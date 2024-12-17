@@ -1,0 +1,138 @@
+[
+    {
+        "element": "Anemo",
+        "img":
+        [
+            "assets/img/char_jewel/i_351.webp",
+            "assets/img/char_jewel/i_352.webp",
+            "assets/img/char_jewel/i_353.webp",
+            "assets/img/char_jewel/i_354.webp"
+        ],
+        "alt":
+        [
+            "Éclat de jade shivada",
+            "Fragment de jade shivada",
+            "Morceau de jade shivada",
+            "Pierre de jade shivada"
+        ]
+    },
+    {
+        "element": "Geo",
+        "img":
+        [
+            "assets/img/char_jewel/i_361.webp",
+            "assets/img/char_jewel/i_362.webp",
+            "assets/img/char_jewel/i_363.webp",
+            "assets/img/char_jewel/i_364.webp"
+        ],
+        "alt":
+        [
+            "Éclat de topaze prithiva",
+            "Fragment de topaze prithiva",
+            "Morceau de topaze prithiva",
+            "Pierre de topaze prithiva"
+        ]
+    },
+    {
+        "element": "Electro",
+        "img":
+        [
+            "assets/img/char_jewel/i_331.webp",
+            "assets/img/char_jewel/i_332.webp",
+            "assets/img/char_jewel/i_333.webp",
+            "assets/img/char_jewel/i_334.webp"
+        ],
+        "alt":
+        [
+            "Éclat d'améthyste vajrada",
+            "Fragment d'améthyste vajrada",
+            "Morceau d'améthyste vajrada",
+            "Pierre d'améthyste vajrada"
+        ]
+    },
+    {
+        "element": "Dendro",
+        "img":
+        [
+            "assets/img/char_jewel/i_371.webp",
+            "assets/img/char_jewel/i_372.webp",
+            "assets/img/char_jewel/i_373.webp",
+            "assets/img/char_jewel/i_374.webp"
+        ],
+        "alt":
+        [
+            "Éclat d'émeraude nagadus",
+            "Fragment d'émeraude nagadus",
+            "Morceau d'émeraude nagadus",
+            "Pierre d'émeraude nagadus"
+        ]
+    },
+    {
+        "element": "Hydro",
+        "img":
+        [
+            "assets/img/char_jewel/i_321.webp",
+            "assets/img/char_jewel/i_322.webp",
+            "assets/img/char_jewel/i_323.webp",
+            "assets/img/char_jewel/i_324.webp"
+        ],
+        "alt":
+        [
+            "Éclat de lazurite varunada",
+            "Fragment de lazurite varunada",
+            "Morceau de lazurite varunada",
+            "Pierre de lazurite varunada"
+        ]
+    },
+    {
+        "element": "Pyro",
+        "img":
+        [
+            "assets/img/char_jewel/i_311.webp",
+            "assets/img/char_jewel/i_312.webp",
+            "assets/img/char_jewel/i_313.webp",
+            "assets/img/char_jewel/i_314.webp"
+        ],
+        "alt":
+        [
+            "Éclat d'agate agnidus",
+            "Fragment d'agate agnidus",
+            "Morceau d'agate agnidus",
+            "Pierre d'agate agnidus"
+        ]
+    },
+    {
+        "element": "Cryo",
+        "img":
+        [
+            "assets/img/char_jewel/i_341.webp",
+            "assets/img/char_jewel/i_342.webp",
+            "assets/img/char_jewel/i_343.webp",
+            "assets/img/char_jewel/i_344.webp"
+        ],
+        "alt":
+        [
+            "Éclat de jade shivada",
+            "Fragment de jade shivada",
+            "Morceau de jade shivada",
+            "Pierre de jade shivada"
+        ]
+    },
+    {
+        "element": "Traveler",
+        "img":
+        [
+            "assets/img/char_jewel/i_301.webp",
+            "assets/img/char_jewel/i_302.webp",
+            "assets/img/char_jewel/i_303.webp",
+            "assets/img/char_jewel/i_304.webp"
+        ],
+        "alt":
+        [
+            "Éclat de diamant scintillant",
+            "Fragment de diamant scintillant",
+            "Morceau de diamant scintillant",
+            "Diamant scintillant"
+        ]
+    }
+]

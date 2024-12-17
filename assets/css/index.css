@@ -1,0 +1,55 @@
+/* ########### Main ########### */
+
+main{
+    /* min-height: calc(84.9vh - 20px); */
+    min-height: calc(80.06vh - 20px);
+    margin-top: 20px;
+}
+
+h1{
+    font-size: 24px;
+    font-family: "Roboto condensed";
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.news-container{
+    background-color: var(--bg-secondary);
+    margin: 0 10px 30px 10px;
+    border-radius: 20px;
+    padding:50px 15px;
+    display:flex;
+    flex-direction: column;
+    gap:15px;
+}
+/* ############################# */
+
+@media screen and (min-width: 426px){
+    h1{
+        font-size: 32px;
+    }
+
+    main{
+        display:flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+    }
+
+    .news-container{
+        min-height:fit-content;
+        max-width:70%;
+    }
+
+}
+
+@media screen and (min-width:769px) {
+    main{
+        min-height: calc(85.36vh - 20px);
+    }
+
+    .news-container{
+        width:82.7%;
+        margin:0 auto;
+    }
+}

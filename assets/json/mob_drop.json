@@ -1,0 +1,107 @@
+[
+    {
+        "name" : "Pilleurs",
+        "drop": 
+        [
+            "assets/img/mob_drop/i_121.webp",
+            "assets/img/mob_drop/i_122.webp",
+            "assets/img/mob_drop/i_123.webp"
+        ],
+        "alt":
+        [
+            "Insigne des Pilleurs",
+            "Insigne de corbeau en argent",
+            "Insigne de corbeau en or"
+        ]
+    },
+    {
+        "name" : "Brutoshamans",
+        "drop": 
+        [
+            "assets/img/mob_drop/i_41.webp",
+            "assets/img/mob_drop/i_42.webp",
+            "assets/img/mob_drop/i_43.webp"
+        ],
+        "alt":
+        [
+            "Parchemin divinatoire",
+            "Parchemin sigilé",
+            "Parchemin maudit"
+        ]
+    },
+    {
+        "name" : "Blobs",
+        "drop": 
+        [
+            "assets/img/mob_drop/i_21.webp",
+            "assets/img/mob_drop/i_22.webp",
+            "assets/img/mob_drop/i_23.webp"
+        ],
+        "alt":
+        [
+            "Bave de Blob",
+            "Mucus de Blob",
+            "Essence de Blob"
+        ]
+    },
+    {
+        "name" : "Brutocollinus",
+        "drop": 
+        [
+            "assets/img/mob_drop/i_31.webp",
+            "assets/img/mob_drop/i_32.webp",
+            "assets/img/mob_drop/i_33.webp"
+        ],
+        "alt":
+        [
+            "Masque endommagé",
+            "Masque sale",
+            "Masque sinistre"
+        ]
+    },
+    {
+        "name" : "Fleur mensongère",
+        "drop": 
+        [
+            "assets/img/mob_drop/i_131.webp",
+            "assets/img/mob_drop/i_132.webp",
+            "assets/img/mob_drop/i_133.webp"
+        ],
+        "alt":
+        [
+            "Nectar de Fleur mensongère",
+            "Nectar miroitant",
+            "Nectar élémentaire"
+        ]
+    },
+    {
+        "name" : "Fatui",
+        "drop": 
+        [
+            "assets/img/mob_drop/i_111.webp",
+            "assets/img/mob_drop/i_112.webp",
+            "assets/img/mob_drop/i_113.webp"
+        ],
+        "alt":
+        [
+            "Insigne de nouvelle recrue",
+            "Insigne de sergent",
+            "Insigne d'officier'"
+        ]
+    },
+    {
+        "name" : "Tireurs Brutocollinus",
+        "drop": 
+        [
+            "assets/img/mob_drop/i_51.webp",
+            "assets/img/mob_drop/i_52.webp",
+            "assets/img/mob_drop/i_53.webp"
+        ],
+        "alt":
+        [
+            "Pointe de flèche robuste",
+            "Pointe de flèche aiguisée",
+            "Pointe de flèche usée"
+        ]
+    }
+]

@@ -1,0 +1,47 @@
+[
+    {
+        "world_boss": "Stormterror",
+        "boss_drop":
+        [
+            "assets/img/world_boss_drop/i_461.webp",
+            "assets/img/world_boss_drop/i_462.webp",
+            "assets/img/world_boss_drop/i_463.webp"
+        ],
+        "alt":
+        [
+            "Plume de Stormterror",
+            "Griffe de Stormterror",
+            "Souffle de Stormterror"
+        ]
+    },
+    {
+        "world_boss": "Loup du nord",
+        "boss_drop":
+        [
+            "assets/img/world_boss_drop/i_464.webp",
+            "assets/img/world_boss_drop/i_465.webp",
+            "assets/img/world_boss_drop/i_466.webp"
+        ],
+        "alt":
+        [
+            "Queue de Borée",
+            "Vertèbre de Borée",
+            "Esprit de Borée"
+        ]
+    },
+    {
+        "world_boss": "Tartaglia",
+        "boss_drop":
+        [
+            "assets/img/world_boss_drop/i_467.webp",
+            "assets/img/world_boss_drop/i_468.webp",
+            "assets/img/world_boss_drop/i_469.webp"
+        ],
+        "alt":
+        [
+            "Corne de Monoceros Caeli",
+            "Fragment du démon",
+            "Ombre du guerrier"
+        ]
+    }
+]

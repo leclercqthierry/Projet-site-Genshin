@@ -1,0 +1,162 @@
+[
+    {
+        "name": "Amber",
+        "img": "assets/img/gallery/Characters/Amber_mini.webp",
+        "card": "assets/img/sheet/Characters/Card/ambor_021_gacha_card.webp",
+        "splash": "assets/img/sheet/Characters/Splash/ambor_021_gacha_splash.webp",
+        "alt": "Amber",
+        "rarity": 4,
+        "element": "Pyro",
+        "weapon": "Bow",
+        "bonus_stats_max": ["ATQ%", "24.0"],
+        "Characters_materials":
+        {
+            "char_jewel": 
+            [
+                "assets/img/char_jewel/i_311.webp", 
+                "assets/img/char_jewel/i_312.webp",
+                "assets/img/char_jewel/i_313.webp",
+                "assets/img/char_jewel/i_314.webp"
+            ],
+            "boss_drop": "assets/img/boss_drop/i_201.webp",
+            "local_material": "assets/img/local_material/i_609.webp",
+            "mob_drop": 
+            [
+                "assets/img/mob_drop/i_51.webp",
+                "assets/img/mob_drop/i_52.webp",
+                "assets/img/mob_drop/i_53.webp"
+            ]
+        },
+        "skill_materials":
+        {
+            "dungeon_drop":
+            [
+                "assets/img/dungeon_drop/i_421.webp",
+                "assets/img/dungeon_drop/i_422.webp",
+                "assets/img/dungeon_drop/i_423.webp"
+            ],
+            "world_boss_drop": "assets/img/world_boss_drop/i_463.webp",
+            "event": "assets/img/other/i_491.webp"
+        }
+    },
+    {
+        "name": "Beidou",
+        "img": "assets/img/gallery/Characters/Beidou_mini.webp",
+        "card": "assets/img/sheet/Characters/Card/beidou_024_gacha_card.webp",
+        "splash": "assets/img/sheet/Characters/Splash/beidou_024_gacha_splash.webp",
+        "alt": "Beidou",
+        "rarity": 4,
+        "element": "Electro",
+        "weapon": "Claymore",
+        "bonus_stats_max": ["Bonus DGT Electro", "24.0"],
+        "Characters_materials":
+        {
+            "char_jewel": 
+            [
+                "assets/img/char_jewel/i_331.webp", 
+                "assets/img/char_jewel/i_332.webp",
+                "assets/img/char_jewel/i_333.webp",
+                "assets/img/char_jewel/i_334.webp"
+            ],
+            "boss_drop": "assets/img/boss_drop/i_203.webp",
+            "local_material": "assets/img/local_material/i_606.webp",
+            "mob_drop": 
+            [
+                "assets/img/mob_drop/i_121.webp",
+                "assets/img/mob_drop/i_122.webp",
+                "assets/img/mob_drop/i_123.webp"
+            ]
+        },
+        "skill_materials":
+        {
+            "dungeon_drop":
+            [
+                "assets/img/dungeon_drop/i_431.webp",
+                "assets/img/dungeon_drop/i_432.webp",
+                "assets/img/dungeon_drop/i_433.webp"
+            ],
+            "world_boss_drop": "assets/img/world_boss_drop/i_463.webp",
+            "event": "assets/img/other/i_491.webp"
+        }
+    },
+    {
+        "name": "Bennet",
+        "img": "assets/img/gallery/Characters/Bennet_mini.webp",
+        "card": "assets/img/sheet/Characters/Card/bennett_032_gacha_card.webp",
+        "splash": "assets/img/sheet/Characters/Splash/bennett_032_gacha_splash.webp",
+        "alt": "Bennet",
+        "rarity": 4,
+        "element": "Pyro",
+        "weapon": "Sword",
+        "bonus_stats_max": ["Recharge d'énergie", "26.7"],
+        "Characters_materials":
+        {
+            "char_jewel": 
+            [
+                "assets/img/char_jewel/i_311.webp", 
+                "assets/img/char_jewel/i_312.webp",
+                "assets/img/char_jewel/i_313.webp",
+                "assets/img/char_jewel/i_314.webp"
+            ],
+            "boss_drop": "assets/img/boss_drop/i_201.webp",
+            "local_material": "assets/img/local_material/i_612.webp",
+            "mob_drop": 
+            [
+                "assets/img/mob_drop/i_121.webp",
+                "assets/img/mob_drop/i_122.webp",
+                "assets/img/mob_drop/i_123.webp"
+            ]
+        },
+        "skill_materials":
+        {
+            "dungeon_drop":
+            [
+                "assets/img/dungeon_drop/i_451.webp",
+                "assets/img/dungeon_drop/i_452.webp",
+                "assets/img/dungeon_drop/i_453.webp"
+            ],
+            "world_boss_drop": "assets/img/world_boss_drop/i_461.webp",
+            "event": "assets/img/other/i_491.webp"
+        }
+    },
+    {
+        "name": "Chongyun",
+        "img": "assets/img/gallery/Characters/Chongyun_mini.webp",
+        "card": "assets/img/sheet/Characters/Card/chongyun_036_gacha_card.webp",
+        "splash": "assets/img/sheet/Characters/Splash/chongyun_036_gacha_splash.webp",
+        "alt": "Chongyun",
+        "rarity": 4,
+        "element": "Cryo",
+        "weapon": "Claymore",
+        "bonus_stats_max": ["ATQ%", "24.0"],
+        "Characters_materials":
+        {
+            "char_jewel": 
+            [
+                "assets/img/char_jewel/i_341.webp", 
+                "assets/img/char_jewel/i_342.webp",
+                "assets/img/char_jewel/i_343.webp",
+                "assets/img/char_jewel/i_344.webp"
+            ],
+            "boss_drop": "assets/img/boss_drop/i_204.webp",
+            "local_material": "assets/img/local_material/i_602.webp",
+            "mob_drop": 
+            [
+                "assets/img/mob_drop/i_31.webp",
+                "assets/img/mob_drop/i_32.webp",
+                "assets/img/mob_drop/i_33.webp"
+            ]
+        },
+        "skill_materials":
+        {
+            "dungeon_drop":
+            [
+                "assets/img/dungeon_drop/i_411.webp",
+                "assets/img/dungeon_drop/i_412.webp",
+                "assets/img/dungeon_drop/i_413.webp"
+            ],
+            "world_boss_drop": "assets/img/world_boss_drop/i_463.webp",
+            "event": "assets/img/other/i_491.webp"
+        }
+    }
+]

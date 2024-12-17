@@ -1,0 +1,104 @@
+[
+    {
+        "name": "Liberté",
+        "drop":
+        [
+            "assets/img/dungeon_drop/i_421.webp",
+            "assets/img/dungeon_drop/i_422.webp",
+            "assets/img/dungeon_drop/i_423.webp"
+        ],
+        "alt":
+        [
+            "Enseignement de la liberté",
+            "Guide de la liberté",
+            "Philosophie de la liberté"
+        ],
+        "days":
+        ["Lundi", "Jeudi", "Dimanche"]
+    },
+    {
+        "name": "Résistance",
+        "drop":
+        [
+            "assets/img/dungeon_drop/i_451.webp",
+            "assets/img/dungeon_drop/i_452.webp",
+            "assets/img/dungeon_drop/i_453.webp"
+        ],
+        "alt":
+        [
+            "Enseignement de la résistance",
+            "Guide de la résistance",
+            "Philosophie de la résistance"
+        ],
+        "days":
+        ["Mardi", "Vendredi", "Dimanche"]
+    },
+    {
+        "name": "Poésie",
+        "drop":
+        [
+            "assets/img/dungeon_drop/i_401.webp",
+            "assets/img/dungeon_drop/i_402.webp",
+            "assets/img/dungeon_drop/i_403.webp"
+        ],
+        "alt":
+        [
+            "Enseignement de la poésie",
+            "Guide de la poésie",
+            "Philosophie de la poésie"
+        ],
+        "days":
+        ["Mercredi", "Samedi", "Dimanche"]
+    },
+    {
+        "name": "Prospérité",
+        "drop":
+        [
+            "assets/img/dungeon_drop/i_441.webp",
+            "assets/img/dungeon_drop/i_442.webp",
+            "assets/img/dungeon_drop/i_443.webp"
+        ],
+        "alt":
+        [
+            "Enseignement de la prospérité",
+            "Guide de la prospérité",
+            "Philosophie de la prospérité"
+        ],
+        "days":
+        ["Lundi", "Jeudi", "Dimanche"]
+    },
+    {
+        "name": "Diligence",
+        "drop":
+        [
+            "assets/img/dungeon_drop/i_411.webp",
+            "assets/img/dungeon_drop/i_412.webp",
+            "assets/img/dungeon_drop/i_413.webp"
+        ],
+        "alt":
+        [
+            "Enseignement de la diligence",
+            "Guide de la diligence",
+            "Philosophie de la diligence"
+        ],
+        "days":
+        ["Mardi", "Vendredi", "Dimanche"]
+    },
+    {
+        "name": "Or",
+        "drop":
+        [
+            "assets/img/dungeon_drop/i_431.webp",
+            "assets/img/dungeon_drop/i_432.webp",
+            "assets/img/dungeon_drop/i_433.webp"
+        ],
+        "alt":
+        [
+            "Enseignement de l'or",
+            "Guide de l'or",
+            "Philosophie de l'or"
+        ],
+        "days":
+        ["Mercredi", "Samedi", "Dimanche"]
+    }
+]

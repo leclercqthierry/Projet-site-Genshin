@@ -1,0 +1,646 @@
+[
+    {
+        "nom": "Albedo",
+        "image_mini": "images/Personnages/Miniatures/Albedo_mini.webp",
+        "alt": "miniature d'Albedo",
+        "rareté": "xxxxx",
+        "type": "Geo"
+    },
+    {
+        "nom": "Alhaitham",
+        "image_mini": "images/Personnages/miniatures/Alhaitham_mini.webp",
+        "alt": "minature d'Alhaitham",
+        "rareté": "xxxxx",
+        "type": "Dendro"
+    },
+    {
+        "nom": "Aloy",
+        "image_mini": "images/Personnages/miniatures/Aloy_mini.webp",
+        "alt": "minature d'Aloy",
+        "rareté": "xxxxx",
+        "type": "Cryo"
+    },
+    {
+        "nom": "Amber",
+        "image_mini": "images/Personnages/Miniatures/Amber_mini.webp",
+        "alt": "miniature d'Amber",
+        "rareté": "xxxx",
+        "type": "Pyro"
+    },
+    {
+        "nom": "Arlecchino",
+        "image_mini": "images/Personnages/Miniatures/Arlecchino_mini.webp",
+        "alt": "miniature d'Arlecchino",
+        "rareté": "xxxxx",
+        "type": "Pyro"
+    },
+    {
+        "nom": "Arataki Itto",
+        "image_mini": "images/Personnages/miniatures/Itto_mini.webp",
+        "alt": "minature d'Arataki Itto",
+        "rareté": "xxxxx",
+        "type": "Geo"
+    },
+    {
+        "nom": "Baizhu",
+        "image_mini": "images/Personnages/miniatures/Baizhu_mini.webp",
+        "alt": "minature de Baizhu",
+        "rareté": "xxxxx",
+        "type": "Dendro"
+    },
+    {
+        "nom": "Barbara",
+        "image_mini": "images/Personnages/miniatures/Barbara_mini.webp",
+        "alt": "minature de Barbara",
+        "rareté": "xxxx",
+        "type": "Hydro"
+    },
+    {
+        "nom": "Beidou",
+        "image_mini": "images/Personnages/miniatures/Beidou_mini.webp",
+        "alt": "minature de Beidou",
+        "rareté": "xxxx",
+        "type": "Electro"
+    },
+    {
+        "nom": "Bennett",
+        "image_mini": "images/Personnages/miniatures/Bennett_mini.webp",
+        "alt": "minature de Bennett",
+        "rareté": "xxxx",
+        "type": "Pyro"
+    },
+    {
+        "nom": "Candace",
+        "image_mini": "images/Personnages/miniatures/Candace_mini.webp",
+        "alt": "minature de Candace",
+        "rareté": "xxxx",
+        "type": "Hydro"
+    },
+    {
+        "nom": "Charlotte",
+        "image_mini": "images/Personnages/miniatures/Charlotte_mini.webp",
+        "alt": "minature de Charlotte",
+        "rareté": "xxxx",
+        "type": "Cryo"
+    },
+    {
+        "nom": "Chevreuse",
+        "image_mini": "images/Personnages/miniatures/Chevreuse_mini.webp",
+        "alt": "minature de Chevreuse",
+        "rareté": "xxxx",
+        "type": "Pyro"
+    },
+    {
+        "nom": "Chiori",
+        "image_mini": "images/Personnages/miniatures/Chiori_mini.webp",
+        "alt": "minature de Chiori",
+        "rareté": "xxxxx",
+        "type": "Geo"
+    },
+    {
+        "nom": "Chongyun",
+        "image_mini": "images/Personnages/miniatures/Chongyun_mini.webp",
+        "alt": "minature de Chongyun",
+        "rareté": "xxxx",
+        "type": "Cryo"
+    },
+    {
+        "nom":"Collei",
+        "image_mini": "images/Personnages/miniatures/Collei_mini.webp",
+        "alt": "minature de Collei",
+        "rareté": "xxxx",
+        "type": "Dendro"
+    },
+    {
+        "nom":"Cyno",
+        "image_mini": "images/Personnages/miniatures/Cyno_mini.webp",
+        "alt": "minature de Cyno",
+        "rareté": "xxxxx",
+        "type": "Electro"
+    },
+    {
+        "nom": "Dehya",
+        "image_mini": "images/Personnages/miniatures/Dehya_mini.webp",
+        "alt": "minature de Dehya",
+        "rareté": "xxxxx",
+        "type": "Pyro"
+    },
+    {
+        "nom": "Diluc",
+        "image_mini": "images/Personnages/miniatures/Diluc_mini.webp",
+        "alt": "minature de Diluc",
+        "rareté": "xxxxx",
+        "type": "Pyro"
+    },
+    {
+        "nom": "Diona",
+        "image_mini": "images/Personnages/miniatures/Diona_mini.webp",
+        "alt": "minature de Diona",
+        "rareté": "xxxx",
+        "type": "Cryo"
+    },
+    {
+        "nom":"Dori",
+        "image_mini": "images/Personnages/miniatures/Dori_mini.webp",
+        "alt": "minature de Dori",
+        "rareté": "xxxx",
+        "type": "Electro"
+    },
+    {
+        "nom":"Eula",
+        "image_mini": "images/Personnages/miniatures/Eula_mini.webp",
+        "alt": "minature d'Eula",
+        "rareté": "xxxxx",
+        "type": "Cryo"
+    },
+    {
+        "nom":"Faruzan",
+        "image_mini": "images/Personnages/miniatures/Faruzan_mini.webp",
+        "alt": "minature de Faruzan",
+        "rareté": "xxxx",
+        "type": "Anemo"
+    },
+    {
+        "nom":"Fischl",
+        "image_mini": "images/Personnages/miniatures/Fischl_mini.webp",
+        "alt": "minature de Fischl",
+        "rareté": "xxxx",
+        "type": "Electro"
+    },
+    {
+        "nom":"Freminet",
+        "image_mini": "images/Personnages/miniatures/Freminet_mini.webp",
+        "alt": "minature de Fréminet",
+        "rareté": "xxxx",
+        "type": "Cryo"
+    },
+    {
+        "nom":"Furina",
+        "image_mini": "images/Personnages/miniatures/Furina_mini.webp",
+        "alt": "minature de Furina",
+        "rareté": "xxxxx",
+        "type": "Hydro"
+    },
+    {
+        "nom":"Gaming",
+        "image_mini": "images/Personnages/miniatures/Gaming_mini.webp",
+        "alt": "minature de Gaming",
+        "rareté": "xxxx",
+        "type": "Pyro"
+    },
+    {
+        "nom":"Ganyu",
+        "image_mini": "images/Personnages/miniatures/Ganyu_mini.webp",
+        "alt": "minature de Ganyu",
+        "rareté": "xxxxx",
+        "type": "Cryo"
+    },
+    {
+        "nom":"Gorou",
+        "image_mini": "images/Personnages/miniatures/Gorou_mini.webp",
+        "alt": "minature de Gorou",
+        "rareté": "xxxx",
+        "type": "Geo"
+    },
+    {
+        "nom":"Hu Tao",
+        "image_mini": "images/Personnages/miniatures/Hu_Tao_mini.webp",
+        "alt": "minature de Hu Tao",
+        "rareté": "xxxxx",
+        "type": "Pyro"
+    },
+    {
+        "nom":"Jean",
+        "image_mini": "images/Personnages/miniatures/Jean_mini.webp",
+        "alt": "minature de Jean",
+        "rareté": "xxxxx",
+        "type": "Anemo"
+    },
+    {
+        "nom":"Kaedehara Kazuha",
+        "image_mini": "images/Personnages/miniatures/Kazuha_mini.webp",
+        "alt": "minature de Kaedehara_Kazuha",
+        "rareté": "xxxxx",
+        "type": "Anemo"
+    },
+    {
+        "nom":"Kaeya",
+        "image_mini": "images/Personnages/miniatures/Kaeya_mini.webp",
+        "alt": "minature de Kaeya",
+        "rareté": "xxxx",
+        "type": "Cryo"
+    },
+    {
+        "nom":"Kamisato Ayaka",
+        "image_mini": "images/Personnages/miniatures/Ayaka_mini.webp",
+        "alt": "minature de Kamisato_Ayaka",
+        "rareté": "xxxxx",
+        "type": "Cryo"
+    },
+    {
+        "nom":"Kamisato Ayato",
+        "image_mini": "images/Personnages/miniatures/Ayato_mini.webp",
+        "alt": "minature de Kamisato_Ayato",
+        "rareté": "xxxxx",
+        "type": "Hydro"
+    },
+    {
+        "nom":"Kaveh",
+        "image_mini": "images/Personnages/miniatures/Kaveh_mini.webp",
+        "alt": "minature de Kaveh",
+        "rareté": "xxxx",
+        "type": "Dendro"
+    },
+    {
+        "nom":"Keqing",
+        "image_mini": "images/Personnages/miniatures/Keqing_mini.webp",
+        "alt": "minature de Keqing",
+        "rareté": "xxxxx",
+        "type": "Electro"
+    },
+    {
+        "nom":"Kirara",
+        "image_mini": "images/Personnages/miniatures/Kirara_mini.webp",
+        "alt": "minature de Kirara",
+        "rareté": "xxxx",
+        "type": "Dendro"
+    },
+    {
+        "nom":"Klee",
+        "image_mini": "images/Personnages/miniatures/Klee_mini.webp",
+        "alt": "minature de Klee",
+        "rareté": "xxxxx",
+        "type": "Pyro"
+    },
+    {
+        "nom":"Kujou Sara",
+        "image_mini": "images/Personnages/miniatures/Kujou_Sara_mini.webp",
+        "alt": "minature de Kujou_Sara",
+        "rareté": "xxxx",
+        "type": "Electro"
+    },
+    {
+        "nom":"Kuki Shinobu",
+        "image_mini": "images/Personnages/miniatures/Shinobu_mini.webp",
+        "alt": "minature de Kuki_Shinobu",
+        "rareté": "xxxx",
+        "type": "Electro"
+    },
+    {
+        "nom":"Layla",
+        "image_mini": "images/Personnages/miniatures/Layla_mini.webp",
+        "alt": "minature de Layla",
+        "rareté": "xxxx",
+        "type": "Cryo"
+    },
+    {
+        "nom":"Lisa",
+        "image_mini": "images/Personnages/miniatures/Lisa_mini.webp",
+        "alt": "minature de Lisa",
+        "rareté": "xxxx",
+        "type": "Electro"
+    },
+    {
+        "nom":"Lynette",
+        "image_mini": "images/Personnages/miniatures/Lynette_mini.webp",
+        "alt": "minature de Lynette",
+        "rareté": "xxxx",
+        "type": "Anemo"
+    },
+    {
+        "nom":"Lyney",
+        "image_mini": "images/Personnages/miniatures/Lyney_mini.webp",
+        "alt": "minature de Lyney",
+        "rareté": "xxxxx",
+        "type": "Pyro"
+    },
+    {
+        "nom":"Mika",
+        "image_mini": "images/Personnages/miniatures/Mika_mini.webp",
+        "alt": "minature de Mika",
+        "rareté": "xxxx",
+        "type": "Cryo"
+    },
+    {
+        "nom":"Mona",
+        "image_mini": "images/Personnages/miniatures/Mona_mini.webp",
+        "alt": "minature de Mona",
+        "rareté": "xxxxx",
+        "type": "Hydro"
+    },
+    {
+        "nom":"Nahida",
+        "image_mini": "images/Personnages/miniatures/Nahida_mini.webp",
+        "alt": "minature de Nahida",
+        "rareté": "xxxxx",
+        "type": "Dendro"
+    },
+    {
+        "nom":"Navia",
+        "image_mini": "images/Personnages/miniatures/Navia_mini.webp",
+        "alt": "minature de Navia",
+        "rareté": "xxxxx",
+        "type": "Geo"
+    },
+    {
+        "nom":"Neuvillette",
+        "image_mini": "images/Personnages/miniatures/Neuvillette_mini.webp",
+        "alt": "minature de Neuvillette",
+        "rareté": "xxxxx",
+        "type": "Hydro"
+    },
+    {
+        "nom":"Nilou",
+        "image_mini": "images/Personnages/miniatures/Nilou_mini.webp",
+        "alt": "minature de Nilou",
+        "rareté": "xxxxx",
+        "type": "Hydro"
+    },
+    {
+        "nom":"Ningguang",
+        "image_mini": "images/Personnages/miniatures/Ningguang_mini.webp",
+        "alt": "minature de Ningguang",
+        "rareté": "xxxx",
+        "type": "Geo"
+    },
+    {
+        "nom":"Noelle",
+        "image_mini": "images/Personnages/miniatures/Noelle_mini.webp",
+        "alt": "minature de Noelle",
+        "rareté": "xxxx",
+        "type": "Geo"
+    },
+    {
+        "nom":"Nomade",
+        "image_mini": "images/Personnages/miniatures/Nomade_mini.webp",
+        "alt": "minature de Nomade",
+        "rareté": "xxxxx",
+        "type": "Anemo"
+    },
+    {
+        "nom":"Qiqi",
+        "image_mini": "images/Personnages/miniatures/Qiqi_mini.webp",
+        "alt": "minature de Qiqi",
+        "rareté": "xxxxx",
+        "type": "Cryo"
+    },
+    {
+        "nom":"Razor",
+        "image_mini": "images/Personnages/miniatures/Razor_mini.webp",
+        "alt": "minature de Razor",
+        "rareté": "xxxx",
+        "type": "Electro"
+    },
+    {
+        "nom":"Rosalia",
+        "image_mini": "images/Personnages/miniatures/Rosalia_mini.webp",
+        "alt": "minature de Rosalia",
+        "rareté": "xxxx",
+        "type": "Cryo"
+    },
+    {
+        "nom":"Sangonomiya Kokomi",
+        "image_mini": "images/Personnages/miniatures/Kokomi_mini.webp",
+        "alt": "minature de Sangonomiya_Kokomi",
+        "rareté": "xxxxx",
+        "type": "Hydro"
+    },
+    {
+        "nom":"Sayu",
+        "image_mini": "images/Personnages/miniatures/Sayu_mini.webp",
+        "alt": "minature de Sayu",
+        "rareté": "xxxx",
+        "type": "Anemo"
+    },
+    {
+        "nom":"Shenhe",
+        "image_mini": "images/Personnages/miniatures/Shenhe_mini.webp",
+        "alt": "minature de Shenhe",
+        "rareté": "xxxxx",
+        "type": "Cryo"
+    },
+    {
+        "nom":"Shikanoin Heizou",
+        "image_mini": "images/Personnages/miniatures/Heizou_mini.webp",
+        "alt": "minature de Shikanoin_Heizou",
+        "rareté": "xxxx",
+        "type": "Anemo"
+    },
+    {
+        "nom":"Shogun Raiden",
+        "image_mini": "images/Personnages/miniatures/Raiden_mini.webp",
+        "alt": "minature de Shogun_Raiden",
+        "rareté": "xxxxx",
+        "type": "Electro"
+    },
+    {
+        "nom":"Sucrose",
+        "image_mini": "images/Personnages/miniatures/Sucrose_mini.webp",
+        "alt": "minature de Sucrose",
+        "rareté": "xxxx",
+        "type": "Anemo"
+    },
+    {
+        "nom":"Tartaglia",
+        "image_mini": "images/Personnages/miniatures/Tartaglia_mini.webp",
+        "alt": "minature de Tartaglia",
+        "rareté": "xxxxx",
+        "type": "Hydro"
+    },
+    {
+        "nom":"Thomas",
+        "image_mini": "images/Personnages/miniatures/Thomas_mini.webp",
+        "alt": "minature de Thomas",
+        "rareté": "xxxx",
+        "type": "Pyro"
+    },
+    {
+        "nom":"Tighnari",
+        "image_mini": "images/Personnages/miniatures/Tighnari_mini.webp",
+        "alt": "minature de Tighnari",
+        "rareté": "xxxxx",
+        "type": "Dendro"
+    },
+    {
+        "nom":"Venti",
+        "image_mini": "images/Personnages/miniatures/Venti_mini.webp",
+        "alt": "minature de Venti",
+        "rareté": "xxxxx",
+        "type": "Anemo"
+    },
+    {
+        "nom":"Voyageur Anemo",
+        "image_mini": "images/Personnages/miniatures/Voyageur_mini.webp",
+        "alt": "minature de Voyageur_Anemo",
+        "rareté": "xxxxx",
+        "type": "Anemo"
+    },
+    {
+        "nom":"Voyageur Dendro",
+        "image_mini": "images/Personnages/miniatures/Voyageur_mini.webp",
+        "alt": "minature de Voyageur_Dendro",
+        "rareté": "xxxxx",
+        "type": "Dendro"
+    },
+    {
+        "nom":"Voyageur Electro",
+        "image_mini": "images/Personnages/miniatures/Voyageur_mini.webp",
+        "alt": "minature de Voyageur_Electro",
+        "rareté": "xxxxx",
+        "type": "Electro"
+    },
+    {
+        "nom":"Voyageur Geo",
+        "image_mini": "images/Personnages/miniatures/Voyageur_mini.webp",
+        "alt": "minature de Voyageur_Geo",
+        "rareté": "xxxxx",
+        "type": "Geo"
+    },
+    {
+        "nom":"Voyageur Hydro",
+        "image_mini": "images/Personnages/miniatures/Voyageur_mini.webp",
+        "alt": "minature de Voyageur_Hydro",
+        "rareté": "xxxxx",
+        "type": "Hydro"
+    },
+    {
+        "nom":"Wriothesley",
+        "image_mini": "images/Personnages/miniatures/Wriothesley_mini.webp",
+        "alt": "minature de Wriothesley",
+        "rareté": "xxxxx",
+        "type": "Cryo"
+    },
+    {
+        "nom":"Xiangling",
+        "image_mini": "images/Personnages/miniatures/Xiangling_mini.webp",
+        "alt": "minature de Xiangling",
+        "rareté": "xxxx",
+        "type": "Pyro"
+    },
+    {
+        "nom":"Xianyun",
+        "image_mini": "images/Personnages/miniatures/Xianyun_mini.webp",
+        "alt": "minature de Xianyun",
+        "rareté": "xxxxx",
+        "type": "Anemo"
+    },
+    {
+        "nom":"Xiao",
+        "image_mini": "images/Personnages/miniatures/Xiao_mini.webp",
+        "alt": "minature de Xiao",
+        "rareté": "xxxxx",
+        "type": "Anemo"
+    },
+    {
+        "nom":"Xingqiu",
+        "image_mini": "images/Personnages/miniatures/Xingqiu_mini.webp",
+        "alt": "minature de Xingqiu",
+        "rareté": "xxxx",
+        "type": "Hydro"
+    },
+    {
+        "nom":"Xinyan",
+        "image_mini": "images/Personnages/miniatures/Xinyan_mini.webp",
+        "alt": "minature de Xinyan",
+        "rareté": "xxxx",
+        "type": "Pyro"
+    },
+    {
+        "nom":"Yae Miko",
+        "image_mini": "images/Personnages/miniatures/Yae_Miko_mini.webp",
+        "alt": "minature de Yae_Miko",
+        "rareté": "xxxxx",
+        "type": "Electro"
+    },
+    {
+        "nom":"Yanfei",
+        "image_mini": "images/Personnages/miniatures/Yanfei_mini.webp",
+        "alt": "minature de Yanfei",
+        "rareté": "xxxx",
+        "type": "Pyro"
+    },
+    {
+        "nom":"Yaoyao",
+        "image_mini": "images/Personnages/miniatures/Yaoyao_mini.webp",
+        "alt": "minature de Yaoyao",
+        "rareté": "xxxx",
+        "type": "Dendro"
+    },
+    {
+        "nom":"Yelan",
+        "image_mini": "images/Personnages/miniatures/Yelan_mini.webp",
+        "alt": "minature de Yelan",
+        "rareté": "xxxxx",
+        "type": "Hydro"
+    },
+    {
+        "nom":"Yoimiya",
+        "image_mini": "images/Personnages/miniatures/Yoimiya_mini.webp",
+        "alt": "minature de Yoimiya",
+        "rareté": "xxxxx",
+        "type": "Pyro"
+    },
+    {
+        "nom":"Yun Jin",
+        "image_mini": "images/Personnages/miniatures/Yun_Jin_mini.webp",
+        "alt": "minature de Yun_Jin",
+        "rareté": "xxxx",
+        "type": "Geo"
+    },
+    {
+        "nom":"Zhongli",
+        "image_mini": "images/Personnages/miniatures/Zhongli_mini.webp",
+        "alt": "minature de Zhongli",
+        "rareté": "xxxxx",
+        "type": "Geo"
+    },
+    {
+        "nom":"Sethos",
+        "image_mini": "images/Personnages/Miniatures/Sethos_mini.webp",
+        "alt":"minature de Sethos",
+        "rareté": "xxxx",
+        "type": "Electro"
+    },
+    {
+        "nom":"Clorinde",
+        "image_mini": "images/Personnages/Miniatures/Clorinde_mini.webp",
+        "alt":"minature de Clorinde",
+        "rareté": "xxxxx",
+        "type": "Electro"
+    },
+    {
+        "nom":"Sigewinne",
+        "image_mini": "images/Personnages/Miniatures/Sigewinne_mini.webp",
+        "alt":"minature de Sigewinne",
+        "rareté": "xxxxx",
+        "type": "Hydro"
+    },
+    {
+        "nom":"Kachina",
+        "image_mini": "images/Personnages/miniatures/Kachina_mini.webp",
+        "alt":"miniature de Kachina",
+        "rareté":"xxxx",
+        "type":"Geo"
+    },
+    {
+        "nom":"Mualani",
+        "image_mini": "images/Personnages/miniatures/Mualani_mini.webp",
+        "alt":"miniature de Mualani",
+        "rareté":"xxxxx",
+        "type":"Hydro"
+    },
+    {
+        "nom":"Emilie",
+        "image_mini": "images/Personnages/miniatures/Emilie_mini.webp",
+        "alt":"miniature de Emilie",
+        "rareté":"xxxxx",
+        "type":"Dendro"
+    },
+    {
+        "nom":"Kinich",
+        "image_mini": "images/Personnages/miniatures/Kinich_mini.webp",
+        "alt":"miniature de Kinich",
+        "rareté":"xxxxx",
+        "type":"Dendro"
+    }
+]

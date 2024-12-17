@@ -1,0 +1,129 @@
+main{
+    min-height: calc(100vh - 11.77vh - 8.17vh); /* screen - header - footer */
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    background-color: var(--bg-secondary);
+    border-radius: 20px;
+    width: 270px;
+    height: 280px;
+    padding: 30px 15px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    gap:15px;
+}
+
+#login,
+#password{
+    width:100%;
+    height:2rem;
+    border-radius: 7px;
+    border:none;
+}
+
+label{
+    padding-left:5px;
+}
+
+.form-group{
+    display:flex;
+    flex-direction: column;
+    justify-content: end;
+    width:100%;
+}
+
+form a{
+    text-transform: none;
+    color:var(--font-color);
+    display: block;
+}
+
+.button-container{
+    width:100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btn{
+    width:108px;
+    height:32px;
+    background-color: var(--bg-primary);
+    border-radius: 50px;
+    border:none;
+    font-family: "Roboto";
+    color: var(--font-color);
+}
+
+a.btn{
+    text-decoration: none;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#login,
+#password{
+    padding: 0 10px;
+}
+
+#login:invalid,
+#password:invalid{
+    border: 2px solid red;
+    box-shadow: 0 0 5px red;
+    transition: box-shadow 0.3s ease;
+}
+
+@media screen and (min-width: 426px){
+    form{
+        height:41.41vh;
+        width:49.31vw;
+        padding: 30px 50px;
+    }
+
+    .btn{
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 769px){
+    main{
+        min-height: calc(100vh - 7.32vh - 7.32vh); /* screen - header - footer */
+    }
+
+    form{
+        padding: 30px 6.94vw;
+        height:fit-content;
+        width:fit-content;
+        gap:25px;
+    }
+
+    form .btn:hover{
+        transform: scale(1.1);
+        cursor:pointer;
+    }
+
+    #login,
+    #password{
+        height:40px;
+    }
+
+    .button-container{
+        gap:30px;
+    }
+
+    .btn{
+        width:12.85vw;
+        height:48px;
+        font-size: 1.25em;
+    }
+
+    ::placeholder{
+        font-size: 1.25em;
+    }
+}

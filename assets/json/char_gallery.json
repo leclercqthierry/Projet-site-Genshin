@@ -1,0 +1,140 @@
+[
+    {
+        "name": "Amber",
+        "img": "assets/img/gallery/Characters/Amber_mini.webp",
+        "alt": "Amber",
+        "element": "Pyro"
+    },
+    {
+        "name": "Beidou",
+        "img": "assets/img/gallery/Characters/Beidou_mini.webp",
+        "alt": "Beidou",
+        "element": "Electro"
+    },
+    {
+        "name": "Bennett",
+        "img": "assets/img/gallery/Characters/Bennett_mini.webp",
+        "alt": "Bennett",
+        "element": "Pyro"
+    },
+    {
+        "name": "Barbara",
+        "img": "assets/img/gallery/Characters/Barbara_mini.webp",
+        "alt": "Barbara",
+        "element": "Hydro"
+    },
+    {
+        "name": "Chongyun",
+        "img": "assets/img/gallery/Characters/Chongyun_mini.webp",
+        "alt": "Chongyun",
+        "element": "Cryo"
+    },
+    {
+        "name": "Diluc",
+        "img": "assets/img/gallery/Characters/Diluc_mini.webp",
+        "alt": "Diluc",
+        "element": "Pyro"
+    },
+    {
+        "name": "Fischl",
+        "img": "assets/img/gallery/Characters/Fischl_mini.webp",
+        "alt": "Fischl",
+        "element": "Electro"
+    },
+    {
+        "name": "Jean",
+        "img": "assets/img/gallery/Characters/Jean_mini.webp",
+        "alt": "Jean",
+        "element": "Anemo"
+    },
+    {
+        "name": "Kaeya",
+        "img": "assets/img/gallery/Characters/Kaeya_mini.webp",
+        "alt": "Kaeya",
+        "element": "Cryo"
+    },
+    {
+        "name": "Keqing",
+        "img": "assets/img/gallery/Characters/Keqing_mini.webp",
+        "alt": "Keqing",
+        "element": "Electro"
+    },
+    {
+        "name": "Klee",
+        "img": "assets/img/gallery/Characters/Klee_mini.webp",
+        "alt": "Klee",
+        "element": "Pyro"
+    },
+    {
+        "name": "Lisa",
+        "img": "assets/img/gallery/Characters/Lisa_mini.webp",
+        "alt": "Lisa",
+        "element": "Electro"
+    },
+    {
+        "name": "Mona",
+        "img": "assets/img/gallery/Characters/Mona_mini.webp",
+        "alt": "Mona",
+        "element": "Hydro"
+    },
+    {
+        "name": "Ningguang",
+        "img": "assets/img/gallery/Characters/Ningguang_mini.webp",
+        "alt": "Ningguang",
+        "element": "Geo"
+    },
+    {
+        "name": "Noelle",
+        "img": "assets/img/gallery/Characters/Noelle_mini.webp",
+        "alt": "Noelle",
+        "element": "Geo"
+    },
+    {
+        "name": "Qiqi",
+        "img": "assets/img/gallery/Characters/Qiqi_mini.webp",
+        "alt": "Qiqi",
+        "element": "Cryo"
+    },
+    {
+        "name": "Razor",
+        "img": "assets/img/gallery/Characters/Razor_mini.webp",
+        "alt": "Razor",
+        "element": "Electro"
+    },
+    {
+        "name": "Sucrose",
+        "img": "assets/img/gallery/Characters/Sucrose_mini.webp",
+        "alt": "Sucrose",
+        "element": "Anemo"
+    },
+    {
+        "name": "Voyageur / Voyageuse",
+        "img": "assets/img/gallery/Characters/Voyageur / Voyageuse_mini.webp",
+        "alt": "Voyageur / Voyageuse",
+        "element": "Anemo"
+    },
+    {
+        "name": "Voyageur / Voyageuse",
+        "img": "assets/img/gallery/Characters/Voyageur / Voyageuse_mini.webp",
+        "alt": "Voyageur / Voyageuse",
+        "element": "Geo"
+    },
+    {
+        "name": "Venti",
+        "img": "assets/img/gallery/Characters/Venti_mini.webp",
+        "alt": "Venti",
+        "element": "Anemo"
+    },
+    {
+        "name": "Xiangling",
+        "img": "assets/img/gallery/Characters/Xiangling_mini.webp",
+        "alt": "Xiangling",
+        "element": "Pyro"
+    },
+    {
+        "name": "Xingqiu",
+        "img": "assets/img/gallery/Characters/Xingqiu_mini.webp",
+        "alt": "Xingqiu",
+        "element": "Hydro"
+    }
+]

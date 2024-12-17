@@ -1,0 +1,147 @@
+:root{
+    --bg-primary: #081C15;
+    --bg-secondary: #1B4332;
+    --font-color: #DADADA;
+    --font-alternate-color: #1E1E1E;
+    --rarity-color-5:#E9AF67;
+    --rarity-color-4:#BDABD4;
+    --rarity-color-3: #009CF0;
+}
+
+/* ########### Reset CSS* ########### */
+* {
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+/* ################################## */
+/* ########### Font ########### */
+@font-face {
+    font-family: "Roboto Condensed";
+    src: url(/assets/font/RobotoCondensed-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(/assets/font/Roboto-Regular.ttf);
+}
+/* ############################# */
+/* ########### Body ########### */
+body {
+    font-family: "Roboto";
+    background-color: var(--bg-primary);
+    font-size: 1em;
+    color: var(--font-color);
+}
+/* ########### Header ########### */
+
+#logo{
+    height:6.46vh;
+}
+
+nav{
+    height:11.77vh;
+    background-color: var(--bg-secondary);
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:15px;
+}
+
+#burger,
+#cross{
+    font-size: 4.37vh;
+    background-color: var(--bg-primary);
+    padding: 20px;
+    border-radius: 15px;
+    width: 9.48vh;
+    height: 9.48vh;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    cursor:pointer;
+}
+
+/*We hide:
+- the checkbox permanently
+- the cross (X) when checkbox not checked
+- the burger when checkbox checked*/
+#menu_toggle,
+#cross,
+#menu_toggle:checked ~ #burger,
+.menu{
+    display:none;
+}
+
+/* We display the menu and the character X when the checkbox is checked */
+#menu_toggle:checked ~ .menu,
+#menu_toggle:checked ~ #cross{
+    display: flex;
+}
+
+.menu{
+    flex-direction: column;
+    align-items: center;
+    width:100%;
+    position:absolute;
+    z-index: 9999;
+    top:11.77vh;
+    left:0;
+    background-color: var(--bg-secondary);
+}
+
+.menu li{
+    list-style: none;
+    width: 100%;
+}
+
+.menu a,
+footer a{
+    text-decoration:none;
+    color: var(--font-color);
+    display: block;
+    text-align: center;
+    cursor:pointer;
+    margin:auto;
+}
+/* ############################# */
+/* ########### Footer ########### */
+footer{
+    background-color: var(--bg-secondary);
+    display:flex;
+    align-items: center;
+    height:8.17vh;
+}
+
+footer a:hover{
+    text-decoration: underline;
+}
+/* ############################# */
+
+@media screen and (min-width: 426px){
+    body,footer{
+        font-size:1.25rem;
+    }
+}
+@media screen and (min-width:769px) {
+
+    nav,
+    footer{
+        height:7.32vh;
+    }
+
+    #burger,
+    #cross{
+        display: none;
+    }
+
+    .menu{
+        display:flex;
+        flex-direction: row;
+        position:static;
+    }
+
+    header a:hover{
+        transform: scale(1.1);
+    }
+}
