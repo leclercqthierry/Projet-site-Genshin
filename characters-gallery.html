@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--Common style-->
+        <link rel="stylesheet" href="/assets/css/style.css">
+        <!--characters gallery style-->
+        <link rel="stylesheet" href="/assets/css/characters-gallery.css">
+    <title>Gallerie de personnages</title>
+</head>
+<body>
+    <header>
+        <!--Navigation-->
+        <nav>
+            <!--Logo-->
+            <a href="index.html">
+                <img src="/assets/img/Logo.png" alt="Logo Genshin Team" id="logo">
+            </a>
+            <!--Menu toggle-->
+            <input type="checkbox" id="menu_toggle">
+            <label for="menu_toggle" id="burger">☰</label>
+            <!--Menu-->
+            <ul class="menu">
+                <li>
+                    <a href="characters-gallery.html">Galerie personnages</a>
+                </li>
+                <li>
+                    <a href="weapons-gallery.html">Galerie armes</a>
+                </li>
+                <li>
+                    <a href="artefacts-gallery.html">Galerie artéfacts</a>
+                </li> 
+                <li>
+                    <a href="teams-gallery.html">Galerie teams</a>
+                </li>
+                <li>
+                    <a href="login.html">Se connecter</a>
+                </li>
+            </ul>
+            <label for="menu_toggle" id="cross">X</label>
+        </nav>
+    </header>
+    <main>
+        <h1>Gallerie de personnages</h1>
+        <!--Filter/Sort Elements-->
+        <div class="filters-container">
+            <div class="weapons-rarity-container">
+                <fieldset class="weapons">
+                    <legend>Armes</legend>
+                    <div class="weapon-container">
+                        <img src="/assets/img/icons/Sword.png" alt="épée à une main">
+                        <input type="radio" name="weapon" id="sword">
+                    </div>
+                    <div class="weapon-container">
+                        <img src="/assets/img/icons/Claymore.png" alt="épée à deux mains">
+                        <input type="radio" name="weapon" id="claymore">
+                    </div>
+                    <div class="weapon-container">
+                        <img src="/assets/img/icons/Bow.png" alt="arc">
+                        <input type="radio" name="weapon" id="bow">
+                    </div>
+                    <div class="weapon-container">
+                        <img src="/assets/img/icons/Polearm.png" alt="arme d'hast">
+                        <input type="radio" name="weapon" id="polearm">
+                    </div>
+                    <div class="weapon-container">
+                        <img src="/assets/img/icons/Catalyst.png" alt="catalyseur">
+                        <input type="radio" name="weapon" id="catalyst">
+                    </div>
+                    <div class="weapon-container">
+                        <label for="all-weapons">Toutes</label>
+                        <input type="radio" name="weapon" id="all-weapons" checked>
+                    </div>
+                </fieldset>
+                <fieldset class="rarity-container">
+                    <legend>Rareté</legend>
+                    <div class="rarity">
+                        <div>
+                            <label for="rarity4">4<sup><img src="/assets/img/icons/1_star.png" alt="étoile"></sup></label>
+                        </div>
+                        <input type="checkbox" name="rarity4" id="rarity4" value="4" checked>
+                    </div>
+                    <div class="rarity">
+                        <div>
+                            <label for="rarity5">5<sup><img src="/assets/img/icons/1_star.png" alt="étoile"></sup></label>
+                        </div>
+                        <input type="checkbox" name="rarity5" id="rarity5" value="5" checked>
+                    </div>
+                </fieldset>
+            </div>
+            <fieldset class="elements">
+                <legend>Eléments</legend>
+                <div class="element">
+                    <img src="/assets/img/icons/Anemo.png" alt="anemo">
+                    <input type="radio" name="element" id="anemo">
+                </div>
+                <div class="element">
+                    <img src="/assets/img/icons/Geo.png" alt="geo">
+                    <input type="radio" name="element" id="geo">
+                </div>
+                <div class="element">
+                    <img src="/assets/img/icons/Electro.png" alt="electro">
+                    <input type="radio" name="element" id="electro">
+                </div>
+                <div class="element">
+                    <img src="/assets/img/icons/Dendro.png" alt="dendro">
+                    <input type="radio" name="element" id="dendro">
+                </div>
+                <div class="element">
+                    <img src="/assets/img/icons/Hydro.png" alt="hydro">
+                    <input type="radio" name="element" id="hydro">
+                </div>
+                <div class="element">
+                    <img src="/assets/img/icons/Pyro.png" alt="pyro">
+                    <input type="radio" name="element" id="pyro">
+                </div>
+                <div class="element">
+                    <img src="/assets/img/icons/Cryo.png" alt="cryo">
+                    <input type="radio" name="element" id="cryo">
+                </div>
+                <div class="element">
+                    <label for="all-elements">Tous</label>
+                    <input type="radio" name="element" id="all-elements" checked>
+                </div>
+            </fieldset>
+            <select name="sort" id="sort">
+                <option value="alphabetic-order">Ordre alphabétique</option>
+                <option value="rarity">Rareté</option>
+                <option value="element">Elément</option>
+            </select>
+        </div>
+        <!--Characters gallery-->
+        <div class="gallery">
+            <a href="#">
+                <div class="card" data-rarity="5" data-weapon="sword" data-element="geo">
+                    <div class="img-container">
+                        <img src="/assets/img/gallery/Characters/Albedo_mini.webp" alt="Albedo" class="rarity5 character">
+                        <img src="/assets/img/icons/Geo.png" class="img-element">
+                    </div>
+                    <p>Albedo</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5" data-weapon="sword" data-element="dendro">
+                    <div class="img-container">
+                        <img src="/assets/img/gallery/Characters/Alhaitham_mini.webp" alt="Alhaitam" class="rarity5 character">
+                        <img src="/assets/img/icons/Dendro.png" class="img-element">
+                    </div>
+                    <p>Alhaitam</p>
+                </div>
+            </a>
+            <a href="amber.html">
+                <div class="card" data-rarity="4" data-weapon="bow" data-element="pyro">
+                    <div class="img-container">
+                        <img src="/assets/img/gallery/Characters/Amber_mini.webp" alt="Amber" class="rarity4 character">
+                        <img src="/assets/img/icons/Pyro.png" class="img-element">
+                    </div>
+                    <p>Amber</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5" data-weapon="polearm" data-element="pyro">
+                    <div class="img-container">
+                        <img src="/assets/img/gallery/Characters/Arlecchino_mini.webp" alt="Arlecchino" class="rarity5 character">
+                        <img src="/assets/img/icons/Pyro.png" class="img-element">
+                    </div>
+                    <p>Arlecchino</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5" data-weapon="sword" data-element="cryo">
+                    <div class="img-container">
+                        <img src="/assets/img/gallery/Characters/Ayaka_mini.webp" alt="Ayaka" class="rarity5 character">
+                        <img src="/assets/img/icons/Cryo.png" class="img-element">
+                    </div>
+                    <p>Ayaka</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5" data-weapon="sword" data-element="hydro">
+                    <div class="img-container">
+                        <img src="/assets/img/gallery/Characters/Ayato_mini.webp" alt="Ayato" class="rarity5 character">
+                        <img src="/assets/img/icons/Hydro.png" class="img-element">
+                    </div>
+                    <p>Ayato</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5" data-weapon="catalyst" data-element="dendro">
+                    <div class="img-container">
+                        <img src="/assets/img/gallery/Characters/Baizhu_mini.webp" alt="Baizhu" class="rarity5 character">
+                        <img src="/assets/img/icons/Dendro.png" class="img-element">
+                    </div>
+                    <p>Baizhu</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4" data-weapon="catalyst" data-element="hydro">
+                    <div class="img-container">
+                        <img src="/assets/img/gallery/Characters/Barbara_mini.webp" alt="Barbara" class="rarity4 character">
+                        <img src="/assets/img/icons/Hydro.png" class="img-element">
+                    </div>
+                    <p>Barbara</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4" data-weapon="claymore" data-element="electro">
+                    <div class="img-container">
+                        <img src="/assets/img/gallery/Characters/Beidou_mini.webp" alt="Beidou" class="rarity4 character">
+                        <img src="/assets/img/icons/Electro.png" class="img-element">
+                    </div>
+                    <p>Beidou</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4" data-weapon="sword" data-element="pyro">
+                    <div class="img-container">
+                        <img src="/assets/img/gallery/Characters/Bennett_mini.webp" alt="Bennett" class="rarity4 character">
+                        <img src="/assets/img/icons/Pyro.png" class="img-element">
+                    </div>
+                    <p>Bennett</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4" data-weapon="polearm" data-element="hydro">
+                    <div class="img-container">
+                        <img src="/assets/img/gallery/Characters/Candace_mini.webp" alt="Candace" class="rarity4 character">
+                        <img src="/assets/img/icons/Hydro.png" class="img-element">
+                    </div>
+                    <p>Candace</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4" data-weapon="catalyst" data-element="cryo">
+                    <div class="img-container">
+                        <img src="/assets/img/gallery/Characters/Charlotte_mini.webp" alt="Charlotte" class="rarity4 character">
+                        <img src="/assets/img/icons/Cryo.png" class="img-element">
+                    </div>
+                    <p>Charlotte</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4" data-weapon="polearm" data-element="pyro">
+                    <div class="img-container">
+                        <img src="/assets/img/gallery/Characters/Chevreuse_mini.webp" alt="Chevreuse" class="rarity4 character">
+                        <img src="/assets/img/icons/Pyro.png" class="img-element">
+                    </div>
+                    <p>Chevreuse</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5" data-weapon="sword" data-element="geo">
+                    <div class="img-container">
+                        <img src="/assets/img/gallery/Characters/Chiori_mini.webp" alt="Chiori" class="rarity5 character">
+                        <img src="/assets/img/icons/Geo.png" class="img-element">
+                    </div>
+                    <p>Chiori</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4" data-weapon="claymore" data-element="cryo">
+                    <div class="img-container">
+                        <img src="/assets/img/gallery/Characters/Chongyun_mini.webp" alt="Chongyun" class="rarity4 character">
+                        <img src="/assets/img/icons/Cryo.png" class="img-element">
+                    </div>
+                    <p>Chongyun</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5" data-weapon="sword" data-element="electro">
+                    <div class="img-container">
+                        <img src="/assets/img/gallery/Characters/Clorinde_mini.webp" alt="Clorinde" class="rarity5 character">
+                        <img src="/assets/img/icons/Electro.png" class="img-element">
+                    </div>
+                    <p>Clorinde</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4" data-weapon="bow" data-element="dendro">
+                    <div class="img-container">
+                        <img src="/assets/img/gallery/Characters/Collei_mini.webp" alt="Collei" class="rarity4 character">
+                        <img src="/assets/img/icons/Dendro.png" class="img-element">
+                    </div>
+                    <p>Collei</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5" data-weapon="polearm" data-element="electro">
+                    <div class="img-container">
+                        <img src="/assets/img/gallery/Characters/Cyno_mini.webp" alt="Cyno" class="rarity5 character">
+                        <img src="/assets/img/icons/Electro.png" class="img-element">
+                    </div>
+                    <p>Cyno</p>
+                </div>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <a href="#">Mentions légales</a>
+    </footer>
+    <script src="/assets/js/characters-gallery.js"></script>
+</body>
+</html>

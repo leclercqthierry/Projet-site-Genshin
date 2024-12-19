@@ -95,6 +95,14 @@ nav{
     width: 100%;
 }
 
+h1{
+    font-size: 24px;
+    font-family: "Roboto condensed";
+    text-decoration: underline;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
 .menu a,
 footer a{
     text-decoration:none;
@@ -121,6 +129,10 @@ footer a:hover{
 @media screen and (min-width: 426px){
     body,footer{
         font-size:1.25rem;
+    }
+    
+    h1{
+        font-size: 32px;
     }
 }
 @media screen and (min-width:769px) {

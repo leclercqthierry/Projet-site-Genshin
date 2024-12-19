@@ -26,6 +26,16 @@ form{
     height:2rem;
     border-radius: 7px;
     border:none;
+    padding: 0 10px;
+}
+
+#pseudo:invalid,
+#email:invalid,
+#password:invalid,
+#confirm-password:invalid{
+    border: 2px solid red;
+    box-shadow: 0 0 5px red;
+    transition: box-shadow 0.3s ease;
 }
 
 .form-group{
@@ -35,14 +45,42 @@ form{
     width:100%;
 }
 
-.button-container{
+.btn-container{
     width:100%;
     display: flex;
     justify-content: end;
 }
 
+.btn{
+    width:108px;
+    height:32px;
+    background-color: var(--bg-primary);
+    border-radius: 50px;
+    border:none;
+    font-family: "Roboto";
+    color: var(--font-color);
+}
+
+@media screen and (min-width: 426px) {
+    form{
+        width:50%;
+        padding: 30px 50px;
+    }
+
+    .btn{
+        font-size: 1em;
+    }
+}
+
 @media screen and (min-width: 769px){
     main{
         min-height: calc(100vh - 7.32vh - 7.32vh); /* screen - header - footer */
+    }
+
+    form{
+        padding:30px 75px;
+        height:fit-content;
+        width:30%;
+        gap:25px;
     }
 }
