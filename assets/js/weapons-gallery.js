@@ -1,6 +1,5 @@
 const weapons = document.getElementsByName('weapon');
 const rarities = document.querySelectorAll('main input[type=checkbox]');
-const elements = document.getElementsByName('element');
 const select = document.querySelector('select');
 const cards = document.querySelectorAll('.card');
 
@@ -13,16 +12,6 @@ function checkWeapons(){
         }
     });
     return id; 
-}
-// the function checks the radio elements and returns the id of the one that is checked
-function checkElements(){
-    let id;
-    elements.forEach((element) => {
-        if (element.checked) {
-            id = element.id;
-        }
-    });
-    return id;
 }
 
 // the function checks the checkbox rarity and returns the values of the ones that are checked
@@ -40,24 +29,21 @@ function checkRarity(){
 let sortArray = [];
 weapons.forEach((weapon) => sortArray.push(weapon));
 rarities.forEach((rarity) => sortArray.push(rarity));
-elements.forEach((element) =>sortArray.push(element));
 
 sortArray.forEach((sort) => {
     sort.addEventListener('change', (event) => {
         let weaponChoise = checkWeapons();
-        let elementChoise = checkElements();
         let raritiesChoise = checkRarity();
         cards.forEach((card) => {
             // Reveal all cards by default
             card.parentElement.style.display = 'block';
             let test1 = weaponChoise == 'all-weapons' ? true : card.dataset.weapon == weaponChoise;
             let test2 = raritiesChoise.length == 0? false : raritiesChoise.includes(String(card.dataset.rarity));
-            let test3 = elementChoise == 'all-elements' ? true : card.dataset.element == elementChoise;
             if (!test2){
                 card.parentElement.style.display = 'none';
             }
             else{
-                if (!test1 ||!test3){
+                if (!test1){
                     card.parentElement.style.display = 'none';
                 }
             }
@@ -70,24 +56,21 @@ select.addEventListener('change', () => {
     switch(select.value){
         case "rarity": {
             cards.forEach(card => {
-                if (card.dataset.rarity == 4){
-                    card.parentElement.style.order = 2;
-                }
-                else {
-                    card.parentElement.style.order = 1;
+                switch(card.dataset.rarity){
+                    case '3': card.parentElement.style.order = 3; break;
+                    case '4': card.parentElement.style.order = 2; break;
+                    case '5': card.parentElement.style.order = 1; break;
                 }
             });break;
         }
-        case "element": {
+        case "type": {
             cards.forEach(card => {
-                switch(card.dataset.element){
-                    case "anemo": card.parentElement.style.order = 1;break;
-                    case "geo": card.parentElement.style.order = 2;break;
-                    case "electro": card.parentElement.style.order = 3;break;
-                    case "dendro": card.parentElement.style.order = 4;break;
-                    case "hydro": card.parentElement.style.order = 5;break;
-                    case "pyro": card.parentElement.style.order = 6;break;
-                    case "cryo": card.parentElement.style.order = 7;break;
+                switch(card.dataset.weapon){
+                    case "sword": card.parentElement.style.order = 1;break;
+                    case "claymore": card.parentElement.style.order = 2;break;
+                    case "bow": card.parentElement.style.order = 3;break;
+                    case "polearm": card.parentElement.style.order = 4;break;
+                    case "catalyst": card.parentElement.style.order = 5;break;
                 }
             }); break;
         }

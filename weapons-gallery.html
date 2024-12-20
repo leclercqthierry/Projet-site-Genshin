@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Common style-->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!--Common gallery style-->
+    <link rel="stylesheet" href="/assets/css/gallery-common-style.css">
+    <!--Weapons gallery style-->
+    <link rel="stylesheet" href="/assets/css/weapons-gallery.css">
+    <title>Gallerie d'armes</title>
+</head>
+<body>
+    <header>
+        <!--Navigation-->
+        <nav>
+            <!--Logo-->
+            <a href="index.html">
+                <img src="/assets/img/Logo.png" alt="Logo Genshin Team" id="logo">
+            </a>
+            <!--Menu toggle-->
+            <input type="checkbox" id="menu_toggle">
+            <label for="menu_toggle" id="burger">☰</label>
+            <!--Menu-->
+            <ul class="menu">
+                <li>
+                    <a href="characters-gallery.html">Galerie personnages</a>
+                </li>
+                <li>
+                    <a href="weapons-gallery.html">Galerie armes</a>
+                </li>
+                <li>
+                    <a href="artefacts-gallery.html">Galerie artéfacts</a>
+                </li> 
+                <li>
+                    <a href="teams-gallery.html">Galerie teams</a>
+                </li>
+                <li>
+                    <a href="login.html">Se connecter</a>
+                </li>
+            </ul>
+            <label for="menu_toggle" id="cross">X</label>
+        </nav>
+    </header>
+    <main>
+        <h1>Gallerie d'armes</h1>
+        <!--Filter/Sort Elements-->
+        <div class="filters-container">
+            <div class="weapons-rarity-container">
+                <fieldset class="rarity-container">
+                    <legend>Rareté</legend>
+                    <div class="rarity">
+                        <div>
+                            <label for="rarity3">3<sup><img src="/assets/img/icons/1_star.png" alt="étoile"></sup></label>
+                        </div>
+                        <input type="checkbox" name="rarity3" id="rarity3" value="3" checked>
+                    </div>
+                    <div class="rarity">
+                        <div>
+                            <label for="rarity4">4<sup><img src="/assets/img/icons/1_star.png" alt="étoile"></sup></label>
+                        </div>
+                        <input type="checkbox" name="rarity4" id="rarity4" value="4" checked>
+                    </div>
+                    <div class="rarity">
+                        <div>
+                            <label for="rarity5">5<sup><img src="/assets/img/icons/1_star.png" alt="étoile"></sup></label>
+                        </div>
+                        <input type="checkbox" name="rarity5" id="rarity5" value="5" checked>
+                    </div>
+                </fieldset>
+                <fieldset class="weapons">
+                    <legend>Armes</legend>
+                    <div class="weapon-container">
+                        <img src="/assets/img/icons/Sword.png" alt="épée à une main">
+                        <input type="radio" name="weapon" id="sword">
+                    </div>
+                    <div class="weapon-container">
+                        <img src="/assets/img/icons/Claymore.png" alt="épée à deux mains">
+                        <input type="radio" name="weapon" id="claymore">
+                    </div>
+                    <div class="weapon-container">
+                        <img src="/assets/img/icons/Bow.png" alt="arc">
+                        <input type="radio" name="weapon" id="bow">
+                    </div>
+                    <div class="weapon-container">
+                        <img src="/assets/img/icons/Polearm.png" alt="arme d'hast">
+                        <input type="radio" name="weapon" id="polearm">
+                    </div>
+                    <div class="weapon-container">
+                        <img src="/assets/img/icons/Catalyst.png" alt="catalyseur">
+                        <input type="radio" name="weapon" id="catalyst">
+                    </div>
+                    <div class="weapon-container">
+                        <label for="all-weapons">Toutes</label>
+                        <input type="radio" name="weapon" id="all-weapons" checked>
+                    </div>
+                </fieldset>
+            </div>
+            <select name="sort" id="sort">
+                <option value="alphabetic-order">Ordre alphabétique</option>
+                <option value="rarity">Rareté</option>
+                <option value="type">Type</option>
+            </select>
+        </div>
+        <!--Weapons gallery-->
+        <div class="gallery">
+            <a href="#">
+                <div class="card" data-rarity="5" data-weapon="sword">
+                    <img src="/assets/img/gallery/Weapons/absolution.webp" alt="absolution" title="absolution" class="rarity5 weapon">
+                    <p>Absolution</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4" data-weapon="catalyst">
+                    <img src="/assets/img/gallery/Weapons/blackcliff_agate.webp" alt="agathe de Rochenoire" title="agathe de Rochenoire" class="rarity4 weapon">
+                    <p>Agathe de Rochenoire</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5" data-weapon="claymore">
+                    <img src="/assets/img/gallery/Weapons/akuoumaru.webp" alt="akuoumaru" title="akuoumaru" class="rarity5 weapon">
+                    <p>Akuoumaru</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5" data-weapon="bow">
+                    <img src="/assets/img/gallery/Weapons/amos_bow.webp" alt="arc d'Amos" title="arc d'Amos" class="rarity5 weapon">
+                    <p>Arc d'Amos</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4" data-weapon="bow">
+                    <img src="/assets/img/gallery/Weapons/blackcliff_warbow.webp" alt="arc de guerre de Rochenoire" title="arc de guerre de Rochenoire" class="rarity4 weapon">
+                    <p>Arc de guerre de Rochenoire</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5" data-weapon="claymore">
+                    <img src="/assets/img/gallery/Weapons/beacon_of_the_reed_sea.webp" alt="balise de la mer de roseaux" title="balise de la mer de roseaux" class="rarity5 weapon">
+                    <p>Balise de la mer de roseaux</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4" data-weapon="catalyst">
+                    <img src="/assets/img/gallery/Weapons/ballad_of_the_boundless_blue.webp" alt="ballade d'un azur infini" title="ballade d'un azur infini" class="rarity4 weapon">
+                    <p>Ballade d'un azur infini</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4" data-weapon="polearm">
+                    <img src="/assets/img/gallery/Weapons/ballad_of_the_fjords.webp" alt="ballade des fjords" title="ballade des fjords" class="rarity4 weapon">
+                    <p>Ballade des fjords</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4" data-weapon="catalyst">
+                    <img src="/assets/img/gallery/Weapons/ashgraven_drinking_horn.webp" alt="corne à boire cendrée" title="corne à boire cendrée" class="rarity4 weapon">
+                    <p>Corne à boire cendrée</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5" data-weapon="sword">
+                    <img src="/assets/img/gallery/Weapons/aquila_favonia.webp" alt="épée du faucon" title="épée du faucon" class="rarity5 weapon">
+                    <p>Epée du faucon</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4" data-weapon="sword">
+                    <img src="/assets/img/gallery/Weapons/blackcliff_longsword.webp" alt="épée longue de Rochenoire" title="épée longue de Rochenoire" class="rarity4 weapon">
+                    <p>Epée longue de Rochenoire</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4" data-weapon="sword">
+                    <img src="/assets/img/gallery/Weapons/amenoma_kageuchi.webp" alt="lame kageuchi d'Amenoma" title="lame kageuchi d'Amenoma" class="rarity4 weapon">
+                    <p>Lame kageuchi d'Amenoma</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4" data-weapon="polearm">
+                    <img src="/assets/img/gallery/Weapons/blackcliff_pole.webp" alt="lance de Rochenoire" title="lance de Rochenoire" class="rarity4 weapon">
+                    <p>Lance de Rochenoire</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5" data-weapon="catalyst">
+                    <img src="/assets/img/gallery/Weapons/a_thousand_floating_dreams.webp" alt="mille rêves flottant" title="mille rêves flottant" class="rarity5 weapon">
+                    <p>Mille rêves flottant</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="3" data-weapon="polearm">
+                    <img src="/assets/img/gallery/Weapons/black_tassel.webp" alt="pampille noire" title="pampille noire" class="rarity3 weapon">
+                    <p>Pampille noire</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5" data-weapon="bow">
+                    <img src="/assets/img/gallery/Weapons/aqua_simulacra.webp" alt="simulacre d'eau" title="simulacre d'eau" class="rarity5 weapon">
+                    <p>Simulacre d'eau</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4" data-weapon="claymore">
+                    <img src="/assets/img/gallery/Weapons/blackcliff_slasher.webp" alt="trancheuse de Rochenoire" title="trancheuse de Rochenoire" class="rarity4 weapon">
+                    <p>Trancheuse de Rochenoire</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4" data-weapon="bow">
+                    <img src="/assets/img/gallery/Weapons/alley_hunter.webp" alt="traqueur des impasses" title="traqueur des impasses" class="rarity4 weapon">
+                    <p>Traqueur des impasses</p>
+                </div>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <a href="#">Mentions légales</a>
+    </footer>
+    <script src="/assets/js/weapons-gallery.js"></script>
+</body>
+</html>
