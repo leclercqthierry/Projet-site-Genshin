@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Common style-->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!--Artifact gallery style-->
+    <link rel="stylesheet" href="/assets/css/artefacts-gallery.css">
+    <title>Gallerie d'artefacts</title>
+</head>
+<body>
+    <header>
+        <!--Navigation-->
+        <nav>
+            <!--Logo-->
+            <a href="index.html">
+                <img src="/assets/img/Logo.png" alt="Logo Genshin Team" id="logo">
+            </a>
+            <!--Menu toggle-->
+            <input type="checkbox" id="menu_toggle">
+            <label for="menu_toggle" id="burger">☰</label>
+            <!--Menu-->
+            <ul class="menu">
+                <li>
+                    <a href="characters-gallery.html">Galerie personnages</a>
+                </li>
+                <li>
+                    <a href="weapons-gallery.html">Galerie armes</a>
+                </li>
+                <li>
+                    <a href="artefacts-gallery.html">Galerie artéfacts</a>
+                </li> 
+                <li>
+                    <a href="teams-gallery.html">Galerie teams</a>
+                </li>
+                <li>
+                    <a href="login.html">Se connecter</a>
+                </li>
+            </ul>
+            <label for="menu_toggle" id="cross">X</label>
+        </nav>
+    </header>
+    <main>
+        <h1>Gallerie d'artéfacts</h1>
+        <!--Filter/Sort Elements-->
+        <div class="filters-container">
+            <fieldset class="rarity-container">
+                <legend>Rareté max</legend>
+                <div class="rarity">
+                    <div>
+                        <label for="rarity3">3<sup><img src="/assets/img/icons/1_star.png" alt="étoile"></sup></label>
+                    </div>
+                    <input type="checkbox" name="rarity3" id="rarity3" value="3" checked>
+                </div>
+                <div class="rarity">
+                    <div>
+                        <label for="rarity4">4<sup><img src="/assets/img/icons/1_star.png" alt="étoile"></sup></label>
+                    </div>
+                    <input type="checkbox" name="rarity4" id="rarity4" value="4" checked>
+                </div>
+                <div class="rarity">
+                    <div>
+                        <label for="rarity5">5<sup><img src="/assets/img/icons/1_star.png" alt="étoile"></sup></label>
+                    </div>
+                    <input type="checkbox" name="rarity5" id="rarity5" value="5" checked>
+                </div>
+            </fieldset>
+            <select name="sort" id="sort">
+                <option value="alphabetic-order">Ordre alphabétique</option>
+                <option value="rarity">Rareté</option>
+            </select>
+        </div>
+        <!--Artefacts gallery-->
+        <div class="gallery">
+            <a href="#">
+                <div class="card" data-rarity="3">
+                    <img src="/assets/img/gallery/Artefacts_set/adventurer.webp" alt="aventurier" title="aventurier" class="rarity3 artifact">
+                    <p>Aventurier</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4">
+                    <img src="/assets/img/gallery/Artefacts_set/berserker.webp" alt="berserker" title="berserker" class="rarity4 artifact">
+                    <p>Berserker</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5">
+                    <img src="/assets/img/gallery/Artefacts_set/blizzard_strayer.webp" alt="briseur de glace" title="briseur de glace" class="rarity5 artifact">
+                    <p>Briseur de glace</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5">
+                    <img src="/assets/img/gallery/Artefacts_set/adventurer.webp" alt="chevalerie ensanglantée" title="chevalerie ensanglantée" class="rarity5 artifact">
+                    <p>Chevalerie ensanglantée</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5">
+                    <img src="/assets/img/gallery/Artefacts_set/desert_pavilion_chronicle.webp" alt="chronique du pavillon du désert" title="chronique du pavillon du désert" class="rarity5 artifact">
+                    <p>Chronique du pavillon du désert</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4">
+                    <img src="/assets/img/gallery/Artefacts_set/brave_heart.webp" alt="coeur du brave" title="coeur du brave" class="rarity4 artifact">
+                    <p>Coeur du brave</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4">
+                    <img src="/assets/img/gallery/Artefacts_set/defenders_will.webp" alt="coeur du gardien" title="coeur du gardien" class="rarity4 artifact">
+                    <p>Coeur du gardien</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5">
+                    <img src="/assets/img/gallery/Artefacts_set/echoes_of_an_offering.webp" alt="echo d'une offrande" title="echo d'une offrande" class="rarity5 artifact">
+                    <p>Echo d'une offrande</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5">
+                    <img src="/assets/img/gallery/Artefacts_set/emblem_of_severed_fate.webp" alt="emblème du destin brisé" title="emblème du destin brisé" class="rarity5 artifact">
+                    <p>Emblême du destin brisé</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5">
+                    <img src="/assets/img/gallery/Artefacts_set/flower_of_paradise_lost.webp" alt="fleur du paradis perdu" title="fleur du paradis perdu" class="rarity5 artifact">
+                    <p>Fleur du paradis perdu</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5">
+                    <img src="/assets/img/gallery/Artefacts_set/fragment_of_harmonic_whimsy.webp" alt="fragment d'harmonie divergente" title="fragment d'harmonie divergente" class="rarity5 artifact">
+                    <p>Fragment d'harmonie divergente</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="4">
+                    <img src="/assets/img/gallery/Artefacts_set/gambler.webp" alt="parieur" title="parieur" class="rarity4 artifact">
+                    <p>Parieur</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5">
+                    <img src="/assets/img/gallery/Artefacts_set/gladiators_finale.webp" alt="rideau du gladiateur" title="rideau du gladiateur" class="rarity5 artifact">
+                    <p>Rideau du gladiateur</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5">
+                    <img src="/assets/img/gallery/Artefacts_set/archaic_petra.webp" alt="roche ancienne" title="roche ancienne" class="rarity5 artifact">
+                    <p>Roche ancienne</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5">
+                    <img src="/assets/img/gallery/Artefacts_set/gilded_dreams.webp" alt="rêve doré" title="rêve doré" class="rarity5 artifact">
+                    <p>Rêve doré</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5">
+                    <img src="/assets/img/gallery/Artefacts_set/crimson_witch_of_flames.webp" alt="sorcière des flammes ardentes" title="sorcière des flammes ardentes" class="rarity5 artifact">
+                    <p>Sorcière des flammes ardentes</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5">
+                    <img src="/assets/img/gallery/Artefacts_set/deepwood_memories.webp" alt="souvenir de forêt" title="souvenir de forêt" class="rarity5 artifact">
+                    <p>Souvenir de forêt</p>
+                </div>
+            </a>
+            <a href="#">
+                <div class="card" data-rarity="5">
+                    <img src="/assets/img/gallery/Artefacts_set/golden_troupe.webp" alt="troupe dorée" title="troupe dorée" class="rarity5 artifact">
+                    <p>Troupe dorée</p>
+                </div>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <a href="#">Mentions légales</a>
+    </footer>
+    <script src="/assets/js/artefacts-gallery.js"></script>
+</body>
+</html>

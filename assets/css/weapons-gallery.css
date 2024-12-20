@@ -20,7 +20,7 @@ p{
     border-bottom-right-radius: 10px;
     width:100px;
     height:40px;
-    font-size:small;
+    font-size:11.5px;
     background-color: var(--bg-primary);
     text-align: center;
 }
