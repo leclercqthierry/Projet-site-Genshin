@@ -22,13 +22,13 @@
 }
 
 @font-face {
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     src: url(/assets/font/Roboto-Regular.ttf);
 }
 /* ############################# */
 /* ########### Body ########### */
 body {
-    font-family: "Roboto";
+    font-family: "Roboto", sans-serif;
     background-color: var(--bg-primary);
     font-size: 1em;
     color: var(--font-color);
@@ -154,6 +154,6 @@ footer a:hover{
     }
 
     header a:hover{
-        transform: scale(1.1);
+        transform: scale(0.8);
     }
 }

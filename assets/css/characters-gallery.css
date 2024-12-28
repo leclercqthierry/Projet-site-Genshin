@@ -10,10 +10,6 @@
     flex-direction: column;
 }
 
-.element img{
-    width:30px;
-}
-
 .element label{
     display:flex;
     align-items: center;
@@ -33,13 +29,11 @@
 }
 
 .character{
-    width:100%;
     border-radius: 50%;
 }
 
 .img-element{
     position:relative;
-    width:30px;
     bottom:90px;
     left: 64px;
     background-color: rgba(0, 0, 0, 0.2);
