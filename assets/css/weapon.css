@@ -1,0 +1,144 @@
+h1{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+main{
+    display:flex;
+    flex-direction: column;
+}
+
+.container{
+    background-color: var(--bg-secondary);
+    border-radius:20px;
+    margin: 0 15px 15px 15px;
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+}
+
+.img-description{
+    width:100%;
+    display:flex;
+    justify-content: space-between;
+}
+
+.img-description img{
+    width:66px;
+}
+
+.description{
+    display:flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    background-color: var(--bg-primary);
+    border-radius:15px;
+    padding: 15px;
+    max-width:60%;
+}
+
+h2{
+    font-size: 20px;
+    text-align: center;
+    margin: 15px auto;
+}
+
+.sub-container{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sub-container p{
+    background-color: var(--bg-primary);
+    border-radius:15px;
+    padding:20px 15px;
+    margin:15px;
+    text-align: justify;
+}
+
+table{
+    display: block;
+    overflow-x: auto;
+    border-collapse: collapse;
+    margin: 0 auto;
+    text-align: center;
+    max-width: 100%;
+    background-color: var(--bg-primary);
+}
+
+td,
+th{
+    border: 1px solid var(--font-color);
+    padding:5px;
+    min-width:75px;
+    max-width: 85px;
+    text-wrap:wrap;
+    font-size: 14px;
+}
+
+table img{
+    width:40px;
+    height:40px;
+}
+
+.rarity1{
+    background-color:var(--rarity-color-1);
+}
+
+.rarity2{
+    background-color:var(--rarity-color-2);
+}
+
+.rarity3{
+    background-color:var(--rarity-color-3);
+}
+
+.rarity4{
+    background-color:var(--rarity-color-4);
+}
+
+.rarity5{
+    background-color:var(--rarity-color-5);
+}
+
+@media screen and (min-width:426px) {
+    .img-description{
+        justify-content: space-evenly;
+    }
+
+    .sub-container p{
+        width:70vw;
+    }
+}
+
+@media screen and (min-width:769px) {
+    .container{
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        padding:30px;
+    }
+
+    .img-description, .p1{
+        width:50%;
+    }
+
+    .sub-container p{
+        width:auto;
+        min-height: 250px;
+        display: flex;
+        align-items: center;
+    }
+
+    table{
+        width:auto;
+    }
+
+    td,th{
+        max-width:initial;
+        min-width: none;
+    }
+}

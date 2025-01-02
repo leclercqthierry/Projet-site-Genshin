@@ -6,6 +6,8 @@
     --rarity-color-5:#E9AF67;
     --rarity-color-4:#BDABD4;
     --rarity-color-3: #009CF0;
+    --rarity-color-2: rgb(134, 250, 134);
+    --rarity-color-1: gray;
 }
 
 /* ########### Reset CSS* ########### */
@@ -98,7 +100,6 @@ nav{
 h1{
     font-size: 24px;
     font-family: "Roboto condensed";
-    text-decoration: underline;
     text-align: center;
     margin-bottom: 20px;
 }
