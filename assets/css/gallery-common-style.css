@@ -71,11 +71,11 @@ select{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    gap:10px;
+    gap:15px 0;
     margin: 0 15px 20px 15px;
     background-color: var(--bg-secondary);
     border-radius: 20px;
-    padding:10px;
+    padding:10px 0;
 }
 
 a{
@@ -83,10 +83,11 @@ a{
     color: var(--text-color);
 }
 
-p{
+strong{
     display:flex;
     align-items: center;
     justify-content: center;
+    font-weight: normal;
 }
 
 .rarity4{
@@ -103,6 +104,11 @@ fieldset{
 }
 
 @media screen and (min-width: 426px){
+    .gallery{
+        gap:15px;
+        padding: 15px;
+    }
+
     .filters-container{
         flex-direction: row;
         flex-wrap: wrap;
@@ -131,8 +137,10 @@ fieldset{
     }
 
     .gallery{
-        width:80%;
+        max-width:80%;
         margin: 0 auto 20px auto;
+        padding:20px;
+        gap:20px;
     }
 
     .card:hover{
@@ -141,7 +149,8 @@ fieldset{
     }
 
     select:hover,
-    input:hover{
+    input:hover,
+    label:hover{
         cursor:pointer;
     }
 }

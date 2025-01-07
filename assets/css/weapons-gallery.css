@@ -15,7 +15,7 @@
     height:100px;
 }
 
-p{
+strong{
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
     width:100px;
@@ -41,5 +41,9 @@ p{
 @media screen and (min-width: 769px){
     .filters-container{
         width:60%;
+    }
+
+    .gallery{
+        margin-top:20px;
     }
 }

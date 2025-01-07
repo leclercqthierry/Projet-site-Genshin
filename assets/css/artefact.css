@@ -36,7 +36,7 @@ p{
 
 @media screen and (min-width:326px) {
     main{
-        min-height: calc(85.36vh - 20px);
+        min-height: calc(85.36vh);
         align-items: center;
     }
 

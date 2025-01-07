@@ -35,6 +35,8 @@ input[type="search"]{
     background-color: var(--bg-secondary);
     border-radius: 20px;
     padding:10px;
+    display: flex;
+    flex-direction: column;
 }
 
 h2{
@@ -78,8 +80,8 @@ a{
 
 .img-element{
     position:relative;
-    bottom:55px;
-    left: 40px;
+    bottom:62px;
+    left: 45px;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius:50%;
     width:15px;
@@ -105,7 +107,9 @@ p{
     padding: 3px 0;
 }
 
-@media screen and (min-width:426px){
+/* not 426px (to include smartphones like iphone 13 pro max up to iphone 16 pro max
+ which have widths between 430 et 440px) */
+@media screen and (min-width:441px){
     .gallery{
         width:70%;
         margin: 0 auto 20px auto;
@@ -133,9 +137,9 @@ p{
     }
 
     .img-element{
-        width:20px;
-        bottom:85px;
-        left:70px;
+        width:25px;
+        bottom:100px;
+        left:72px;
     }
 
     p{
@@ -172,17 +176,16 @@ p{
         border-radius: 20px;
     }
 
+    input:hover{
+        cursor:pointer;
+    }
+
     .gallery{
         width:80%;
         margin: 0 auto 20px auto;
-        display:flex;
         flex-wrap: wrap;
         gap:15px;
         justify-content: center;
-    }
-
-    .team-container{
-        padding: 15px;
     }
 
     a:hover{
@@ -190,7 +193,22 @@ p{
         transition: transform 0.3s ease;
     }
 
-    input:hover{
-        cursor:pointer;
+    .team-container{
+        padding: 15px;
+    }
+
+    .img-element{
+        width:25px;
+    }
+
+}
+
+@media screen and (min-width:1025px) {
+    .gallery{
+        flex-direction: row;
+    }
+
+    .gallery a{
+        width:45%;
     }
 }
