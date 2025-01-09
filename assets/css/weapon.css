@@ -139,6 +139,6 @@ table img{
 
     td,th{
         max-width:initial;
-        min-width: none;
+        min-width: auto;
     }
 }
