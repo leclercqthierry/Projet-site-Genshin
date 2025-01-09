@@ -1,10 +1,179 @@
+// A modifier quand on fera le back (BDD)
+let charactersArray = [
+    {
+        rarity: '5',
+        weapon: 'sword',
+        element: 'geo',
+        character_image: '/assets/img/gallery/Characters/Albedo.webp',
+        name: 'Albedo',
+        element_image: '/assets/img/icons/Geo.png'
+    },
+    {
+        rarity: '5',
+        weapon: 'sword',
+        element: 'dendro',
+        character_image: '/assets/img/gallery/Characters/Alhaitham.webp',
+        name: 'Alhaitam',
+        element_image: '/assets/img/icons/Dendro.png'
+    },
+    {
+        rarity: '4',
+        weapon: 'bow',
+        element: 'pyro',
+        character_image: '/assets/img/gallery/Characters/Amber.webp',
+        name: 'Amber',
+        element_image: '/assets/img/icons/Pyro.png'
+    },
+    {
+        rarity: '5',
+        weapon: 'polearm',
+        element: 'pyro',
+        character_image: '/assets/img/gallery/Characters/Arlecchino.webp',
+        name: 'Arlecchino',
+        element_image: '/assets/img/icons/Pyro.png'
+    },
+    {
+        rarity: '5',
+        weapon: 'sword',
+        element: 'cryo',
+        character_image: '/assets/img/gallery/Characters/Kamisato_Ayaka.webp',
+        name: 'Ayaka',
+        element_image: '/assets/img/icons/Cryo.png'
+    },
+    {
+        rarity: '5',
+        weapon: 'sword',
+        element: 'hydro',
+        character_image: '/assets/img/gallery/Characters/Kamisato_Ayato.webp',
+        name: 'Ayato',
+        element_image: '/assets/img/icons/Hydro.png'
+    },
+    {
+        rarity: '5',
+        weapon: 'catalyst',
+        element: 'dendro',
+        character_image: '/assets/img/gallery/Characters/Baizhu.webp',
+        name: 'Baizhu',
+        element_image: '/assets/img/icons/Dendro.png'
+    },
+    {
+        rarity: '4',
+        weapon: 'catalyst',
+        element: 'hydro',
+        character_image: '/assets/img/gallery/Characters/Barbara.webp',
+        name: 'Barbara',
+        element_image: '/assets/img/icons/Hydro.png'
+    },
+    {
+        rarity: '4',
+        weapon: 'claymore',
+        element: 'electro',
+        character_image: '/assets/img/gallery/Characters/Beidou.webp',
+        name: 'Beidou',
+        element_image: '/assets/img/icons/Electro.png'
+    },
+    {
+        rarity: '4',
+        weapon: 'sword',
+        element: 'pyro',
+        character_image: '/assets/img/gallery/Characters/Bennett.webp',
+        name: 'Bennett',
+        element_image: '/assets/img/icons/Pyro.png'
+    },
+    {
+        rarity: '4',
+        weapon: 'polearm',
+        element: 'hydro',
+        character_image: '/assets/img/gallery/Characters/Candace.webp',
+        name: 'Candace',
+        element_image: '/assets/img/icons/Hydro.png'
+    },
+    {
+        rarity: '4',
+        weapon: 'catalyst',
+        element: 'cryo',
+        character_image: '/assets/img/gallery/Characters/Charlotte.webp',
+        name: 'Charlotte',
+        element_image: '/assets/img/icons/Cryo.png'
+    },
+    {
+        rarity: '4',
+        weapon: 'polearm',
+        element: 'pyro',
+        character_image: '/assets/img/gallery/Characters/Chevreuse.webp',
+        name: 'Chevreuse',
+        element_image: '/assets/img/icons/Pyro.png'
+    },
+    {
+        rarity: '5',
+        weapon: 'sword',
+        element: 'geo',
+        character_image: '/assets/img/gallery/Characters/Chiori.webp',
+        name: 'Chiori',
+        element_image: '/assets/img/icons/Geo.png'
+    },
+    {
+        rarity: '4',
+        weapon: 'claymore',
+        element: 'cryo',
+        character_image: '/assets/img/gallery/Characters/Chongyun.webp',
+        name: 'Chongyun',
+        element_image: '/assets/img/icons/Cryo.png'
+    },
+    {
+        rarity: '5',
+        weapon: 'sword',
+        element: 'electro',
+        character_image: '/assets/img/gallery/Characters/Clorinde.webp',
+        name: 'Clorinde',
+        element_image: '/assets/img/icons/Electro.png'
+    },
+    {
+        rarity: '4',
+        weapon: 'bow',
+        element: 'dendro',
+        character_image: '/assets/img/gallery/Characters/Collei.webp',
+        name: 'Collei',
+        element_image: '/assets/img/icons/Dendro.png'
+    },
+    {
+        rarity: '5',
+        weapon: 'polearm',
+        element: 'electro',
+        character_image: '/assets/img/gallery/Characters/Cyno.webp',
+        name: 'Cyno',
+        element_image: '/assets/img/icons/Electro.png'
+    }
+];
+
+// Create the gallery 
+const gallery = document.querySelector('div.gallery');
+let HTML = '';
+let item = '';
+
+// Modifier le lien quand on fera le back (pour l'instant redirection vers la fiche amber pour tous)
+charactersArray.forEach((character) => {
+    item = `
+    <a href="/character.html">
+        <div class="card" data-rarity="${character.rarity}" data-weapon="${character.weapon}" data-element="${character.element}">
+            <div class="img-container">
+                <img src="${character.character_image}" alt="${character.name}" class="rarity${character.rarity} character" width="100">
+                <img src="${character.element_image}" class="img-element">
+            </div>
+            <strong>${character.name}</strong>
+        </div>
+    </a>`;
+    HTML += item;
+});
+gallery.innerHTML = HTML;
+
 const weapons = document.getElementsByName('weapon');
 const rarities = document.querySelectorAll('main input[type=checkbox]');
 const elements = document.getElementsByName('element');
 const select = document.querySelector('select');
 const cards = document.querySelectorAll('.card');
 
-// the function checks the radio weapons and returns the id of the one that is checked
+// Checks the radio weapons and returns the id of the one that is checked
 function checkWeapons(){
     let id;
     weapons.forEach((weapon) => {
@@ -14,7 +183,7 @@ function checkWeapons(){
     });
     return id; 
 }
-// the function checks the radio elements and returns the id of the one that is checked
+// Checks the radio elements and returns the id of the one that is checked
 function checkElements(){
     let id;
     elements.forEach((element) => {
@@ -25,7 +194,7 @@ function checkElements(){
     return id;
 }
 
-// the function checks the checkbox rarity and returns the values of the ones that are checked
+// Checks the checkbox rarity and returns the values of the ones that are checked
 function checkRarity(){
     let values = [];
     rarities.forEach((rarity) => {

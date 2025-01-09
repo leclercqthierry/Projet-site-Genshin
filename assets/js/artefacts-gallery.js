@@ -1,3 +1,115 @@
+// A modifier quand on fera le back (BDD)
+let artefactsArray = [
+    {
+        rarity: '3',
+        image: '/assets/img/gallery/Artefacts_set/aventurier.webp',
+        name: 'Aventurier'
+    },
+    {
+        rarity: '4',
+        image: '/assets/img/gallery/Artefacts_set/berserker.webp',
+        name: 'Berserker'
+    },
+    {
+        rarity: '5',
+        image: '/assets/img/gallery/Artefacts_set/briseur_de_glace.webp',
+        name: 'Briseur de glace'
+    },
+    {
+        rarity: '5',
+        image: '/assets/img/gallery/Artefacts_set/Chevalerie_ensanglantee.webp',
+        name: 'Chevalerie ensanglantée'
+    },
+    {
+        rarity: '5',
+        image: '/assets/img/gallery/Artefacts_set/chronique_du_pavillon_du_desert.webp',
+        name: 'Chronique du pavillon du désert'
+    },
+    {
+        rarity: '4',
+        image: '/assets/img/gallery/Artefacts_set/coeur_du_brave.webp',
+        name: 'Coeur du brave'
+    },
+    {
+        rarity: '4',
+        image: '/assets/img/gallery/Artefacts_set/coeur_du_gardien.webp',
+        name: 'Coeur du gardien'
+    },
+    {
+        rarity: '5',
+        image: '/assets/img/gallery/Artefacts_set/echos_d_une_offrande.webp',
+        name: "Echo d'une offrande"
+    },
+    {
+        rarity: '5',
+        image: '/assets/img/gallery/Artefacts_set/embleme_du_destin_brise.webp',
+        name: 'Emblême du destin brisé'
+    },
+    {
+        rarity: '5',
+        image: '/assets/img/gallery/Artefacts_set/fleur_du_paradis_perdu.webp',
+        name: 'Fleur du paradis perdu'
+    },
+    {
+        rarity: '5',
+        image: '/assets/img/gallery/Artefacts_set/fragment_d_harmonie_divergente.webp',
+        name: "Fragment d'harmonie divergente"
+    },
+    {
+        rarity: '4',
+        image: '/assets/img/gallery/Artefacts_set/parieur.webp',
+        name: 'Parieur'
+    },
+    {
+        rarity: '5',
+        image: '/assets/img/gallery/Artefacts_set/rideau_du_gladiateur.webp',
+        name: 'Rideau du gladiateur'
+    },
+    {
+        rarity: '5',
+        image: '/assets/img/gallery/Artefacts_set/roche_ancienne.webp',
+        name: 'Roche ancienne'
+    },
+    {
+        rarity: '5',
+        image: '/assets/img/gallery/Artefacts_set/reve_dore.webp',
+        name: 'Rêve doré'
+    },
+    {
+        rarity: '5',
+        image: '/assets/img/gallery/Artefacts_set/sorciere_des_flammes_ardentes.webp',
+        name: 'Sorcière des flammes ardentes'
+    },
+    {
+        rarity: '5',
+        image: '/assets/img/gallery/Artefacts_set/souvenir_de_foret.webp',
+        name: 'Souvenir de forêt'
+    },
+    {
+        rarity: '5',
+        image: '/assets/img/gallery/Artefacts_set/troupe_doree.webp',
+        name: 'Troupe dorée'
+    }
+];
+
+// Create the gallery 
+const gallery = document.querySelector('div.gallery');
+let HTML = '';
+let item = '';
+
+// Modifier le lien quand on fera back (pour l'instant redirection vers la fiche berserker pour tous)
+artefactsArray.forEach((artefact) => {
+    item = `
+    <a href="/artefact.html">
+        <div class="card" data-rarity="${artefact.rarity}">
+            <img src="${artefact.image}" alt="${artefact.name}" class="rarity${artefact.rarity} artifact">
+            <strong>${artefact.name}</strong>
+        </div>
+    </a>`;
+    HTML += item;
+});
+gallery.innerHTML = HTML;
+
 const artifact = document.getElementsByName('artifact');
 const rarities = document.querySelectorAll('main input[type=checkbox]');
 const select = document.querySelector('select');
