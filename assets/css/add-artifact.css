@@ -1,0 +1,31 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+form>.form-label:nth-child(3),
+form>.form-label:nth-child(4){
+    margin-bottom: 15px;
+}
+
+@media screen and (min-width: 441px){
+    main{
+        width:70%;
+        margin:auto;
+    }
+
+    input[type="file"]{
+        max-width: none;
+    }
+
+    fieldset{
+        margin:auto;
+    }
+}
+
+@media screen and (min-width:1024px) {
+    main{
+        width:60%;
+    }
+}
