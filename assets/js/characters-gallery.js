@@ -1,5 +1,7 @@
 // A modifier quand on fera le back (BDD)
-let charactersArray = [
+// Simulation d'une BDD avec 18 personnages variés (suffisant pour utiliser les tri et filtres)
+let charactersArray = 
+[
     {
         rarity: '5',
         weapon: 'sword',
@@ -151,7 +153,7 @@ const gallery = document.querySelector('div.gallery');
 let HTML = '';
 let item = '';
 
-// Modifier le lien quand on fera le back (pour l'instant redirection vers la fiche amber pour tous)
+// Modifier peut être quand on fera le back (pour l'instant redirection vers la fiche character ayant le même contenu pour tous)
 charactersArray.forEach((character) => {
     item = `
     <a href="/character.html">
@@ -167,6 +169,7 @@ charactersArray.forEach((character) => {
 });
 gallery.innerHTML = HTML;
 
+// Radio, checkbox, sort and filters
 const weapons = document.getElementsByName('weapon');
 const rarities = document.querySelectorAll('main input[type=checkbox]');
 const elements = document.getElementsByName('element');
@@ -205,14 +208,14 @@ function checkRarity(){
     return values;
 }
 
-// We group the inputs in an array
+// We group the inputs in a same array
 let sortArray = [];
 weapons.forEach((weapon) => sortArray.push(weapon));
 rarities.forEach((rarity) => sortArray.push(rarity));
 elements.forEach((element) =>sortArray.push(element));
 
 sortArray.forEach((sort) => {
-    sort.addEventListener('change', (event) => {
+    sort.addEventListener('change', () => {
         let weaponChoise = checkWeapons();
         let elementChoise = checkElements();
         let raritiesChoise = checkRarity();
@@ -226,7 +229,7 @@ sortArray.forEach((sort) => {
                 card.parentElement.style.display = 'none';
             }
             else{
-                if (!test1 ||!test3){
+                if (!test1 || !test3){
                     card.parentElement.style.display = 'none';
                 }
             }

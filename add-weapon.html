@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Common style-->
     <link rel="stylesheet" href="/assets/css/style.css">
-    <!--add-character style-->
+    <!--add-character style (same style)-->
+    <link rel="stylesheet" href="/assets/css/add-character.css">
+    <!--add-weapon style-->
     <link rel="stylesheet" href="/assets/css/add-weapon.css">
     <title>Panneau Admin - Ajout d'une arme</title>
 </head>
@@ -45,7 +47,7 @@
         <h1>Ajout d'une arme</h1>
         <div class="container">
             <form action="#" method="post" name="add-weapon-form">
-                <div class="group1">
+                <div id="group1">
                     <div class="form-label">
                         <label for="name">Nom</label>
                         <input type="text" id="name" name="name">
@@ -61,7 +63,7 @@
                         </select>
                     </div>
                 </div>
-                <div class="group2">
+                <div id="group2">
                     <span>Rareté</span>
                     <div class="rarity">
                         <div>
@@ -108,6 +110,16 @@
                             <option value="pass">Battle Pass</option>
                         </select>
                     </div>
+                    <!-- <div class="form-label">
+                        <label for="farm-days">Jours de farm élévation</label>
+                        <select name="farm-days" id="farm-days">
+                            <option value="mo-th-su">Lundi / Jeudi / Dimanche</option>
+                            <option value="tu-fr-su">Mardi / Vendredi / Dimanche</option>
+                            <option value="we-sa-su">Mercredi / Samedi / Diamnche</option>
+                        </select>
+                    </div> -->
+                </div>
+                <div id="group3">
                     <div class="form-label">
                         <label for="farm-days">Jours de farm élévation</label>
                         <select name="farm-days" id="farm-days">
@@ -116,64 +128,87 @@
                             <option value="we-sa-su">Mercredi / Samedi / Diamnche</option>
                         </select>
                     </div>
-                </div>
-                <div class="form-label">
-                    <label for="description">Description</label>
-                    <textarea name="description" id="description" rows="5"></textarea>
-                </div>
-                <div>
                     <div class="form-label">
-                        <label for="thumbnail">Miniature</label>
-                        <button name="thumbnail" id="thumbnail" class="btn">Charger une image</button>
-                    </div>
-                    <div class="form-label">
-                        <label for="card">Card</label>
-                        <button name="card" id="card" class="btn">Charger une image</button>
+                        <label for="description">Description</label>
+                        <textarea name="description" id="description" rows="5"></textarea>
                     </div>
                 </div>
-                <div>
+                <div class="form-label-groups">
                     <div class="form-label">
-                        <label for="mob-mat1-r1">Mob matériel 1 rareté 1</label>
-                        <button name="mob-mat1-r1" id="mob-mat1-r1" class="btn">Charger une image</button>
+                        <fieldset>
+                            <legend>Miniature</legend>
+                            <input type="file" name="thumbnail" id="thumbnail">
+                        </fieldset>
                     </div>
                     <div class="form-label">
-                        <label for="mob-mat1-r2">Mob matériel 1 rareté 2</label>
-                        <button name="mob-mat1-r2" id="mob-mat1-r2" class="btn">Charger une image</button>
-                    </div>
-                    <div class="form-label">
-                        <label for="mob-mat1-r3">Mob matériel 1 rareté 3</label>
-                        <button name="mob-mat1-r3" id="mob-mat1-r3" class="btn">Charger une image</button>
-                    </div>
-                </div>
-                <div>
-                    <div class="form-label">
-                        <label for="mob-mat2-r2">Mob matériel 2 rareté 2</label>
-                        <button name="mob-mat2-r2" id="mob-mat2-r2" class="btn">Charger une image</button>
-                    </div>
-                    <div class="form-label">
-                        <label for="mob-mat2-r3">Mob matériel 2 rareté 3</label>
-                        <button name="mob-mat2-r3" id="mob-mat2-r3" class="btn">Charger une image</button>
-                    </div>
-                    <div class="form-label">
-                        <label for="mob-mat2-r4">Mob matériel 2 rareté 4</label>
-                        <button name="mob-mat2-r4" id="mob-mat2-r4" class="btn">Charger une image</button>
+                        <fieldset>
+                            <legend>Card</legend>
+                            <input type="file" name="card" id="card">
+                        </fieldset>
                     </div>
                 </div>
-                <div>
+                <div class="form-label-groups">
                     <div class="form-label">
-                        <label for="dj-mat-r2">Donjon matériel rareté 2</label>
-                        <button name="dj-mat-r2" id="dj-mat-r2" class="btn">Charger une image</button>
+                        <fieldset>
+                            <legend>Mob matériel 1 rareté 1</legend>                        
+                            <input type="file" name="mob-mat1-r1" id="mob-mat1-r1">
+                        </fieldset>
                     </div>
                     <div class="form-label">
-                        <label for="dj-mat-r3">Donjon matériel rareté 3</label>
-                        <button name="dj-mat-r3" id="dj-mat-r3" class="btn">Charger une image</button>
+                        <fieldset>
+                            <legend>Mob matériel 1 rareté 2</legend>
+                            <input type="file" name="mob-mat1-r2" id="mob-mat1-r2">
+                        </fieldset>
+                        
                     </div>
                     <div class="form-label">
-                        <label for="dj-mat-r4">Donjon matériel rareté 4</label>
-                        <button name="dj-mat-r4" id="dj-mat-r4" class="btn">Charger une image</button>
+                        <fieldset>
+                            <legend>Mob matériel 1 rareté 3</legend>
+                            <input type="file" name="mob-mat1-r3" id="mob-mat1-r3">
+                        </fieldset>   
                     </div>
                 </div>
-                <input type="submit" value="Valider">
+                <div class="form-label-groups">
+                    <div class="form-label">
+                        <fieldset>
+                            <legend>Mob matériel 2 rareté 2</legend>
+                            <input type="file" name="mob-mat2-r2" id="mob-mat2-r2">
+                        </fieldset>
+                    </div>
+                    <div class="form-label">
+                        <fieldset>
+                            <legend>Mob matériel 2 rareté 3</legend>
+                            <input type="file" name="mob-mat2-r3" id="mob-mat2-r3">
+                        </fieldset>
+                    </div>
+                    <div class="form-label">
+                        <fieldset>
+                            <legend>Mob matériel 2 rareté 4</legend>
+                            <input type="file" name="mob-mat2-r4" id="mob-mat2-r4">
+                        </fieldset>
+                    </div>
+                </div>
+                <div class="form-label-groups">
+                    <div class="form-label">
+                        <fieldset>
+                            <legend>Donjon matériel rareté 2</legend>
+                            <input type="file" name="dj-mat-r2" id="dj-mat-r2">
+                        </fieldset>
+                    </div>
+                    <div class="form-label">
+                        <fieldset>
+                            <legend>Donjon matériel rareté 3</legend>
+                            <input type="file" name="dj-mat-r3" id="dj-mat-r3">
+                        </fieldset>
+                    </div>
+                    <div class="form-label">
+                        <fieldset>
+                            <legend>Donjon matériel rareté 4</legend>
+                            <input type="file" name="dj-mat-r4" id="dj-mat-r4">
+                        </fieldset>   
+                    </div>
+                </div>
+                <input type="submit" value="Valider" class="btn">
             </form>
         </div>
     </main>
