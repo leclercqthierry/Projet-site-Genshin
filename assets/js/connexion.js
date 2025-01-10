@@ -1,6 +1,11 @@
-// A initialiser quand on fera le back
-let isConnected;
-let isAdmin;
+let isConnected = localStorage.getItem('isConnected') != null ? localStorage.getItem('isConnected') : 'false';
+let isAdmin = localStorage.getItem('isAdmin') != null ? localStorage.getItem('isAdmin') : 'false';
+
+/* Si je ne suis pas connecté on fait rien sinon:
+    - on change le lien Se connecter pour mes teams si membre et panneau admin si admin
+    - on ajoute un lien de déconnexion
+    - on écoute le click sur le lien de déconnexion pour déconnecter l'utilisateur
+*/
 
 const link = document.querySelector('header .menu li:last-child').children[0];
 const ul = document.querySelector('header ul');
@@ -11,19 +16,15 @@ let a = document.createElement('a');
 a.textContent = 'Se déconnecter';
 li.appendChild(a);
 
-/* Si je ne suis pas connecté on fait rien sinon:
-    - on change le lien Se connecter pour mes teams si membre et admin si admin
-    - on ajoute un lien de déconnexion
-    - on écoute le click sur le lien de déconnexion pour déconnecter l'utilisateur
-*/
+changeLinkConnect(isConnected, isAdmin);
 
 /* Change link in the menu if connected
 ** @param {Boolean} isConnected
 ** @param {Boolean} isAdmin */
 function changeLinkConnect(isConnected, isAdmin) {
-    if (isConnected && link.textContent === 'Se connecter'){
-        link.href = isAdmin ? '/admin.html' : '/member.html';
-        link.textContent = isAdmin ? 'Admin' : 'Mes teams';
+    if (isConnected === 'true' && link.textContent === 'Se connecter'){
+        link.href = isAdmin === 'true' ? '/admin-menu.html' : '/member.html';
+        link.textContent = isAdmin === 'true' ? 'Panneau Admin' : 'Mes teams';
     
         // Add the deconnexion link
         ul.appendChild(li);
@@ -34,14 +35,19 @@ function changeLinkConnect(isConnected, isAdmin) {
 function changeLinkDisconnect(){
     // Remove the deconnexion link
     ul.removeChild(li);
+    // Change link to initial state
     link.textContent = 'Se connecter';
     link.href = '/login.html';
+    // Clear local storage items
+    localStorage.removeItem('isConnected');
+    localStorage.removeItem('isAdmin');
+    // Return to index.html
+    window.location.href = '/index.html';
 }
 
+
 a.addEventListener('click', () =>{
-    isConnected = false;
-    isAdmin = false;
+    isConnected = 'false';
+    isAdmin = 'false';
     changeLinkDisconnect();
 });
-
-changeLinkConnect(false, true);
