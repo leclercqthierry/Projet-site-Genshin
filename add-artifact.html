@@ -48,7 +48,7 @@
             <form action="#" method="post" name="add-artifact-form">
                 <div class="form-label">
                     <label for="name">Nom du set</label>
-                    <input type="text" id="name" name="name">
+                    <input type="text" id="name" name="name" required>
                 </div>
                 <div id="group2">
                     <span>Rareté maximale</span>
@@ -56,30 +56,24 @@
                         <div>
                             <label for="rarity3">3<sup><img src="/assets/img/icons/1_star.png" alt="étoile"></sup></label>
                         </div>
-                        <input type="checkbox" name="rarity3" id="rarity3" value="3">
+                        <input type="radio" name="rarity" id="rarity3" value="3">
                     </div>
                     <div class="rarity">
                         <div>
                             <label for="rarity4">4<sup><img src="/assets/img/icons/1_star.png" alt="étoile"></sup></label>
                         </div>
-                        <input type="checkbox" name="rarity4" id="rarity4" value="4">
+                        <input type="radio" name="rarity" id="rarity4" value="4">
                     </div>
                     <div class="rarity">
                         <div>
                             <label for="rarity5">5<sup><img src="/assets/img/icons/1_star.png" alt="étoile"></sup></label>
                         </div>
-                        <input type="checkbox" name="rarity5" id="rarity5" value="5">
+                        <input type="radio" name="rarity" id="rarity5" value="5">
                     </div>
                 </div>
                 <div class="form-label">
                     <label for="description">Bonus de set</label>
-                    <textarea name="description" id="description" rows="5"></textarea>
-                </div>
-                <div class="form-label">
-                    <fieldset>
-                        <legend>Donjon matériel rareté 2</legend>
-                        <input type="file" name="dj-mat-r2" id="dj-mat-r2">
-                    </fieldset>
+                    <textarea name="description" id="description" rows="5" required></textarea>
                 </div>
                 <input type="submit" value="Valider" class="btn">
             </form>

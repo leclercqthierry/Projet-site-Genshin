@@ -1,5 +1,7 @@
 let isConnected = localStorage.getItem('isConnected') != null ? localStorage.getItem('isConnected') : 'false';
 let isAdmin = localStorage.getItem('isAdmin') != null ? localStorage.getItem('isAdmin') : 'false';
+currentUser = localStorage.getItem('currentUser');
+console.log(currentUser);
 
 /* Si je ne suis pas connecté on fait rien sinon:
     - on change le lien Se connecter pour mes teams si membre et panneau admin si admin
@@ -41,6 +43,7 @@ function changeLinkDisconnect(){
     // Clear local storage items
     localStorage.removeItem('isConnected');
     localStorage.removeItem('isAdmin');
+    localStorage.removeItem('currentUser');
     // Return to index.html
     window.location.href = '/index.html';
 }

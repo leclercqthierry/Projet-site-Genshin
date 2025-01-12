@@ -1,0 +1,105 @@
+*{
+    font-size: 14px;
+}
+
+input{
+    font-family: 'Roboto', sans-serif;
+}
+
+select{
+    width:100%;
+    padding:5px;
+    border:none;
+    border-radius:5px;
+}
+
+form,
+.form-label,
+main{
+    display:flex;
+    flex-direction: column;
+}
+
+form{
+    width:100%;
+    row-gap: 15px;
+}
+
+main{
+    justify-content: space-evenly;
+}
+
+.container{
+    margin:0 auto 20px auto;
+    background-color: var(--bg-secondary);
+    border-radius:20px;
+    padding:15px;
+    width:290px;
+}
+
+.btn{
+    background-color: var(--bg-primary);
+    padding: 5px 10px;
+    border:none;
+    border-radius: 20px;
+    color:var(--font-color);
+    max-height: 40px;
+}
+
+#confirm-dialog{
+    display:none;
+}
+
+#confirm-dialog label{
+    text-align: center;
+}
+
+#confirm-dialog .container{
+    row-gap:15px;
+}
+
+#confirm-dialog .form-label{
+    height:auto;
+}
+
+.btn-container{
+    display:flex;
+    justify-content: center;
+    column-gap: 30px;
+}
+
+@media screen and (min-width:441px) {
+    *{
+        font-size: 20px;
+    }
+
+    .container{
+        width:70%;
+    }
+
+    .form-label{
+        height:100px;
+    }
+
+    .btn{
+        max-height: 80px;
+        border-radius: 40px;
+    }
+
+    input[type="submit"]{
+        width:30%;
+        align-self: center;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .container{
+        width:30%;
+    }
+
+    .btn:hover{
+        background-color: var(--font-color);
+        color:var(--bg-primary);
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
+}

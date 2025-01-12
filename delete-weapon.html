@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!--Common style-->
-        <link rel="stylesheet" href="/assets/css/style.css">
-        <!--Index style-->
-        <link rel="stylesheet" href="/assets/css/member.css">
-    <title>Mon profil</title>
+    <!--Common style-->
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <!--delete-character style-->
+    <link rel="stylesheet" href="/assets/css/delete-form.css">
+    <title>Panneau Admin - Suppression d'arme</title>
 </head>
 <body>
     <header>
@@ -15,7 +15,7 @@
         <nav>
             <!--Logo-->
             <a href="index.html">
-                <img src="/assets/img/Logo.webp" alt="Accueil" id="logo">
+                <img src="/assets/img/Logo.webp" alt="Logo Genshin Team" id="logo">
             </a>
             <!--Menu toggle-->
             <input type="checkbox" id="menu_toggle">
@@ -42,13 +42,27 @@
         </nav>
     </header>
     <main>
-        <h1>Mes teams</h1>
-        <div class="gallery">
-            <!--generated in js-->
+        <h1>Suppression d'une arme</h1>
+        <div class="container">
+            <form action="#" method="post" name="delete-weapon-form">
+                <div class="form-label">
+                    <label for="weapon">Arme à supprimer</label>
+                    <select name="weapon" id="weapon">
+                        <option value=""></option>
+                        <!--generated in js-->
+                    </select>
+                </div>
+                <input type="submit" value="Valider" class="btn">
+            </form>
         </div>
-        <div class="btn-container2">
-            <a href="/add-team.html" class="btn">Créer une nouvelle team</a>
-            <button class="btn">Supprimer mon compte</button>
+        <div id="confirm-dialog">
+            <div class="container form-label">
+                <label>Veuillez confirmer la suppression de l'arme</label>
+                <div class="btn-container">
+                    <button type="submit" class="btn">Confirmer</button>
+                    <button id="cancel" type="reset" class="btn">Annuler</button>
+                </div>
+            </div>
         </div>
     </main>
     <footer>
@@ -56,6 +70,6 @@
     </footer>
     <script src="/assets/js/connexion.js"></script>
     <script src="/assets/js/base.js"></script>
-    <script src="/assets/js/member.js"></script>
+    <script src="/assets/js/delete-weapon.js"></script>
 </body>
 </html>

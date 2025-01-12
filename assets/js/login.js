@@ -7,6 +7,7 @@ forgottenPassword.addEventListener('click', ()=> {
 });
 
 const form = document.querySelector('form');
+let currentUser;
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -22,6 +23,7 @@ form.addEventListener('submit', (e) => {
     } else {
         isAdmin = 'false';
         localStorage.setItem('isConnected', 'true');
+        localStorage.setItem('currentUser', login);
     }
     localStorage.setItem('isAdmin', isAdmin);
     window.location.href = isAdmin === 'true' ? '/admin-menu.html' : '/member.html';
