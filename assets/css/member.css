@@ -122,7 +122,7 @@ main a{
     text-align: center;
 }
 
-@media screen and (min-width:441px) {
+@media screen and (min-width:610px) {
     .gallery{
         width:70%;
     }

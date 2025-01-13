@@ -38,11 +38,11 @@ body {
 /* ########### Header ########### */
 
 #logo{
-    height:6.46vh;
+    height:37px;
 }
 
 nav{
-    height:11.77vh;
+    height:80px;
     background-color: var(--bg-secondary);
     display:flex;
     justify-content: space-between;
@@ -52,12 +52,12 @@ nav{
 
 #burger,
 #cross{
-    font-size: 4.37vh;
+    font-size:25px;
     background-color: var(--bg-primary);
     padding: 20px;
     border-radius: 15px;
-    width: 9.48vh;
-    height: 9.48vh;
+    width:50px;
+    height:50px;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -87,7 +87,7 @@ nav{
     width:100%;
     position:absolute;
     z-index: 9999;
-    top:11.77vh;
+    top:80px;
     left:0;
     background-color: var(--bg-secondary);
 }
@@ -99,7 +99,7 @@ nav{
 }
 
 h1{
-    font-size: 24px;
+    /* font-size: 24px; */
     font-family: "Roboto condensed";
     text-align: center;
     margin: 20px auto;
@@ -120,40 +120,32 @@ footer a{
 main{
     /* main min-height = 100vh - header height - footer height 
     to have the footer always at the bottom of the page */
-    min-height: 80.06vh; 
+    min-height: calc(100vh - 80px - 40px);
 }
 /* ########### Footer ########### */
 footer{
     background-color: var(--bg-secondary);
     display:flex;
     align-items: center;
-    height:8.17vh;
-}
-
-footer a:hover{
-    text-decoration: underline;
+    height:40px;
+    font-size:0.8em;
 }
 /* ############################# */
 
 @media screen and (min-width: 441px){
-    body,footer{
-        font-size:1.25rem;
+    body{
+        font-size:1.25em;
     }
     
     h1{
-        font-size: 32px;
+        font-size: 2.5em;
+    }
+
+    footer{
+        font-size: 1em;
     }
 }
 @media screen and (min-width: 1024px) {
-    main{
-        min-height: 85.36vh;
-    }
-
-    nav,
-    footer{
-        height:7.32vh;
-    }
-
     #burger,
     #cross{
         display: none;
@@ -166,6 +158,10 @@ footer a:hover{
     }
 
     header a:hover{
-        transform: scale(0.8);
+        transform: scale(1.1);
+    }
+
+    footer a:hover{
+        text-decoration: underline;
     }
 }

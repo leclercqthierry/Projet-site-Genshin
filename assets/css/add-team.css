@@ -85,4 +85,10 @@ fieldset{
     fieldset{
         flex:1;
     }
+
+    .btn:hover{
+        background-color: var(--font-color);
+        color:var(--bg-primary);
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }                                                                                                                                                                
 }

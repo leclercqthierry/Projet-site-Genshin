@@ -62,5 +62,7 @@ form.addEventListener('submit', (e) => {
     if (!checkAllDifferent(teamChars)) {
         alert('Tous les personnages doivent être différents!');
         return;
+    } else {
+        form.submit(); // Submit the form if all conditions are met.
     }
 });

@@ -103,9 +103,7 @@ p{
     padding: 3px 0;
 }
 
-/* not 426px (to include smartphones like iphone 13 pro max up to iphone 16 pro max
- which have widths between 430 et 440px) */
-@media screen and (min-width:441px){
+@media screen and (min-width:650px){
     .gallery{
         width:70%;
         margin: 0 auto 20px auto;
@@ -199,7 +197,13 @@ p{
 
 }
 
-@media screen and (min-width:1025px) {
+@media screen and (min-width:1025px) and (max-width:1264px){
+    .gallery{
+        width:60%;
+    }
+}
+
+@media screen and (min-width:1265px){
     .gallery{
         flex-direction: row;
     }
@@ -207,4 +211,5 @@ p{
     .gallery a{
         width:45%;
     }
+
 }

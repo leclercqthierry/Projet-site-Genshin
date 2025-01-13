@@ -63,7 +63,7 @@ select{
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    gap:15px 0;
+    gap:15px;
     margin: 0 15px 20px 15px;
     background-color: var(--bg-secondary);
     border-radius: 20px;

@@ -62,5 +62,6 @@ editBtns.forEach(btn => {
 
 deleteAccountBtn.addEventListener('click', () => {
     //TODO:
+    confirm("Etes vous sûr de supprimer votre compte? Cette action est irreversible vous ne pourrez plus le récupérer ensuite !");
     // effacer l'user de la BDD (à voir s'il n'y a pas un temps de conservation des données fixé par la réglementation)
 });
