@@ -1,3 +1,12 @@
+form[name="edit-weapon-form"]{
+    display:none;
+}
+
+form[name="select-weapon-form"]{
+    display:flex;
+    flex-direction: column;
+}
+
 #group3{
     display: flex;
     flex-wrap: wrap;
@@ -13,6 +22,10 @@
 @media screen and (min-width:441px){
     #group3{
         margin:15px 0;
+    }
+
+    .form-label-groups{
+        flex-wrap: wrap;
     }
 
     form>.form-label-groups:nth-child(4){

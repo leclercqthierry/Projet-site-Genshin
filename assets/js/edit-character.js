@@ -54,8 +54,8 @@ charSelect.addEventListener('change',(e)=>{
 
     // creating and populating an image path array
     let imgPathArray = [];
-    imgPathArray.push(charactersArray.find(character => character.name === e.target.value).character_image);
-    imgPathArray.push(charactersArray.find(character => character.name === e.target.value).card_image);
+    imgPathArray.push(charactersArray.find(character => character.name === e.target.value).image);
+    imgPathArray.push(charactersArray.find(character => character.name === e.target.value).card);
     imgPathArray.push(charactersArray.find(character => character.name === e.target.value).boss_drop);
     imgPathArray.push(charactersArray.find(character => character.name === e.target.value).local_material);
     imgPathArray.push(charactersArray.find(character => character.name === e.target.value).world_boss_drop);

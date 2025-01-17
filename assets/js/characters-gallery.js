@@ -11,7 +11,7 @@ charactersArray.forEach((character) => {
     <a href="/character.html">
         <div class="card" data-rarity="${character.rarity}" data-weapon="${character.weapon}" data-element="${character.element}">
             <div class="img-container">
-                <img src="${character.character_image}" alt="${character.name}" class="rarity${character.rarity} character" width="100">
+                <img src="${character.image}" alt="${character.name}" class="rarity${character.rarity} character" width="100">
                 <img src="${character_element_image}" class="img-element">
             </div>
             <strong>${character.name}</strong>

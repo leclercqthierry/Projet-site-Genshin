@@ -86,8 +86,8 @@ let charactersArray =
     {
         name: 'Albedo',
         rarity: '5',
-        card_image: '/assets/img/sheet/Characters/card/albedo.webp',
-        character_image: '/assets/img/gallery/Characters/Albedo.webp',
+        card: '/assets/img/sheet/Characters/card/albedo.webp',
+        image: '/assets/img/gallery/Characters/Albedo.webp',
         weapon: 'sword',
         element: 'geo',
         bonus_elevation:'dgt-geo',
@@ -111,8 +111,8 @@ let charactersArray =
     {
         name: 'Alhaitham',
         rarity: '5',
-        card_image: '/assets/img/sheet/Characters/card/alhaitham.webp',
-        character_image: '/assets/img/gallery/Characters/Alhaitham.webp',
+        card: '/assets/img/sheet/Characters/card/alhaitham.webp',
+        image: '/assets/img/gallery/Characters/Alhaitham.webp',
         weapon: 'sword',
         element: 'dendro',
         bonus_elevation:'dgt-dendro',
@@ -136,8 +136,8 @@ let charactersArray =
     {
         name: 'Amber',
         rarity: '4',
-        card_image: '/assets/img/sheet/Characters/card/amber.webp',
-        character_image: '/assets/img/gallery/Characters/Amber.webp',
+        card: '/assets/img/sheet/Characters/card/amber.webp',
+        image: '/assets/img/gallery/Characters/Amber.webp',
         weapon: 'bow',
         element: 'pyro',
         bonus_elevation:'atq',
@@ -161,8 +161,8 @@ let charactersArray =
     {
         name: 'Arlecchino',
         rarity: '5',
-        card_image: '/assets/img/sheet/Characters/card/arlecchino.webp',
-        character_image: '/assets/img/gallery/Characters/Arlecchino.webp',
+        card: '/assets/img/sheet/Characters/card/arlecchino.webp',
+        image: '/assets/img/gallery/Characters/Arlecchino.webp',
         weapon: 'polearm',
         element: 'pyro',
         bonus_elevation:'crit-dgt',
@@ -186,8 +186,8 @@ let charactersArray =
     {
         name: 'Ayaka',
         rarity: '5',
-        card_image: '/assets/img/sheet/Characters/card/kamisato_ayaka.webp',
-        character_image: '/assets/img/gallery/Characters/Kamisato_Ayaka.webp',
+        card: '/assets/img/sheet/Characters/card/kamisato_ayaka.webp',
+        image: '/assets/img/gallery/Characters/Kamisato_Ayaka.webp',
         weapon: 'sword',
         element: 'cryo',
         bonus_elevation:'crit-dgt',
@@ -211,8 +211,8 @@ let charactersArray =
     {
         name: 'Ayato',
         rarity: '5',
-        card_image: '/assets/img/sheet/Characters/card/kamisato_ayato.webp',
-        character_image: '/assets/img/gallery/Characters/Kamisato_Ayato.webp',
+        card: '/assets/img/sheet/Characters/card/kamisato_ayato.webp',
+        image: '/assets/img/gallery/Characters/Kamisato_Ayato.webp',
         weapon: 'sword',
         element: 'hydro',
         bonus_elevation:'crit-dgt',
@@ -321,114 +321,168 @@ let charactersArray =
 
 let weaponsArray = [
     {
-        rarity: '5',
-        type: 'sword',
         name: 'Absolution',
-        image: '/assets/img/gallery/Weapons/absolution.webp'
-    },
-    {
-        rarity: '4',
-        type: 'catalyst',
-        name: 'Agathe de Rochenoire',
-        image: '/assets/img/gallery/Weapons/agate_de_rochenoire.webp'
-    },
-    {
-        rarity: '5',
-        type: 'claymore',
-        name: 'Akuoumaru',
-        image: 'assets/img/gallery/Weapons/akuoumaru.webp'
-    },
-    {
-        rarity: '5',
-        type: 'bow',
-        name: "Arc d'Amos",
-        image: '/assets/img/gallery/Weapons/arc_d_amos.webp'
-    },
-    {
-        rarity: '4',
-        type: 'bow',
-        name: 'Arc de guerre de Rochenoire',
-        image: '/assets/img/gallery/Weapons/arc_de_guerre_de_rochenoire.webp'
-    },
-    {
-        rarity: '5',
-        type: 'claymore',
-        name: 'Balise de la mer de roseaux',
-        image: '/assets/img/gallery/Weapons/balise_de_la_mer_de_roseaux.webp'
-    },
-    {
-        rarity: '4',
-        type: 'catalyst',
-        name: "Ballade d'un azur infini",
-        image: '/assets/img/gallery/Weapons/ballade_d_un_azur_infini.webp'
-    },
-    {
-        rarity: '4',
-        type: 'polearm',
-        name: 'Ballade des fjords',
-        image: '/assets/img/gallery/Weapons/ballade_des_fjords.webp'
-    },
-    {
-        rarity: '4',
-        type: 'catalyst',
-        name: 'Corne à boire cendrée',
-        image: '/assets/img/gallery/Weapons/corne_a_boire_cendree.webp'
-    },
-    {
         rarity: '5',
         type: 'sword',
-        name: 'Epée du faucon',
-        image: '/assets/img/gallery/Weapons/epee_du_faucon.webp'
+        card: '/assets/img/sheet/Weapons/Cards/absolution.webp',
+        image: '/assets/img/gallery/Weapons/absolution.webp',
+        sub_stat: 'crit-dgt',
+        obtaining: 'wish',
+        farms_days: 'mo-th-su',
+        description: "Augmente les DGT CRIT de 20 %. Lorsque la valeur d'un engagement vital augmente, les DGT infligés par le personnage équipé de l'arme augmentent de 16 % pendant 6 s, cet effet pouvant être cumulé 3 fois maximum.",
+        dungeon_weapon: 
+        [
+            'assets/img/dungeon_weapon/fragment_d_un_accord_ancien.webp',
+            'assets/img/dungeon_weapon/chapitre_d_un_accord_ancien.webp',
+            'assets/img/dungeon_weapon/mouvement_d_un_accord_ancien.webp',
+            'assets/img/dungeon_weapon/echo_d_un_accord_ancien.webp'
+        ],
+        elevation_weapon_drop:
+        [
+            'assets/img/elevation_weapon_drop/vieille_montre_a_gousset_d_operateur.webp',
+            'assets/img/elevation_weapon_drop/montre_a_gousset_d_operateur.webp',
+            'assets/img/elevation_weapon_drop/constance_d_operateur.webp',
+        ],
+        mob_drop:
+        [
+            'assets/img/mob_drop/engrenage_de_maillage.webp',
+            'assets/img/mob_drop/engrenage_a_coupe_droite.webp',
+            'assets/img/mob_drop/engrenage_dynamique_artificie.webp',
+        ]
     },
     {
+        name: 'Agate de Rochenoire',
         rarity: '4',
-        type: 'sword',
-        name: 'Epée longue de Rochenoire',
-        image: '/assets/img/gallery/Weapons/epee_longue_de_rochenoire.webp'
-    },
-    {
-        rarity: '4',
-        type: 'sword',
-        name: "Lame kageuchi d'Amenoma",
-        image: '/assets/img/gallery/Weapons/lame_kageuchi_d_amenoma.webp'
-    },
-    {
-        rarity: '4',
-        type: 'polearm',
-        name: 'Lance de Rochenoire',
-        image: '/assets/img/gallery/Weapons/lance_de_rochenoire.webp'
-    },
-    {
-        rarity: '5',
         type: 'catalyst',
-        name: 'Mille rêves flottant',
-        image: '/assets/img/gallery/Weapons/mille_reves_flottants.webp'
-    },
-    {
-        rarity: '3',
-        type: 'polearm',
-        name: 'Pampille noire',
-        image: '/assets/img/gallery/Weapons/pampille_noire.webp'
-    },
-    {
-        rarity: '5',
-        type: 'bow',
-        name: "Simulacre d'eau",
-        image: '/assets/img/gallery/Weapons/simulacre_d_eau.webp'
-    },
-    {
-        rarity: '4',
-        type: 'claymore',
-        name: 'Trancheuse de Rochenoire',
-        image: '/assets/img/gallery/Weapons/trancheuse_de_rochenoire.webp'
-    },
-    {
-        rarity: '4',
-        type: 'bow',
-        name: 'Traqueur des impasses',
-        image: '/assets/img/gallery/Weapons/traqueur_des_impasses.webp'
+        card: '/assets/img/sheet/Weapons/Cards/agate_de_rochenoire.webp',
+        image: '/assets/img/gallery/Weapons/agate_de_rochenoire.webp',
+        sub_stat: 'crit-dgt',
+        obtaining: 'shop',
+        farms_days: 'mo-th-su',
+        description: "Augmente l'ATQ de 12 % pendant 30 s après avoir vaincu un ennemi. Cet effet peut être cumulé 3 fois maximum et la durée de chaque cumul peut varier.",
+        dungeon_weapon: 
+        [
+            'assets/img/dungeon_weapon/sable_lumineux_de_guyun.webp',
+            'assets/img/dungeon_weapon/roche_lustree_de_guyun.webp',
+            'assets/img/dungeon_weapon/squelette_sacre_de_guyun.webp',
+            'assets/img/dungeon_weapon/corps_divin_de_guyun.webp'
+        ],
+        elevation_weapon_drop:
+        [
+            'assets/img/elevation_weapon_drop/dague_de_chasse_rituelle.webp',
+            'assets/img/elevation_weapon_drop/dague_rituelle_de_l_usurier.webp',
+            'assets/img/elevation_weapon_drop/grande_dague_de_l_inspecteur.webp',
+        ],
+        mob_drop:
+        [
+            'assets/img/mob_drop/parchemin_divinatoire.webp',
+            'assets/img/mob_drop/parchemin_sigille.webp',
+            'assets/img/mob_drop/parchemin_maudit.webp',
+        ]
     }
-];
+//     {
+//         rarity: '4',
+//         type: 'catalyst',
+//         name: 'Agathe de Rochenoire',
+//         image: '/assets/img/gallery/Weapons/agate_de_rochenoire.webp'
+//     },
+//     {
+//         rarity: '5',
+//         type: 'claymore',
+//         name: 'Akuoumaru',
+//         image: 'assets/img/gallery/Weapons/akuoumaru.webp'
+//     },
+//     {
+//         rarity: '5',
+//         type: 'bow',
+//         name: "Arc d'Amos",
+//         image: '/assets/img/gallery/Weapons/arc_d_amos.webp'
+//     },
+//     {
+//         rarity: '4',
+//         type: 'bow',
+//         name: 'Arc de guerre de Rochenoire',
+//         image: '/assets/img/gallery/Weapons/arc_de_guerre_de_rochenoire.webp'
+//     },
+//     {
+//         rarity: '5',
+//         type: 'claymore',
+//         name: 'Balise de la mer de roseaux',
+//         image: '/assets/img/gallery/Weapons/balise_de_la_mer_de_roseaux.webp'
+//     },
+//     {
+//         rarity: '4',
+//         type: 'catalyst',
+//         name: "Ballade d'un azur infini",
+//         image: '/assets/img/gallery/Weapons/ballade_d_un_azur_infini.webp'
+//     },
+//     {
+//         rarity: '4',
+//         type: 'polearm',
+//         name: 'Ballade des fjords',
+//         image: '/assets/img/gallery/Weapons/ballade_des_fjords.webp'
+//     },
+//     {
+//         rarity: '4',
+//         type: 'catalyst',
+//         name: 'Corne à boire cendrée',
+//         image: '/assets/img/gallery/Weapons/corne_a_boire_cendree.webp'
+//     },
+//     {
+//         rarity: '5',
+//         type: 'sword',
+//         name: 'Epée du faucon',
+//         image: '/assets/img/gallery/Weapons/epee_du_faucon.webp'
+//     },
+//     {
+//         rarity: '4',
+//         type: 'sword',
+//         name: 'Epée longue de Rochenoire',
+//         image: '/assets/img/gallery/Weapons/epee_longue_de_rochenoire.webp'
+//     },
+//     {
+//         rarity: '4',
+//         type: 'sword',
+//         name: "Lame kageuchi d'Amenoma",
+//         image: '/assets/img/gallery/Weapons/lame_kageuchi_d_amenoma.webp'
+//     },
+//     {
+//         rarity: '4',
+//         type: 'polearm',
+//         name: 'Lance de Rochenoire',
+//         image: '/assets/img/gallery/Weapons/lance_de_rochenoire.webp'
+//     },
+//     {
+//         rarity: '5',
+//         type: 'catalyst',
+//         name: 'Mille rêves flottant',
+//         image: '/assets/img/gallery/Weapons/mille_reves_flottants.webp'
+//     },
+//     {
+//         rarity: '3',
+//         type: 'polearm',
+//         name: 'Pampille noire',
+//         image: '/assets/img/gallery/Weapons/pampille_noire.webp'
+//     },
+//     {
+//         rarity: '5',
+//         type: 'bow',
+//         name: "Simulacre d'eau",
+//         image: '/assets/img/gallery/Weapons/simulacre_d_eau.webp'
+//     },
+//     {
+//         rarity: '4',
+//         type: 'claymore',
+//         name: 'Trancheuse de Rochenoire',
+//         image: '/assets/img/gallery/Weapons/trancheuse_de_rochenoire.webp'
+//     },
+//     {
+//         rarity: '4',
+//         type: 'bow',
+//         name: 'Traqueur des impasses',
+//         image: '/assets/img/gallery/Weapons/traqueur_des_impasses.webp'
+//     }
+ ];
 
 let artifactsArray = [
     {
