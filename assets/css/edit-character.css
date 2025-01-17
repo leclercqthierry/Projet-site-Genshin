@@ -1,5 +1,9 @@
-button,
-input{
+form[name="edit-character-form"]{
+    display:none;
+}
+
+input,
+button{
     font-family: 'Roboto', sans-serif;
 }
 
@@ -15,17 +19,23 @@ sup img{
     width:20px;
 }
 
-form,
+form[name="select-character-form"],
 #group1,
 .form-label,
 .rarity,
-.rarity div{
+.rarity div,
+main{
     display:flex;
     flex-direction: column;
 }
 
 form{
     width:100%;
+    row-gap: 15px;
+}
+
+main{
+    justify-content: space-evenly;
 }
 
 .container{
@@ -71,14 +81,13 @@ input[type="file"]{
 }
 
 input[type="file"]::file-selector-button{
-    display:flex;
-    flex-direction: column;
     background-color: var(--bg-primary);
     padding: 5px 10px;
     border:none;
     border-radius: 20px;
     color:var(--font-color);
     margin:auto;
+    width:100%;
 }
 
 .form-label-groups{
@@ -89,16 +98,16 @@ input[type="file"]::file-selector-button{
 .form-label-groups .form-label{
     flex-direction: column;
     align-items: center;
-    height:70px;
     margin-bottom: 15px;
 }
 
 fieldset{
-    max-width:260px;
     display: flex;
+    flex-direction: column-reverse;
     padding:5px;
     border: var(--bg-primary) 3px solid;
     border-radius: 5px;
+    gap: 5px;
 }
 
 @media screen and (min-width:441px) {

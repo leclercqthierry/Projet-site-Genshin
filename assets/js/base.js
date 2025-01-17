@@ -1,151 +1,322 @@
 // modifier une fois le back vu
 // simulation d'une BDD de 18 personnages, 18 armes, 18 set d'artéfacts et 4 teams
+let elementArray =
+[
+    {
+        name: 'anemo',
+        element_image: '/assets/img/icons/Anemo.png',
+        char_jewel:
+        [
+            '/assets/img/char_jewel/eclat_de_turquoise_vayuda.webp',
+            '/assets/img/char_jewel/fragment_de_turquoise_vayuda.webp',
+            '/assets/img/char_jewel/morceau_de_turquoise_vayuda.webp',
+            '/assets/img/char_jewel/pierre_de_turquoise_vayuda.webp'
+        ]
+    },
+    {
+        name: 'geo',
+        element_image: '/assets/img/icons/Geo.png',
+        char_jewel:
+        [
+            '/assets/img/char_jewel/eclat_de_topaze_prithiva.webp',
+            '/assets/img/char_jewel/fragment_de_topaze_prithiva.webp',
+            '/assets/img/char_jewel/morceau_de_topaze_prithiva.webp',
+            '/assets/img/char_jewel/pierre_de_topaze_prithiva.webp'
+        ]
+    },
+    {
+        name: 'electro',
+        element_image: '/assets/img/icons/Electro.png',
+        char_jewel:
+        [
+            '/assets/img/char_jewel/eclat_de_amethyste_vajrada.webp',
+            '/assets/img/char_jewel/fragment_de_amethyste_vajrada.webp',
+            '/assets/img/char_jewel/morceau_de_amethyste_vajrada.webp',
+            '/assets/img/char_jewel/pierre_de_amethyste_vajrada.webp'
+        ]
+    },
+    {
+        name: 'dendro',
+        element_image: '/assets/img/icons/Dendro.png',
+        char_jewel:
+        [
+            '/assets/img/char_jewel/eclat_d_emeraude_nagadus.webp',
+            '/assets/img/char_jewel/fragment_d_emeraude_nagadus.webp',
+            '/assets/img/char_jewel/morceau_d_emeraude_nagadus.webp',
+            '/assets/img/char_jewel/pierre_d_emeraude_nagadus.webp'
+        ]
+    },
+    {
+        name: 'hydro',
+        element_image: '/assets/img/icons/Hydro.png',
+        char_jewel:
+        [
+            '/assets/img/char_jewel/eclat_de_lazurite_varunada.webp',
+            '/assets/img/char_jewel/fragment_de_lazurite_varunada.webp',
+            '/assets/img/char_jewel/morceau_de_lazurite_varunada.webp',
+            '/assets/img/char_jewel/pierre_de_lazurite_varunada.webp'
+        ]
+    },
+    {
+        name: 'pyro',
+        element_image: '/assets/img/icons/Pyro.png',
+        char_jewel:
+        [
+            '/assets/img/char_jewel/eclat_d_agate_agnidus.webp',
+            '/assets/img/char_jewel/fragment_d_agate_agnidus.webp',
+            '/assets/img/char_jewel/morceau_d_agate_agnidus.webp',
+            '/assets/img/char_jewel/pierre_d_agate_agnidus.webp'
+        ]
+    },
+    {
+        name: 'cryo',
+        element_image: '/assets/img/icons/Cryo.png',
+        char_jewel:
+        [
+            '/assets/img/char_jewel/eclat_de_jade_shivada.webp',
+            '/assets/img/char_jewel/fragment_de_jade_shivada.webp',
+            '/assets/img/char_jewel/morceau_de_jade_shivada.webp',
+            '/assets/img/char_jewel/pierre_de_jade_shivada.webp'
+        ]
+    }
+];
+
 let charactersArray = 
 [
     {
-        rarity: '5',
-        weapon: 'sword',
-        element: 'geo',
-        character_image: '/assets/img/gallery/Characters/Albedo.webp',
         name: 'Albedo',
-        element_image: '/assets/img/icons/Geo.png'
-    },
-    {
         rarity: '5',
-        weapon: 'sword',
-        element: 'dendro',
-        character_image: '/assets/img/gallery/Characters/Alhaitham.webp',
-        name: 'Alhaitam',
-        element_image: '/assets/img/icons/Dendro.png'
-    },
-    {
-        rarity: '4',
-        weapon: 'bow',
-        element: 'pyro',
-        character_image: '/assets/img/gallery/Characters/Amber.webp',
-        name: 'Amber',
-        element_image: '/assets/img/icons/Pyro.png'
-    },
-    {
-        rarity: '5',
-        weapon: 'polearm',
-        element: 'pyro',
-        character_image: '/assets/img/gallery/Characters/Arlecchino.webp',
-        name: 'Arlecchino',
-        element_image: '/assets/img/icons/Pyro.png'
-    },
-    {
-        rarity: '5',
-        weapon: 'sword',
-        element: 'cryo',
-        character_image: '/assets/img/gallery/Characters/Kamisato_Ayaka.webp',
-        name: 'Ayaka',
-        element_image: '/assets/img/icons/Cryo.png'
-    },
-    {
-        rarity: '5',
-        weapon: 'sword',
-        element: 'hydro',
-        character_image: '/assets/img/gallery/Characters/Kamisato_Ayato.webp',
-        name: 'Ayato',
-        element_image: '/assets/img/icons/Hydro.png'
-    },
-    {
-        rarity: '5',
-        weapon: 'catalyst',
-        element: 'dendro',
-        character_image: '/assets/img/gallery/Characters/Baizhu.webp',
-        name: 'Baizhu',
-        element_image: '/assets/img/icons/Dendro.png'
-    },
-    {
-        rarity: '4',
-        weapon: 'catalyst',
-        element: 'hydro',
-        character_image: '/assets/img/gallery/Characters/Barbara.webp',
-        name: 'Barbara',
-        element_image: '/assets/img/icons/Hydro.png'
-    },
-    {
-        rarity: '4',
-        weapon: 'claymore',
-        element: 'electro',
-        character_image: '/assets/img/gallery/Characters/Beidou.webp',
-        name: 'Beidou',
-        element_image: '/assets/img/icons/Electro.png'
-    },
-    {
-        rarity: '4',
-        weapon: 'sword',
-        element: 'pyro',
-        character_image: '/assets/img/gallery/Characters/Bennett.webp',
-        name: 'Bennett',
-        element_image: '/assets/img/icons/Pyro.png'
-    },
-    {
-        rarity: '4',
-        weapon: 'polearm',
-        element: 'hydro',
-        character_image: '/assets/img/gallery/Characters/Candace.webp',
-        name: 'Candace',
-        element_image: '/assets/img/icons/Hydro.png'
-    },
-    {
-        rarity: '4',
-        weapon: 'catalyst',
-        element: 'cryo',
-        character_image: '/assets/img/gallery/Characters/Charlotte.webp',
-        name: 'Charlotte',
-        element_image: '/assets/img/icons/Cryo.png'
-    },
-    {
-        rarity: '4',
-        weapon: 'polearm',
-        element: 'pyro',
-        character_image: '/assets/img/gallery/Characters/Chevreuse.webp',
-        name: 'Chevreuse',
-        element_image: '/assets/img/icons/Pyro.png'
-    },
-    {
-        rarity: '5',
+        card_image: '/assets/img/sheet/Characters/card/albedo.webp',
+        character_image: '/assets/img/gallery/Characters/Albedo.webp',
         weapon: 'sword',
         element: 'geo',
-        character_image: '/assets/img/gallery/Characters/Chiori.webp',
-        name: 'Chiori',
-        element_image: '/assets/img/icons/Geo.png'
+        bonus_elevation:'dgt-geo',
+        aptitude_farm_days: 'mo-th-su',
+        boss_drop: 'assets/img/boss_drop/pilier_de_basalte.webp',
+        local_material: 'assets/img/local_material/cecilia.webp',
+        mob_drop: 
+        [
+            'assets/img/mob_drop/parchemin_divinatoire.webp',
+            'assets/img/mob_drop/parchemin_sigille.webp',
+            'assets/img/mob_drop/parchemin_maudit.webp',
+        ],
+        dungeon_drop:
+        [
+            'assets/img/dungeon_drop/enseignement_de_la_poesie.webp',
+            'assets/img/dungeon_drop/guide_de_la_poesie.webp',
+            'assets/img/dungeon_drop/philosophie_de_la_poesie.webp'
+        ],
+        world_boss_drop:'assets/img/world_boss_drop/corne_de_monoceros_caeli.webp',
     },
     {
-        rarity: '4',
-        weapon: 'claymore',
-        element: 'cryo',
-        character_image: '/assets/img/gallery/Characters/Chongyun.webp',
-        name: 'Chongyun',
-        element_image: '/assets/img/icons/Cryo.png'
-    },
-    {
+        name: 'Alhaitham',
         rarity: '5',
+        card_image: '/assets/img/sheet/Characters/card/alhaitham.webp',
+        character_image: '/assets/img/gallery/Characters/Alhaitham.webp',
         weapon: 'sword',
-        element: 'electro',
-        character_image: '/assets/img/gallery/Characters/Clorinde.webp',
-        name: 'Clorinde',
-        element_image: '/assets/img/icons/Electro.png'
-    },
-    {
-        rarity: '4',
-        weapon: 'bow',
         element: 'dendro',
-        character_image: '/assets/img/gallery/Characters/Collei.webp',
-        name: 'Collei',
-        element_image: '/assets/img/icons/Dendro.png'
+        bonus_elevation:'dgt-dendro',
+        aptitude_farm_days: 'tu-fr-su',
+        boss_drop: 'assets/img/boss_drop/pseudo-etamines.webp',
+        local_material: 'assets/img/local_material/pulpe_graisseuse_des_sables.webp',
+        mob_drop: 
+        [
+            'assets/img/mob_drop/satin_rouge_delave.webp',
+            'assets/img/mob_drop/soie_rouge_brodee.webp',
+            'assets/img/mob_drop/brocart_rouge_luxueux.webp',
+        ],
+        dungeon_drop:
+        [
+            'assets/img/dungeon_drop/enseignement_de_l_ingenuite.webp',
+            'assets/img/dungeon_drop/guide_de_l_ingenuite.webp',
+            'assets/img/dungeon_drop/philosophie_de_l_ingenuite.webp'
+        ],
+        world_boss_drop:'assets/img/world_boss_drop/miroir_de_mushin.webp',
     },
     {
+        name: 'Amber',
+        rarity: '4',
+        card_image: '/assets/img/sheet/Characters/card/amber.webp',
+        character_image: '/assets/img/gallery/Characters/Amber.webp',
+        weapon: 'bow',
+        element: 'pyro',
+        bonus_elevation:'atq',
+        aptitude_farm_days: 'mo-th-su',
+        boss_drop: 'assets/img/boss_drop/graine_de_feu.webp',
+        local_material: 'assets/img/local_material/herbe_a_lampe.webp',
+        mob_drop:
+        [
+            'assets/img/mob_drop/pointe_de_fleche_robuste.webp',
+            'assets/img/mob_drop/pointe_de_fleche_aiguisee.webp',
+            'assets/img/mob_drop/pointe_de_fleche_usee.webp',
+        ],
+        dungeon_drop:
+        [
+            'assets/img/dungeon_drop/enseignement_de_la_liberte.webp',
+            'assets/img/dungeon_drop/guide_de_la_liberte.webp',
+            'assets/img/dungeon_drop/philosophie_de_la_liberte.webp'
+        ],
+        world_boss_drop:'assets/img/world_boss_drop/souffle_de_stormterror.webp',
+    },
+    {
+        name: 'Arlecchino',
         rarity: '5',
+        card_image: '/assets/img/sheet/Characters/card/arlecchino.webp',
+        character_image: '/assets/img/gallery/Characters/Arlecchino.webp',
         weapon: 'polearm',
-        element: 'electro',
-        character_image: '/assets/img/gallery/Characters/Cyno.webp',
-        name: 'Cyno',
-        element_image: '/assets/img/icons/Electro.png'
+        element: 'pyro',
+        bonus_elevation:'crit-dgt',
+        aptitude_farm_days: 'we-sa-su',
+        boss_drop: 'assets/img/boss_drop/fragment_d_une_melodie_doree.webp',
+        local_material: 'assets/img/local_material/rose_arc-en-ciel.webp',
+        mob_drop:
+        [
+            'assets/img/mob_drop/insigne_de_nouvelle_recrue.webp',
+            'assets/img/mob_drop/insigne_de_sergent.webp',
+            'assets/img/mob_drop/insigne_d_officier.webp',
+        ],
+        dungeon_drop:
+        [
+            'assets/img/dungeon_drop/enseignement_de_l_ordre.webp',
+            'assets/img/dungeon_drop/guide_de_l_ordre.webp',
+            'assets/img/dungeon_drop/philosophie_de_l_ordre.webp'
+        ],
+        world_boss_drop:'assets/img/world_boss_drop/bougie_vacillante.webp',
+    },
+    {
+        name: 'Ayaka',
+        rarity: '5',
+        card_image: '/assets/img/sheet/Characters/card/kamisato_ayaka.webp',
+        character_image: '/assets/img/gallery/Characters/Kamisato_Ayaka.webp',
+        weapon: 'sword',
+        element: 'cryo',
+        bonus_elevation:'crit-dgt',
+        aptitude_farm_days: 'tu-fr-su',
+        boss_drop: 'assets/img/boss_drop/coeur_perpetuel.webp',
+        local_material: 'assets/img/local_material/fleur_de_cerisier.webp',
+        mob_drop:
+        [
+            'assets/img/mob_drop/garde-main_ancien.webp',
+            'assets/img/mob_drop/garde-main_kageuchi.webp',
+            'assets/img/mob_drop/garde-main_celebre.webp',
+        ],
+        dungeon_drop:
+        [
+            'assets/img/dungeon_drop/enseignement_de_l_elegance.webp',
+            'assets/img/dungeon_drop/guide_de_l_elegance.webp',
+            'assets/img/dungeon_drop/philosophie_de_l_elegance.webp'
+        ],
+        world_boss_drop:'assets/img/world_boss_drop/branche_de_jade_cramoisi.webp',
+    },
+    {
+        name: 'Ayato',
+        rarity: '5',
+        card_image: '/assets/img/sheet/Characters/card/kamisato_ayato.webp',
+        character_image: '/assets/img/gallery/Characters/Kamisato_Ayato.webp',
+        weapon: 'sword',
+        element: 'hydro',
+        bonus_elevation:'crit-dgt',
+        aptitude_farm_days: 'tu-fr-su',
+        boss_drop: 'assets/img/boss_drop/rosee_du_rejet.webp',
+        local_material: 'assets/img/local_material/fleur_de_cerisier.webp',
+        mob_drop:
+        [
+            'assets/img/mob_drop/garde-main_ancien.webp',
+            'assets/img/mob_drop/garde-main_kageuchi.webp',
+            'assets/img/mob_drop/garde-main_celebre.webp',
+        ],
+        dungeon_drop:
+        [
+            'assets/img/dungeon_drop/enseignement_de_l_elegance.webp',
+            'assets/img/dungeon_drop/guide_de_l_elegance.webp',
+            'assets/img/dungeon_drop/philosophie_de_l_elegance.webp'
+        ],
+        world_boss_drop:'assets/img/world_boss_drop/mudra_du_general_malefique.webp',
     }
+    // {
+    //     rarity: '5',
+    //     weapon: 'catalyst',
+    //     element: 'dendro',
+    //     character_image: '/assets/img/gallery/Characters/Baizhu.webp',
+    //     name: 'Baizhu',
+    // },
+    // {
+    //     rarity: '4',
+    //     weapon: 'catalyst',
+    //     element: 'hydro',
+    //     character_image: '/assets/img/gallery/Characters/Barbara.webp',
+    //     name: 'Barbara',
+    // },
+    // {
+    //     rarity: '4',
+    //     weapon: 'claymore',
+    //     element: 'electro',
+    //     character_image: '/assets/img/gallery/Characters/Beidou.webp',
+    //     name: 'Beidou',
+    // },
+    // {
+    //     rarity: '4',
+    //     weapon: 'sword',
+    //     element: 'pyro',
+    //     character_image: '/assets/img/gallery/Characters/Bennett.webp',
+    //     name: 'Bennett',
+    // },
+    // {
+    //     rarity: '4',
+    //     weapon: 'polearm',
+    //     element: 'hydro',
+    //     character_image: '/assets/img/gallery/Characters/Candace.webp',
+    //     name: 'Candace',
+    // },
+    // {
+    //     rarity: '4',
+    //     weapon: 'catalyst',
+    //     element: 'cryo',
+    //     character_image: '/assets/img/gallery/Characters/Charlotte.webp',
+    //     name: 'Charlotte',
+    // },
+    // {
+    //     rarity: '4',
+    //     weapon: 'polearm',
+    //     element: 'pyro',
+    //     character_image: '/assets/img/gallery/Characters/Chevreuse.webp',
+    //     name: 'Chevreuse',
+    // },
+    // {
+    //     rarity: '5',
+    //     weapon: 'sword',
+    //     element: 'geo',
+    //     character_image: '/assets/img/gallery/Characters/Chiori.webp',
+    //     name: 'Chiori',
+    // },
+    // {
+    //     rarity: '4',
+    //     weapon: 'claymore',
+    //     element: 'cryo',
+    //     character_image: '/assets/img/gallery/Characters/Chongyun.webp',
+    //     name: 'Chongyun',
+    // },
+    // {
+    //     rarity: '5',
+    //     weapon: 'sword',
+    //     element: 'electro',
+    //     character_image: '/assets/img/gallery/Characters/Clorinde.webp',
+    //     name: 'Clorinde',
+    // },
+    // {
+    //     rarity: '4',
+    //     weapon: 'bow',
+    //     element: 'dendro',
+    //     character_image: '/assets/img/gallery/Characters/Collei.webp',
+    //     name: 'Collei',
+    // },
+    // {
+    //     rarity: '5',
+    //     weapon: 'polearm',
+    //     element: 'electro',
+    //     character_image: '/assets/img/gallery/Characters/Cyno.webp',
+    //     name: 'Cyno'
+    // }
 ];
 
 let weaponsArray = [
