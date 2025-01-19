@@ -101,7 +101,7 @@ fieldset{
     border-radius: 5px;
 }
 
-@media screen and (min-width:441px) {
+@media screen and (min-width:769px) {
     *{
         font-size: 18px;
     }

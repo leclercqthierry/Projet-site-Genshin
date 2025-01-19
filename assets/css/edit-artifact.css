@@ -1,0 +1,13 @@
+form[name="edit-artifact-form"]{
+    display:none;
+}
+
+form[name="select-artifact-form"]{
+    display:flex;
+    flex-direction: column;
+}
+
+textarea{
+    resize:none;
+    padding-left: 5px;
+}

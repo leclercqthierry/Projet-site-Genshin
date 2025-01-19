@@ -15,6 +15,13 @@
         margin:15px 0;
     }
 
+    textarea{
+        resize:none;
+        padding-left: 5px;
+    }
+}
+
+@media screen and (min-width: 769px){
     form>.form-label-groups:nth-child(4){
         width:66%;
     }

@@ -52,7 +52,6 @@ weaponSelect.addEventListener('change',(e)=>{
         }
     });
     description.value = weaponsArray.find(weapon => weapon.name === e.target.value).description;
-    console.log(description.value);
 
     // creating and populating an image path array
     let imgPathArray = [];

@@ -488,92 +488,110 @@ let artifactsArray = [
     {
         rarity: '3',
         image: '/assets/img/gallery/Artefacts_set/aventurier.webp',
-        name: 'Aventurier'
+        name: 'Aventurier',
+        description: "2 Pièces: Augmente les PV max de 1 000 pts.\n\n4 Pièces: Restaure 30 % des PV pendant 5 s après l'ouverture d'un coffre."
     },
     {
         rarity: '4',
         image: '/assets/img/gallery/Artefacts_set/berserker.webp',
-        name: 'Berserker'
+        name: 'Berserker',
+        description: "2 Pièces: Augmente le taux CRIT de 12 %.\n\n4 Pièces: Augmente le taux CRIT de 24 % lorsque les PV sont inférieurs à 70 %."
     },
     {
         rarity: '5',
         image: '/assets/img/gallery/Artefacts_set/briseur_de_glace.webp',
-        name: 'Briseur de glace'
+        name: 'Briseur de glace',
+        description: "2 Pièces: Confère un bonus de DGT Cryo de 15 %.\n\n4 Pièces: Augmente le taux CRIT de 20 % lorsque le personnage attaque un ennemi affecté par l'élément Cryo. Confère un bonus supplémentaire de 20 % de taux CRIT si l'ennemi est gelé."
     },
     {
         rarity: '5',
         image: '/assets/img/gallery/Artefacts_set/Chevalerie_ensanglantee.webp',
-        name: 'Chevalerie ensanglantée'
+        name: 'Chevalerie ensanglantée',
+        description:"2 Pièces: Augmente les DGT physiques de 25 %.\n\n4 Pièces: L'utilisation d'attaques chargées ne consomme pas l'endurance pendant 10 s après la défaite d'un ennemi, et ces dernières infligent 50 % de DGT supplémentaires."
     },
     {
         rarity: '5',
         image: '/assets/img/gallery/Artefacts_set/chronique_du_pavillon_du_desert.webp',
-        name: 'Chronique du pavillon du désert'
+        name: 'Chronique du pavillon du désert',
+        description: "2 Pièces: Confère un bonus de DGT Anémo de 15 %.\n\n4 Pièces: Lorsqu'une attaque chargée a touché un ennemi, la VIT d'attaque normale du personnage augmente de 10 % et les DGT infligés par ses attaques normales, chargées et plongeantes augmentent de 40 %, pendant 15 s."
     },
     {
         rarity: '4',
         image: '/assets/img/gallery/Artefacts_set/coeur_du_brave.webp',
-        name: 'Coeur du brave'
+        name: 'Coeur du brave',
+        description:"2 Pièces: Augmente l'ATQ de 18 %.\n\n4 Pièces: Augmente les DGT infligés aux ennemis dont les PV sont supérieurs à 50 % de 30 %."
     },
     {
         rarity: '4',
         image: '/assets/img/gallery/Artefacts_set/coeur_du_gardien.webp',
-        name: 'Coeur du gardien'
+        name: 'Coeur du gardien',
+        description:"2 Pièces: Augmente la DÉF de 30 %.\n\n4 Pièces: Pour chaque personnage de l'équipe ayant un élément de type différent du personnage équipé, la RÉS élémentaire correspondante est augmentée de 30 %."
     },
     {
         rarity: '5',
         image: '/assets/img/gallery/Artefacts_set/echos_d_une_offrande.webp',
-        name: "Echo d'une offrande"
+        name: "Echo d'une offrande",
+        description:"2 Pièces: Augmente l'ATQ de 18 %.\n\n4 Pièces: En touchant un ennemi, les attaques normales ont 36 % de chances de déclencher l'effet Rituel de la vallée, augmentant les DGT d'attaque normale d'une valeur équivalant à 70 % de l'ATQ. Cet effet sera dissipé 0,05 s après avoir infligé des DGT avec une attaque normale. Chaque attaque normale ne déclenchant pas l'effet augmentera les chances de le déclencher la prochaine fois de 20 %. Cet effet peut être déclenché une fois toutes les 0,2 s."
     },
     {
         rarity: '5',
         image: '/assets/img/gallery/Artefacts_set/embleme_du_destin_brise.webp',
-        name: 'Emblême du destin brisé'
+        name: 'Emblême du destin brisé',
+        description: "2 Pièces: Augmente la recharge d'énergie de 20 %.\n\n4 Pièces: Augmente les DGT infligés par le déchaînement élémentaire d'une valeur équivalant à 25 % de la recharge d'énergie. Les DGT peuvent être augmentés d'un maximum de 75 % de cette manière."
     },
     {
         rarity: '5',
         image: '/assets/img/gallery/Artefacts_set/fleur_du_paradis_perdu.webp',
-        name: 'Fleur du paradis perdu'
+        name: 'Fleur du paradis perdu',
+        description:"2 Pièces: Augmente la maîtrise élémentaire de 80 pts.\n\n4 Pièces: Augmente les DGT infligés par les réactions de Fleurissement, d'Exubérance et de Bourgeonnement du personnage équipé de l'artéfact de 40 %. De plus, lorsque le personnage équipé de l'artéfact a déclenché une réaction de Fleurissement, d'Exubérance ou de Bourgeonnement, le bonus mentionné précédemment augmente de 25 % pendant 10 s. Cet effet peut être cumulé 4 fois maximum et déclenché une fois toutes les secondes. Cet effet peut être déclenché même si le personnage équipé de l'artéfact fait partie de l'équipe mais n'est pas déployé."
     },
     {
         rarity: '5',
         image: '/assets/img/gallery/Artefacts_set/fragment_d_harmonie_divergente.webp',
-        name: "Fragment d'harmonie divergente"
+        name: "Fragment d'harmonie divergente",
+        description: "2 Pièces: Augmente l'ATQ de 18 %.\n\n4 Pièces: Lorsque la valeur d'un engagement vital augmente ou diminue, les DGT infligés par le personnage augmentent de 18 % pendant 6 s. Cet effet peut être cumulé 3 fois maximum."
     },
     {
         rarity: '4',
         image: '/assets/img/gallery/Artefacts_set/parieur.webp',
-        name: 'Parieur'
+        name: 'Parieur',
+        description: "2 Pièces: Augmente les DGT infligés par la compétence élémentaire de 20 %.\n\n4 Pièces: Après la défaite d'un ennemi, le TdR de compétence élémentaire a 100 % de chances d'être réinitialisé. Cet effet peut être déclenché une fois toutes les 15 s."
     },
     {
         rarity: '5',
         image: '/assets/img/gallery/Artefacts_set/rideau_du_gladiateur.webp',
-        name: 'Rideau du gladiateur'
+        name: 'Rideau du gladiateur',
+        description:"2 Pièces: Augmente l'ATQ de 18 %.\n\n4 Pièces: Augmente les DGT infligés par les attaques normales de 35 % lorsque ce set d'artéfacts est équipé par les personnages armés d'une épée à une main, à deux mains ou d'une arme d'hast."
     },
     {
         rarity: '5',
         image: '/assets/img/gallery/Artefacts_set/roche_ancienne.webp',
-        name: 'Roche ancienne'
+        name: 'Roche ancienne',
+        description: "2 Pièces: Confère un bonus de DGT Géo de 15 %.\n\n4 Pièces: Lorsque vous obtenez un cristal issu d'une Cristallisation, tous les personnages de l'équipe bénéficient d'un bonus de DGT du second élément de la réaction de 35 % pendant 10 s. Cet effet ne peut s'appliquer qu'à un seul élément à la fois."
     },
     {
         rarity: '5',
         image: '/assets/img/gallery/Artefacts_set/reve_dore.webp',
-        name: 'Rêve doré'
+        name: 'Rêve doré',
+        description: "2 Pièces: Augmente la maîtrise élémentaire de 80 pts.\n\n4 Pièces: Déclencher une réaction élémentaire confère pendant 8 s au personnage équipé de l'artéfact des bonus en fonction du nombre de types élémentaires des autres personnages de l'équipe : son ATQ augmente de 14 % pour chaque membre du même type élémentaire que le sien, et sa maîtrise élémentaire augmente de 50 pts pour chaque membre de type élémentaire différent du sien. Chacun des bonus susmentionnés compte un maximum de 3 personnages. Cet effet peut être déclenché une fois toutes les 8 s, même si le personnage équipé de l'artéfact fait partie de l'équipe mais n'est pas déployé."
     },
     {
         rarity: '5',
         image: '/assets/img/gallery/Artefacts_set/sorciere_des_flammes_ardentes.webp',
-        name: 'Sorcière des flammes ardentes'
+        name: 'Sorcière des flammes ardentes',
+        description: "2 Pièces: Confère un bonus de DGT Pyro de 15 %.\n\n4 Pièces: Augmente les DGT infligés par Surcharge, Brûlure et Bourgeonnement de 40 % et ceux d'Évaporation et de Fonte de 15 %. L'utilisation d'une compétence élémentaire augmente pendant 10 s l'effet du set de 2 pièces de 50 %. Cet effet peut être cumulé 3 fois maximum."
     },
     {
         rarity: '5',
         image: '/assets/img/gallery/Artefacts_set/souvenir_de_foret.webp',
-        name: 'Souvenir de forêt'
+        name: 'Souvenir de forêt',
+        description: "2 Pièces: Confère un bonus de DGT Dendro de 15 %.\n\n4 Pièces: Après qu'une compétence ou un déchaînement élémentaires a touché un ennemi, sa RÉS Dendro diminue de 30 % pendant 8 s. Cet effet peut être déclenché même si le personnage équipé de l'artéfact fait partie de l'équipe mais n'est pas déployé."
     },
     {
         rarity: '5',
         image: '/assets/img/gallery/Artefacts_set/troupe_doree.webp',
-        name: 'Troupe dorée'
+        name: 'Troupe dorée',
+        description: "2 Pièces: Augmente les DGT infligés par la compétence élémentaire de 20 %.\n\n4 Pièces: Les DGT infligés par les compétences élémentaires augmentent de 25 %. De plus, lorsque le personnage fait partie de l'équipe mais n'est pas déployé, les DGT infligés par ses compétences élémentaires augmentent de 25 % supplémentaires, cet effet prenant fin 2 s après le déploiement du personnage."
     }
 ];
 
