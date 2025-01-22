@@ -8,7 +8,7 @@ charactersArray.forEach((character) => {
     // we retrieve the path of the image of the element corresponding to the character in the "element table"
     let character_element_image = elementArray.find(element => element.name === character.element).element_image;
     item = `
-    <a href="/character.html">
+    <a href="character.html">
         <div class="card" data-rarity="${character.rarity}" data-weapon="${character.weapon}" data-element="${character.element}">
             <div class="img-container">
                 <img src="${character.image}" alt="${character.name}" class="rarity${character.rarity} character" width="100">

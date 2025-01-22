@@ -57,7 +57,11 @@ deleteBtns.forEach(btn => {
 });
 
 editBtns.forEach(btn => {
-    //TODO:
+    // Rediriger vers la page edit-team.html en préremplissant le select du nom de la team à editer
+    btn.addEventListener('click', () => {
+        window.location.href = "edit-team.html";
+        // Remplir le select du nom de la team à editer
+    });
 });
 
 deleteAccountBtn.addEventListener('click', () => {

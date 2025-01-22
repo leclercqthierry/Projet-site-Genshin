@@ -6,7 +6,7 @@ let item = '';
 // Modifier le lien quand on fera le back (pour l'instant redirection vers la fiche Arc de guerre de Rochenoire  pour tous)
 weaponsArray.forEach((weapon) => {
     item = `
-    <a href="/weapon.html">
+    <a href="weapon.html">
         <div class="card" data-rarity="${weapon.rarity}" data-weapon="${weapon.type}">
             <img src="${weapon.image}" alt="${weapon.name}" class="rarity${weapon.rarity} weapon">
             <strong>${weapon.name}</strong>

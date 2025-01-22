@@ -6,7 +6,7 @@ let item = '';
 // Modifier le lien quand on fera back (pour l'instant redirection vers la fiche berserker pour tous)
 artifactsArray.forEach((artifact) => {
     item = `
-    <a href="/artifact.html">
+    <a href="artifact.html">
         <div class="card" data-rarity="${artifact.rarity}">
             <img src="${artifact.image}" alt="${artifact.name}" class="rarity${artifact.rarity} artifact">
             <strong>${artifact.name}</strong>

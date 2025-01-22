@@ -26,5 +26,5 @@ form.addEventListener('submit', (e) => {
         localStorage.setItem('currentUser', login);
     }
     localStorage.setItem('isAdmin', isAdmin);
-    window.location.href = isAdmin === 'true' ? '/admin-menu.html' : '/member.html';
+    window.location.href = isAdmin === 'true' ? 'admin-menu.html' : 'member.html';
 });
