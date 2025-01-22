@@ -20,12 +20,12 @@
 /* ########### Font ########### */
 @font-face {
     font-family: "Roboto Condensed";
-    src: url(/assets/font/RobotoCondensed-Bold.ttf);
+    src: url(../font/RobotoCondensed-Bold.ttf);
 }
 
 @font-face {
     font-family: "Roboto";
-    src: url(/assets/font/Roboto-Regular.ttf);
+    src: url(../font/Roboto-Regular.ttf);
 }
 /* ############################# */
 /* ######### Body CSS ########## */
