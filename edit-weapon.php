@@ -5,66 +5,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Common style-->
     <link rel="stylesheet" href="assets/css/style.css">
-    <!--add-character style-->
-    <link rel="stylesheet" href="assets/css/add-character.css">
-    <title>Panneau Admin - Ajout de personnage</title>
+    <!--add-character style (same style)-->
+    <link rel="stylesheet" href="assets/css/edit-character.css">
+    <!--add-weapon style-->
+    <link rel="stylesheet" href="assets/css/edit-weapon.css">
+    <title>Panneau Admin - Edition d'une arme</title>
 </head>
 <body>
-    <header>
-        <!--Navigation-->
-        <nav>
-            <!--Logo-->
-            <a href="index.html">
-                <img src="assets/img/Logo.webp" alt="Logo Genshin Team" id="logo">
-            </a>
-            <!--Menu toggle-->
-            <input type="checkbox" id="menu_toggle">
-            <label for="menu_toggle" id="burger">☰</label>
-            <!--Menu-->
-            <ul class="menu">
-                <li>
-                    <a href="characters-gallery.html">Galerie personnages</a>
-                </li>
-                <li>
-                    <a href="weapons-gallery.html">Galerie armes</a>
-                </li>
-                <li>
-                    <a href="artifacts-gallery.html">Galerie artéfacts</a>
-                </li> 
-                <li>
-                    <a href="teams-gallery.html">Galerie teams</a>
-                </li>
-                <li>
-                    <a href="login.html">Se connecter</a>
-                </li>
-            </ul>
-            <label for="menu_toggle" id="cross">X</label>
-        </nav>
-    </header>
+    <?php include "header.php"; ?>
     <main>
-        <h1>Ajout de personnage</h1>
+        <h1>Edition d'une arme</h1>
         <div class="container">
-            <form action="#" method="post" name="add-character-form">
+            <form action="#" method="post" name="select-weapon-form">
+                <div class="form-label">
+                    <label for="weapon">Arme à éditer</label>
+                    <select name="weapon" id="weapon">
+                        <option value=""></option>
+                        <!--generated in js-->
+                    </select>
+                </div>
+                <input type="submit" value="Valider" class="btn">
+            </form>
+            <form action="#" method="post" name="edit-weapon-form">
                 <div id="group1">
                     <div class="form-label">
                         <label for="name">Nom</label>
-                        <input type="text" id="name" name="name" title="Uniquement des lettres et commence par une majuscule" required>
+                        <input type="text" id="name" name="name">
                     </div>
                     <div class="form-label">
-                        <label for="element">Elément</label>
-                        <select name="element" id="element">
-                            <option value="anemo">Anemo</option>
-                            <option value="geo">Geo</option>
-                            <option value="electro">Electro</option>
-                            <option value="dendro">Dendro</option>
-                            <option value="hydro">Hydro</option>
-                            <option value="pyro">Pyro</option>
-                            <option value="cryo">Cryo</option>
-                        </select>
-                    </div>
-                    <div class="form-label">
-                        <label for="weapon">Arme</label>
-                        <select name="weapon" id="weapon">
+                        <label for="type">Type</label>
+                        <select name="type" id="type">
                             <option value="sword">Epée à une main</option>
                             <option value="claymore">Epée à deux mains</option>
                             <option value="bow">Arc</option>
@@ -75,6 +45,12 @@
                 </div>
                 <div id="group2">
                     <span>Rareté</span>
+                    <div class="rarity">
+                        <div>
+                            <label for="rarity3">3<sup><img src="assets/img/icons/1_star.png" alt="étoile"></sup></label>
+                        </div>
+                        <input type="radio" name="rarity" id="rarity3" value="3">
+                    </div>
                     <div class="rarity">
                         <div>
                             <label for="rarity4">4<sup><img src="assets/img/icons/1_star.png" alt="étoile"></sup></label>
@@ -88,116 +64,135 @@
                         <input type="radio" name="rarity" id="rarity5" value="5">
                     </div>
                     <div class="form-label">
-                        <label for="bonus">Bonus type</label>
+                        <label for="bonus">Sous-stat</label>
                         <select name="bonus" id="bonus">
                             <option value="atq">ATQ%</option>
                             <option value="def">DEF%</option>
                             <option value="pv">PV%</option>
-                            <option value="dgt-anemo">DGT Anemo</option>
-                            <option value="dgt-geo">DGT Geo</option>
-                            <option value="dgt-electro">DGT Electro</option>
-                            <option value="dgt-dendro">DGT Dendro</option>
-                            <option value="dgt-hydro">DGT Hydro</option>
-                            <option value="dgt-pyro">DGT Pyro</option>
-                            <option value="dgt-cryo">DGT Cryo</option>
                             <option value="dgt-phy">DGT Physique</option>
                             <option value="crit-rate">TC</option>
                             <option value="crit-dgt">DC</option>
                             <option value="re">RE</option>
                             <option value="me">ME</option>
-                            <option value="heal">Soin</option>
                         </select>
                     </div>
                     <div class="form-label">
-                        <label for="farm-days">Jours de farm aptitudes</label>
+                        <label for="obtaining">Obtention</label>
+                        <select name="obtaining" id="obtaining">
+                            <option value="wish">Voeux</option>
+                            <option value="shop">Boutique</option>
+                            <option value="event">Evènement temporaire</option>
+                            <option value="craft">Forge</option>
+                            <option value="quest">Quète</option>
+                            <option value="ps">Playstation</option>
+                            <option value="drop">Drop</option>
+                            <option value="dialog">Dialogue</option>
+                            <option value="pass">Battle Pass</option>
+                        </select>
+                    </div>
+                </div>
+                <div id="group3">
+                    <div class="form-label">
+                        <label for="farm-days">Jours de farm élévation</label>
                         <select name="farm-days" id="farm-days">
                             <option value="mo-th-su">Lundi / Jeudi / Dimanche</option>
                             <option value="tu-fr-su">Mardi / Vendredi / Dimanche</option>
                             <option value="we-sa-su">Mercredi / Samedi / Diamnche</option>
                         </select>
                     </div>
+                    <div class="form-label">
+                        <label for="description">Description</label>
+                        <textarea name="description" id="description" rows="5"></textarea>
+                    </div>
                 </div>
                 <div class="form-label-groups">
                     <div class="form-label">
                         <fieldset>
                             <legend>Miniature</legend>
-                            <input type="file" name="thumbnail" id="thumbnail" accept="image/*" required>
+                            <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
                             <legend>Card</legend>
-                            <input type="file" name="card" id="card" accept="image/*" required>
+                            <input type="file" name="card" id="card" accept="image/*">
                         </fieldset>
                     </div>
                 </div>
                 <div class="form-label-groups">
                     <div class="form-label">
                         <fieldset>
-                            <legend>Boss matériel</legend>
-                            <input type="file" name="boss-mat" id="boss-mat" accept="image/*" required>
+                            <legend>Mob matériel 1 rareté 1</legend>                        
+                            <input type="file" name="mob-mat1-r1" id="mob-mat1-r1" accept="image/*">
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
-                            <legend>Local matériel</legend>
-                            <input type="file" name="local-mat" id="local-mat" accept="image/*" required>
+                            <legend>Mob matériel 1 rareté 2</legend>
+                            <input type="file" name="mob-mat1-r2" id="mob-mat1-r2" accept="image/*">
+                        </fieldset>
+                        
+                    </div>
+                    <div class="form-label">
+                        <fieldset>
+                            <legend>Mob matériel 1 rareté 3</legend>
+                            <input type="file" name="mob-mat1-r3" id="mob-mat1-r3" accept="image/*">
+                        </fieldset>   
+                    </div>
+                </div>
+                <div class="form-label-groups">
+                    <div class="form-label">
+                        <fieldset>
+                            <legend>Mob matériel 2 rareté 2</legend>
+                            <input type="file" name="mob-mat2-r2" id="mob-mat2-r2" accept="image/*">
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
-                            <legend>World Boss matériel</legend>
-                            <input type="file" name="wb-mat" id="wb-mat" accept="image/*" required>
+                            <legend>Mob matériel 2 rareté 3</legend>
+                            <input type="file" name="mob-mat2-r3" id="mob-mat2-r3" accept="image/*">
+                        </fieldset>
+                    </div>
+                    <div class="form-label">
+                        <fieldset>
+                            <legend>Mob matériel 2 rareté 4</legend>
+                            <input type="file" name="mob-mat2-r4" id="mob-mat2-r4" accept="image/*">
                         </fieldset>
                     </div>
                 </div>
                 <div class="form-label-groups">
                     <div class="form-label">
                         <fieldset>
-                            <legend>Mob matériel rareté 1</legend>
-                            <input type="file" name="mob-mat-r1" id="mob-mat-r1" accept="image/*" required>
+                            <legend>Donjon matériel rareté 1</legend>
+                            <input type="file" name="dj-mat-r1" id="dj-mat-r1" accept="image/*">
                         </fieldset>
                     </div>
-                    <div class="form-label">
-                        <fieldset>
-                            <legend>Mob matériel rareté 2</legend>
-                            <input type="file" name="mob-mat-r2" id="mob-mat-r2" accept="image/*" required>
-                        </fieldset>
-                    </div>
-                    <div class="form-label">
-                        <fieldset>
-                            <legend>Mob matériel rareté 3</legend>
-                            <input type="file" name="mob-mat-r3" id="mob-mat-r3" accept="image/*" required>
-                        </fieldset>
-                    </div>
-                </div>
-                <div class="form-label-groups">
                     <div class="form-label">
                         <fieldset>
                             <legend>Donjon matériel rareté 2</legend>
-                            <input type="file" name="dj-mat-r2" id="dj-mat-r2" accept="image/*" required>
+                            <input type="file" name="dj-mat-r2" id="dj-mat-r2" accept="image/*">
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
                             <legend>Donjon matériel rareté 3</legend>
-                            <input type="file" name="dj-mat-r3" id="dj-mat-r3" accept="image/*" required>
+                            <input type="file" name="dj-mat-r3" id="dj-mat-r3" accept="image/*">
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
                             <legend>Donjon matériel rareté 4</legend>
-                            <input type="file" name="dj-mat-r4" id="dj-mat-r4" accept="image/*" required>
-                        </fieldset>
+                            <input type="file" name="dj-mat-r4" id="dj-mat-r4" accept="image/*">
+                        </fieldset>   
                     </div>
                 </div>
                 <input type="submit" value="Valider" class="btn">
             </form>
         </div>
     </main>
-    <footer>
-        <a href="#">Mentions légales</a>
-    </footer>
+    <?php include "footer.php"; ?>
     <script src="assets/js/connexion.js"></script>
+    <script src="assets/js/base.js"></script>
+    <script src="assets/js/edit-weapon.js"></script>
 </body>
 </html>

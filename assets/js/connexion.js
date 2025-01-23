@@ -24,7 +24,7 @@ changeLinkConnect(isConnected, isAdmin);
 ** @param {Boolean} isAdmin */
 function changeLinkConnect(isConnected, isAdmin) {
     if (isConnected === 'true' && link.textContent === 'Se connecter'){
-        link.href = isAdmin === 'true' ? 'admin-menu.html' : 'member.html';
+        link.href = isAdmin === 'true' ? 'admin-menu.php' : 'member.php';
         link.textContent = isAdmin === 'true' ? 'Panneau Admin' : 'Mes teams';
     
         // Add the deconnexion link
@@ -44,7 +44,7 @@ function changeLinkDisconnect(){
     localStorage.removeItem('isAdmin');
     localStorage.removeItem('currentUser');
     // Return to index.html
-    window.location.href = 'index.html';
+    window.location.href = 'index.php';
 }
 
 

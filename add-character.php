@@ -6,59 +6,19 @@
     <!--Common style-->
     <link rel="stylesheet" href="assets/css/style.css">
     <!--add-character style-->
-    <link rel="stylesheet" href="assets/css/edit-character.css">
-    <title>Panneau Admin - Edition d'un personnage</title>
+    <link rel="stylesheet" href="assets/css/add-character.css">
+    <title>Panneau Admin - Ajout de personnage</title>
 </head>
 <body>
-    <header>
-        <!--Navigation-->
-        <nav>
-            <!--Logo-->
-            <a href="index.html">
-                <img src="assets/img/Logo.webp" alt="Logo Genshin Team" id="logo">
-            </a>
-            <!--Menu toggle-->
-            <input type="checkbox" id="menu_toggle">
-            <label for="menu_toggle" id="burger">☰</label>
-            <!--Menu-->
-            <ul class="menu">
-                <li>
-                    <a href="characters-gallery.html">Galerie personnages</a>
-                </li>
-                <li>
-                    <a href="weapons-gallery.html">Galerie armes</a>
-                </li>
-                <li>
-                    <a href="artifacts-gallery.html">Galerie artéfacts</a>
-                </li> 
-                <li>
-                    <a href="teams-gallery.html">Galerie teams</a>
-                </li>
-                <li>
-                    <a href="login.html">Se connecter</a>
-                </li>
-            </ul>
-            <label for="menu_toggle" id="cross">X</label>
-        </nav>
-    </header>
+    <?php include "header.php"; ?>
     <main>
-        <h1>Edition d'un personnage</h1>
+        <h1>Ajout de personnage</h1>
         <div class="container">
-            <form action="#" method="post" name="select-character-form">
-                <div class="form-label">
-                    <label for="character">Personnage à éditer</label>
-                    <select name="character" id="character">
-                        <option value=""></option>
-                        <!--generated in js-->
-                    </select>
-                </div>
-                <input type="submit" value="Valider" class="btn">
-            </form>
-            <form action="#" method="post" name="edit-character-form">
+            <form action="#" method="post" name="add-character-form">
                 <div id="group1">
                     <div class="form-label">
                         <label for="name">Nom</label>
-                        <input type="text" id="name" name="name" title="Uniquement des lettres et commence par une majuscule">
+                        <input type="text" id="name" name="name" title="Uniquement des lettres et commence par une majuscule" required>
                     </div>
                     <div class="form-label">
                         <label for="element">Elément</label>
@@ -131,13 +91,13 @@
                     <div class="form-label">
                         <fieldset>
                             <legend>Miniature</legend>
-                            <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
+                            <input type="file" name="thumbnail" id="thumbnail" accept="image/*" required>
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
                             <legend>Card</legend>
-                            <input type="file" name="card" id="card" accept="image/*">
+                            <input type="file" name="card" id="card" accept="image/*" required>
                         </fieldset>
                     </div>
                 </div>
@@ -145,19 +105,19 @@
                     <div class="form-label">
                         <fieldset>
                             <legend>Boss matériel</legend>
-                            <input type="file" name="boss-mat" id="boss-mat" accept="image/*">
+                            <input type="file" name="boss-mat" id="boss-mat" accept="image/*" required>
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
                             <legend>Local matériel</legend>
-                            <input type="file" name="local-mat" id="local-mat" accept="image/*">
+                            <input type="file" name="local-mat" id="local-mat" accept="image/*" required>
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
                             <legend>World Boss matériel</legend>
-                            <input type="file" name="wb-mat" id="wb-mat" accept="image/*">
+                            <input type="file" name="wb-mat" id="wb-mat" accept="image/*" required>
                         </fieldset>
                     </div>
                 </div>
@@ -165,19 +125,19 @@
                     <div class="form-label">
                         <fieldset>
                             <legend>Mob matériel rareté 1</legend>
-                            <input type="file" name="mob-mat-r1" id="mob-mat-r1" accept="image/*">
+                            <input type="file" name="mob-mat-r1" id="mob-mat-r1" accept="image/*" required>
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
                             <legend>Mob matériel rareté 2</legend>
-                            <input type="file" name="mob-mat-r2" id="mob-mat-r2" accept="image/*">
+                            <input type="file" name="mob-mat-r2" id="mob-mat-r2" accept="image/*" required>
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
                             <legend>Mob matériel rareté 3</legend>
-                            <input type="file" name="mob-mat-r3" id="mob-mat-r3" accept="image/*">
+                            <input type="file" name="mob-mat-r3" id="mob-mat-r3" accept="image/*" required>
                         </fieldset>
                     </div>
                 </div>
@@ -185,19 +145,19 @@
                     <div class="form-label">
                         <fieldset>
                             <legend>Donjon matériel rareté 2</legend>
-                            <input type="file" name="dj-mat-r2" id="dj-mat-r2" accept="image/*">
+                            <input type="file" name="dj-mat-r2" id="dj-mat-r2" accept="image/*" required>
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
                             <legend>Donjon matériel rareté 3</legend>
-                            <input type="file" name="dj-mat-r3" id="dj-mat-r3" accept="image/*">
+                            <input type="file" name="dj-mat-r3" id="dj-mat-r3" accept="image/*" required>
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
                             <legend>Donjon matériel rareté 4</legend>
-                            <input type="file" name="dj-mat-r4" id="dj-mat-r4" accept="image/*">
+                            <input type="file" name="dj-mat-r4" id="dj-mat-r4" accept="image/*" required>
                         </fieldset>
                     </div>
                 </div>
@@ -205,11 +165,7 @@
             </form>
         </div>
     </main>
-    <footer>
-        <a href="#">Mentions légales</a>
-    </footer>
+    <?php include "footer.php"; ?>
     <script src="assets/js/connexion.js"></script>
-    <script src="assets/js/base.js"></script>
-    <script src="assets/js/edit-character.js"></script>
 </body>
 </html>

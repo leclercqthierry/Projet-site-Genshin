@@ -5,156 +5,120 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Common style-->
     <link rel="stylesheet" href="assets/css/style.css">
-    <!--add-team common style-->
+    <!--add-team style-->
     <link rel="stylesheet" href="assets/css/add-team.css">
-    <link rel="stylesheet" href="assets/css/edit-team.css">
-    <title>Panneau Admin - Edition d'une team</title>
+    <title>Panneau Admin - Ajout d'une team</title>
 </head>
 <body>
-    <header>
-        <!--Navigation-->
-        <nav>
-            <!--Logo-->
-            <a href="index.html">
-                <img src="assets/img/Logo.webp" alt="Logo Genshin Team" id="logo">
-            </a>
-            <!--Menu toggle-->
-            <input type="checkbox" id="menu_toggle">
-            <label for="menu_toggle" id="burger">☰</label>
-            <!--Menu-->
-            <ul class="menu">
-                <li>
-                    <a href="characters-gallery.html">Galerie personnages</a>
-                </li>
-                <li>
-                    <a href="weapons-gallery.html">Galerie armes</a>
-                </li>
-                <li>
-                    <a href="artifacts-gallery.html">Galerie artéfacts</a>
-                </li> 
-                <li>
-                    <a href="teams-gallery.html">Galerie teams</a>
-                </li>
-                <li>
-                    <a href="login.html">Se connecter</a>
-                </li>
-            </ul>
-            <label for="menu_toggle" id="cross">X</label>
-        </nav>
-    </header>
+    <?php include "header.php"; ?>
     <main>
-        <h1>Edition d'une team</h1>
+        <h1>Ajout d'une team</h1>
         <div class="container">
-            <form action="#" method="post" name="select-team-form">
-                <div class="form-label">
-                    <label for="team">Team à éditer</label>
-                    <select name="team" id="team">
-                        <option value=""></option>
-                        <!--generated in js-->
-                    </select>
-                </div>
-                <input type="submit" value="Valider" class="btn">
-            </form>
-            <form action="#" method="post" name="edit-team-form">
+            <form action="#" method="post" name="add-team-form">
                 <div class="form-container">
                     <fieldset id="field1">
                         <legend>Personnage 1</legend>
                         <div class="form-label">
                             <label for="char1">Choix du personnage</label>
-                            <select name="char" id="char1">
+                            <select name="char" id="char1" required>
+                                <option value=""></option>
                                 <!--generated in js-->
                             </select>
                         </div>
                         <div class="form-label">
                             <label for="weapon1">Choix de l'arme</label>
-                            <select name="weapon" id="weapon1">
+                            <select name="weapon" id="weapon1" required>
                                 <!--generated in js-->
                             </select>
                         </div>
                         <div class="form-label">
                             <label for="set1">Choix du set d'artéfacts</label>
-                            <select name="artifact" id="set1">
+                            <select name="artifact" id="set1" required>
+                                <option value=""></option>
                                 <!--generated in js-->
                             </select>
                         </div>
                         <div class="form-label">
                             <label for="note1">Complément d'information</label>
-                            <textarea name="note1" id="note1" rows="5"></textarea>
+                            <textarea name="note1" id="note1" rows="5" placeholder="Sablier: Maîtrise élémentaire / ATQ% Gobelet: Bonus de DGT Dendro Coiffe: Taux CRIT / DGT CRIT" id="note"></textarea>
                         </div>
                     </fieldset>
                     <fieldset id="field2">
                         <legend>Personnage 2</legend>
                         <div class="form-label">
                             <label for="char2">Choix du personnage</label>
-                            <select name="char" id="char2">
+                            <select name="char" id="char2" required>
+                                <option value=""></option>
                                 <!--generated in js-->
                             </select>
                         </div>
                         <div class="form-label">
                             <label for="weapon2">Choix de l'arme</label>
-                            <select name="weapon" id="weapon2">
+                            <select name="weapon" id="weapon2" required>
                                 <!--generated in js-->
                             </select>
                         </div>
                         <div class="form-label">
                             <label for="set2">Choix du set d'artéfacts</label>
-                            <select name="artifact" id="set2">
+                            <select name="artifact" id="set2" required>
                                 <!--generated in js-->
                             </select>
                         </div>
                         <div class="form-label">
                             <label for="note2">Complément d'information</label>
-                            <textarea name="note2" id="note2" rows="5"></textarea>
+                            <textarea name="note2" id="note2" rows="5" placeholder="Sablier: Maîtrise élémentaire / ATQ% Gobelet: Bonus de DGT Dendro Coiffe: Taux CRIT / DGT CRIT" id="note"></textarea>
                         </div>
                     </fieldset>
                     <fieldset id="field3">
                         <legend>Personnage 3</legend>
                         <div class="form-label">
                             <label for="char3">Choix du personnage</label>
-                            <select name="char" id="char3">
+                            <select name="char" id="char3" required>
+                                <option value=""></option>
                                 <!--generated in js-->
                             </select>
                         </div>
                         <div class="form-label">
                             <label for="weapon3">Choix de l'arme</label>
-                            <select name="weapon" id="weapon3">
+                            <select name="weapon" id="weapon3" required>
                                 <!--generated in js-->
                             </select>
                         </div>
                         <div class="form-label">
                             <label for="set3">Choix du set d'artéfacts</label>
-                            <select name="artifact" id="set3">
+                            <select name="artifact" id="set3" required>
                                 <!--generated in js-->
                             </select>
                         </div>
                         <div class="form-label">
                             <label for="note3">Complément d'information</label>
-                            <textarea name="note3" id="note3" rows="5"></textarea>
+                            <textarea name="note3" id="note3" rows="5" placeholder="Sablier: Maîtrise élémentaire / ATQ% Gobelet: Bonus de DGT Dendro Coiffe: Taux CRIT / DGT CRIT" id="note"></textarea>
                         </div>
                     </fieldset>
                     <fieldset id="field4">
                         <legend>Personnage 4</legend>
                         <div class="form-label">
                             <label for="char4">Choix du personnage</label>
-                            <select name="char" id="char4">
+                            <select name="char" id="char4" required>
+                                <option value=""></option>
                                 <!--generated in js-->
                             </select>
                         </div>
                         <div class="form-label">
                             <label for="weapon4">Choix de l'arme</label>
-                            <select name="weapon" id="weapon4">
+                            <select name="weapon" id="weapon4" required>
                                 <!--generated in js-->
                             </select>
                         </div>
                         <div class="form-label">
                             <label for="set4">Choix du set d'artéfacts</label>
-                            <select name="artifact" id="set4">
+                            <select name="artifact" id="set4" required>
                                 <!--generated in js-->
                             </select>
                         </div>
                         <div class="form-label">
                             <label for="note4">Complément d'information</label>
-                            <textarea name="note4" id="note4" rows="5"></textarea>
+                            <textarea name="note4" id="note4" rows="5" placeholder="Sablier: Maîtrise élémentaire / ATQ% Gobelet: Bonus de DGT Dendro Coiffe: Taux CRIT / DGT CRIT" id="note"></textarea>
                         </div>
                     </fieldset>
                 </div>
@@ -162,11 +126,9 @@
             </form>
         </div>
     </main>
-    <footer>
-        <a href="#">Mentions légales</a>
-    </footer>
+    <?php include "footer"; ?>
     <script src="assets/js/connexion.js"></script>
     <script src="assets/js/base.js"></script>
-    <script src="assets/js/edit-team.js"></script>
+    <script src="assets/js/add-team.js"></script>
 </body>
 </html>

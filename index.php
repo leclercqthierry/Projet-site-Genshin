@@ -11,37 +11,7 @@
     <title>Accueil</title>
 </head>
 <body>
-    <header>
-        <!--Navigation-->
-        <nav>
-            <!--Logo-->
-            <a href="index.html">
-                <img src="assets/img/Logo.webp" alt="Accueil" id="logo">
-            </a>
-            <!--Menu toggle-->
-            <input type="checkbox" id="menu_toggle">
-            <label for="menu_toggle" id="burger">☰</label>
-            <!--Menu-->
-            <ul class="menu">
-                <li>
-                    <a href="characters-gallery.html">Galerie personnages</a>
-                </li>
-                <li>
-                    <a href="weapons-gallery.html">Galerie armes</a>
-                </li>
-                <li>
-                    <a href="artifacts-gallery.html">Galerie artéfacts</a>
-                </li> 
-                <li>
-                    <a href="teams-gallery.html">Galerie teams</a>
-                </li>
-                <li>
-                    <a href="login.html">Se connecter</a>
-                </li>
-            </ul>
-            <label for="menu_toggle" id="cross">X</label>
-        </nav>
-    </header>
+    <?php include "header.php"; ?>
     <main>
         <h1>News</h1>
         <div class="news-container">
@@ -58,9 +28,7 @@
             </ul>
         </div>
     </main>
-    <footer>
-        <a href="#">Mentions légales</a>
-    </footer>
+<?php include "footer.php"; ?>
     <script src="assets/js/connexion.js"></script>
 </body>
 </html>
