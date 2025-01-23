@@ -1,26 +1,3 @@
-// Create the gallery 
-const gallery = document.querySelector('div.gallery');
-let HTML = '';
-let item = '';
-
-// Modifier peut être quand on fera le back (pour l'instant redirection vers la fiche character ayant le même contenu pour tous)
-charactersArray.forEach((character) => {
-    // we retrieve the path of the image of the element corresponding to the character in the "element table"
-    let character_element_image = elementArray.find(element => element.name === character.element).element_image;
-    item = `
-    <a href="character.html">
-        <div class="card" data-rarity="${character.rarity}" data-weapon="${character.weapon}" data-element="${character.element}">
-            <div class="img-container">
-                <img src="${character.image}" alt="${character.name}" class="rarity${character.rarity} character" width="100">
-                <img src="${character_element_image}" class="img-element">
-            </div>
-            <strong>${character.name}</strong>
-        </div>
-    </a>`;
-    HTML += item;
-});
-gallery.innerHTML = HTML;
-
 // Radio, checkbox, sort and filters
 const weapons = document.getElementsByName('weapon');
 const rarities = document.querySelectorAll('main input[type=checkbox]');

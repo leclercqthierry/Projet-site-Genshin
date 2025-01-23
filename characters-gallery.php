@@ -131,12 +131,34 @@
         </div>
         <!--Characters gallery-->
         <div class="gallery">
-            <!--Generated in javascript-->
+            <!--Generate the gallery-->
+            <?php
+            include "base.php";
+            foreach ($characters as $character){
+                foreach ($elements as $element){
+                    if ($element['name'] === $character['element']){
+                        $character_element_image = $element['element_image'];
+                    }
+                }
+                $HTML='';
+                $item ="
+                <a href='character.php'>
+                    <div class='card' data-rarity=$character[rarity] data-weapon=$character[weapon] data-element=$character[element]>
+                        <div class='img-container'>
+                            <img src=$character[image] alt=$character[name] class='rarity$character[rarity] character' width='100'>
+                            <img src=$character_element_image class='img-element'>
+                        </div>
+                        <strong>$character[name]</strong>
+                    </div>
+                </a>";
+                $HTML .= $item;
+                echo $HTML;
+            }
+            ?>
         </div>
     </main>
     <?php include "footer.php"; ?>
     <script src="assets/js/connexion.js"></script>
-    <script src="assets/js/base.js"></script>
     <script src="assets/js/characters-gallery.js"></script>
 </body>
 </html>
