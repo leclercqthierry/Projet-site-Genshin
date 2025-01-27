@@ -3,9 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="preload" as="style" href="assets/css/style.css">
-    <link rel="preload" as="style" href="assets/css/gallery-common-style.css">
-    <link rel="preload" as="style" href="assets/css/characters-gallery.css"> -->
     <!--Common style-->
     <link rel="stylesheet" href="assets/css/style.css">
     <!--Common gallery style-->
@@ -140,19 +137,17 @@
                         $character_element_image = $element['element_image'];
                     }
                 }
-                $HTML='';
                 $item ="
                 <a href='character.php'>
-                    <div class='card' data-rarity=$character[rarity] data-weapon=$character[weapon] data-element=$character[element]>
+                    <div class='card' data-rarity=".$character['rarity']." data-weapon=".$character['weapon']." data-element=".$character['element'].">
                         <div class='img-container'>
-                            <img src=$character[image] alt=$character[name] class='rarity$character[rarity] character' width='100'>
-                            <img src=$character_element_image class='img-element'>
+                            <img src=".$character['image']." alt=".$character['name']." class='rarity".$character['rarity']." character' width='100'>
+                            <img src=".$character_element_image." class='img-element'>
                         </div>
-                        <strong>$character[name]</strong>
+                        <strong>".$character['name']."</strong>
                     </div>
                 </a>";
-                $HTML .= $item;
-                echo $HTML;
+                echo $item;
             }
             ?>
         </div>

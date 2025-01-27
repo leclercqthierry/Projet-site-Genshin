@@ -85,12 +85,24 @@
         </div>
         <!--Weapons gallery-->
         <div class="gallery">
-            <!--Generated in javascript-->
+            <!--Generated in php-->
+            <?php
+            include "base.php";
+            foreach($weapons as $weapon) {
+                $item = "
+                <a href='weapon.php'>
+                    <div class='card' data-rarity=".$weapon['rarity']." data-weapon=".$weapon['type'].">
+                        <img src=".$weapon['image']." alt=".$weapon['name']." class='rarity".$weapon['rarity']." weapon'>
+                        <strong>".$weapon['name']."</strong>
+                    </div>
+                </a>";
+                echo $item;
+            };
+            ?>
         </div>
     </main>
     <?php include "footer.php"; ?>
     <script src="assets/js/connexion.js"></script>
-    <script src="assets/js/base.js"></script>
     <script src="assets/js/weapons-gallery.js"></script>
 </body>
 </html>

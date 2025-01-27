@@ -43,12 +43,24 @@
         </div>
         <!--Artefacts gallery-->
         <div class="gallery">
-            <!--Generated in javascript-->
+            <!--Generated in php-->
+            <?php
+            include "base.php";
+            foreach($artifacts as $artifact) {
+                $item = "
+                <a href='artifact.php'>
+                    <div class='card' data-rarity=".$artifact['rarity'].">
+                        <img src=".$artifact['image']." alt=".$artifact['name']." class='rarity".$artifact['rarity']." artifact'>
+                        <strong>".$artifact['name']."</strong>
+                    </div>
+                </a>";
+                echo $item;
+            };
+            ?>
         </div>
     </main>
     <?php include "footer.php"; ?>
     <script src="assets/js/connexion.js"></script>
-    <script src="assets/js/base.js"></script>
     <script src="assets/js/artifacts-gallery.js"></script>
 </body>
 </html>
