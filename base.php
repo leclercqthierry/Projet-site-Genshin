@@ -28,10 +28,10 @@ $elements =
         "element_image"=> 'assets/img/icons/Electro.png',
         "char_jewel"=>
         [
-            'assets/img/char_jewel/eclat_de_amethyste_vajrada.webp',
-            'assets/img/char_jewel/fragment_de_amethyste_vajrada.webp',
-            'assets/img/char_jewel/morceau_de_amethyste_vajrada.webp',
-            'assets/img/char_jewel/pierre_de_amethyste_vajrada.webp'
+            'assets/img/char_jewel/eclat_d_amethyste_vajrada.webp',
+            'assets/img/char_jewel/fragment_d_amethyste_vajrada.webp',
+            'assets/img/char_jewel/morceau_d_amethyste_vajrada.webp',
+            'assets/img/char_jewel/pierre_d_amethyste_vajrada.webp'
         ]
     ],
     [
@@ -235,7 +235,7 @@ $characters =
     [
         "name"=> 'Emilie',
         "rarity"=> '5',
-        "card"=> 'assets/img/sheet/Characters/Card/Emilie.webp',
+        "card"=> 'assets/img/sheet/Characters/Card/emilie.webp',
         "image"=> 'assets/img/gallery/Characters/Emilie.webp',
         "weapon"=> 'polearm',
         "element"=> 'dendro',
@@ -260,7 +260,7 @@ $characters =
     [
         "name"=> 'Xiangling',
         "rarity"=> '4',
-        "card"=> 'assets/img/sheet/Characters/Card/Xiangling.webp',
+        "card"=> 'assets/img/sheet/Characters/Card/xiangling.webp',
         "image"=> 'assets/img/gallery/Characters/Xiangling.webp',
         "weapon"=> 'polearm',
         "element"=> 'pyro',
@@ -285,7 +285,7 @@ $characters =
     [
         "name"=> 'Bennett',
         "rarity"=> '4',
-        "card"=> 'assets/img/sheet/Characters/Card/Bennett.webp',
+        "card"=> 'assets/img/sheet/Characters/Card/bennett.webp',
         "image"=> 'assets/img/gallery/Characters/Bennett.webp',
         "weapon"=> 'sword',
         "element"=> 'pyro',
@@ -310,7 +310,7 @@ $characters =
     [
         "name"=> 'Mualani',
         "rarity"=> '5',
-        "card"=> 'assets/img/sheet/Characters/Card/Mualani.webp',
+        "card"=> 'assets/img/sheet/Characters/Card/mualani.webp',
         "image"=> 'assets/img/gallery/Characters/Mualani.webp',
         "weapon"=> 'catalyst',
         "element"=> 'hydro',
@@ -335,7 +335,7 @@ $characters =
     [
         "name"=> 'Kachina',
         "rarity"=> '4',
-        "card"=> 'assets/img/sheet/Characters/Card/Kachina.webp',
+        "card"=> 'assets/img/sheet/Characters/Card/kachina.webp',
         "image"=> 'assets/img/gallery/Characters/Kachina.webp',
         "weapon"=> 'polearm',
         "element"=> 'geo',
@@ -360,7 +360,7 @@ $characters =
     [
         "name"=> 'Zhongli',
         "rarity"=> '5',
-        "card"=> 'assets/img/sheet/Characters/Card/Zhongli.webp',
+        "card"=> 'assets/img/sheet/Characters/Card/zhongli.webp',
         "image"=> 'assets/img/gallery/Characters/Zhongli.webp',
         "weapon"=> 'polearm',
         "element"=> 'geo',

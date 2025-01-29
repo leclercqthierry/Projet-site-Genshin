@@ -14,10 +14,13 @@
     <main>
         <h1>Mes teams</h1>
         <div class="gallery">
-            <!--generated in js-->
+            <!--generated in php-->
+            <?php 
+                
+            ?>
         </div>
         <div class="btn-container2">
-            <a href="add-team.html" class="btn">Créer une nouvelle team</a>
+            <a href="add-team.php" class="btn">Créer une nouvelle team</a>
             <button class="btn">Supprimer mon compte</button>
         </div>
     </main>

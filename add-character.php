@@ -63,19 +63,19 @@
                             <option value="atq">ATQ%</option>
                             <option value="def">DEF%</option>
                             <option value="pv">PV%</option>
-                            <option value="dgt-anemo">DGT Anemo</option>
-                            <option value="dgt-geo">DGT Geo</option>
-                            <option value="dgt-electro">DGT Electro</option>
-                            <option value="dgt-dendro">DGT Dendro</option>
-                            <option value="dgt-hydro">DGT Hydro</option>
-                            <option value="dgt-pyro">DGT Pyro</option>
-                            <option value="dgt-cryo">DGT Cryo</option>
-                            <option value="dgt-phy">DGT Physique</option>
+                            <option value="dgt-anemo">DGT% Anemo</option>
+                            <option value="dgt-geo">DGT% Geo</option>
+                            <option value="dgt-electro">DGT% Electro</option>
+                            <option value="dgt-dendro">DGT% Dendro</option>
+                            <option value="dgt-hydro">DGT% Hydro</option>
+                            <option value="dgt-pyro">DGT% Pyro</option>
+                            <option value="dgt-cryo">DGT% Cryo</option>
+                            <option value="dgt-phy">DGT% Physique</option>
                             <option value="crit-rate">TC</option>
                             <option value="crit-dgt">DC</option>
                             <option value="re">RE</option>
                             <option value="me">ME</option>
-                            <option value="heal">Soin</option>
+                            <option value="heal">%Soins</option>
                         </select>
                     </div>
                     <div class="form-label">
