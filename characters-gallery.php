@@ -138,7 +138,7 @@
                     }
                 }
                 $item ="
-                <a href='character.php?name=".$character['name']."'>
+                <a href='character.php?id=".$character['id']."'>
                     <div class='card' data-rarity=".$character['rarity']." data-weapon=".$character['weapon']." data-element=".$character['element'].">
                         <div class='img-container'>
                             <img src=".$character['image']." alt=".$character['name']." class='rarity".$character['rarity']." character' width='100'>

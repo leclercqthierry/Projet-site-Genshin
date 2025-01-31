@@ -5,7 +5,7 @@ $currentWeapon = [];
 
 // We retrieve the weapon through the link
 foreach ($weapons as $weapon) {
-    if ($weapon['name'] === htmlspecialchars($_GET['name'])){
+    if ($weapon['id'] === htmlspecialchars($_GET['id'])){
         $currentWeapon = $weapon;
         break;
     }

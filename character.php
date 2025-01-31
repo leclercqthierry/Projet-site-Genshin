@@ -5,7 +5,7 @@
 
     // We retrieve the character through the link
     foreach ($characters as $character) {
-        if ($character['name'] === htmlspecialchars($_GET['name'])){
+        if ($character['id'] === htmlspecialchars($_GET['id'])){
             $currentCharacter = $character;
         }
     }

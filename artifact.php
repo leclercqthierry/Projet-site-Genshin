@@ -4,7 +4,7 @@ $currentArtifact = [];
 
 // We retrieve the artifact through the link
 foreach ($artifacts as $artifact) {
-    if ($artifact['name'] === htmlspecialchars($_GET['name'])){
+    if ($artifact['id'] === htmlspecialchars($_GET['id'])){
         $currentArtifact = $artifact;
         break;
     }
