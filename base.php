@@ -394,7 +394,7 @@ $weapons =
         'image'=> 'assets/img/gallery/Weapons/absolution.webp',
         'sub_stat'=> 'crit-dgt',
         'obtaining'=> 'wish',
-        'farms_days'=> 'mo-th-su',
+        'farm_days'=> 'mo-th-su',
         'description'=> "Augmente les DGT CRIT de 20 %. Lorsque la valeur d'un engagement vital augmente, les DGT infligés par le personnage équipé de l'arme augmentent de 16 % pendant 6 s, cet effet pouvant être cumulé 3 fois maximum.",
         'dungeon_weapon'=> 
         [
@@ -424,7 +424,7 @@ $weapons =
         'image'=> 'assets/img/gallery/Weapons/agate_de_rochenoire.webp',
         'sub_stat'=> 'crit-dgt',
         'obtaining'=> 'shop',
-        'farms_days'=> 'mo-th-su',
+        'farm_days'=> 'mo-th-su',
         'description'=> "Augmente l'ATQ de 12 % pendant 30 s après avoir vaincu un ennemi. Cet effet peut être cumulé 3 fois maximum et la durée de chaque cumul peut varier.",
         'dungeon_weapon'=> 
         [

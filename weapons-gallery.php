@@ -90,7 +90,7 @@
             include "base.php";
             foreach($weapons as $weapon) {
                 $item = "
-                <a href='weapon.php'>
+                <a href='weapon.php?name=".$weapon['name']."'>
                     <div class='card' data-rarity=".$weapon['rarity']." data-weapon=".$weapon['type'].">
                         <img src=".$weapon['image']." alt=".$weapon['name']." class='rarity".$weapon['rarity']." weapon'>
                         <strong>".$weapon['name']."</strong>

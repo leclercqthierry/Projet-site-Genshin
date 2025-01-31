@@ -1,12 +1,23 @@
 <?php 
-    include "header.php";
     include "base.php";
+    include "functions.php";
     $currentCharacter = [];
+
+    // We retrieve the character through the link
     foreach ($characters as $character) {
-        if ($character['name'] === $_GET['name']){
+        if ($character['name'] === htmlspecialchars($_GET['name'])){
             $currentCharacter = $character;
         }
     }
+
+    ################ En attendant une page 404 ################
+    // If the character is not found, we redirect to the characters gallery
+    if (empty($currentCharacter)) {
+        header("Location: characters-gallery.php");
+        exit;
+    }
+
+    // character was found
     $card = $currentCharacter['card'];
     $name = $currentCharacter['name'];
     $rarity = $currentCharacter['rarity'];
@@ -18,6 +29,7 @@
         case 'catalyst' : $weapon = 'Catalyseur'; break;
         case 'polearm' : $weapon = 'Arme d\'hast';
     };
+
     switch($currentCharacter['bonus_elevation']){
         case 'atq': $bonus = 'ATQ%'; break;
         case 'def': $bonus = 'DEF%'; break;
@@ -36,28 +48,36 @@
         case 'me': $bonus = 'ME'; break;
         case 'heal': $bonus = '%Soins';
     }
+
     switch($currentCharacter['aptitude_farm_days']){
         case 'mo-th-su': $days = 'Lundi / Jeudi / Dimanche'; break;
         case 'tu-fr-su': $days = 'Mardi / Vendredi / Dimanche'; break;
         case 'we-sa-su': $days = 'Mercredi / Samedi / Dimanche';
     }
+
     foreach($elements as $el){
         if ($element === $el['name']){
-            $charJewel = $el['char_jewel'];
+            $charJewelPath = $el['char_jewel'];
         }
     };
-    $localMaterial = $currentCharacter['local_material'];
-    $mobDrop = $currentCharacter['mob_drop'];
-    $dungeonDrop = $currentCharacter['dungeon_drop'];
-    $bossDrop = $currentCharacter['boss_drop'];
-    $worldBossDrop = $currentCharacter['world_boss_drop'];
-    function extractNameFile($fileName){
-        // on extrait les sous-chaines délimitées par /, on inverse le tableau obtenu et prend le premier élément (on obtient le fichier avec l'extension))
-        $tmp = array_reverse(explode('/', $fileName))[0];
-        // on extrait cette fois les sous-chaines délimitées par . 
-        return explode('.', $tmp)[0];
-    }
-    $HTML="
+    $charJewel = extractNameArray($charJewelPath);
+
+    $localMaterialPath = $currentCharacter['local_material'];
+    $localMaterial = extractNameString($localMaterialPath);
+
+    $mobDropPath = $currentCharacter['mob_drop'];
+    $mobDrop = extractNameArray($mobDropPath);
+
+    $dungeonDropPath = $currentCharacter['dungeon_drop'];
+    $dungeonDrop = extractNameArray($dungeonDropPath);
+
+    $bossDropPath = $currentCharacter['boss_drop'];
+    $bossDrop = extractNameString($bossDropPath);
+
+    $worldBossDropPath = $currentCharacter['world_boss_drop'];
+    $worldBossDrop = extractNameString($worldBossDropPath);
+
+    echo "
 <!DOCTYPE html>
 <html lang='fr'>
 <head>
@@ -69,7 +89,9 @@
     <link rel='stylesheet' href='assets/css/character.css'>
     <title>".$name."</title>
 </head>
-<body>
+<body>";
+    include "header.php";
+    echo"
     <main>
         <h1>Fiche Personnage</h1>
         <div class='container'>
@@ -158,50 +180,50 @@
                     </tr>
                     <tr>
                         <td>Niveau 20</td>
-                        <td><img src=".$charJewel[0]." alt=".extractNameFile($charJewel[0])." title=".extractNameFile($charJewel[0])." class='rarity2'>x1</td>
+                        <td><img src=".$charJewelPath[0]." alt=".$charJewel[0]." title=".$charJewel[0]." class='rarity2'>x1</td>
                         <td></td>
-                        <td><img src=".$localMaterial." alt=".extractNameFile($localMaterial)." title=".extractNameFile($localMaterial)." class='rarity1'>x3</td>
-                        <td><img src=".$mobDrop[0]." alt=".extractNameFile($mobDrop[0])." title=".extractNameFile($mobDrop[0])." class='rarity1'>x3</td>
+                        <td><img src=".$localMaterialPath." alt=".$localMaterial." title=".$localMaterial." class='rarity1'>x3</td>
+                        <td><img src=".$mobDropPath[0]." alt=".$mobDrop[0]." title=".$mobDrop[0]." class='rarity1'>x3</td>
                         <td>20 000</td>
                     </tr>
                     <tr>
                         <td>Niveau 40</td>
-                        <td><img src=".$charJewel[1]." alt=".extractNameFile($charJewel[1])." title=".extractNameFile($charJewel[1])." class='rarity3'>x3</td>
-                        <td><img src=".$bossDrop." alt=".extractNameFile($bossDrop)." title=".extractNameFile($bossDrop)." class='rarity4'>x2</td>
-                        <td><img src=".$localMaterial." alt=".extractNameFile($localMaterial)." title=".extractNameFile($localMaterial)." class='rarity1'>x10</td>
-                        <td><img src=".$mobDrop[0]." alt=".extractNameFile($mobDrop[0])." title=".extractNameFile($mobDrop[0])." class='rarity1'>x15</td>
+                        <td><img src=".$charJewelPath[1]." alt=".$charJewel[1]." title=".$charJewel[1]." class='rarity3'>x3</td>
+                        <td><img src=".$bossDropPath." alt=".$bossDrop." title=".$bossDrop." class='rarity4'>x2</td>
+                        <td><img src=".$localMaterialPath." alt=".$localMaterial." title=".$localMaterial." class='rarity1'>x10</td>
+                        <td><img src=".$mobDropPath[0]." alt=".$mobDrop[0]." title=".$mobDrop[0]." class='rarity1'>x15</td>
                         <td>40 000</td>
                     </tr>
                     <tr>
                         <td>Niveau 50</td>
-                        <td><img src=".$charJewel[1]." alt=".extractNameFile($charJewel[1])." title=".extractNameFile($charJewel[1])." class='rarity3'>x6</td>
-                        <td><img src=".$bossDrop." alt=".extractNameFile($bossDrop)." title=".extractNameFile($bossDrop)." class='rarity4'>x4</td>
-                        <td><img src=".$localMaterial." alt=".extractNameFile($localMaterial)." title=".extractNameFile($localMaterial)." class='rarity1'>x20</td>
-                        <td><img src=".$mobDrop[1]." alt=".extractNameFile($mobDrop[1])." title=".extractNameFile($mobDrop[1])." class='rarity2'>x12</td>
+                        <td><img src=".$charJewelPath[1]." alt=".$charJewel[1]." title=".$charJewel[1]." class='rarity3'>x6</td>
+                        <td><img src=".$bossDropPath." alt=".$bossDrop." title=".$bossDrop." class='rarity4'>x4</td>
+                        <td><img src=".$localMaterialPath." alt=".$localMaterial." title=".$localMaterial." class='rarity1'>x20</td>
+                        <td><img src=".$mobDropPath[1]." alt=".$mobDrop[1]." title=".$mobDrop[1]." class='rarity2'>x12</td>
                         <td>60 000</td>
                     </tr>
                     <tr>
                         <td>Niveau 60</td>
-                        <td><img src=".$charJewel[2]." alt=".extractNameFile($charJewel[2])." title=".extractNameFile($charJewel[2])." class='rarity4'>x3</td>
-                        <td><img src=".$bossDrop." alt=".extractNameFile($bossDrop)." title=".extractNameFile($bossDrop)." class='rarity4'>x8</td>
-                        <td><img src=".$localMaterial." alt=".extractNameFile($localMaterial)." title=".extractNameFile($localMaterial)." class='rarity1'>x30</td>
-                        <td><img src=".$mobDrop[1]." alt=".extractNameFile($mobDrop[1])." title=".extractNameFile($mobDrop[1])." class='rarity2'>x18</td>
+                        <td><img src=".$charJewelPath[2]." alt=".$charJewel[2]." title=".$charJewel[2]." class='rarity4'>x3</td>
+                        <td><img src=".$bossDropPath." alt=".$bossDrop." title=".$bossDrop." class='rarity4'>x8</td>
+                        <td><img src=".$localMaterialPath." alt=".$localMaterial." title=".$localMaterial." class='rarity1'>x30</td>
+                        <td><img src=".$mobDropPath[1]." alt=".$mobDrop[1]." title=".$mobDrop[1]." class='rarity2'>x18</td>
                         <td>80 000</td>
                     </tr>
                     <tr>
                         <td>Niveau 70</td>
-                        <td><img src=".$charJewel[2]." alt=".extractNameFile($charJewel[2])." title=".extractNameFile($charJewel[2])." class='rarity4'>x6</td>
-                        <td><img src=".$bossDrop." alt=".extractNameFile($bossDrop)." title=".extractNameFile($bossDrop)." class='rarity4'>x12</td>
-                        <td><img src=".$localMaterial." alt=".extractNameFile($localMaterial)." title=".extractNameFile($localMaterial)." class='rarity1'>x45</td>
-                        <td><img src=".$mobDrop[2]." alt=".extractNameFile($mobDrop[2])." title=".extractNameFile($mobDrop[2])." class='rarity3'>x12</td>
+                        <td><img src=".$charJewelPath[2]." alt=".$charJewel[2]." title=".$charJewel[2]." class='rarity4'>x6</td>
+                        <td><img src=".$bossDropPath." alt=".$bossDrop." title=".$bossDrop." class='rarity4'>x12</td>
+                        <td><img src=".$localMaterialPath." alt=".$localMaterial." title=".$localMaterial." class='rarity1'>x45</td>
+                        <td><img src=".$mobDropPath[2]." alt=".$mobDrop[2]." title=".$mobDrop[2]." class='rarity3'>x12</td>
                         <td>100 000</td>
                     </tr>
                     <tr>
                         <td>Niveau 80</td>
-                        <td><img src=".$charJewel[3]." alt=".extractNameFile($charJewel[3])." title=".extractNameFile($charJewel[3])." class='rarity5'>x6</td>
-                        <td><img src=".$bossDrop." alt=".extractNameFile($bossDrop)." title=".extractNameFile($bossDrop)." class='rarity4'>x20</td>
-                        <td><img src=".$localMaterial." alt=".extractNameFile($localMaterial)." title=".extractNameFile($localMaterial)." class='rarity1'>x60</td>
-                        <td><img src=".$mobDrop[2]." alt=".extractNameFile($mobDrop[2])." title=".extractNameFile($mobDrop[2])." class='rarity3'>x18</td>
+                        <td><img src=".$charJewelPath[3]." alt=".$charJewel[3]." title=".$charJewel[3]." class='rarity5'>x6</td>
+                        <td><img src=".$bossDropPath." alt=".$bossDrop." title=".$bossDrop." class='rarity4'>x20</td>
+                        <td><img src=".$localMaterialPath." alt=".$localMaterial." title=".$localMaterial." class='rarity1'>x60</td>
+                        <td><img src=".$mobDropPath[2]." alt=".$mobDrop[2]." title=".$mobDrop[2]." class='rarity3'>x18</td>
                         <td>120 000</td>
                     </tr>
                 </table>
@@ -218,72 +240,71 @@
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td><img src=".$dungeonDrop[0]." alt=".extractNameFile($dungeonDrop[0])." title=".extractNameFile($dungeonDrop[0])." class='rarity2'>x3</td>
-                        <td><img src=".$mobDrop[0]." alt=".extractNameFile($mobDrop[0])." title=".extractNameFile($mobDrop[0])." class='rarity1'>x6</td>
+                        <td><img src=".$dungeonDropPath[0]." alt=".$dungeonDrop[0]." title=".$dungeonDrop[0]." class='rarity2'>x3</td>
+                        <td><img src=".$mobDropPath[0]." alt=".$mobDrop[0]." title=".$mobDrop[0]." class='rarity1'>x6</td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td><img src=".$dungeonDrop[1]." alt=".extractNameFile($dungeonDrop[1])." title=".extractNameFile($dungeonDrop[1])." class='rarity3'>x2</td>
-                        <td><img src=".$mobDrop[1]." alt=".extractNameFile($mobDrop[1])." title=".extractNameFile($mobDrop[1])." class='rarity2'>x3</td>
+                        <td><img src=".$dungeonDropPath[1]." alt=".$dungeonDrop[1]." title=".$dungeonDrop[1]." class='rarity3'>x2</td>
+                        <td><img src=".$mobDropPath[1]." alt=".$mobDrop[1]." title=".$mobDrop[1]." class='rarity2'>x3</td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>4</td>
-                        <td><img src=".$dungeonDrop[1]." alt=".extractNameFile($dungeonDrop[1])." title=".extractNameFile($dungeonDrop[1])." class='rarity3'>x4</td>
-                        <td><img src=".$mobDrop[1]." alt=".extractNameFile($mobDrop[1])." title=".extractNameFile($mobDrop[1])." class='rarity2'>x4</td>
+                        <td><img src=".$dungeonDropPath[1]." alt=".$dungeonDrop[1]." title=".$dungeonDrop[1]." class='rarity3'>x4</td>
+                        <td><img src=".$mobDropPath[1]." alt=".$mobDrop[1]." title=".$mobDrop[1]." class='rarity2'>x4</td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>5</td>
-                        <td><img src=".$dungeonDrop[1]." alt=".extractNameFile($dungeonDrop[1])." title=".extractNameFile($dungeonDrop[1])." class='rarity3'>x6</td>
-                        <td><img src=".$mobDrop[1]." alt=".extractNameFile($mobDrop[1])." title=".extractNameFile($mobDrop[1])." class='rarity2'>x6</td>
+                        <td><img src=".$dungeonDropPath[1]." alt=".$dungeonDrop[1]." title=".$dungeonDrop[1]." class='rarity3'>x6</td>
+                        <td><img src=".$mobDropPath[1]." alt=".$mobDrop[1]." title=".$mobDrop[1]." class='rarity2'>x6</td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>6</td>
-                        <td><img src=".$dungeonDrop[1]." alt=".extractNameFile($dungeonDrop[1])." title=".extractNameFile($dungeonDrop[1])." class='rarity3'>x9</td>
-                        <td><img src=".$mobDrop[1]." alt=".extractNameFile($mobDrop[1])." title=".extractNameFile($mobDrop[1])." class='rarity2'>x9</td>
+                        <td><img src=".$dungeonDropPath[1]." alt=".$dungeonDrop[1]." title=".$dungeonDrop[1]." class='rarity3'>x9</td>
+                        <td><img src=".$mobDropPath[1]." alt=".$mobDrop[1]." title=".$mobDrop[1]." class='rarity2'>x9</td>
                         <td></td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>7</td>
-                        <td><img src=".$dungeonDrop[2]." alt=".extractNameFile($dungeonDrop[2])." title=".extractNameFile($dungeonDrop[2])." class='rarity4'>x3</td>
-                        <td><img src=".$mobDrop[2]." alt=".extractNameFile($mobDrop[2])." title=".extractNameFile($mobDrop[2])." class='rarity3'>x4</td>
-                        <td><img src=".$worldBossDrop." alt=".extractNameFile($worldBossDrop)." title=".extractNameFile($worldBossDrop)." class='rarity5'>x1</td>
+                        <td><img src=".$dungeonDropPath[2]." alt=".$dungeonDrop[2]." title=".$dungeonDrop[2]." class='rarity4'>x3</td>
+                        <td><img src=".$mobDropPath[2]." alt=".$mobDrop[2]." title=".$mobDrop[2]." class='rarity3'>x4</td>
+                        <td><img src=".$worldBossDropPath." alt=".$worldBossDrop." title=".$worldBossDrop." class='rarity5'>x1</td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>8</td>
-                        <td><img src=".$dungeonDrop[2]." alt=".extractNameFile($dungeonDrop[2])." title=".extractNameFile($dungeonDrop[2])." class='rarity4'>x4</td>
-                        <td><img src=".$mobDrop[2]." alt=".extractNameFile($mobDrop[2])." title=".extractNameFile($mobDrop[2])." class='rarity3'>x6</td>
-                        <td><img src=".$worldBossDrop." alt=".extractNameFile($worldBossDrop)." title=".extractNameFile($worldBossDrop)." class='rarity5'>x1</td>
+                        <td><img src=".$dungeonDropPath[2]." alt=".$dungeonDrop[2]." title=".$dungeonDrop[2]." class='rarity4'>x4</td>
+                        <td><img src=".$mobDropPath[2]." alt=".$mobDrop[2]." title=".$mobDrop[2]." class='rarity3'>x6</td>
+                        <td><img src=".$worldBossDropPath." alt=".$worldBossDrop." title=".$worldBossDrop." class='rarity5'>x1</td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>9</td>
-                        <td><img src=".$dungeonDrop[2]." alt=".extractNameFile($dungeonDrop[2])." title=".extractNameFile($dungeonDrop[2])." class='rarity4'>x6</td>
-                        <td><img src=".$mobDrop[2]." alt=".extractNameFile($mobDrop[2])." title=".extractNameFile($mobDrop[2])." class='rarity3'>x9</td>
-                        <td><img src=".$worldBossDrop." alt=".extractNameFile($worldBossDrop)." title=".extractNameFile($worldBossDrop)." class='rarity5'>x2</td>
+                        <td><img src=".$dungeonDropPath[2]." alt=".$dungeonDrop[2]." title=".$dungeonDrop[2]." class='rarity4'>x6</td>
+                        <td><img src=".$mobDropPath[2]." alt=".$mobDrop[2]." title=".$mobDrop[2]." class='rarity3'>x9</td>
+                        <td><img src=".$worldBossDropPath." alt=".$worldBossDrop." title=".$worldBossDrop." class='rarity5'>x2</td>
                         <td></td>
                     </tr>
                     <tr>
                         <td>10</td>
-                        <td><img src=".$dungeonDrop[2]." alt=".extractNameFile($dungeonDrop[2])." title=".extractNameFile($dungeonDrop[2])." class='rarity4'>x9</td>
-                        <td><img src=".$mobDrop[2]." alt=".extractNameFile($mobDrop[2])." title=".extractNameFile($mobDrop[2])." class='rarity3'>x12</td>
-                        <td><img src=".$worldBossDrop." alt=".extractNameFile($worldBossDrop)." title=".extractNameFile($worldBossDrop)." class='rarity5'>x2</td>
+                        <td><img src=".$dungeonDropPath[2]." alt=".$dungeonDrop[2]." title=".$dungeonDrop[2]." class='rarity4'>x9</td>
+                        <td><img src=".$mobDropPath[2]." alt=".$mobDrop[2]." title=".$mobDrop[2]." class='rarity3'>x12</td>
+                        <td><img src=".$worldBossDropPath." alt=".$worldBossDrop." title=".$worldBossDrop." class='rarity5'>x2</td>
                         <td><img src='assets/img/other/couronne_de_la_sagesse.webp' alt='Couronne de la sagesse' title='Couronne de la sagesse' class='rarity5'>x1</td><!--Ressource fixe-->
                     </tr>
                 </table>
             </div>
         </div>
     </main>";
-    echo $HTML;
     include "footer.php"; 
     ?>
     <script src="assets/js/connexion.js"></script>
