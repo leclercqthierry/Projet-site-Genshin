@@ -24,7 +24,6 @@ main{
 
 .container img{
     width:120px;
-    background-color: var(--rarity-color-4);
 }
 
 p{
@@ -32,6 +31,18 @@ p{
     padding: 30px 15px;
     border-radius:15px;
     margin-top:10px;
+}
+
+.rarity3{
+    background-color:var(--rarity-color-3);
+}
+
+.rarity4{
+    background-color:var(--rarity-color-4);
+}
+
+.rarity5{
+    background-color:var(--rarity-color-5);
 }
 
 @media screen and (min-width:326px) {

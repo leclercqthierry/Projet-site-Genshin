@@ -13,7 +13,7 @@ foreach ($weapons as $weapon) {
 
 
 ################ En attendant une page 404 ################
-// If the weapon is not found, we redirect to the weapons gallery
+// If the weapon isn't found, we redirect to the weapons gallery
 if (empty($currentWeapon)) {
     header("Location: weapons-gallery.php");
     exit;

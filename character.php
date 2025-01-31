@@ -11,7 +11,7 @@
     }
 
     ################ En attendant une page 404 ################
-    // If the character is not found, we redirect to the characters gallery
+    // If the character isn't found, we redirect to the characters gallery
     if (empty($currentCharacter)) {
         header("Location: characters-gallery.php");
         exit;

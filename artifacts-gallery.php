@@ -48,7 +48,7 @@
             include "base.php";
             foreach($artifacts as $artifact) {
                 $item = "
-                <a href='artifact.php'>
+                <a href='artifact.php?name=".$artifact['name']."'>
                     <div class='card' data-rarity=".$artifact['rarity'].">
                         <img src=".$artifact['image']." alt=".$artifact['name']." class='rarity".$artifact['rarity']." artifact'>
                         <strong>".$artifact['name']."</strong>

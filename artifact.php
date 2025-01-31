@@ -1,3 +1,29 @@
+<?php
+include "base.php";
+$currentArtifact = [];
+
+// We retrieve the artifact through the link
+foreach ($artifacts as $artifact) {
+    if ($artifact['name'] === htmlspecialchars($_GET['name'])){
+        $currentArtifact = $artifact;
+        break;
+    }
+}
+
+################ En attendant une page 404 ################
+// If the artifact isn't found, we redirect to the artifacts gallery
+if (empty($currentArtifact)) {
+    header("Location: artifacts-gallery.php");
+    exit;
+}
+
+// artifact was found
+$name = $currentArtifact['name'];
+$rarity = $currentArtifact['rarity'];
+$image = $currentArtifact['image'];
+$description = $currentArtifact['description'];
+
+echo '
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -9,20 +35,22 @@
     <link rel="stylesheet" href="assets/css/artifact.css">
     <title>Set Berserker</title>
 </head>
-<body>
-    <?php include "header.php"; ?>
+<body>';
+    include "header.php";
+    echo nl2br('
     <main>
-        <h1>Fiche de set d'artefact</h1>
+        <h1>Fiche de set d\'artefact</h1>
         <div class="container">
             <div>
-                <img src="assets/img/gallery/Artefacts_set/berserker.webp" alt="set Berserker">
-                <h2>Berserker</h2>
+                <img src='.$image.' alt='.$name.' class="rarity'.$rarity.'">
+                <h2>'.$name.'</h2>
             </div>
-            <p><u>2 pièces</u>: Augmente le taux CRIT de 12 %.<br><br>
-                <u>4 pièces</u>: Augmente le taux CRIT de 24 % lorsque les PV sont inférieurs à 70 %.</p>
+            <p>'.$description.'</p>  
         </div>
-    </main>
-    <?php include "footer.php"; ?>
+    </main>');
+    include "footer.php";
+    echo '
     <script src="assets/js/connexion.js"></script>
 </body>
-</html>
+</html>';
+?>
