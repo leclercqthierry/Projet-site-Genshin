@@ -1,0 +1,96 @@
+main{
+    min-height: calc(100vh - 11.77vh - 8.17vh); /* screen - header - footer */
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+form{
+    background-color: var(--bg-secondary);
+    border-radius: 20px;
+    width: 270px;
+    padding: 30px 15px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: start;
+    gap:15px;
+}
+
+#nickname,
+#email,
+#password,
+#confirm-password{
+    width:100%;
+    height:2rem;
+    border-radius: 7px;
+    border:none;
+    padding: 0 10px;
+}
+
+#nickname+p,
+#email+p,
+#password+p,
+#confirm-password+p{
+    font-size:12px;
+    padding-top:1em;
+    font-weight: bold;
+}
+
+.form-group{
+    display:flex;
+    flex-direction: column;
+    justify-content: end;
+    width:100%;
+}
+
+.btn-container{
+    width:100%;
+    display: flex;
+    justify-content: end;
+}
+
+.btn{
+    width:108px;
+    height:32px;
+    background-color: var(--bg-primary);
+    border-radius: 50px;
+    border:none;
+    font-family: "Roboto";
+    color: var(--font-color);
+}
+
+@media screen and (min-width: 426px) {
+    form{
+        width:50%;
+        padding: 30px 50px;
+        margin: 20px auto;
+    }
+
+    .btn{
+        font-size: 1em;
+    }
+}
+
+@media screen and (min-width: 769px){
+    main{
+        min-height: calc(100vh - 7.32vh - 7.32vh); /* screen - header - footer */
+    }
+
+    form{
+        padding:30px 75px;
+        height:fit-content;
+        width:30%;
+        gap:25px;
+    }
+
+    #nickname+p,
+    #email+p,
+    #password+p,
+    #confirm-password+p{
+        font-size:14px;
+        padding-top:1em;
+        font-weight: bold;
+    }
+}

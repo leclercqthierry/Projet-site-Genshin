@@ -2,7 +2,7 @@
     <!--Navigation-->
     <nav>
         <!--Logo-->
-        <a href="index.php">
+        <a href="index">
             <img src="assets/img/Logo.webp" alt="Accueil" id="logo">
         </a>
         <!--Menu toggle-->
@@ -23,7 +23,7 @@
                 <a href="teams-gallery.php">Galerie teams</a>
             </li>
             <li>
-                <a href="login.php">Se connecter</a>
+                <a href="login">Se connecter</a>
             </li>
         </ul>
         <label for="menu_toggle" id="cross">X</label>
