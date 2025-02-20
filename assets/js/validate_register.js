@@ -1,4 +1,4 @@
-// The purpose of the script is to validate the registration form on the front side
+// The purpose of this script is to validate the registration form on the front side
 
 const nickname = document.getElementById('nickname');
 const email = document.getElementById('email');
@@ -39,7 +39,6 @@ email.addEventListener('input', () => {
 });
 
 // password field control
-
 password.addEventListener('input', () => {
     errorPassword.textContent = 'Le mot de passe doit contenir au moins un nombre, une lettre majuscule et minuscule et comporter au moins 8 caractères';
     errorPassword.style.display =!regexPassword.test(password.value)? 'block' : 'none';

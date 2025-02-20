@@ -12,15 +12,14 @@
 <body>
     <?php include "header.php"; ?>
     <main>
-        <form action="assets/js/login.js"> <!--A changer quand on fera le back-->
+        <form action="login" method="post"> <!--A changer quand on fera le back-->
             <div class="form-group">
-                <label for="pseudo">Pseudo</label>
-                <input type="text" id="pseudo" name="pseudo" placeholder="user887" minlength="4" pattern="[A-Za-z0-9]{4,}" title="Ne doit contenir ni espace, ni caractères spéciaux" required>
+                <label for="nickname">Pseudo</label>
+                <input type="text" id="nickname" name="nickname" placeholder="user887" minlength="4" required>
             </div>
             <div class="form-group">
                 <label for="password">mot de passe</label>
-                <input type="password" id="password" name="password" placeholder="********" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                title="Le mot de passe doit contenir au moins un nombre, une lettre majuscule et minuscule et comporter au moins 8 caractères" required>
+                <input type="password" id="password" name="password" placeholder="********" required>
             </div>
             <a href="#">mot de passe oublié</a>
             <div class="button-container">
@@ -30,7 +29,6 @@
         </form>
     </main>
     <?php include "footer.php";?>
-    <script src="assets/js/login.js"></script>
-    <script src="assets/js/connexion.js"></script>
+    <script src="assets/js/validate_login.js"></script>
 </body>
 </html>

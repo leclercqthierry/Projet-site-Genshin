@@ -10,7 +10,7 @@ form{
     background-color: var(--bg-secondary);
     border-radius: 20px;
     width: 270px;
-    height: 280px;
+    min-height: 280px;
     padding: 30px 15px;
     display:flex;
     flex-direction: column;
@@ -19,7 +19,7 @@ form{
     gap:15px;
 }
 
-#pseudo,
+#nickname,
 #password{
     width:100%;
     height:2rem;
@@ -28,11 +28,12 @@ form{
     padding: 0 10px;
 }
 
-#pseudo:invalid,
-#password:invalid{
-    border: 2px solid red;
-    box-shadow: 0 0 5px red;
-    transition: box-shadow 0.3s ease;
+#nickname+p,
+#password+p{
+    font-size:12px;
+    padding-top:1em;
+    font-weight: bold;
+    font-style: italic;
 }
 
 label{
@@ -94,7 +95,7 @@ a.btn{
     form{
         padding: 30px 6.94vw;
         height:fit-content;
-        width:fit-content;
+        max-width:600px;
         gap:25px;
     }
 
@@ -105,9 +106,14 @@ a.btn{
         transition: background-color 0.3s ease, color 0.3s ease;
     }
 
-    #pseudo,
+    #nickname,
     #password{
         height:40px;
+    }
+
+    #nickname+p,
+    #password+p{
+        font-size:14px;
     }
 
     .button-container{

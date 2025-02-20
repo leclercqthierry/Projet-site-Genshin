@@ -90,7 +90,5 @@ form{
     #password+p,
     #confirm-password+p{
         font-size:14px;
-        padding-top:1em;
-        font-weight: bold;
     }
 }

@@ -4,8 +4,8 @@
 function getConnexion() {
     try {
         $dsn = "mysql:host=localhost;dbname=genshinteam;charset=utf8";
-        $user = "root";
-        $pass = "";
+        $user = "Thierry";
+        $pass = "Aubvu7k7";
         $pdo = new PDO($dsn, $user, $pass);
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;

@@ -35,6 +35,6 @@
         </form>
     </main>
     <?php include "footer.php";?>
-    <script src="assets/js/validate.js"></script>
+    <script src="assets/js/validate_register.js"></script>
 </body>
 </html>
