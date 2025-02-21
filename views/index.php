@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="author" content="Thierry Leclercq">
-    <!--Common style-->
+    <?php // Common style ?>
     <link rel="stylesheet" href="assets/css/style.css">
-    <!--Index style-->
+    <?php // Specific style ?>
     <link rel="stylesheet" href="assets/css/index.css">
     <title>Accueil</title>
 </head>
 <body>
-    <?php include "header.php"; ?>
+    <?php include_once "templates/header.php"; ?>
     <main>
         <h1>News</h1>
         <div class="news-container">
@@ -28,7 +27,6 @@
             </ul>
         </div>
     </main>
-<?php include "footer.php"; ?>
-    <script src="assets/js/connexion.js"></script>
+    <?php include_once "templates/footer.php"; ?>
 </body>
 </html>

@@ -10,7 +10,7 @@
     <title>Meilleure équipe pour Emilie</title>
 </head>
 <body>
-    <?php include "header.php"; ?>
+    <?php include "template/header.php"; ?>
     <main>
         <h1>Meilleure équipe pour Emilie</h1>
         <div class="container">
@@ -102,8 +102,7 @@
             <input type="submit" value="Valider">
         </form>
     </main>
-    <?php include "footer.php"; ?>
-    <script src="assets/js/connexion.js"></script>
+    <?php include "template/footer.php"; ?>
     <script src="assets/js/team.js"></script>
 </body>
 </html>

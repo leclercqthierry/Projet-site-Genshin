@@ -39,12 +39,8 @@ if (isset($_POST['nickname']) && (isset($_POST['email'])) && isset($_POST['passw
         exit;
     }
 
-    require "models/register_model.php";
+    require_once "models/register_model.php";
     echo "Vous avez créer votre compte avec succès !";
-
-    // $a = password_hash("password", PASSWORD_DEFAULT);
-    // $b = password_verify("password", $a);
-    // echo $a . ' ' . $b;
 
 } else {
     require_once "views/register.php";

@@ -10,7 +10,7 @@
     <title>Panneau Admin - Ajout d'une team</title>
 </head>
 <body>
-    <?php include "header.php"; ?>
+    <?php include "template/header.php"; ?>
     <main>
         <h1>Ajout d'une team</h1>
         <div class="container">
@@ -126,9 +126,7 @@
             </form>
         </div>
     </main>
-    <?php include "footer.php"; ?>
-    <script src="assets/js/connexion.js"></script>
-    <script src="assets/js/base.js"></script>
+    <?php include "template/footer.php"; ?>
     <script src="assets/js/add-team.js"></script>
 </body>
 </html>

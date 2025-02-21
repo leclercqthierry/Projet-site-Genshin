@@ -36,7 +36,7 @@ echo '
     <title>Set Berserker</title>
 </head>
 <body>';
-    include "header.php";
+    include "template/header.php";
     echo nl2br('
     <main>
         <h1>Fiche de set d\'artefact</h1>
@@ -48,9 +48,8 @@ echo '
             <p>'.$description.'</p>  
         </div>
     </main>');
-    include "footer.php";
+    include "template/footer.php";
     echo '
-    <script src="assets/js/connexion.js"></script>
 </body>
 </html>';
 ?>

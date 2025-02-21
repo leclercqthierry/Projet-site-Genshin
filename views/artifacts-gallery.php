@@ -10,7 +10,7 @@
     <title>Gallerie d'artefacts</title>
 </head>
 <body>
-    <?php include "header.php"; ?>
+    <?php include "template/header.php"; ?>
     <main>
         <h1>Gallerie d'artéfacts</h1>
         <!--Filter/Sort Elements-->
@@ -59,8 +59,7 @@
             ?>
         </div>
     </main>
-    <?php include "footer.php"; ?>
-    <script src="assets/js/connexion.js"></script>
+    <?php include "template/footer.php"; ?>
     <script src="assets/js/artifacts-gallery.js"></script>
 </body>
 </html>

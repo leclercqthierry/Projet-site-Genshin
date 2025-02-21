@@ -10,15 +10,15 @@
     <title>Panneau Admin - Ajout de personnage</title>
 </head>
 <body>
-    <?php include "header.php"; ?>
+    <?php include "template/header.php"; ?>
     <main>
         <h1>Ajout de personnage</h1>
         <div class="container">
-            <form action="#" method="post" name="add-character-form">
+            <form action="add-character" method="post" name="add-character-form" enctype="multipart/form-data">
                 <div id="group1">
                     <div class="form-label">
                         <label for="name">Nom</label>
-                        <input type="text" id="name" name="name" title="Uniquement des lettres et commence par une majuscule" required>
+                        <input type="text" id="name" name="name" minlength="2" required>
                     </div>
                     <div class="form-label">
                         <label for="element">Elément</label>
@@ -49,7 +49,7 @@
                         <div>
                             <label for="rarity4">4<sup><img src="assets/img/icons/1_star.png" alt="étoile"></sup></label>
                         </div>
-                        <input type="radio" name="rarity" id="rarity4" value="4">
+                        <input type="radio" name="rarity" id="rarity4" value="4" checked>
                     </div>
                     <div class="rarity">
                         <div>
@@ -83,7 +83,7 @@
                         <select name="farm-days" id="farm-days">
                             <option value="mo-th-su">Lundi / Jeudi / Dimanche</option>
                             <option value="tu-fr-su">Mardi / Vendredi / Dimanche</option>
-                            <option value="we-sa-su">Mercredi / Samedi / Diamnche</option>
+                            <option value="we-sa-su">Mercredi / Samedi / Dimanche</option>
                         </select>
                     </div>
                 </div>
@@ -91,13 +91,13 @@
                     <div class="form-label">
                         <fieldset>
                             <legend>Miniature</legend>
-                            <input type="file" name="thumbnail" id="thumbnail" accept="image/*" required>
+                            <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
                             <legend>Card</legend>
-                            <input type="file" name="card" id="card" accept="image/*" required>
+                            <input type="file" name="card" id="card" accept="image/*">
                         </fieldset>
                     </div>
                 </div>
@@ -105,19 +105,19 @@
                     <div class="form-label">
                         <fieldset>
                             <legend>Boss matériel</legend>
-                            <input type="file" name="boss-mat" id="boss-mat" accept="image/*" required>
+                            <input type="file" name="boss-mat" id="boss-mat" accept="image/*">
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
                             <legend>Local matériel</legend>
-                            <input type="file" name="local-mat" id="local-mat" accept="image/*" required>
+                            <input type="file" name="local-mat" id="local-mat" accept="image/*">
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
                             <legend>World Boss matériel</legend>
-                            <input type="file" name="wb-mat" id="wb-mat" accept="image/*" required>
+                            <input type="file" name="wb-mat" id="wb-mat" accept="image/*">
                         </fieldset>
                     </div>
                 </div>
@@ -125,19 +125,19 @@
                     <div class="form-label">
                         <fieldset>
                             <legend>Mob matériel rareté 1</legend>
-                            <input type="file" name="mob-mat-r1" id="mob-mat-r1" accept="image/*" required>
+                            <input type="file" name="mob-mat-r1" id="mob-mat-r1" accept="image/*">
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
                             <legend>Mob matériel rareté 2</legend>
-                            <input type="file" name="mob-mat-r2" id="mob-mat-r2" accept="image/*" required>
+                            <input type="file" name="mob-mat-r2" id="mob-mat-r2" accept="image/*">
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
                             <legend>Mob matériel rareté 3</legend>
-                            <input type="file" name="mob-mat-r3" id="mob-mat-r3" accept="image/*" required>
+                            <input type="file" name="mob-mat-r3" id="mob-mat-r3" accept="image/*">
                         </fieldset>
                     </div>
                 </div>
@@ -145,19 +145,19 @@
                     <div class="form-label">
                         <fieldset>
                             <legend>Donjon matériel rareté 2</legend>
-                            <input type="file" name="dj-mat-r2" id="dj-mat-r2" accept="image/*" required>
+                            <input type="file" name="dj-mat-r2" id="dj-mat-r2" accept="image/*">
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
                             <legend>Donjon matériel rareté 3</legend>
-                            <input type="file" name="dj-mat-r3" id="dj-mat-r3" accept="image/*" required>
+                            <input type="file" name="dj-mat-r3" id="dj-mat-r3" accept="image/*">
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
                             <legend>Donjon matériel rareté 4</legend>
-                            <input type="file" name="dj-mat-r4" id="dj-mat-r4" accept="image/*" required>
+                            <input type="file" name="dj-mat-r4" id="dj-mat-r4" accept="image/*">
                         </fieldset>
                     </div>
                 </div>
@@ -165,7 +165,7 @@
             </form>
         </div>
     </main>
-    <?php include "footer.php"; ?>
-    <script src="assets/js/connexion.js"></script>
+    <?php include "template/footer.php"; ?>
+    <!-- <script src="assets/js/validate_add_char.js"></script> -->
 </body>
 </html>

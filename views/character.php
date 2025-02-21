@@ -90,7 +90,7 @@
     <title>".$name."</title>
 </head>
 <body>";
-    include "header.php";
+    include "template/header.php";
     echo"
     <main>
         <h1>Fiche Personnage</h1>
@@ -305,8 +305,7 @@
             </div>
         </div>
     </main>";
-    include "footer.php"; 
+    include "template/footer.php"; 
     ?>
-    <script src="assets/js/connexion.js"></script>
 </body>
 </html>

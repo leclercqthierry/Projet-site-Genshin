@@ -8,7 +8,7 @@
     <title>Page 404</title>
 </head>
 <body>
-    <?php include_once "header.php"?>
+    <?php include_once "templates/header.php"?>
     <main>
         <h1>Page 404</h1>
         <div class="container">
@@ -16,6 +16,6 @@
             <a href="index">Retour à la page d'accueil</a>
         </div>
     </main>
-    <?php include_once "footer.php"?>
+    <?php include_once "templates/footer.php"?>
 </body>
 </html>

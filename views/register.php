@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Common style-->
+    <?php // Common style ?>
     <link rel="stylesheet" href="assets/css/style.css">
-    <!--register style-->
+    <?php // Specific style ?>
     <link rel="stylesheet" href="assets/css/register.css">
     <title>S'inscrire</title>
 </head>
 <body>
-    <?php include "header.php";?>
+    <?php include_once "templates/header.php";?>
     <main>
         <form action="register" method="post">
             <div class="form-group">
@@ -34,7 +34,7 @@
             </div>
         </form>
     </main>
-    <?php include "footer.php";?>
+    <?php include_once "templates/footer.php";?>
     <script src="assets/js/validate_register.js"></script>
 </body>
 </html>

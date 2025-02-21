@@ -1,0 +1,86 @@
+main{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.main-container{
+    display:flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap:15px;
+    max-width:1200px;
+}
+
+.container{
+    margin:0 auto 20px auto;
+    background-color: var(--bg-secondary);
+    border-radius:20px;
+    padding:15px;
+    width:290px;
+    height:fit-content;
+}
+
+form,
+.form-label{
+    display:flex;
+    flex-direction: column;
+}
+
+form{
+    width:100%;
+    gap:15px;
+}
+
+h2{
+    font-size: 18px;
+    text-align: center;
+    font-family: "Roboto condensed";
+    margin-bottom: 10px;
+}
+
+fieldset{
+    border:2px solid var(--bg-primary);
+    padding:10px;
+}
+
+button,
+input{
+    font-family: 'Roboto', sans-serif;
+    max-width: 240px;
+}
+
+input[type="text"]{
+    width:100%;
+    padding:5px;
+    border:none;
+    border-radius:5px;
+}
+
+input[type="file"]::file-selector-button{
+    background-color: var(--bg-primary);
+    padding: 5px 10px;
+    border:none;
+    border-radius: 20px;
+    color:var(--font-color);
+    margin:auto;
+}
+
+.btn{
+    background-color: var(--bg-primary);
+    padding: 5px 10px;
+    border:none;
+    border-radius: 20px;
+    color:var(--font-color);
+    max-height: 40px;
+}
+
+@media screen and (min-width: 768px) {
+    .btn:hover,
+    input[type="file"]::file-selector-button:hover{
+        background-color: var(--font-color);
+        color:var(--bg-primary);
+        transition: background-color 0.4s ease, color 0.4s ease;
+        cursor: pointer;
+    }
+}

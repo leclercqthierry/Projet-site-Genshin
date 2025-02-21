@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php // Common style ?>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <?php // Specific style ?>
+    <link rel="stylesheet" href="assets/css/add-resources.css">
+    <title>Ajout de ressources</title>
+</head>
+<body>
+    <?php include_once "templates/header.php"; ?>
+    <main>
+        <h1>Ajout de ressources</h1>
+        <div class="main-container">
+            <?= addResourceForm('Boss drop', 'boss_drop', ['bd_name'], ['bd_image'])?>
+            <?= addResourceForm('Matériel local', 'local_mat', ['lc_name'], ['lc_image'])?>
+            <?= addResourceForm('World boss drop', 'world_boss_drop', ['wbd_name'], ['wbd_image'])?>
+            <?= addResourceForm('Mob drops', 'mob_drop', ['m_d_name1', 'm_d_name2', 'm_d_name3'], ['m_d_image1', 'm_d_image2', 'm_d_image3'])?>
+            <?= addResourceForm('Donjon drops', 'dj_drop', ['djd_name1', 'djd_name2', 'djd_name3'], ['djd_image1', 'djd_image2', 'djd_image3'])?>
+            <?= addResourceForm('Drop pour élévation d\'arme', 'ele_weapon_drop', ['ewd_name1', 'ewd_name2', 'ewd_name3'], ['ewd_image1', 'ewd_image2', 'ewd_image3'])?>
+            <?= addResourceForm('Drop de donjon d\'arme','dj_weapon_drop', ['dwd_name1', 'dwd_name2', 'dwd_name3', 'dwd_name4'], ['dwd_image1', 'dwd_image2', 'dwd_image3', 'dwd_image4'])?>
+        </div>
+    </main>
+    <?php include_once "templates/footer.php"; ?>
+    <!-- <script src="assets/js/validate_add-resources.js"></script> -->
+</body>
+</html>

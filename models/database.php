@@ -14,3 +14,16 @@ function getConnexion() {
         exit;
     }
 }
+
+// Check in $table if $value exists in $col
+function checkExist($table, $col, $value){
+    $pdo = getConnexion();
+    try{
+        $stmt = $pdo->prepare("SELECT * FROM $table WHERE ".$col." =?");
+        $stmt->execute([$value]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    } catch(PDOException $e){
+        echo $e->getMessage();
+        exit;
+    }
+}

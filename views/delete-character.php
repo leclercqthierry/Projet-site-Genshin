@@ -10,7 +10,7 @@
     <title>Panneau Admin - Suppression de personnage</title>
 </head>
 <body>
-    <?php include "header.php"; ?>
+    <?php include "template/header.php"; ?>
     <main>
         <h1>Suppression d'un personnage</h1>
         <div class="container">
@@ -35,9 +35,7 @@
             </div>
         </div>
     </main>
-    <?php include "footer.php"; ?>
-    <script src="assets/js/connexion.js"></script>
-    <script src="assets/js/base.js"></script>
+    <?php include "template/footer.php"; ?>
     <script src="assets/js/delete-character.js"></script>
 </body>
 </html>

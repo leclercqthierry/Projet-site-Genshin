@@ -12,7 +12,7 @@
     <title>Panneau Admin - Ajout d'une arme</title>
 </head>
 <body>
-    <?php include "header.php"; ?>    
+    <?php include "template/header.php"; ?>    
     <main>
         <h1>Ajout d'une arme</h1>
         <div class="container">
@@ -174,7 +174,6 @@
             </form>
         </div>
     </main>
-    <?php include "footer.php"; ?>
-    <script src="assets/js/connexion.js"></script>
+    <?php include "template/footer.php"; ?>
 </body>
 </html>

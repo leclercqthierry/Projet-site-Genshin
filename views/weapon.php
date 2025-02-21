@@ -86,7 +86,7 @@ echo'
     <title>'.$name.'</title>
 </head>
 <body>';
-    include "header.php";
+    include "template/header.php";
     echo '
     <main>
         <h1>Fiche Arme</h1>
@@ -161,9 +161,8 @@ echo'
             </div>
         </div>
     </main>';
-    include "footer.php";
+    include "template/footer.php";
     echo '
-    <script src="assets/js/connexion.js"></script>
 </body>
 </html>';
 ?>

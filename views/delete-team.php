@@ -10,7 +10,7 @@
     <title>Suppression de team</title>
 </head>
 <body>
-    <?php include "header.php"; ?>
+    <?php include "template/header.php"; ?>
     <main>
         <h1>Suppression d'une team</h1>
         <div class="container">
@@ -35,9 +35,7 @@
             </div>
         </div>
     </main>
-    <?php include "footer.php"; ?>
-    <script src="assets/js/connexion.js"></script>
-    <script src="assets/js/base.js"></script>
+    <?php include "template/footer.php"; ?>
     <script src="assets/js/delete-team.js"></script>
 </body>
 </html>

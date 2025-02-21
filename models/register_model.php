@@ -2,18 +2,6 @@
 
 require_once "models/database.php";
 
-function checkExist($col, $value){
-    $pdo = getConnexion();
-    try{
-        $stmt = $pdo->prepare("SELECT * FROM zell_users WHERE ".$col." =?");
-        $stmt->execute([$value]);
-        return $stmt->fetch(PDO::FETCH_ASSOC);
-    } catch(PDOException $e){
-        echo $e->getMessage();
-        exit;
-    }
-}
-
 function createUser($nickname, $email, $password){
     $pdo = getConnexion();
     try{
@@ -26,13 +14,13 @@ function createUser($nickname, $email, $password){
 }
 
 // check if the nickname is already taken
-if (checkExist("nickname", $nickname)){
+if (checkExist("zell_users", "nickname", $nickname)){
     echo "Ce pseudo est déjà utilisé.";
     exit;
 }
 
 // check if the email is already taken
-if (checkExist("email", $email)) {
+if (checkExist("zell_users", "email", $email)) {
     echo "Cette adresse email est déjà utilisée.";
     exit;
 }
