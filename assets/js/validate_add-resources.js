@@ -43,6 +43,11 @@ forms.forEach(form => {
                 showError('Le nom doit avoir entre 2 et 100 lettres uniquement (espaces inclus) mais ne pas comporter d\'espaces dans les 2 premiers caractères.', errorForm);
             }
         });
+
+        // if at least one duplicate
+        if (names.length > new Set(names).size){
+            showError('Vous ne pouvez pas ajouter deux ressources avec le même nom.', errorForm);
+        }
         if (errorForm.textContent === '') {
             form.submit();
         }
