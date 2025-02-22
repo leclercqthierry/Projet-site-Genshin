@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php // Common style ?>
     <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/login.css">
     <?php // Specific style ?>
     <link rel="stylesheet" href="assets/css/register.css">
     <title>S'inscrire</title>
@@ -12,6 +13,7 @@
 <body>
     <?php include_once "templates/header.php";?>
     <main>
+        <h1>S'inscrire</h1>
         <form action="register" method="post">
             <div class="form-group">
                 <label for="nickname">Pseudo</label>

@@ -12,6 +12,7 @@
 <body>
     <?php include_once "templates/header.php"; ?>
     <main>
+        <h1>Se connecter</h1>
         <form action="login" method="post">
             <div class="form-group">
                 <label for="nickname">Pseudo</label>
@@ -22,7 +23,7 @@
                 <input type="password" id="password" name="password" placeholder="********" required>
             </div>
             <a href="#">mot de passe oublié</a>
-            <div class="button-container">
+            <div class="btn-container">
                 <a href="register" class="btn">S'inscrire</a>
                 <button type="submit" class="btn">Valider</button>
             </div>

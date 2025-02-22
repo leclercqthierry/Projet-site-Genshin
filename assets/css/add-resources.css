@@ -2,52 +2,67 @@ main{
     display:flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .main-container{
+    max-width:1200px;
     display:flex;
     flex-wrap: wrap;
     align-items: center;
     gap:15px;
-    max-width:1200px;
 }
 
 .container{
-    margin:0 auto 20px auto;
-    background-color: var(--bg-secondary);
-    border-radius:20px;
-    padding:15px;
     width:290px;
     height:fit-content;
+    margin:0 auto 20px auto;
+    padding:15px;
+    background-color: var(--bg-secondary);
+    border-radius:20px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-form,
+h2{
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: center;
+    font-family: "Roboto condensed";
+}
+
+/* chevron animation */
+.fa-solid{
+    animation: upAndDown 0.4s infinite alternate;
+}
+
+@keyframes upAndDown {
+    0% {transform: translateY(5px);}
+    100% {transform: translateY(-5px);}
+}
+
+form{
+    width:100%;
+    display:none;
+    flex-direction: column;
+    gap:15px;
+}
+
 .form-label{
     display:flex;
     flex-direction: column;
 }
 
-form{
-    width:100%;
-    gap:15px;
-}
-
-h2{
-    font-size: 18px;
-    text-align: center;
-    font-family: "Roboto condensed";
-    margin-bottom: 10px;
-}
-
 fieldset{
-    border:2px solid var(--bg-primary);
     padding:10px;
+    border:2px solid var(--bg-primary);
 }
 
 button,
 input{
-    font-family: 'Roboto', sans-serif;
     max-width: 240px;
+    font-family: 'Roboto', sans-serif;
 }
 
 input[type="text"]{
@@ -58,21 +73,21 @@ input[type="text"]{
 }
 
 input[type="file"]::file-selector-button{
-    background-color: var(--bg-primary);
+    margin:auto;
     padding: 5px 10px;
+    background-color: var(--bg-primary);
+    color:var(--font-color);
     border:none;
     border-radius: 20px;
-    color:var(--font-color);
-    margin:auto;
 }
 
 .btn{
-    background-color: var(--bg-primary);
+    max-height: 40px;
     padding: 5px 10px;
+    color:var(--font-color);
+    background-color: var(--bg-primary);
     border:none;
     border-radius: 20px;
-    color:var(--font-color);
-    max-height: 40px;
 }
 
 @media screen and (min-width: 768px) {

@@ -9,6 +9,7 @@ function addResourceForm($title, $controller, $names, $images){
     $html ='
     <div class="container">
         <h2>Ajout '.$title.'</h2>
+        <i class="fa-solid fa-chevron-down"></i>
         <form action="'.$controller.'" method="post" enctype="multipart/form-data">';
     for ($i = 0; $i < count($names); $i++){
         $html .= '

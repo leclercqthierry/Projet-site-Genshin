@@ -7,10 +7,10 @@ main{
 }
 
 .news-container{
-    background-color: var(--bg-secondary);
     margin: 0 15px 20px 15px;
-    border-radius: 20px;
     padding:15px;
+    background-color: var(--bg-secondary);
+    border-radius: 20px;
     display:flex;
     flex-direction: column;
     justify-content: space-evenly;

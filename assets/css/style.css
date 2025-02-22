@@ -12,9 +12,9 @@
 
 /* ########### Reset CSS* ########### */
 * {
-    box-sizing: border-box;
     margin:0;
     padding:0;
+    box-sizing: border-box;
 }
 /* ################################## */
 /* ########### Font ########### */
@@ -31,9 +31,9 @@
 /* ######### Body CSS ########## */
 body {
     font-family: "Roboto", sans-serif;
-    background-color: var(--bg-primary);
     font-size: 1em;
     color: var(--font-color);
+    background-color: var(--bg-primary);
 }
 /* ########### Header ########### */
 
@@ -43,25 +43,24 @@ body {
 
 nav{
     height:80px;
+    padding:15px;
     background-color: var(--bg-secondary);
     display:flex;
     justify-content: space-between;
     align-items: center;
-    padding:15px;
 }
 
 #burger,
 #cross{
-    font-size:25px;
-    background-color: var(--bg-primary);
-    padding: 20px;
-    border-radius: 15px;
     width:50px;
     height:50px;
+    padding: 20px;
+    font-size:25px;
+    background-color: var(--bg-primary);
+    border-radius: 15px;
     display:flex;
     justify-content: center;
     align-items: center;
-    cursor:pointer;
 }
 
 /*We hide:
@@ -82,36 +81,36 @@ nav{
 }
 
 .menu{
+    width:100%;
+    background-color: var(--bg-secondary);
     flex-direction: column;
     align-items: center;
-    width:100%;
     position:absolute;
-    z-index: 9999;
     top:80px;
     left:0;
-    background-color: var(--bg-secondary);
+    z-index: 9999;
 }
 
 .menu li{
-    list-style: none;
     width: 100%;
     padding: 10px 0;
+    list-style: none;
 }
 
 h1{
+    margin: 20px auto;
     font-family: "Roboto condensed";
     text-align: center;
-    margin: 20px auto;
 }
 
 .menu a,
 footer a{
+    margin:auto;
     text-decoration:none;
     color: var(--font-color);
     display: block;
     text-align: center;
     cursor:pointer;
-    margin:auto;
 }
 /* ############################## */
 /* ###### Common main CSS ####### */
@@ -123,22 +122,15 @@ main{
 }
 /* ########### Footer ########### */
 footer{
+    height:40px;
+    font-size:0.8em;
     background-color: var(--bg-secondary);
     display:flex;
     align-items: center;
-    height:40px;
-    font-size:0.8em;
 }
 /* ############################# */
 
 @media screen and (min-width: 441px){
-    body{
-        font-size:1.25em;
-    }
-    
-    h1{
-        font-size: 2.5em;
-    }
 
     footer{
         font-size: 1em;

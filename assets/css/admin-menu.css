@@ -1,5 +1,7 @@
 main{
-    min-height: calc(100vh - 11.77vh - 8.17vh - 20px);
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 h1{
@@ -7,33 +9,27 @@ h1{
 }
 
 .main-container{
+    width:290px;
+    margin:0 auto 20px auto;
+    padding:15px;
+    background-color: var(--bg-secondary);
+    border-radius:20px;
     display:flex;
     flex-direction:column;
     align-items: center;
-    background-color: var(--bg-secondary);
-    border-radius:20px;
-    padding:15px;
-    margin:0 auto 20px auto;
-    row-gap: 15px;
-    width:290px;
+    gap: 15px;
+
 }
 
 .container{
+    padding:15px;
+    width:100%;
+    background-color: var(--bg-primary);
+    border-radius:15px;
     display:flex;
     flex-direction:column;
     align-items: center;
-    background-color: var(--bg-primary);
-    border-radius:15px;
-    padding:15px;
-    width:100%;
-    row-gap: 15px;
-}
-
-.link-container{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 15px;
+    gap: 15px;
 }
 
 h2{
@@ -41,39 +37,50 @@ h2{
     font-size: 1.2em;
 }
 
+.link-container{
+    display:none;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* chevron animation */
+.fa-solid{
+    animation: upAndDown 0.4s infinite alternate;
+}
+
+@keyframes upAndDown {
+    0% {transform: translateY(5px);}
+    100% {transform: translateY(-5px);}
+}
+
 main a{
+    min-width:100px;
+    padding:10px;
     color: var(--font-color);
     text-decoration: none;
     background-color: var(--bg-secondary);
     border-radius:20px;
-    padding:10px;
     display: inline-block;
-    min-width:100px;
     text-align: center;
 }
 
-@media screen and (min-width: 441px) {
-    main{
-        display:flex;
-        flex-direction: column;
-        justify-content: space-evenly;
-        min-height:calc(100vh - 11.77vh - 8.17vh);
-    }
+@media screen and (min-width: 610px) {
 
     .main-container{
         width:580px;
     }
 
-    .container{
-        height: 150px;
+    .link-container{
+        width:100%;
+        display:flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         justify-content: space-evenly;
     }
 
-    .link-container{
-        flex-direction: row;
-        flex-wrap: wrap;
-        width:100%;
-        justify-content: space-evenly;
+    .fa-chevron-down{
+        display:none;
     }
 }
 
@@ -83,4 +90,4 @@ main a{
         color:var(--bg-secondary);
         transition: background-color 0.4s ease, color 0.4s ease;
     }
-}
+} 
