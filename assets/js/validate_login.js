@@ -13,6 +13,12 @@ const errorNickname = document.createElement('p');
 const errorPassword = document.createElement('p');
 const errorForm = document.createElement('p');
 
+errorNickname.textContent = 'Votre pseudo doit contenir au moins 4 caractères alphanumériques sans espaces ni caractères spéciaux!';
+errorPassword.textContent = 'Le mot de passe doit contenir au moins un nombre, une lettre majuscule et minuscule et comporter au moins 8 caractères';
+
+errorNickname.style.display = 'none';
+errorPassword.style.display = 'none';
+
 // Add error messages to the form
 nickname.insertAdjacentElement('afterend', errorNickname);
 password.insertAdjacentElement('afterend', errorPassword);
@@ -20,13 +26,11 @@ form.insertAdjacentElement('afterbegin', errorForm);
 
 // nickname field control
 nickname.addEventListener('input', () => {
-    errorNickname.textContent = 'Votre pseudo doit contenir au moins 4 caractères alphanumériques sans espaces ni caractères spéciaux!';
     errorNickname.style.display = !regexNickname.test(nickname.value) ? 'block' : 'none';
 });
 
 // password field control
 password.addEventListener('input', () => {
-    errorPassword.textContent = 'Le mot de passe doit contenir au moins un nombre, une lettre majuscule et minuscule et comporter au moins 8 caractères';
     errorPassword.style.display =!regexPassword.test(password.value)? 'block' : 'none';
 });
 
@@ -35,6 +39,8 @@ form.addEventListener('submit', (e) => {
     if (!regexNickname.test(nickname.value) || !regexPassword.test(password.value)) {
         e.preventDefault();
         errorForm.textContent = 'Veuillez corriger les erreurs dans le formulaire!';
+        errorNickname.style.display = !regexNickname.test(nickname.value) ? 'block' : 'none';
+        errorPassword.style.display =!regexPassword.test(password.value)? 'block' : 'none';
         setTimeout(() => {errorForm.textContent = '';}, 2000);
     } else {
         form.submit();

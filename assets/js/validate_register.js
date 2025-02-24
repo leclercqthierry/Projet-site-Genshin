@@ -18,6 +18,13 @@ const errorPassword = document.createElement('p');
 const errorConfirmPassword = document.createElement('p');
 const errorForm = document.createElement('p');
 
+errorNickname.textContent = 'Votre pseudo doit contenir au moins 4 caractères alphanumériques sans espaces ni caractères spéciaux!';
+errorEmail.textContent = 'Ceci n\'est pas une adresse email valide !';
+errorPassword.textContent = 'Le mot de passe doit contenir au moins un nombre, une lettre majuscule et minuscule et comporter au moins 8 caractères';
+
+errorNickname.style.display = 'none';
+errorEmail.style.display = 'none';
+errorPassword.style.display = 'none';
 
 // Add error messages to the form
 nickname.insertAdjacentElement('afterend', errorNickname);
@@ -28,19 +35,16 @@ form.insertAdjacentElement('afterbegin', errorForm);
 
 // nickname field control
 nickname.addEventListener('input', () => {
-    errorNickname.textContent = 'Votre pseudo doit contenir au moins 4 caractères alphanumériques sans espaces ni caractères spéciaux!';
     errorNickname.style.display = !regexNickname.test(nickname.value) ? 'block' : 'none';
 });
 
 // email field control
 email.addEventListener('input', () => {
-    errorEmail.textContent = 'Ceci n\'est pas une adresse email valide !';
     errorEmail.style.display = !regexEmail.test(email.value) ? 'block' : 'none';
 });
 
 // password field control
 password.addEventListener('input', () => {
-    errorPassword.textContent = 'Le mot de passe doit contenir au moins un nombre, une lettre majuscule et minuscule et comporter au moins 8 caractères';
     errorPassword.style.display =!regexPassword.test(password.value)? 'block' : 'none';
 });
 
@@ -61,6 +65,9 @@ form.addEventListener('submit', (e) => {
     if (!regexNickname.test(nickname.value) || !regexEmail.test(email.value) || !regexPassword.test(password.value) || confirmPassword.value !== password.value) {
         e.preventDefault();
         errorForm.textContent = 'Veuillez corriger les erreurs dans le formulaire!';
+        errorNickname.style.display = !regexNickname.test(nickname.value) ? 'block' : 'none';
+        errorEmail.style.display =!regexEmail.test(email.value)? 'block' : 'none';
+        errorPassword.style.display = !regexPassword.test(password.value) ? 'block' : 'none'; 
         setTimeout(() => {errorForm.textContent = '';}, 2000);
     } else {
         form.submit();

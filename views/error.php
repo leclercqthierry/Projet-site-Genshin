@@ -6,14 +6,14 @@
     <meta name="robots" content="noindex">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/index.css">
-    <title>Page 404</title>
+    <title>Page Erreur</title>
 </head>
 <body>
     <?php include_once "templates/header.php"?>
     <main>
-        <h1>Erreur 404</h1>
+        <h1>Erreur</h1>
         <div class="container">
-            <p>La page demandée n'existe pas.</p>
+            <p><?= $error?></p>
             <a href="index">Retour à la page d'accueil</a>
         </div>
     </main>

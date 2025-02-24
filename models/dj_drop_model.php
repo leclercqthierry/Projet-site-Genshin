@@ -6,7 +6,8 @@ require_once "models/database.php";
 for ($i = 0; $i < count($images); $i++) {
     $j = $i + 1;
     if (checkExist("zell_dungeon_drops", "name".$j, $names[$i]) || checkExist("zell_dungeon_drops", "image".$j, $images[$i])){
-        echo "L'objet existe déjà.";
+        $error = "L'objet existe déjà.";
+        require_once "views/error.php";
         exit;
     }
 }
@@ -17,6 +18,7 @@ try{
     $stmt = $pdo->prepare("INSERT INTO zell_dungeon_drops (name1, image1, name2, image2, name3, image3) VALUES (?,?,?,?,?,?)");
     $stmt->execute([$names[0], $imagePaths[0], $names[1], $imagePaths[1], $names[2], $imagePaths[2]]);
 } catch(PDOException $e){
-    echo $e->getMessage();
+    $error = "Erreur lors de la tentative d'insertion des drops de donjon en base de données: ". $e->getMessage();
+    require_once "views/error.php";
     exit;
 }

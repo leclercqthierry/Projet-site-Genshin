@@ -8,23 +8,26 @@ function createUser($nickname, $email, $password){
         $stmt = $pdo->prepare("INSERT INTO zell_users (nickname, email, `password`, role_id) VALUES (?,?,?,?)");
         $stmt->execute([$nickname, $email, $password, 2]);
     } catch(PDOException $e){
-        echo $e->getMessage();
+        $error = "Echec lors la création de l'utilisateur: ". $e->getMessage();
+        require_once "views/error.php";
         exit;
     }
 }
 
 // check if the nickname is already taken
 if (checkExist("zell_users", "nickname", $nickname)){
-    echo "Ce pseudo est déjà utilisé.";
+    $error = "Ce pseudo est déjà utilisé.";
+    require_once "views/error.php";
     exit;
 }
 
 // check if the email is already taken
 if (checkExist("zell_users", "email", $email)) {
-    echo "Cette adresse email est déjà utilisée.";
+    $error = "Cette adresse email est déjà utilisée.";
+    require_once "views/error.php";
     exit;
 }
 
 // insert the new user as member into the database
 createUser($nickname, $email, $password);
-header("Location:index");
+header("location: index");

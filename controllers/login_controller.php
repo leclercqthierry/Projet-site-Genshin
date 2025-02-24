@@ -12,7 +12,8 @@ if (isset($_POST['nickname']) && isset($_POST['password'])){
         }
     
     } catch (Exception $e) {
-        echo $e->getMessage();
+        $error = $e->getMessage();
+        require_once "views/error.php";
         exit;
     }
 
@@ -24,7 +25,8 @@ if (isset($_POST['nickname']) && isset($_POST['password'])){
             $password = htmlspecialchars($_POST['password']);
         }
     } catch (Exception $e) {
-        echo $e->getMessage();
+        $error = $e->getMessage();
+        require_once "views/error.php";
         exit;
     }
 
@@ -46,10 +48,15 @@ if (isset($_POST['nickname']) && isset($_POST['password'])){
                 header("Location: member");
                 break;
             }
-            default: echo "Rôle inconnu."; exit;
+            default: {
+                $error = "Rôle inconnu."; 
+                require_once "views/error.php";
+                exit;
+            }
         }
     } else{
-        echo "Nom d'utilisateur ou mot de passe incorrect.";
+        $error = "Nom d'utilisateur ou mot de passe incorrect.";
+        require_once "views/error.php";
         exit;
     }
 

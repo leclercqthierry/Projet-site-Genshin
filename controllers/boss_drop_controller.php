@@ -15,7 +15,8 @@ if ($_SESSION['role'] === 1){
             }
         
         } catch (Exception $e) {
-            echo $e->getMessage();
+            $error = $e->getMessage();
+            require_once "views/error.php";
             exit;
         }
 
@@ -32,11 +33,14 @@ if ($_SESSION['role'] === 1){
                 move_uploaded_file($_FILES['bd_image']['tmp_name'], $imagePath);
                 header("Location: admin-menu");
             } else {
-                echo "Le fichier existe déjà.";
+                $error = "Le fichier existe déjà.";
+                require_once "views/error.php";
                 exit;
             }
         }
     }
 } else {
-    echo "Accès interdit !!";
+    $error = "Accès interdit !!";
+    require_once "views/error.php";
+    exit;
 }

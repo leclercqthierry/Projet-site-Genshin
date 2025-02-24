@@ -12,7 +12,8 @@ function checkUser($nickname, $password){
         return $user && password_verify($password, $user['password']) ? $user : false;
 
     } catch (PDOException $e){
-        echo $e->getMessage();
+        $error =  "Erreur lors de la vérification de l'existence d'un utilisateur: ".$e->getMessage();
+        require_once "views/error.php";
         exit;
     }
 }

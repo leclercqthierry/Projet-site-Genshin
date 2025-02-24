@@ -17,19 +17,19 @@
         <form action="register" method="post">
             <div class="form-group">
                 <label for="nickname">Pseudo</label>
-                <input type="text" id="nickname" name="nickname" placeholder="user887" minlength="4" required>
+                <input type="text" id="nickname" name="nickname" placeholder="user887">
             </div>
             <div class="form-group">
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="ex: user887@gmail.com" required>
+                <input type="email" id="email" name="email" placeholder="ex: user887@gmail.com">
             </div>
             <div class="form-group">
                 <label for="password">Mot de passe</label>
-                <input type="password" id="password" name="password" placeholder="********" required>
+                <input type="password" id="password" name="password" placeholder="********">
             </div>
             <div class="form-group">
                 <label for="confirm-password">Confirmez votre mot de passe</label>
-                <input type="password" id="confirm-password" name="confirm-password" placeholder="********" required>
+                <input type="password" id="confirm-password" name="confirm-password" placeholder="********">
             </div>
             <div class="btn-container">
             <button type="submit" class="btn">Valider</button>

@@ -11,7 +11,8 @@ if (isset($_POST['nickname']) && (isset($_POST['email'])) && isset($_POST['passw
         }
     
     } catch (Exception $e) {
-        echo $e->getMessage();
+        $error = $e->getMessage();
+        require_once "views/error.php";
         exit;
     }
     
@@ -23,7 +24,8 @@ if (isset($_POST['nickname']) && (isset($_POST['email'])) && isset($_POST['passw
             $email = htmlspecialchars($_POST['email']);
         }
     } catch (Exception $e) {
-        echo $e->getMessage();
+        $error = $e->getMessage();
+        require_once "views/error.php";
         exit;
     }
 
@@ -35,12 +37,12 @@ if (isset($_POST['nickname']) && (isset($_POST['email'])) && isset($_POST['passw
             $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
         }
     } catch (Exception $e) {
-        echo $e->getMessage();
+        $error = $e->getMessage();
+        require_once "views/error.php";
         exit;
     }
 
     require_once "models/register_model.php";
-    echo "Vous avez créer votre compte avec succès !";
 
 } else {
     require_once "views/register.php";

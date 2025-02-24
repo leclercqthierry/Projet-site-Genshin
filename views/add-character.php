@@ -10,7 +10,7 @@
     <title>Panneau Admin - Ajout de personnage</title>
 </head>
 <body>
-    <?php include "template/header.php"; ?>
+    <?php include "templates/header.php"; ?>
     <main>
         <h1>Ajout de personnage</h1>
         <div class="container">
@@ -23,23 +23,21 @@
                     <div class="form-label">
                         <label for="element">Elément</label>
                         <select name="element" id="element">
-                            <option value="anemo">Anemo</option>
-                            <option value="geo">Geo</option>
-                            <option value="electro">Electro</option>
-                            <option value="dendro">Dendro</option>
-                            <option value="hydro">Hydro</option>
-                            <option value="pyro">Pyro</option>
-                            <option value="cryo">Cryo</option>
+                        <?php
+                        foreach($elements as $element){
+                            echo '<option value="' . $element['id'] . '">' . $element['name'] . '</option>';
+                        }
+                        ?>
                         </select>
                     </div>
                     <div class="form-label">
                         <label for="weapon">Arme</label>
                         <select name="weapon" id="weapon">
-                            <option value="sword">Epée à une main</option>
-                            <option value="claymore">Epée à deux mains</option>
-                            <option value="bow">Arc</option>
-                            <option value="polearm">Arme d'hast</option>
-                            <option value="catalyst">Catalyseur</option>
+                        <?php
+                        foreach($weaponTypes as $weaponType){
+                            echo '<option value="'. $weaponType['weapon_type_id']. '">'. $weaponType['name']. '</option>';
+                        }
+                        ?>
                         </select>
                     </div>
                 </div>
@@ -60,30 +58,21 @@
                     <div class="form-label">
                         <label for="bonus">Bonus type</label>
                         <select name="bonus" id="bonus">
-                            <option value="atq">ATQ%</option>
-                            <option value="def">DEF%</option>
-                            <option value="pv">PV%</option>
-                            <option value="dgt-anemo">DGT% Anemo</option>
-                            <option value="dgt-geo">DGT% Geo</option>
-                            <option value="dgt-electro">DGT% Electro</option>
-                            <option value="dgt-dendro">DGT% Dendro</option>
-                            <option value="dgt-hydro">DGT% Hydro</option>
-                            <option value="dgt-pyro">DGT% Pyro</option>
-                            <option value="dgt-cryo">DGT% Cryo</option>
-                            <option value="dgt-phy">DGT% Physique</option>
-                            <option value="crit-rate">TC</option>
-                            <option value="crit-dgt">DC</option>
-                            <option value="re">RE</option>
-                            <option value="me">ME</option>
-                            <option value="heal">%Soins</option>
+                        <?php
+                        foreach($stats as $stat){
+                            echo '<option value="'.$stat['stat_id'].'">'.$stat['nameFr']. '</option>';
+                        }
+                        ?>
                         </select>
                     </div>
                     <div class="form-label">
                         <label for="farm-days">Jours de farm aptitudes</label>
                         <select name="farm-days" id="farm-days">
-                            <option value="mo-th-su">Lundi / Jeudi / Dimanche</option>
-                            <option value="tu-fr-su">Mardi / Vendredi / Dimanche</option>
-                            <option value="we-sa-su">Mercredi / Samedi / Dimanche</option>
+                        <?php
+                        foreach($days as $day){
+                            echo '<option value="'.$day['farm_day_id'].'">'.$day['daysFr']. '</option>';
+                        }
+                        ?>
                         </select>
                     </div>
                 </div>
@@ -103,69 +92,63 @@
                 </div>
                 <div class="form-label-groups">
                     <div class="form-label">
-                        <fieldset>
-                            <legend>Boss matériel</legend>
-                            <input type="file" name="boss-mat" id="boss-mat" accept="image/*">
-                        </fieldset>
+                        <label for="boss-drop">Boss matériel</label>
+                        <select name="boss-drop" id="boss-drop">
+                        <?php
+                        foreach($bossDrops as $bossDrop){
+                            echo '<option value="' . $bossDrop['boss_drop_id'] . '">' . $bossDrop['name'] . '</option>';
+                        }
+                        ?>
+                        </select>
                     </div>
                     <div class="form-label">
-                        <fieldset>
-                            <legend>Local matériel</legend>
-                            <input type="file" name="local-mat" id="local-mat" accept="image/*">
-                        </fieldset>
+                        <label for="local-mat">Local matériel</label>
+                        <select name="local-mat" id="local-mat">
+                        <?php
+                        foreach($localMaterials as $localMaterial){
+                            echo '<option value="' . $localMaterial['local_material_id'] . '">' . $localMaterial['name'] . '</option>';
+                        }
+                        ?>
+                        </select>
                     </div>
                     <div class="form-label">
-                        <fieldset>
-                            <legend>World Boss matériel</legend>
-                            <input type="file" name="wb-mat" id="wb-mat" accept="image/*">
-                        </fieldset>
-                    </div>
-                </div>
-                <div class="form-label-groups">
-                    <div class="form-label">
-                        <fieldset>
-                            <legend>Mob matériel rareté 1</legend>
-                            <input type="file" name="mob-mat-r1" id="mob-mat-r1" accept="image/*">
-                        </fieldset>
-                    </div>
-                    <div class="form-label">
-                        <fieldset>
-                            <legend>Mob matériel rareté 2</legend>
-                            <input type="file" name="mob-mat-r2" id="mob-mat-r2" accept="image/*">
-                        </fieldset>
-                    </div>
-                    <div class="form-label">
-                        <fieldset>
-                            <legend>Mob matériel rareté 3</legend>
-                            <input type="file" name="mob-mat-r3" id="mob-mat-r3" accept="image/*">
-                        </fieldset>
+                        <label for="wb-drop">World Boss matériel</label>
+                        <select name="wb-drop" id="wb-drop">
+                        <?php
+                        foreach($wbDrops as $wbDrop){
+                            echo '<option value="' . $wbDrop['world_boss_drop_id'] . '">' . $wbDrop['name'] . '</option>';
+                        }
+                        ?>
+                        </select>
                     </div>
                 </div>
                 <div class="form-label-groups">
                     <div class="form-label">
-                        <fieldset>
-                            <legend>Donjon matériel rareté 2</legend>
-                            <input type="file" name="dj-mat-r2" id="dj-mat-r2" accept="image/*">
-                        </fieldset>
+                        <label for="mob_drop_category">Mob drop catégorie</label>
+                        <select name="mob_drop_category" id="mob_drop_category">
+                        <?php
+                        foreach($MobMaterialCategories as $Category){
+                            echo '<option value="'.$Category['mob_drop_id'].'">'.$Category['category']. '</option>';
+                        }
+                        ?>
+                        </select>
                     </div>
                     <div class="form-label">
-                        <fieldset>
-                            <legend>Donjon matériel rareté 3</legend>
-                            <input type="file" name="dj-mat-r3" id="dj-mat-r3" accept="image/*">
-                        </fieldset>
-                    </div>
-                    <div class="form-label">
-                        <fieldset>
-                            <legend>Donjon matériel rareté 4</legend>
-                            <input type="file" name="dj-mat-r4" id="dj-mat-r4" accept="image/*">
-                        </fieldset>
+                        <label for="dj_drop_category">Dj drop catégorie</label>
+                        <select name="dj_drop_category" id="dj_drop_category">
+                        <?php
+                        foreach($djMaterialCategories as $Category){
+                            echo '<option value="'.$Category['dungeon_drop_id'].'">'.$Category['category']. '</option>';
+                        }
+                        ?>
+                        </select>
                     </div>
                 </div>
                 <input type="submit" value="Valider" class="btn">
             </form>
         </div>
     </main>
-    <?php include "template/footer.php"; ?>
-    <!-- <script src="assets/js/validate_add_char.js"></script> -->
+    <?php include "templates/footer.php"; ?>
+    <script src="assets/js/validate_add_char.js"></script>
 </body>
 </html>

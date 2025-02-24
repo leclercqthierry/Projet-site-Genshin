@@ -4,7 +4,8 @@ require_once "models/database.php";
 
 // check if the object already exist
 if (checkExist("zell_world_boss_drops", "name", $name) || checkExist("zell_world_boss_drops", "image", $imagePath)){
-    echo "L'objet existe déjà.";
+    $error = "L'objet existe déjà.";
+    require_once "views/error.php";
     exit;
 }
 
@@ -14,7 +15,8 @@ function createWorldBossDrop($name, $imagePath){
         $stmt = $pdo->prepare("INSERT INTO zell_world_boss_drops (`name`, `image`) VALUES (?,?)");
         $stmt->execute([$name, $imagePath]);
     } catch(PDOException $e){
-        echo $e->getMessage();
+        $error = "Echec lors de la création d'un drop de world boss: ".$e->getMessage();
+        require_once "views/error.php";
         exit;
     }
 }

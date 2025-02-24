@@ -14,10 +14,12 @@ if($_SESSION['role'] === 1){
 
         // check if there are duplicates values
         if (count(array_unique($names))!= count($names)) {
-            echo "Les noms ne doivent pas être identiques.";
+            $error = "Les noms ne doivent pas être identiques.";
+            require_once "views/error.php";
             exit;
         } else if (count(array_unique($files))!= count($files)){
-            echo "Les images doivent être differentes.";
+            $error = "Les images doivent être differentes.";
+            require_once "views/error.php";
             exit;
         }
 
@@ -31,7 +33,8 @@ if($_SESSION['role'] === 1){
                 }
             }
         } catch (Exception $e) {
-            echo $e->getMessage();
+            $error = $e->getMessage();
+            require_once "views/error.php";
             exit;
         }
         
@@ -43,7 +46,8 @@ if($_SESSION['role'] === 1){
             } else {
                 $imagePath = "assets/img/dungeon_weapon/".$_FILES[$image]['name'];
                 if (file_exists($imagePath)){
-                    echo "Le fichier existe déjà.";
+                    $error = "Le fichier existe déjà.";
+                    require_once "views/error.php";
                     exit;
                 } else {
                     array_push($imagePaths, $imagePath);
@@ -60,5 +64,7 @@ if($_SESSION['role'] === 1){
         header("Location: admin-menu");
     }
 } else {
-    echo "Accès interdit !!";
+    $error = "Accès interdit !!";
+    require_once "views/error.php";
+    exit;
 }

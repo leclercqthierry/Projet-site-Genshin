@@ -7,6 +7,7 @@
 
 form{
     width: 270px;
+    margin-bottom: 20px;
     padding: 30px 15px;
     background-color: var(--bg-secondary);
     border-radius: 20px;
@@ -81,8 +82,17 @@ a.btn{
     form .btn:hover{
         background-color: var(--font-color);
         color:var(--bg-primary);
-        transition: background-color 0.3s ease, color 0.3s ease;
+        transition: background-color 0.4s ease, color 0.4s ease;
         cursor:pointer;
+    }
+
+    form .btn{
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    #nickname:hover,
+    #password:hover{
+        border: 2px solid var(--bg-primary);
     }
 
     #nickname+p,
