@@ -2,6 +2,9 @@
 
 require_once "models/database.php";
 
+/**
+ * @param string $nickname, $email, $password
+ */
 function createUser($nickname, $email, $password){
     $pdo = getConnexion();
     try{

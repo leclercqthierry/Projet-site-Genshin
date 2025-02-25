@@ -1,8 +1,8 @@
 <?php
 
 /**
- * @param String $controller, $title, $names, $images
- * @return String $html
+ * @param string $controller, $title, $names, $images
+ * @return string $html
  */
 function addSimpleResourceForm($title, $controller, $name, $image){
     $html ='
@@ -27,11 +27,11 @@ function addSimpleResourceForm($title, $controller, $name, $image){
 }
 
 /**
- * @param String $controller, $title
- * @param Array $names, $images
- * @return String $html
+ * @param string $controller, $title
+ * @param array $names, $images
+ * @return string $html
  */
-function addMultipleResourceForm($title, $controller, $names, $images){
+function addMultiplesResourcesForm($title, $controller, $names, $images){
     $html ='
     <div class="container">
         <h2>Ajout '.$title.'</h2>

@@ -9,6 +9,9 @@ if (checkExist("zell_world_boss_drops", "name", $name) || checkExist("zell_world
     exit;
 }
 
+/**
+ * @param string $name, $imagePath
+ */
 function createWorldBossDrop($name, $imagePath){
     $pdo = getConnexion();
     try{

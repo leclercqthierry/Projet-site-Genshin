@@ -3,6 +3,9 @@
 require_once "models/database.php";
 
 // returns the user with the nickname $nickname and the password $password if it exists otherwise false
+/**
+ * @param string $nickname, $password
+ */
 function checkUser($nickname, $password){
     $pdo = getConnexion();
     try{

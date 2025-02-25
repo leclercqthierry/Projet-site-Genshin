@@ -9,6 +9,9 @@ if (checkExist("zell_local_materials", "name", $name) || checkExist("zell_local_
     exit;
 }
 
+/**
+ * @param string $name, $imagePath
+ */
 function createLocalMaterial($name, $imagePath){
     $pdo = getConnexion();
     try{

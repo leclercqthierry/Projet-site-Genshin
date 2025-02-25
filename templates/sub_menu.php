@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @param String $title, $action
+ * @param string $title, $action
  */
 function subMenu($title, $action){
     $html = '

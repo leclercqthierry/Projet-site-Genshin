@@ -18,14 +18,14 @@
                 <div id="group1">
                     <div class="form-label">
                         <label for="name">Nom</label>
-                        <input type="text" id="name" name="name" minlength="2" required>
+                        <input type="text" id="name" name="name">
                     </div>
                     <div class="form-label">
                         <label for="element">Elément</label>
                         <select name="element" id="element">
                         <?php
                         foreach($elements as $element){
-                            echo '<option value="' . $element['id'] . '">' . $element['name'] . '</option>';
+                            echo '<option value="' . $element['element_id'] . '">' . $element['name'] . '</option>';
                         }
                         ?>
                         </select>
@@ -124,8 +124,8 @@
                 </div>
                 <div class="form-label-groups">
                     <div class="form-label">
-                        <label for="mob_drop_category">Mob drop catégorie</label>
-                        <select name="mob_drop_category" id="mob_drop_category">
+                        <label for="mob-drop-category">Mob drop catégorie</label>
+                        <select name="mob-drop-category" id="mob-drop-category">
                         <?php
                         foreach($MobMaterialCategories as $Category){
                             echo '<option value="'.$Category['mob_drop_id'].'">'.$Category['category']. '</option>';
@@ -134,8 +134,8 @@
                         </select>
                     </div>
                     <div class="form-label">
-                        <label for="dj_drop_category">Dj drop catégorie</label>
-                        <select name="dj_drop_category" id="dj_drop_category">
+                        <label for="dj-drop-category">Dj drop catégorie</label>
+                        <select name="dj-drop-category" id="dj-drop-category">
                         <?php
                         foreach($djMaterialCategories as $Category){
                             echo '<option value="'.$Category['dungeon_drop_id'].'">'.$Category['category']. '</option>';
@@ -149,6 +149,6 @@
         </div>
     </main>
     <?php include "templates/footer.php"; ?>
-    <script src="assets/js/validate_add_char.js"></script>
+    <!-- <script src="assets/js/validate_add_char.js"></script> -->
 </body>
 </html>

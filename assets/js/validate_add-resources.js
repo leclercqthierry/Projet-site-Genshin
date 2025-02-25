@@ -28,6 +28,7 @@ forms.forEach(form => {
     form.addEventListener('submit',(e)=> {
         e.preventDefault();
         images.forEach(image => {
+            console.log(image.files);
             if (image.files.length === 0) {
                 showError('Vous n\'avez pas chargé d\'image.', errorForm);
             } else if (image.files[0].size > 1048576) {

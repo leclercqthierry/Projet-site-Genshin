@@ -5,7 +5,7 @@ require_once "models/database.php";
 function getAllElementNames(){
     $pdo = getConnexion();
     try{
-        $stmt = $pdo->query("SELECT `id`, `name` FROM zell_elements ORDER BY `name`");
+        $stmt = $pdo->query("SELECT `element_id`, `name` FROM zell_elements ORDER BY `name`");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(Exception $e){
         $error =  "Erreur lors de la récupération des éléments: ".$e->getMessage();
@@ -108,4 +108,16 @@ function getDjMaterialCategory() {
         require_once "views/error.php";
         exit;
     } 
+}
+
+function createCharacter($name, $element_id, $char_jewels_id, $weapon_type_id, $rarity, $stat_id, $farm_day_id, $boss_drop_id, $local_material_id, $world_boss_drop_id, $mob_drop_id, $dungeon_drop_id, $cardPath, $thumbnailPath){
+    $pdo = getConnexion();
+    try{
+        $stmt = $pdo->prepare("INSERT INTO zell_characters (`name`, `rarity`, `card`, `image`, `weapon_type_id`, `world_boss_drop_id`, `dungeon_drop_id`, `mob_drop_id`, `local_material_id`, `boss_drop_id`, `farm_day_id`, `stat_id`, `char_jewels_id`, `element_id`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $stmt->execute([$name, $rarity, $cardPath, $thumbnailPath, $weapon_type_id, $world_boss_drop_id, $dungeon_drop_id, $mob_drop_id, $local_material_id, $boss_drop_id, $farm_day_id, $stat_id, $char_jewels_id, $element_id]);
+    } catch(PDOException $e){
+        $error = "Erreur lors de la création d'un personnage: ".$e->getMessage();
+        require_once "views/error.php";
+        exit;
+    }
 }
