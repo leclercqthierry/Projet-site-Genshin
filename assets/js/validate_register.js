@@ -12,41 +12,23 @@ const regexEmail = /^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/;
 const regexPassword = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
 
 // Error messages display
-const errorNickname = document.createElement('p');
-const errorEmail = document.createElement('p');
-const errorPassword = document.createElement('p');
-const errorConfirmPassword = document.createElement('p');
 const errorForm = document.createElement('p');
 
-errorNickname.textContent = 'Votre pseudo doit contenir au moins 4 caractères alphanumériques sans espaces ni caractères spéciaux!';
-errorEmail.textContent = 'Ceci n\'est pas une adresse email valide !';
-errorPassword.textContent = 'Le mot de passe doit contenir au moins un nombre, une lettre majuscule et minuscule et comporter au moins 8 caractères';
-
-errorNickname.style.display = 'none';
-errorEmail.style.display = 'none';
-errorPassword.style.display = 'none';
+const errorN = 'Votre pseudo doit contenir au moins 4 caractères alphanumériques sans espaces ni caractères spéciaux!';
+const errorE = 'Ceci n\'est pas une adresse email valide !';
+const errorP = 'Le mot de passe doit contenir au moins un nombre, une lettre majuscule et minuscule et comporter au moins 8 caractères';
 
 // Add error messages to the form
-nickname.insertAdjacentElement('afterend', errorNickname);
-email.insertAdjacentElement('afterend', errorEmail);
-password.insertAdjacentElement('afterend', errorPassword);
-confirmPassword.insertAdjacentElement('afterend', errorConfirmPassword);
 form.insertAdjacentElement('afterbegin', errorForm);
 
-// nickname field control
-nickname.addEventListener('input', () => {
-    errorNickname.style.display = !regexNickname.test(nickname.value) ? 'block' : 'none';
-});
+const errorNickname = addErrorMessage(nickname, errorN);
+const errorEmail = addErrorMessage(email, errorE);
+const errorPassword = addErrorMessage(password, errorP);
+const errorConfirmPassword = addErrorMessage(confirmPassword, errorP);
 
-// email field control
-email.addEventListener('input', () => {
-    errorEmail.style.display = !regexEmail.test(email.value) ? 'block' : 'none';
-});
-
-// password field control
-password.addEventListener('input', () => {
-    errorPassword.style.display =!regexPassword.test(password.value)? 'block' : 'none';
-});
+validateTextField(nickname, regexNickname, errorNickname);
+validateTextField(email, regexEmail, errorEmail);
+validateTextField(password, regexPassword, errorPassword);
 
 // confirm password field control
 confirmPassword.addEventListener('input', () => {

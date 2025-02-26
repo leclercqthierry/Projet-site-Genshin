@@ -26,6 +26,7 @@
     </main>
     <?php include_once "templates/footer.php"; ?>
     <script src="assets/js/chevron_form.js"></script>
-    <!-- <script src="assets/js/validate_add-resources.js"></script> -->
+    <script src="assets/js/validate.js"></script>
+    <script src="assets/js/validate_add-resources.js"></script>
 </body>
 </html>

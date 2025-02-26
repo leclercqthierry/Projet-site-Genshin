@@ -5,6 +5,9 @@ const cards = document.querySelectorAll('.card');
 console.log(weapons);
 
 // Checks the radio weapons and returns the id of the one that is checked
+/**
+ * @return {string}
+ */
 function checkWeapons(){
     let id;
     weapons.forEach((weapon) => {
@@ -16,6 +19,10 @@ function checkWeapons(){
 }
 
 // Checks the checkbox rarity and returns the values of the ones that are checked
+
+/**
+ * @return {Array}
+ */
 function checkRarity(){
     let values = [];
     rarities.forEach((rarity) => {

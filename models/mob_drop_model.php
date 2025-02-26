@@ -16,7 +16,7 @@ for ($i = 0; $i < count($images); $i++) {
 $pdo = getConnexion();
 try{
     $stmt = $pdo->prepare("INSERT INTO zell_mob_drops (category, name1, image1, name2, image2, name3, image3) VALUES (?,?,?,?,?,?,?)");
-    $stmt->execute([$category, $names[0], $imagePaths[0], $names[1], $imagePaths[1], $names[2], $imagePaths[2]]);
+    $stmt->execute([$names[0], $names[1], $imagePaths[0], $names[2], $imagePaths[1], $names[3], $imagePaths[2]]);
 } catch(PDOException $e){
     $error = "Erreur lors de la tentative d'insertion des drop de mobs dans la base de données: ".$e->getMessage();
     require_once "views/error.php";

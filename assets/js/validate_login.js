@@ -9,36 +9,26 @@ const regexNickname = /^[\w\d]{4,}$/;
 const regexPassword = /(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/;
 
 // Error messages display
-const errorNickname = document.createElement('p');
-const errorPassword = document.createElement('p');
 const errorForm = document.createElement('p');
 
-errorNickname.textContent = 'Votre pseudo doit contenir au moins 4 caractères alphanumériques sans espaces ni caractères spéciaux!';
-errorPassword.textContent = 'Le mot de passe doit contenir au moins un nombre, une lettre majuscule et minuscule et comporter au moins 8 caractères';
-
-errorNickname.style.display = 'none';
-errorPassword.style.display = 'none';
+const errorN = 'Votre pseudo doit contenir au moins 4 caractères alphanumériques sans espaces ni caractères spéciaux!';
+const errorP = 'Le mot de passe doit contenir au moins un nombre, une lettre majuscule et minuscule et comporter au moins 8 caractères';
 
 // Add error messages to the form
-nickname.insertAdjacentElement('afterend', errorNickname);
-password.insertAdjacentElement('afterend', errorPassword);
 form.insertAdjacentElement('afterbegin', errorForm);
 
-// nickname field control
-nickname.addEventListener('input', () => {
-    errorNickname.style.display = !regexNickname.test(nickname.value) ? 'block' : 'none';
-});
+const errorNickname = addErrorMessage(nickname, errorN);
+const errorPassword = addErrorMessage(password, errorP);
 
-// password field control
-password.addEventListener('input', () => {
-    errorPassword.style.display =!regexPassword.test(password.value)? 'block' : 'none';
-});
+validateTextField(nickname, regexNickname, errorNickname);
+validateTextField(password, regexPassword, errorPassword);
+
 
 // form submission control
 form.addEventListener('submit', (e) => {
     if (!regexNickname.test(nickname.value) || !regexPassword.test(password.value)) {
         e.preventDefault();
-        errorForm.textContent = 'Veuillez corriger les erreurs dans le formulaire!';
+        errorForm.textContent = 'Veuillez corriger les erreurs dans le formulaire !';
         errorNickname.style.display = !regexNickname.test(nickname.value) ? 'block' : 'none';
         errorPassword.style.display =!regexPassword.test(password.value)? 'block' : 'none';
         setTimeout(() => {errorForm.textContent = '';}, 2000);
@@ -46,24 +36,6 @@ form.addEventListener('submit', (e) => {
         form.submit();
     }
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 const forgottenPassword = document.querySelector('form a:not(.btn)');
 

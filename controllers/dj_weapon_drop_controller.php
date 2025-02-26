@@ -6,11 +6,15 @@ if($_SESSION['role'] === 1){
 
     require_once "utilities/validateFile.php";
 
-    if (isset($_POST['dwd_name1']) && isset($_POST['dwd_name2']) && isset($_POST['dwd_name3']) && isset($_POST['dwd_name4'])&& isset($_FILES['dwd_image1']) && isset($_FILES['dwd_image2']) && isset($_FILES['dwd_image3']) && isset($_FILES['dwd_image4'])) {
+    if (isset($_POST['category']) && isset($_POST['dwd_name1']) && isset($_POST['dwd_name2']) && isset($_POST['dwd_name3']) && isset($_POST['dwd_name4'])&& isset($_FILES['dwd_image1']) && isset($_FILES['dwd_image2']) && isset($_FILES['dwd_image3']) && isset($_FILES['dwd_image4'])) {
 
-        $names = [$_POST['dwd_name1'], $_POST['dwd_name2'], $_POST['dwd_name3'], $_POST['dwd_name4']];
+        $names = [$_POST['category'], $_POST['dwd_name1'], $_POST['dwd_name2'], $_POST['dwd_name3'], $_POST['dwd_name4']];
         $images = ['dwd_image1', 'dwd_image2', 'dwd_image3', 'dwd_image4'];
         $files = [$_FILES['dwd_image1']['name'], $_FILES['dwd_image2']['name'], $_FILES['dwd_image3']['name'], $_FILES['dwd_image4']['name']];
+
+        $strNames = ['category', 'dwd_name1', 'dwd_name2', 'dwd_name3'];
+        $regex = "/^[a-zéèê][a-zA-Z \-éèêëàâû']+[a-zA-Zé]$/";
+        $errorMessage = "Le nom ne commence pas par un espace ni une majuscule (caractères -éèêëàû' autorisés à l'intérieur).";
 
         // check if there are duplicates values
         if (count(array_unique($names))!= count($names)) {
@@ -24,18 +28,8 @@ if($_SESSION['role'] === 1){
         }
 
         // Validate the names
-        try {
-            foreach ($names as $name) {
-                if (!preg_match("/^[a-zA-Z]{2}[a-zA-Z ]{1,98}$/", $name)) {
-                    throw new Exception("Le nom doit avoir entre 2 et 100 lettres uniquement (espaces inclus) mais ne pas comporter d'espaces dans les 2 premiers caractères.");
-                }else {
-                    $name = htmlspecialchars($name);
-                }
-            }
-        } catch (Exception $e) {
-            $error = $e->getMessage();
-            require_once "views/error.php";
-            exit;
+        for ($i = 0; $i < count($names); $i++){
+            $names[$i] = validateTextField($strNames[$i], $regex, $errorMessage);
         }
         
         // Validate the images

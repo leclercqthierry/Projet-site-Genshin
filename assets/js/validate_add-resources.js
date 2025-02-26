@@ -1,34 +1,22 @@
 // The purpose of this script is to validate the add character form on the front side
 
-// Retrieving form elements
 const forms = document.querySelectorAll('form');
-const regexName = /^[a-zA-Z]{2}[a-zA-Z ]{1,98}$/;
-
-function showError(message, errorForm){
-    errorForm.textContent = message;
-    errorForm.style.display = 'block';
-    setTimeout(() => {errorForm.textContent = '';}, 2000);
-}
+const regexName = /^[a-zéèê][a-zA-Z \-éèêëàâû']+[a-zA-Zé]$/;
+const errorN = "Le nom ne commence pas par un espace ni une majuscule (caractères -éèêëàû' autorisés à l'intérieur).";
 
 forms.forEach(form => {
     const names = form.querySelectorAll("input[type=text]");
     const images = form.querySelectorAll("input[type='file']");
-    const errorForm = document.createElement('p');
-    form.insertAdjacentElement('afterbegin', errorForm);
+    const errorForm = addErrorMessage(form, ' ');
 
     names.forEach(name => {
-        const errorName = document.createElement('p');
-        name.insertAdjacentElement('afterend', errorName);
-        name.addEventListener('input',()=> {
-            errorName.textContent = 'Le nom doit avoir entre 2 et 100 lettres uniquement (espaces inclus) mais ne pas comporter d\'espaces dans les 2 premiers caractères.';
-            errorName.style.display = !(regexName.test(name.value)) ? 'block' : 'none';
-        });
+        const errorName = addErrorMessage(name, errorN);
+        validateTextField(name, regexName, errorName);
     });
 
     form.addEventListener('submit',(e)=> {
         e.preventDefault();
         images.forEach(image => {
-            console.log(image.files);
             if (image.files.length === 0) {
                 showError('Vous n\'avez pas chargé d\'image.', errorForm);
             } else if (image.files[0].size > 1048576) {
@@ -40,7 +28,7 @@ forms.forEach(form => {
             }
         });
         names.forEach(name => {
-            if (!(regexName.test(name.value))){
+            if (!(regexName.test(name.value)) || name.value === '') {
                 showError('Le nom doit avoir entre 2 et 100 lettres uniquement (espaces inclus) mais ne pas comporter d\'espaces dans les 2 premiers caractères.', errorForm);
             }
         });

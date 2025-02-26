@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Common style-->
+    <?php //Common style ?>
     <link rel="stylesheet" href="assets/css/style.css">
-    <!--add-character style-->
+    <?php //add-character style ?>
     <link rel="stylesheet" href="assets/css/add-character.css">
     <title>Panneau Admin - Ajout de personnage</title>
 </head>
@@ -47,7 +47,7 @@
                         <div>
                             <label for="rarity4">4<sup><img src="assets/img/icons/1_star.png" alt="étoile"></sup></label>
                         </div>
-                        <input type="radio" name="rarity" id="rarity4" value="4" checked>
+                        <input type="radio" name="rarity" id="rarity4" value="4">
                     </div>
                     <div class="rarity">
                         <div>
@@ -149,6 +149,7 @@
         </div>
     </main>
     <?php include "templates/footer.php"; ?>
-    <!-- <script src="assets/js/validate_add_char.js"></script> -->
+    <script src="assets/js/validate.js"></script>
+    <script src="assets/js/validate_add_char.js"></script>
 </body>
 </html>

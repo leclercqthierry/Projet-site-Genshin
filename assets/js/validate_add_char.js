@@ -1,38 +1,34 @@
-// The purpose of this script is to validate the add character form on the front side
-
-function showError(message, errorForm){
-    errorForm.textContent = message;
-    errorForm.style.display = 'block';
-    setTimeout(() => {errorForm.textContent = '';}, 2000);
-}
+// The purpose of this script is to validate the add character||weapon form on the front side
 
 // Retrieving form elements
 const form = document.querySelector('form');
 const charName = document.getElementById('name');
 const rarities = document.getElementsByName('rarity');
+const selects = document.querySelectorAll('select');
+const thumbnail = document.getElementById('thumbnail');
+const card = document.getElementById('card');
+
 
 // Regex pattern for validation
-const regexName = /^[A-Z][a-zA-Z -éèêë]+\S$/;
+const regexName = /^[A-Z][a-zA-Z \-éèêëàâû']+[a-zA-Zé]$/;
+const regexSelect  =/^\d+$/;
 
-// Error messages display
-const errorName = document.createElement('p');
-const errorForm = document.createElement('p');
+const errorN = "Le nom doit commencer par une majuscule et ne pas comporter de chiffres (caractères spéciaux autorisés: -, é, è, ê, ë, à, â, û et ') et avoir au moins 3 lettres.";
 
-// Add error messages to the form
-charName.insertAdjacentElement('afterend', errorName);
-form.insertAdjacentElement('afterbegin', errorForm);
+const errorS = 'Valeur incorrecte !';
 
-// nickname field control
-charName.addEventListener('input', () => {
-    errorName.textContent = 'Le nom du personnage doit commencer par une majuscule et ne pas comporter de chiffres ni de caractères spéciaux (seuls é, è, ê ou ë sont autorisés) et avoir au moins 3 lettres.';
-    errorName.style.display = !regexName.test(charName.value) ? 'block' : 'none';
+const errorName = addErrorMessage(charName, errorN);
+const errorForm = addErrorMessage(form, ' ');
+
+validateTextField(charName, regexName, errorName);
+
+selects.forEach(select =>{
+    const errorSelect = addErrorMessage(select, errorS);
+    validateSelect(select, regexSelect, errorSelect);
 });
-
 
 form.addEventListener('submit', (e) =>{
     e.preventDefault();
-    const thumbnail = document.getElementById('thumbnail');
-    const card = document.getElementById('card');
     if (thumbnail.files.length === 0 || card.files.length === 0) {
         showError('Vous n\'avez pas chargé d\'image.', errorForm);
     } else if (thumbnail.files[0].size > 1048576 || card.files[0].size > 1048576) {
@@ -49,6 +45,12 @@ form.addEventListener('submit', (e) =>{
     if (!rarities[0].checked && !rarities[1].checked){
         showError('Veuillez selectionner une rareté pour votre personnage.', errorForm);
     };
+
+    selects.forEach(select =>{
+        if (!regexSelect.test(select.value) || select.value===''){
+            showError('Veuillez choisir une valeur valide pour votre personnage dans les menus déroulants.', errorForm);
+        }
+    });
     
     if (errorForm.textContent === '') {
         form.submit();

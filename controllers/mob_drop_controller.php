@@ -1,17 +1,19 @@
 <?php
-
 session_start();
 
 if($_SESSION['role'] === 1){
 
-    require_once "utilities/validateFile.php";
+    require_once "utilities/validate.php";
 
     if (isset($_POST['category']) && isset($_POST['md_name1']) && isset($_POST['md_name2']) && isset($_POST['md_name3']) && isset($_FILES['md_image1']) && isset($_FILES['md_image2']) && isset($_FILES['md_image3'])) {
 
-        $category = $_POST['category'];
-        $names = [$_POST['md_name1'], $_POST['md_name2'], $_POST['md_name3']];
+        $names = [$_POST['category'], $_POST['md_name1'], $_POST['md_name2'], $_POST['md_name3']];
         $images = ['md_image1', 'md_image2', 'md_image3'];
         $files = [$_FILES['md_image1']['name'], $_FILES['md_image2']['name'], $_FILES['md_image3']['name']];
+
+        $strNames = ['category', 'md_name1', 'md_name2', 'md_name3'];
+        $regex = "/^[a-zéèê][a-zA-Z \-éèêëàâû']+[a-zA-Zé]$/";
+        $errorMessage = "Le nom ne commence pas par un espace ni une majuscule (caractères -éèêëàû' autorisés à l'intérieur).";
 
         // check if there are duplicates values
         if (count(array_unique($names))!= count($names)) {
@@ -24,28 +26,9 @@ if($_SESSION['role'] === 1){
             exit;
         }
 
-        // Validate the category
-        if(!preg_match("/^[a-zA-Z]{2}[a-zA-Z ]{1,98}$/", $category)){
-            $error = "Le nom de la catégorie doit avoir entre 2 et 100 lettres uniquement (espaces inclus) mais ne pas comporter d'espaces dans les 2 premiers caractères.";
-            require_once "views/error.php";
-            exit;
-        } else {
-            $category = htmlspecialchars($category);
-        }
-
         // Validate the names
-        try {
-            foreach ($names as $name) {
-                if (!preg_match("/^[a-zA-Z]{2}[a-zA-Z ]{1,98}$/", $name)) {
-                    throw new Exception("Le nom doit avoir entre 2 et 100 lettres uniquement (espaces inclus) mais ne pas comporter d'espaces dans les 2 premiers caractères.");
-                }else {
-                    $name = htmlspecialchars($name);
-                }
-            }
-        } catch (Exception $e) {
-            $error = $e->getMessage();
-            require_once "views/error.php";
-            exit;
+        for ($i = 0; $i < count($names); $i++){
+            $names[$i] = validateTextField($strNames[$i], $regex, $errorMessage);
         }
         
         // Validate the images

@@ -4,13 +4,17 @@ session_start();
 
 if($_SESSION['role'] === 1){
 
-    require_once "utilities/validateFile.php";
+    require_once "utilities/validate.php";
 
-    if (isset($_POST['ewd_name1']) && isset($_POST['ewd_name2']) && isset($_POST['ewd_name3']) && isset($_FILES['ewd_image1']) && isset($_FILES['ewd_image2']) && isset($_FILES['ewd_image3'])) {
+    if (isset($_POST['category']) && isset($_POST['ewd_name1']) && isset($_POST['ewd_name2']) && isset($_POST['ewd_name3']) && isset($_FILES['ewd_image1']) && isset($_FILES['ewd_image2']) && isset($_FILES['ewd_image3'])) {
 
-        $names = [$_POST['ewd_name1'], $_POST['ewd_name2'], $_POST['ewd_name3']];
+        $names = [$_POST['category'], $_POST['ewd_name1'], $_POST['ewd_name2'], $_POST['ewd_name3']];
         $images = ['ewd_image1', 'ewd_image2', 'ewd_image3'];
         $files = [$_FILES['ewd_image1']['name'], $_FILES['ewd_image2']['name'], $_FILES['ewd_image3']['name']];
+
+        $strNames = ['category', 'ewd_name1', 'ewd_name2', 'ewd_name3'];
+        $regex = "/^[a-zéèê][a-zA-Z \-éèêëàâû']+[a-zA-Zé]$/";
+        $errorMessage = "Le nom ne commence pas par un espace ni une majuscule (caractères -éèêëàû' autorisés à l'intérieur).";
 
         // check if there are duplicates values
         if (count(array_unique($names))!= count($names)) {
@@ -24,18 +28,8 @@ if($_SESSION['role'] === 1){
         }
 
         // Validate the names
-        try {
-            foreach ($names as $name) {
-                if (!preg_match("/^[a-zA-Z]{2}[a-zA-Z ]{1,98}$/", $name)) {
-                    throw new Exception("Le nom doit avoir entre 2 et 100 lettres uniquement (espaces inclus) mais ne pas comporter d'espaces dans les 2 premiers caractères.");
-                }else {
-                    $name = htmlspecialchars($name);
-                }
-            }
-        } catch (Exception $e) {
-            $error = $e->getMessage();
-            require_once "views/error.php";
-            exit;
+        for ($i = 0; $i < count($names); $i++){
+            $names[$i] = validateTextField($strNames[$i], $regex, $errorMessage);
         }
         
         // Validate the images
