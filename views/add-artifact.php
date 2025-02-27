@@ -11,14 +11,14 @@
     <title>Panneau Admin - Ajout d'un set d'artéfacts</title>
 </head>
 <body>
-    <?php include "template/header.php"; ?>
+    <?php include "templates/header.php"; ?>
     <main>
         <h1>Ajout d'un set d'artéfact</h1>
         <div class="container">
-            <form action="#" method="post" name="add-artifact-form">
+            <form action="add-artifact" method="post" name="add-artifact-form" enctype="multipart/form-data">
                 <div class="form-label">
                     <label for="name">Nom du set</label>
-                    <input type="text" id="name" name="name" required>
+                    <input type="text" id="name" name="name">
                 </div>
                 <div id="group2">
                     <span>Rareté max</span>
@@ -43,13 +43,13 @@
                 </div>
                 <div class="form-label">
                     <label for="description">Bonus de set</label>
-                    <textarea name="description" id="description" rows="5" required></textarea>
+                    <textarea name="description" id="description" rows="5"></textarea>
                 </div>
                 <div class="form-label-groups">
                     <div class="form-label">
                         <fieldset>
                             <legend>Miniature</legend>
-                            <input type="file" name="thumbnail" id="thumbnail" accept="image/*" required>
+                            <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
                         </fieldset>
                     </div>
                 </div>
@@ -57,6 +57,8 @@
             </form>
         </div>
     </main>
-    <?php include "template/footer.php"; ?>
+    <?php include "templates/footer.php"; ?>
+    <script src="assets/js/validate.js"></script>
+    <script src="assets/js/validate_add-artifact.js"></script>
 </body>
 </html>

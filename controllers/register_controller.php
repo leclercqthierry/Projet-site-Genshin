@@ -18,10 +18,11 @@ if (isset($_POST['nickname']) && (isset($_POST['email'])) && isset($_POST['passw
     
     // Validate the email
     try{
-        if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+        $tmp = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL);
+        if (!filter_var($tmp, FILTER_VALIDATE_EMAIL)) {
             throw new Exception("L'adresse email est invalide.");
         } else {
-            $email = htmlspecialchars($_POST['email']);
+            $email = filter_var($tmp, FILTER_VALIDATE_EMAIL);
         }
     } catch (Exception $e) {
         $error = $e->getMessage();
