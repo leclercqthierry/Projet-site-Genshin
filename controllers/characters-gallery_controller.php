@@ -1,4 +1,5 @@
 <?php
+session_start();
 
 require_once "models/weapons.php";
 require_once "models/common.php";

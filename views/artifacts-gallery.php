@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Common style-->
+    <?php // Common style ?>
     <link rel="stylesheet" href="assets/css/style.css">
-    <!--Artifact gallery style-->
+    <?php // Artifact gallery style ?>
     <link rel="stylesheet" href="assets/css/artifacts-gallery.css">
     <title>Gallerie d'artefacts</title>
 </head>
 <body>
-    <?php include "template/header.php"; ?>
+    <?php include "templates/header.php"; ?>
     <main>
         <h1>Gallerie d'artéfacts</h1>
-        <!--Filter/Sort Elements-->
+        <?php // Filter/Sort Elements ?>
         <div class="filters-container">
             <fieldset class="rarity-container">
                 <legend>Rareté max</legend>
@@ -41,14 +41,13 @@
                 <option value="rarity">Rareté</option>
             </select>
         </div>
-        <!--Artefacts gallery-->
+        <?php // Artefacts gallery ?>
         <div class="gallery">
-            <!--Generated in php-->
+            <?php // Generated in php ?>
             <?php
-            include "base.php";
             foreach($artifacts as $artifact) {
                 $item = "
-                <a href='artifact.php?id=".$artifact['id']."'>
+                <a href='artifact.php?id=".$artifact['artifact_id']."'>
                     <div class='card' data-rarity=".$artifact['rarity'].">
                         <img src=".$artifact['image']." alt=".$artifact['name']." class='rarity".$artifact['rarity']." artifact'>
                         <strong>".$artifact['name']."</strong>
@@ -59,7 +58,7 @@
             ?>
         </div>
     </main>
-    <?php include "template/footer.php"; ?>
+    <?php include "templates/footer.php"; ?>
     <script src="assets/js/artifacts-gallery.js"></script>
 </body>
 </html>

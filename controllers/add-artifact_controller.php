@@ -32,7 +32,7 @@ if ($_SESSION['role'] === 1){
             $thumbnailPath = "assets/img/gallery/Artefacts_set/".$_FILES['thumbnail']['name'];
             if (!file_exists($thumbnailPath)){
                 // Save in database
-                require_once "models/add-artifact_model.php";
+                require_once "models/artifacts.php";
                 $artifact = createArtifact($name, $rarity, $description, $thumbnailPath);
 
                 // Then save the file in the good directory
