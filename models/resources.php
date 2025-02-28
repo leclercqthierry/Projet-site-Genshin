@@ -64,6 +64,32 @@ function getMobMaterials() {
     }
 }
 
+function getElevationMaterials(){
+    $pdo = getConnexion();
+    try{
+        $stmt = $pdo->query("SELECT * FROM zell_elevation_weapon_drops ORDER BY `category`");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    } catch (Exception $e){
+        $error = "Erreur lors de la récupération des matériaux d'élévation: ".$e->getMessage();
+        require_once "views/error.php";
+        exit;
+    }
+}
+
+function getDjElevationMaterials(){
+    $pdo = getConnexion();
+    try{
+        $stmt = $pdo->query("SELECT * FROM zell_dungeon_weapon_drops ORDER BY `category`");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        
+    } catch (Exception $e){
+        $error = "Erreur lors de la récupération des matériaux de DJ d'élévation: ".$e->getMessage();
+        require_once "views/error.php";
+        exit;
+    }
+}
+
 ################# CREATE #################
 
 /**

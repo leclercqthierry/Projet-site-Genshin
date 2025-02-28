@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Common style-->
+    <?php // Common style ?>
     <link rel="stylesheet" href="assets/css/style.css">
-    <!--Common gallery style-->
+    <?php // Common gallery style ?>
     <link rel="stylesheet" href="assets/css/gallery-common-style.css">
-    <!--Weapons gallery style-->
+    <?php // Weapons gallery style ?>
     <link rel="stylesheet" href="assets/css/weapons-gallery.css">
     <title>Gallerie d'armes</title>
 </head>
 <body>
-    <?php include "template/header.php"; ?>
+    <?php include "templates/header.php"; ?>
     <main>
         <h1>Gallerie d'armes</h1>
-        <!--Filter/Sort Elements-->
+        <?php // Filter/Sort Elements ?>
         <div class="filters-container">
             <div class="weapons-rarity-container">
                 <fieldset class="rarity-container">
@@ -41,36 +41,17 @@
                 </fieldset>
                 <fieldset class="weapons">
                     <legend>Armes</legend>
-                    <div class="weapon-container">
-                        <label for="sword">
-                            <img src="assets/img/icons/Sword.png" alt="épée à une main">
-                        </label>
-                        <input type="radio" name="weapon" id="sword">
-                    </div>
-                    <div class="weapon-container">
-                        <label for="claymore">
-                            <img src="assets/img/icons/Claymore.png" alt="épée à deux mains">
-                        </label>
-                        <input type="radio" name="weapon" id="claymore">
-                    </div>
-                    <div class="weapon-container">
-                        <label for="bow">
-                            <img src="assets/img/icons/Bow.png" alt="arc">
-                        </label>
-                        <input type="radio" name="weapon" id="bow">
-                    </div>
-                    <div class="weapon-container">
-                        <label for="polearm">
-                            <img src="assets/img/icons/Polearm.png" alt="arme d'hast">
-                        </label>
-                        <input type="radio" name="weapon" id="polearm">
-                    </div>
-                    <div class="weapon-container">
-                        <label for="catalyst">
-                            <img src="assets/img/icons/Catalyst.png" alt="catalyseur">
-                        </label>
-                        <input type="radio" name="weapon" id="catalyst">
-                    </div>
+                    <?php
+                    foreach($weaponTypes as $weaponType){
+                        echo '
+                        <div class="weapon-container">
+                            <label for="'.$weaponType['type'].'">
+                                <img src="'.$weaponType['image'].'" alt="'.$weaponType['name'].'">
+                            </label>
+                            <input type="radio" name="weapon" id="'.$weaponType['type'].'">
+                        </div>';
+                    }
+                    ?>
                     <div class="weapon-container">
                         <label for="all-weapons">Toutes</label>
                         <input type="radio" name="weapon" id="all-weapons" checked>
@@ -83,15 +64,14 @@
                 <option value="type">Type</option>
             </select>
         </div>
-        <!--Weapons gallery-->
+        <?php // Weapons gallery ?>
         <div class="gallery">
-            <!--Generated in php-->
+            <?php // Generated in php ?>
             <?php
-            include "base.php";
             foreach($weapons as $weapon) {
                 $item = "
-                <a href='weapon.php?id=".$weapon['id']."'>
-                    <div class='card' data-rarity=".$weapon['rarity']." data-weapon=".$weapon['type'].">
+                <a href='weapon.php?id=".$weapon['weapon_id']."'>
+                    <div class='card' data-rarity=".$weapon['rarity']." data-weapon=".getWeaponTypeById($weapon['weapon_type_id'])['type'].">
                         <img src=".$weapon['image']." alt=".$weapon['name']." class='rarity".$weapon['rarity']." weapon'>
                         <strong>".$weapon['name']."</strong>
                     </div>
@@ -101,7 +81,7 @@
             ?>
         </div>
     </main>
-    <?php include "template/footer.php"; ?>
+    <?php include "templates/footer.php"; ?>
     <script src="assets/js/weapons-gallery.js"></script>
 </body>
 </html>

@@ -109,8 +109,8 @@
                         <label for="mob-drop-category">Mob drop catégorie</label>
                         <select name="mob-drop-category" id="mob-drop-category">
                         <?php
-                        foreach($MobMatCategories as $Category){
-                            echo '<option value="'.$Category['mob_drop_id'].'">'.$Category['category']. '</option>';
+                        foreach($mobMats as $mobMat){
+                            echo '<option value="'.$mobMat['mob_drop_id'].'">'.$mobMat['category']. '</option>';
                         }
                         ?>
                         </select>
@@ -119,8 +119,8 @@
                         <label for="elevation-drop-category">Elévation drop catégorie</label>
                         <select name="elevation-drop-category" id="elevation-drop-category">
                         <?php
-                        foreach($elevationMatCategories as $Category){
-                            echo '<option value="'.$Category['elevation_weapon_drop_id'].'">'.$Category['category']. '</option>';
+                        foreach($elevationMats as $elevationMat){
+                            echo '<option value="'.$elevationMat['elevation_weapon_drop_id'].'">'.$elevationMat['category']. '</option>';
                         }
                         ?>
                         </select>
@@ -129,8 +129,8 @@
                         <label for="dj-drop-category">Donjon drop catégorie</label>
                         <select name="dj-drop-category" id="dj-drop-category">
                         <?php
-                        foreach($djElevationCategories as $Category){
-                            echo '<option value="'.$Category['dungeon_drop_id'].'">'.$Category['category']. '</option>';
+                        foreach($djElevationMats as $djElevationMat){
+                            echo '<option value="'.$djElevationMat['dungeon_drop_id'].'">'.$djElevationMat['category']. '</option>';
                         }
                         ?>
                         </select>
@@ -141,8 +141,7 @@
         </div>
     </main>
     <?php include "templates/footer.php"; ?>
-    <!-- <script src="assets/js/validate.js"></script>
-    <?php // Same validation as for the characters ?>
-    <script src="assets/js/validate_add_char.js"></script> -->
+    <script src="assets/js/validate.js"></script>
+    <script src="assets/js/validate_add_weapon.js"></script>
 </body>
 </html>

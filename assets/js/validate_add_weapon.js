@@ -1,8 +1,8 @@
-// The purpose of this script is to validate the add character form on the front side
+// The purpose of this script is to validate the add weapon form on the front side
 
 // Retrieving form elements
 const form = document.querySelector('form');
-const charName = document.getElementById('name');
+const weaponName = document.getElementById('name');
 const rarities = document.getElementsByName('rarity');
 const selects = document.querySelectorAll('select');
 const thumbnail = document.getElementById('thumbnail');
@@ -20,7 +20,7 @@ const errorS = 'Valeur incorrecte !';
 const errorName = addErrorMessage(charName, errorN);
 const errorForm = addErrorMessage(form, '');
 
-validateTextField(charName, regexName, errorName);
+validateTextField(weaponName, regexName, errorName);
 
 selects.forEach(select =>{
     const errorSelect = addErrorMessage(select, errorS);
@@ -39,16 +39,16 @@ form.addEventListener('submit', (e) =>{
         errorForm.style.display = 'none';
     }
 
-    if (!regexName.test(charName.value) || charName.value===''){
-        showError('Veuillez entrer un nom valide pour votre personnage.', errorForm);
+    if (!regexName.test(weaponName.value) || weaponName.value===''){
+        showError('Veuillez entrer un nom valide pour votre arme.', errorForm);
     }
-    if (!rarities[0].checked && !rarities[1].checked){
-        showError('Veuillez selectionner une rareté pour votre personnage.', errorForm);
+    if (!rarities[0].checked && !rarities[1].checked && !rarities[2].checked){
+        showError('Veuillez selectionner une rareté pour votre arme.', errorForm);
     };
 
     selects.forEach(select =>{
         if (!regexSelect.test(select.value) || select.value===''){
-            showError('Veuillez choisir une valeur valide pour votre personnage dans les menus déroulants.', errorForm);
+            showError('Veuillez choisir une valeur valide pour votre arme dans les menus déroulants.', errorForm);
         }
     });
     

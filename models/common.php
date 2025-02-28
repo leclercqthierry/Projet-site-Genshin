@@ -63,3 +63,15 @@ function getElementById($id){
         exit;
     }
 }
+
+function howToGet(){
+    $pdo = getConnexion();
+    try{
+        $stmt = $pdo->query("SELECT `obtaining_id`, `name` FROM zell_obtainings");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (Exception $e) {
+        $error = "Erreur lors de la récupération du moyen d'obtention: ".$e->getMessage();
+        require_once "views/error.php";
+        exit;
+    }
+}

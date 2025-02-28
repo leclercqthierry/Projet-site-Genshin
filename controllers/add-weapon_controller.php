@@ -59,7 +59,7 @@ if ($_SESSION['role'] === 1){
             $cardPath = "assets/img/sheet/Weapons/Cards/".$_FILES['card']['name'];
             if (!file_exists($thumbnailPath) && !file_exists($cardPath)){
                 // Save in database
-                require_once "models/add-weapon_model.php";
+                require_once "models/weapons.php";
                 $weapon = createWeapon($name, $rarity, $cardPath, $thumbnailPath, $description, $ids);
 
                 // Then save the file in the good directory
@@ -74,15 +74,17 @@ if ($_SESSION['role'] === 1){
         }
 
     }else{
-        require_once "models/add-weapon_model.php";
+        require_once "models/common.php";
+        require_once "models/resources.php";
+        require_once "models/weapons.php";
 
-        $weaponTypes = getWeaponTypes();
+        $weaponTypes = getAllWeaponTypesOrderedByName();
         $subStats = getStats();
         $obtainings = howToGet();
         $days = getFarmDays();
-        $MobMatCategories = getMobMaterialCategory();
-        $elevationMatCategories = getElevationMaterialCategory();
-        $djElevationCategories = getDjElevationMaterialCategory();
+        $mobMats = getMobMaterials();
+        $elevationMats = getElevationMaterials();
+        $djElevationMats = getDjElevationMaterials();
 
         require_once "views/add-weapon.php";
     }

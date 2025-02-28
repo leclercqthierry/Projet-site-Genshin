@@ -38,3 +38,29 @@ function getWeaponTypeById($id){
         exit;
     }
 }
+
+function getAllWeapons(){
+    $pdo = getConnexion();
+    try{
+        $stmt = $pdo->query("SELECT * FROM zell_weapons ORDER BY `name`");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch(Exception $e){
+        $error =  "Erreur lors de la récupération de tous les armes: ".$e->getMessage();
+        require_once "views/error.php";
+        exit;
+    }
+}
+
+function createWeapon($name, $rarity, $cardPath, $thumbnailPath, $description, $ids){
+    $pdo = getConnexion();
+    try{
+        $stmt = $pdo->prepare("INSERT INTO zell_weapons (`name`, `rarity`, `card`, `image`, `description`, `weapon_type_id`, `stat_id`, `farm_day_id`, `obtaining`, `mob_drop_id`, `dungeon_drop_id`, `elevation_weapon_drop_id` ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+        $datas = array_merge([$name, $rarity, $cardPath, $thumbnailPath, $description], $ids);
+        $stmt->execute($datas);
+        
+    } catch(PDOException $e){
+        $error = "Erreur lors de la création d'un personnage: ".$e->getMessage();
+        require_once "views/error.php";
+        exit;
+    }
+}
