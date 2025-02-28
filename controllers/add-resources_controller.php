@@ -28,7 +28,7 @@ if($_SESSION['role'] === 1){
             $strNames = ['category', 'md_name1', 'md_name2', 'md_name3'];
             $data = multipleResources($names, $images, $files, $strNames, 'mob_drop');
 
-            require_once "models/resources_model.php";
+            require_once "models/resources.php";
             createMobDrop($data);
             header("location: admin-menu");
         }else if(isset($_POST['category']) && isset($_POST['djd_name1']) && isset($_POST['djd_name2']) && isset($_POST['djd_name3']) && isset($_FILES['djd_image1']) && isset($_FILES['djd_image2']) && isset($_FILES['djd_image3'])) {
@@ -40,7 +40,7 @@ if($_SESSION['role'] === 1){
             $strNames = ['category', 'djd_name1', 'djd_name2', 'djd_name3'];
             $data = multipleResources($names, $images, $files, $strNames, 'dungeon_drop');
 
-            require_once "models/resources_model.php";
+            require_once "models/resources.php";
             createDjDrop($data);
             header("location: admin-menu");
         }else if (isset($_POST['category']) && isset($_POST['ewd_name1']) && isset($_POST['ewd_name2']) && isset($_POST['ewd_name3']) && isset($_FILES['ewd_image1']) && isset($_FILES['ewd_image2']) && isset($_FILES['ewd_image3'])) {
@@ -52,7 +52,7 @@ if($_SESSION['role'] === 1){
             $strNames = ['category', 'ewd_name1', 'ewd_name2', 'ewd_name3'];
             $data = multipleResources($names, $images, $files, $strNames, 'elevation_weapon_drop');
 
-            require_once "models/resources_model.php";
+            require_once "models/resources.php";
             createElevationDrop($data);
             header("location: admin-menu");
         }else if (isset($_POST['category']) && isset($_POST['dwd_name1']) && isset($_POST['dwd_name2']) && isset($_POST['dwd_name3']) && isset($_POST['dwd_name4'])&& isset($_FILES['dwd_image1']) && isset($_FILES['dwd_image2']) && isset($_FILES['dwd_image3']) && isset($_FILES['dwd_image4'])) {
@@ -64,7 +64,7 @@ if($_SESSION['role'] === 1){
             $strNames = ['category', 'dwd_name1', 'dwd_name2', 'dwd_name3', 'dwd_name4'];
             $data = multipleResources($names, $images, $files, $strNames, 'dungeon_weapon_drop');
 
-            require_once "models/resources_model.php";
+            require_once "models/resources.php";
             createDjWeaponDrop($data);
             header("location: admin-menu");
         }

@@ -71,7 +71,7 @@ if ($_SESSION['role'] === 1){
             $cardPath = "assets/img/sheet/Characters/Card/".$_FILES['card']['name'];
             if (!file_exists($thumbnailPath) && !file_exists($cardPath)){
                 // Save in database
-                require_once "models/add-character_model.php";
+                require_once "models/characters.php";
                 $character = createCharacter($name, $element_id, $char_jewels_id, $rarity, $cardPath, $thumbnailPath, $ids);
 
                 // Then save the file in the good directory
@@ -85,17 +85,19 @@ if ($_SESSION['role'] === 1){
             }
         }
     } else {
-        require_once "models/add-character_model.php";
+        require_once "models/resources.php";
+        require_once "models/common.php";
+        require_once "models/weapons.php";
 
-        $elements = getAllElementNames();
-        $weaponTypes = getWeaponTypes();
+        $elements = getAllElementsOrderedByName();
+        $weaponTypes = getAllWeaponTypesOrderedByName();
         $stats = getStats();
         $days = getFarmDays();
-        $bossDrops = getBossDropNames();
-        $localMaterials = getLocalMaterialNames();
-        $wbDrops = getWorldBossDropNames();
-        $MobMaterialCategories = getMobMaterialCategory();
-        $djMaterialCategories = getDjMaterialCategory();
+        $bossDrops = getBossDrops();
+        $localMaterials = getLocalMaterials();
+        $wbDrops = getWorldBossDrops();
+        $mobMaterials = getMobMaterials();
+        $djMaterials = getDjMaterials();
     
         require_once "views/add-character.php";
     }

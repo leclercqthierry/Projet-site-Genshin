@@ -70,7 +70,7 @@ function simpleResource($strName, $strImage, $directory){
 
     // Validate the name
     $regex = "/^[a-zéèê][a-zA-Z \-éèêëàâû']+[a-zA-Zé]$/";
-    $errorMessage = "Le nom ne commence pas par un espace ni une majuscule (caractères -éèêëàû' autorisés à l'intérieur).";
+    $errorMessage = "Le nom ne doit pas commencer par un espace ni une majuscule (caractères -éèêëàû' autorisés à l'intérieur).";
     $name = validateTextField($strName, $regex, $errorMessage);
 
     // Validate the image
@@ -80,7 +80,7 @@ function simpleResource($strName, $strImage, $directory){
         $imagePath = "assets/img/".$directory."/".$_FILES[$strImage]['name'];
         if (!file_exists($imagePath)){
             // Save in database
-            require_once "models/resources_model.php";
+            require_once "models/resources.php";
 
             // check if the object already exist
             if (checkExist("zell_".$directory."s", "name", $name) || checkExist("zell_".$directory."s", "image", $imagePath)){
@@ -110,7 +110,7 @@ function simpleResource($strName, $strImage, $directory){
  */
 function multipleResources($names, $images, $files, $strNames, $directory){
     $regex = "/^[a-zéèê][a-zA-Z \-éèêëàâû']+[a-zA-Zé]$/";
-    $errorMessage = "Le nom ne commence pas par un espace ni une majuscule (caractères -éèêëàû' autorisés à l'intérieur).";
+    $errorMessage = "Le nom ne doit pas commencer par un espace ni une majuscule (caractères -éèêëàû' autorisés à l'intérieur).";
 
     // check if there are duplicates values
     if (count(array_unique($names))!= count($names)) {

@@ -127,8 +127,8 @@
                         <label for="mob-drop-category">Mob drop catégorie</label>
                         <select name="mob-drop-category" id="mob-drop-category">
                         <?php
-                        foreach($MobMaterialCategories as $Category){
-                            echo '<option value="'.$Category['mob_drop_id'].'">'.$Category['category']. '</option>';
+                        foreach($mobMaterials as $mobMaterial){
+                            echo '<option value="'.$mobMaterial['mob_drop_id'].'">'.$mobMaterial['category']. '</option>';
                         }
                         ?>
                         </select>
@@ -137,8 +137,8 @@
                         <label for="dj-drop-category">Dj drop catégorie</label>
                         <select name="dj-drop-category" id="dj-drop-category">
                         <?php
-                        foreach($djMaterialCategories as $Category){
-                            echo '<option value="'.$Category['dungeon_drop_id'].'">'.$Category['category']. '</option>';
+                        foreach($djMaterials as $djMaterial){
+                            echo '<option value="'.$djMaterial['dungeon_drop_id'].'">'.$djMaterial['category']. '</option>';
                         }
                         ?>
                         </select>

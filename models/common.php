@@ -1,16 +1,6 @@
 <?php
 
-function getWeaponTypes(){
-    $pdo = getConnexion();
-    try{
-        $stmt = $pdo->query("SELECT `weapon_type_id`, `name` FROM zell_weapon_types ORDER BY `name`");
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    } catch(Exception $e){
-        $error =  "Erreur lors de la récupération des types d'armes: ".$e->getMessage();
-        require_once "views/error.php";
-        exit;
-    }
-}
+require_once "models/database.php";
 
 function getStats(){
     $pdo = getConnexion();
@@ -36,13 +26,39 @@ function getFarmDays(){
     }
 }
 
-function getMobMaterialCategory() {
+function getAllElementsOrderedByName(){
     $pdo = getConnexion();
-    try {
-        $stmt = $pdo->query("SELECT `mob_drop_id`, `category` FROM zell_mob_drops ORDER BY `category`");
+    try{
+        $stmt = $pdo->query("SELECT * FROM zell_elements ORDER BY `name`");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    } catch (Exception $e) {
-        $error = "Erreur lors de la récupération des noms de drops de monstres: ". $e->getMessage();
+    } catch(Exception $e){
+        $error =  "Erreur lors de la récupération des éléments ordonnés par nom: ".$e->getMessage();
+        require_once "views/error.php";
+        exit;
+    }
+}
+
+function getAllElementsOrderedById(){
+    $pdo = getConnexion();
+    try{
+        $stmt = $pdo->query("SELECT * FROM zell_elements ORDER BY `element_id`");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch(Exception $e){
+        $error =  "Erreur lors de la récupération des éléments ordonnés par Id: ".$e->getMessage();
+        require_once "views/error.php";
+        exit;
+    }
+}
+
+function getElementById($id){
+    $pdo = getConnexion();
+    try{
+        $stmt = $pdo->prepare("SELECT * FROM zell_elements WHERE `element_id` = :id");
+        $stmt->bindParam(":id", $id, PDO::PARAM_INT);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    } catch(Exception $e){
+        $error =  "Erreur lors de la récupération de l'élément par son Id: ".$e->getMessage();
         require_once "views/error.php";
         exit;
     }

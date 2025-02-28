@@ -82,13 +82,13 @@ select.addEventListener('change', () => {
         case "element": {
             cards.forEach(card => {
                 switch(card.dataset.element){
-                    case "anemo": card.parentElement.style.order = 1;break;
-                    case "geo": card.parentElement.style.order = 2;break;
-                    case "electro": card.parentElement.style.order = 3;break;
-                    case "dendro": card.parentElement.style.order = 4;break;
-                    case "hydro": card.parentElement.style.order = 5;break;
-                    case "pyro": card.parentElement.style.order = 6;break;
-                    case "cryo": card.parentElement.style.order = 7;break;
+                    case "Anemo": card.parentElement.style.order = 1;break;
+                    case "Geo": card.parentElement.style.order = 2;break;
+                    case "Electro": card.parentElement.style.order = 3;break;
+                    case "Dendro": card.parentElement.style.order = 4;break;
+                    case "Hydro": card.parentElement.style.order = 5;break;
+                    case "Pyro": card.parentElement.style.order = 6;break;
+                    case "Cryo": card.parentElement.style.order = 7;break;
                 }
             }); break;
         }

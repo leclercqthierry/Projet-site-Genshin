@@ -2,6 +2,68 @@
 
 require_once "models/database.php";
 
+################# GET #################
+
+function getBossDrops(){
+    $pdo = getConnexion();
+    try{
+        $stmt = $pdo->query("SELECT * FROM zell_boss_drops ORDER BY `name`");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch(Exception $e){
+        $error = "Erreur lors de la récupération des noms de drop des boss: ".$e->getMessage();
+        require_once "views/error.php";
+        exit;
+    }
+}
+
+function getLocalMaterials() {
+    $pdo = getConnexion();
+    try {
+        $stmt = $pdo->query("SELECT * FROM zell_local_materials ORDER BY `name`");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (Exception $e) {
+        $error = "Erreur lors de la récupération des noms des matériaux locaux: " . $e->getMessage();
+        require_once "views/error.php";
+        exit;
+    }
+}
+
+function getWorldBossDrops() {
+    $pdo = getConnexion();
+    try {
+        $stmt = $pdo->query("SELECT * FROM zell_world_boss_drops ORDER BY `name`");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (Exception $e) {
+        $error = "Erreur lors de la récupération des noms de drop des world boss: " . $e->getMessage();
+        require_once "views/error.php";
+        exit;
+    }
+}
+
+function getDjMaterials() {
+    $pdo = getConnexion();
+    try {
+        $stmt = $pdo->query("SELECT * FROM zell_dungeon_drops ORDER BY `category`");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (Exception $e) {
+        $error = "Erreur lors de la récupération des noms de matériel de donjon: ". $e->getMessage();
+        require_once "views/error.php";
+        exit;
+    } 
+}
+
+function getMobMaterials() {
+    $pdo = getConnexion();
+    try {
+        $stmt = $pdo->query("SELECT * FROM zell_mob_drops ORDER BY `category`");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (Exception $e) {
+        $error = "Erreur lors de la récupération des noms de drops de monstres: ". $e->getMessage();
+        require_once "views/error.php";
+        exit;
+    }
+}
+
 ################# CREATE #################
 
 /**
