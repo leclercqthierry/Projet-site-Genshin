@@ -1,15 +1,15 @@
 <?php
 
 /**
- * @param string $controller, $title, $names, $images
+ * @param string $title, $names, $images
  * @return string $html
  */
-function addSimpleResourceForm($title, $controller, $name, $image){
+function addSimpleResourceForm($title, $name, $image){
     $html ='
     <div class="container">
         <h2>Ajout '.$title.'</h2>
         <i class="fa-solid fa-chevron-down"></i>
-        <form action="'.$controller.'" method="post" enctype="multipart/form-data">
+        <form action="add-resources" method="post" enctype="multipart/form-data">
             <div class="form-label">
                 <label for="'.$name.'">Nom</label>
                 <input type="text" id="'.$name.'" name="'.$name.'">
@@ -31,12 +31,12 @@ function addSimpleResourceForm($title, $controller, $name, $image){
  * @param array $names, $images
  * @return string $html
  */
-function addMultiplesResourcesForm($title, $controller, $names, $images){
+function addMultiplesResourcesForm($title, $names, $images){
     $html ='
     <div class="container">
         <h2>Ajout '.$title.'</h2>
         <i class="fa-solid fa-chevron-down"></i>
-        <form action="'.$controller.'" method="post" enctype="multipart/form-data">
+        <form action="add-resources" method="post" enctype="multipart/form-data">
             <div class="form-label">
                 <label for="category">Catégorie</label>
                 <input type="text" id="category" name="category">
@@ -60,3 +60,4 @@ function addMultiplesResourcesForm($title, $controller, $names, $images){
     </div>';
     return $html;
 }
+?>

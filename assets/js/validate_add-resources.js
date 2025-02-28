@@ -7,7 +7,7 @@ const errorN = "Le nom ne commence pas par un espace ni une majuscule (caractèr
 forms.forEach(form => {
     const names = form.querySelectorAll("input[type=text]");
     const images = form.querySelectorAll("input[type='file']");
-    const errorForm = addErrorMessage(form, ' ');
+    const errorForm = addErrorMessage(form, '');
 
     names.forEach(name => {
         const errorName = addErrorMessage(name, errorN);

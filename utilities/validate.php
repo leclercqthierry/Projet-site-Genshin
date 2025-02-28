@@ -59,3 +59,109 @@ function validateSelect($select, $errorMessage){
         return $_POST[$select];
     }
 }
+
+/**
+ * @param string $strName
+ * @param string $strImage
+ * @param string $directory
+ * @return array
+ */
+function simpleResource($strName, $strImage, $directory){
+
+    // Validate the name
+    $regex = "/^[a-zéèê][a-zA-Z \-éèêëàâû']+[a-zA-Zé]$/";
+    $errorMessage = "Le nom ne commence pas par un espace ni une majuscule (caractères -éèêëàû' autorisés à l'intérieur).";
+    $name = validateTextField($strName, $regex, $errorMessage);
+
+    // Validate the image
+    if (!validateFile($strImage)){
+        exit;
+    } else {
+        $imagePath = "assets/img/".$directory."/".$_FILES[$strImage]['name'];
+        if (!file_exists($imagePath)){
+            // Save in database
+            require_once "models/resources_model.php";
+
+            // check if the object already exist
+            if (checkExist("zell_".$directory."s", "name", $name) || checkExist("zell_".$directory."s", "image", $imagePath)){
+                $error = "L'objet existe déjà.";
+                require_once "views/error.php";
+                exit;
+            }
+
+            // Then save the file in the good directory
+            move_uploaded_file($_FILES[$strImage]['tmp_name'], $imagePath);
+            header("Location: admin-menu");
+        } else {
+            $error = "Le fichier existe déjà.";
+            require_once "views/error.php";
+            exit;
+        }
+        return [$name, $imagePath];
+    }
+}
+/** 
+ * @param array $names
+ * @param array $images
+ * @param array $files
+ * @param array $strNames
+ * @param string $directory
+ * @return array
+ */
+function multipleResources($names, $images, $files, $strNames, $directory){
+    $regex = "/^[a-zéèê][a-zA-Z \-éèêëàâû']+[a-zA-Zé]$/";
+    $errorMessage = "Le nom ne commence pas par un espace ni une majuscule (caractères -éèêëàû' autorisés à l'intérieur).";
+
+    // check if there are duplicates values
+    if (count(array_unique($names))!= count($names)) {
+        $error = "Les noms ne doivent pas être identiques.";
+        require_once "views/error.php";
+        exit;
+    } else if (count(array_unique($files))!= count($files)){
+        $error = "Les images doivent être differentes.";
+        require_once "views/error.php";
+        exit;
+    }
+
+    // Validate the names
+    for ($i = 0; $i < count($names); $i++){
+        $names[$i] = validateTextField($strNames[$i], $regex, $errorMessage);
+    }
+    
+    // Validate the images
+    $imagePaths = [];
+    foreach ($images as $image){
+        if (!validateFile($image)){
+            exit;
+        } else {
+            $imagePath = "assets/img/".$directory."/".$_FILES[$image]['name'];
+            if (file_exists($imagePath)){
+                $error = "Le fichier existe déjà.";
+                require_once "views/error.php";
+                exit;
+            } else {
+                array_push($imagePaths, $imagePath);
+            }
+        }
+    }
+
+    require_once "models/database.php";
+
+    // check if the objects already exist
+    for ($i = 0; $i < count($images); $i++) {
+        $j = $i + 1;
+        if (checkExist("zell_".$directory."s", "name".$j, $names[$i]) || checkExist("zell_".$directory."s", "image".$j, $images[$i])){
+            $error = "L'objet existe déjà.";
+            require_once "views/error.php";
+            exit;
+        }
+    }
+
+    // Then save the file in the good directory
+    for ($i = 0; $i < count($images); $i++) {
+        move_uploaded_file($_FILES[$images[$i]]['tmp_name'], $imagePaths[$i]);
+    }
+    // header("Location: admin-menu");
+
+    return array_merge($names, $imagePaths);
+}

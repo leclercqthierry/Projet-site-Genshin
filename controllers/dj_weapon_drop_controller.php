@@ -12,9 +12,9 @@ if($_SESSION['role'] === 1){
         $images = ['dwd_image1', 'dwd_image2', 'dwd_image3', 'dwd_image4'];
         $files = [$_FILES['dwd_image1']['name'], $_FILES['dwd_image2']['name'], $_FILES['dwd_image3']['name'], $_FILES['dwd_image4']['name']];
 
-        $strNames = ['category', 'dwd_name1', 'dwd_name2', 'dwd_name3'];
+        $strNames = ['category', 'dwd_name1', 'dwd_name2', 'dwd_name3', 'dwd_name4'];
         $regex = "/^[a-zéèê][a-zA-Z \-éèêëàâû']+[a-zA-Zé]$/";
-        $errorMessage = "Le nom ne commence pas par un espace ni une majuscule (caractères -éèêëàû' autorisés à l'intérieur).";
+        $errorMessage = "Le nom ne doit pas commencer par un espace ni une majuscule (caractères -éèêëàû' autorisés à l'intérieur).";
 
         // check if there are duplicates values
         if (count(array_unique($names))!= count($names)) {
