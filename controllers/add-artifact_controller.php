@@ -4,13 +4,12 @@ session_start();
 if ($_SESSION['role'] === 'Administrator') {
 
     if (isset($_POST['name']) && isset($_POST['rarity']) && isset($_POST['description']) && isset($_FILES['thumbnail'])){
-        echo ("OK");
 
         require_once "utilities/validate.php";
 
         // Validate the artifact name
-        $regexName = "/^[A-Z][a-zA-Z \-éèêëàâû']+[a-zA-Zé]$/";
-        $errorName = "Le nom du set d'artefacts doit commencer par une majuscule et ne pas comporter de chiffres (caractères spéciaux autorisés: -, é, è, ê, ë, à, â, û et ') et avoir au moins 3 lettres.";
+        $regexName = "/^[A-Z][a-zA-Z \-éèêëàâûô']+[a-zA-Zé]$/";
+        $errorName = "Le nom du set d'artefacts doit commencer par une majuscule et ne pas comporter de chiffres (caractères spéciaux autorisés: -, é, è, ê, ë, à, â, û, ô et ') et avoir au moins 3 lettres.";
         $name = validateTextField('name', $regexName, $errorName);
 
         // Validate the rarity

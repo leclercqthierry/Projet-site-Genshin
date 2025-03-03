@@ -50,6 +50,32 @@ function validateFile($fileName){
     }
 }
 
+/**
+ * @param string $filename
+ * @return true
+ */
+function validateEditFile($fileName){
+    if ($_FILES[$fileName] === null){
+        return true;
+    }else{
+        if ($_FILES[$fileName]['size'] > 1048576){
+            $error = "L'image $fileName est trop volumineuse. La taille maximum est de 1MB.";
+            require_once "views/error.php";
+            exit;
+        } else {
+            $allowedMimeTypes = ['image/jpeg', 'image/png', 'image/gif', 'image/webp', 'image/jpg'];
+        
+            if (!in_array($_FILES[$fileName]['type'], $allowedMimeTypes)) {
+                $error = "L'image $fileName n'est pas au bon format";
+                require_once "views/error.php";
+                exit;
+            } else{
+                return true;
+            }
+        }
+    }
+}
+
 function validateSelect($select, $errorMessage){
     if (!is_numeric($_POST[$select])){
         $error = $errorMessage;
@@ -69,8 +95,8 @@ function validateSelect($select, $errorMessage){
 function simpleResource($strName, $strImage, $directory){
 
     // Validate the name
-    $regex = "/^[a-zéèê][a-zA-Z \-éèêëàâû']+[a-zA-Zé]$/";
-    $errorMessage = "Le nom ne doit pas commencer par un espace ni une majuscule (caractères -éèêëàû' autorisés à l'intérieur).";
+    $regex = "/^[a-zéèê][a-zA-Z \-éèêëàâûô']+[a-zA-Zé]$/";
+    $errorMessage = "Le nom ne doit pas commencer par un espace ni une majuscule (caractères -éèêëàûô' autorisés à l'intérieur).";
     $name = validateTextField($strName, $regex, $errorMessage);
 
     // Validate the image
@@ -109,8 +135,8 @@ function simpleResource($strName, $strImage, $directory){
  * @return array
  */
 function multipleResources($names, $images, $files, $strNames, $directory){
-    $regex = "/^[a-zéèê][a-zA-Z \-éèêëàâû']+[a-zA-Zé]$/";
-    $errorMessage = "Le nom ne doit pas commencer par un espace ni une majuscule (caractères -éèêëàû' autorisés à l'intérieur).";
+    $regex = "/^[a-zéèê][a-zA-Z \-éèêëàâûô']+[a-zA-Zé]$/";
+    $errorMessage = "Le nom ne doit pas commencer par un espace ni une majuscule (caractères -éèêëàûô' autorisés à l'intérieur).";
 
     // check if there are duplicates values
     if (count(array_unique($names))!= count($names)) {

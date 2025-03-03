@@ -1,8 +1,8 @@
 // The purpose of this script is to validate the add character form on the front side
 
 const forms = document.querySelectorAll('form');
-const regexName = /^[a-zéèê][a-zA-Z \-éèêëàâû']+[a-zA-Zé]$/;
-const errorN = "Le nom ne commence pas par un espace ni une majuscule (caractères -éèêëàû' autorisés à l'intérieur).";
+const regexName = /^[a-zéèê][a-zA-Z \-éèêëàâûô']+[a-zA-Zé]$/;
+const errorN = "Le nom ne commence pas par un espace ni une majuscule (caractères -éèêëàûô' autorisés à l'intérieur).";
 
 forms.forEach(form => {
     const names = form.querySelectorAll("input[type=text]");

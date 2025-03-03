@@ -6,8 +6,23 @@ if ($_SESSION['role'] === 'Administrator') {
 
     // If both forms have been submitted
     if (isset($_POST['name']) && isset($_POST['rarity']) && isset($_POST['description']) && isset($_POST['id'])){
-        $name = htmlspecialchars($_POST['name']);
-        $rarity = htmlspecialchars($_POST['rarity']);
+
+        require_once "utilities/validate.php";
+
+        // Validate the artifact name
+        $regexName = "/^[A-Z][a-zA-Z \-éèêëàâûô']+[a-zA-Zé]$/";
+        $errorName = "Le nom du set d'artefacts doit commencer par une majuscule et ne pas comporter de chiffres (caractères spéciaux autorisés: -, é, è, ê, ë, à, â, û, ô et ') et avoir au moins 3 lettres.";
+        $name = validateTextField('name', $regexName, $errorName);
+
+        // Validate the rarity
+        if ($_POST['rarity'] !== '3' && $_POST['rarity'] !== '4' && $_POST['rarity'] !== '5') {
+            $error = "La rareté choisie n'est pas valide.";
+            require_once "views/error.php";
+            exit;
+        } else{
+            $rarity = $_POST['rarity'];
+        }
+
         $description = htmlspecialchars($_POST['description']);
         $id = htmlspecialchars($_POST['id']);
 
@@ -15,6 +30,11 @@ if ($_SESSION['role'] === 'Administrator') {
 
         // If we uploaded a new image
         if ($_FILES['thumbnail']['size'] !== 0){
+
+            // Validate the file
+            if (!validateEditFile('thumbnail')){
+                exit;
+            }
 
             // we must delete the old one then add the new one
             unlink($artifact['image']);

@@ -51,6 +51,19 @@ function getAllWeapons(){
     }
 }
 
+function getWeaponById($id){
+    $pdo = getConnexion();
+    try{
+        $stmt = $pdo->prepare("SELECT * FROM zell_weapons WHERE `weapon_id` =?");
+        $stmt->execute([$id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    } catch(Exception $e){
+        $error =  "Erreur lors de la récupération de l'arme avec l'ID ".$id.": ".$e->getMessage();
+        require_once "views/error.php";
+        exit;
+    }
+}
+
 function createWeapon($name, $rarity, $cardPath, $thumbnailPath, $description, $ids){
     $pdo = getConnexion();
     try{
@@ -59,8 +72,22 @@ function createWeapon($name, $rarity, $cardPath, $thumbnailPath, $description, $
         $stmt->execute($datas);
         
     } catch(PDOException $e){
-        $error = "Erreur lors de la création d'un personnage: ".$e->getMessage();
+        $error = "Erreur lors de la création d'une arme: ".$e->getMessage();
         require_once "views/error.php";
         exit;
     }
+}
+
+function editWeapon($id, $name, $rarity, $cardPath, $thumbnailPath, $description, $ids){
+    $pdo = getConnexion();
+    try{
+        $stmt = $pdo->prepare("UPDATE zell_weapons SET `name` =?, `rarity` =?, `card` =?, `image` =?, `description` =?, `weapon_type_id` =?, `stat_id` =?, `farm_day_id` =?, `obtaining` =?, `mob_drop_id` =?, `dungeon_drop_id` =?, `elevation_weapon_drop_id` =? WHERE `weapon_id` =?");
+        $datas = array_merge([$name, $rarity, $cardPath, $thumbnailPath, $description], $ids, [$id]);
+        $stmt->execute($datas);
+    } catch(PDOException $e){
+        $error = "Erreur lors de la modification d'une arme: ".$e->getMessage();
+        require_once "views/error.php";
+        exit;
+    }
+
 }

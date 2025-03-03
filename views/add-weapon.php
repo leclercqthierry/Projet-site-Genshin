@@ -16,7 +16,7 @@
     <main>
         <h1>Ajout d'une arme</h1>
         <div class="container">
-            <form action="#" method="post" name="add-weapon-form" enctype="multipart/form-data">
+            <form action="add-weapon" method="post" name="add-weapon-form" enctype="multipart/form-data">
                 <div id="group1">
                     <div class="form-label">
                         <label for="name">Nom</label>

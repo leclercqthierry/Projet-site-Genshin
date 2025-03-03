@@ -10,10 +10,10 @@ const card = document.getElementById('card');
 
 
 // Regex pattern for validation
-const regexName = /^[A-Z][a-zA-Z \-éèêëàâû']+[a-zA-Zé]$/;
+const regexName = /^[A-Z][a-zA-Z \-éèêëàâûô']+[a-zA-Zé]$/;
 const regexSelect  =/^\d+$/;
 
-const errorN = "Le nom doit commencer par une majuscule et ne pas comporter de chiffres (caractères spéciaux autorisés: -, é, è, ê, ë, à, â, û et ') et avoir au moins 3 lettres.";
+const errorN = "Le nom doit commencer par une majuscule et ne pas comporter de chiffres (caractères spéciaux autorisés: -, é, è, ê, ë, à, â, û, ô et ') et avoir au moins 3 lettres.";
 
 const errorS = 'Valeur incorrecte !';
 

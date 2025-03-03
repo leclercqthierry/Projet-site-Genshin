@@ -2,7 +2,10 @@
 session_start();
 
 if ($_SESSION['role'] === 'Administrator'){
-    
+
+    require_once "models/weapons.php";
+
+    // If both forms have been submitted
     if(isset($_POST['name']) &&
     isset($_POST['type']) &&
     isset($_POST['rarity']) &&
@@ -13,9 +16,12 @@ if ($_SESSION['role'] === 'Administrator'){
     isset($_POST['mob-drop-category']) &&
     isset($_POST['dj-drop-category']) &&
     isset($_POST['elevation-drop-category']) &&
-    isset($_FILES['thumbnail']) &&
-    isset($_FILES['card'])){
+    isset($_POST['id'])){
+
         require_once "utilities/validate.php";
+
+        $id = htmlspecialchars($_POST['id']);
+        $weapon = getWeaponById($id);
 
         // validate the weapon name
         $regexName = "/^[A-Z][a-zA-Z \-éèêëàâûô']+[a-zA-Zé]$/";
@@ -51,45 +57,86 @@ if ($_SESSION['role'] === 'Administrator'){
             array_push($ids, validateSelect($selects[$i], $errors[$i]));
         }
 
-        // Validate the files
-        if (!validateFile('thumbnail') || !validateFile('card')){
-            exit;
-        }else{
-            $thumbnailPath = "assets/img/gallery/Weapons/".$_FILES['thumbnail']['name'];
-            $cardPath = "assets/img/sheet/Weapons/Cards/".$_FILES['card']['name'];
-            if (!file_exists($thumbnailPath) && !file_exists($cardPath)){
-                // Save in database
-                require_once "models/weapons.php";
-                $weapon = createWeapon($name, $rarity, $cardPath, $thumbnailPath, $description, $ids);
+        if ($_FILES['thumbnail']['size'] !== 0){
 
-                // Then save the file in the good directory
+            // Validate the file
+            if (!validateEditFile('thumbnail')){
+                exit;
+            }
+
+            // we must delete the old one then add the new one
+            unlink($weapon['image']);
+            $thumbnailPath = "assets/img/gallery/Weapons/".$_FILES['thumbnail']['name'];
+            
+            if(!file_exists($thumbnailPath)){
                 move_uploaded_file($_FILES['thumbnail']['tmp_name'], $thumbnailPath);
-                move_uploaded_file($_FILES['card']['tmp_name'], $cardPath);
-                header("Location: admin-menu");
-            } else {
+            }else{
                 $error = "Le fichier existe déjà.";
                 require_once "views/error.php";
                 exit;
             }
+        } else {
+            $thumbnailPath = $weapon['image'];
+        }
+
+        if ($_FILES['card']['size'] !== 0){
+
+            // Validate the file
+            if (!validateEditFile('card')){
+                exit;
+            }
+
+            // we must delete the old one then add the new one
+            unlink($weapon['card']);
+            $cardPath = "assets/img/sheet/Weapons/Cards/".$_FILES['card']['name'];
+            
+            if(!file_exists($cardPath)){
+                move_uploaded_file($_FILES['card']['tmp_name'], $cardPath);
+            }else{
+                $error = "Le fichier existe déjà.";
+                require_once "views/error.php";
+                exit;
+            }
+        } else {
+            $cardPath = $weapon['card'];
+        }
+
+        $weapon = editWeapon($id, $name, $rarity, $cardPath, $thumbnailPath, $description, $ids);
+        header("Location: admin-menu");
+    }
+
+    // the form for choosing the weapon to be edited has been submitted
+
+    if (isset($_POST['weapon'])){
+
+        $id = htmlspecialchars($_POST['weapon']);
+
+        if(!checkExist('zell_weapons','weapon_id', $id)){
+            $error = "Erreur! L'arme n'existe pas!!!";
+            require_once "views/error.php";
+            exit;
+        }else{
+            require_once "models/common.php";
+            require_once "models/resources.php";
+
+            $weaponTypes = getAllWeaponTypesOrderedByName();
+            $subStats = getStats();
+            $obtainings = howToGet();
+            $days = getFarmDays();
+            $mobMats = getMobMaterials();
+            $elevationMats = getElevationMaterials();
+            $djElevationMats = getDjElevationMaterials();
+            $weapon = getWeaponById($id);
+
+            require_once "views/edit-weapon.php";
         }
 
     }else{
-        require_once "models/common.php";
-        require_once "models/resources.php";
-        require_once "models/weapons.php";
 
-        $weaponTypes = getAllWeaponTypesOrderedByName();
-        $subStats = getStats();
-        $obtainings = howToGet();
-        $days = getFarmDays();
-        $mobMats = getMobMaterials();
-        $elevationMats = getElevationMaterials();
-        $djElevationMats = getDjElevationMaterials();
-
-        require_once "views/add-weapon.php";
+        $weapons = getAllWeapons();
+        require_once "views/edit-weapon.php";
     }
-
-} else{
+}else {
     $error = "Accès interdit !!";
     require_once "views/error.php";
     exit;
