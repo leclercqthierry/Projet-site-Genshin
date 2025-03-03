@@ -38,13 +38,13 @@ if (isset($_POST['nickname']) && isset($_POST['password'])){
         switch ($user['role_id']){
             case 1: {
                 $_SESSION['nickname'] = $user['nickname'];
-                $_SESSION['role'] = $user['role_id'];
+                $_SESSION['role'] = 'Administrator';
                 header("Location: admin-menu");
                 break;
             }
             case 2: {
                 $_SESSION['nickname'] = $user['nickname'];
-                $_SESSION['role'] = $user['role_id'];
+                $_SESSION['role'] = 'Member';
                 header("Location: member");
                 break;
             }

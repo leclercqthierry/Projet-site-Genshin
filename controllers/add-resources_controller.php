@@ -3,7 +3,7 @@ session_start();
 
 // The addition of resources being independent most of the time, we therefore process the forms independently.
 
-if($_SESSION['role'] === 1){
+if($_SESSION['role'] === 'Administrator'){
 
     if(count($_POST) === 0){
         require_once "templates/add-resources.php";

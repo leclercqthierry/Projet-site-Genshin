@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if ($_SESSION['role'] === 1){
+if ($_SESSION['role'] === 'Administrator'){
     
     if(isset($_POST['name']) &&
     isset($_POST['type']) &&

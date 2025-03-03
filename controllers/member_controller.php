@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if ($_SESSION['role'] === 2){
+if ($_SESSION['role'] === 'Member') {
     require_once "views/member.php";
 } else{
     $error = "Accès interdit !!";

@@ -24,7 +24,7 @@
             </li>
             <?php
                 if (isset($_SESSION['role'])){
-                    $link = ($_SESSION['role'] === 2) ? '<li><a href="member">Mes Teams</a></li>' : '<li><a href="admin-menu">Admin Menu</a></li>';
+                    $link = ($_SESSION['role'] === 'Member') ? '<li><a href="member">Mes Teams</a></li>' : '<li><a href="admin-menu">Admin Menu</a></li>';
                     $link .= '<li><a href="deconnect">Déconnexion</a></li>';
                     echo $link;                    
                 }else {

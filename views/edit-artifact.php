@@ -3,32 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Common style-->
+    <?php // Common style ?>
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- add-artifacts style-->
+    <?php // add-artifacts style ?>
      <link rel="stylesheet" href="assets/css/edit-character.css">
      <link rel="stylesheet" href="assets/css/edit-artifact.css">
     <title>Panneau Admin - Edition d'un set d'artéfacts</title>
 </head>
 <body>
-    <?php include "template/header.php"; ?>
+    <?php include "templates/header.php"; ?>
     <main>
         <h1>Edition d'un set d'artéfact</h1>
         <div class="container">
-            <form action="#" method="post" name="select-artifact-form">
+        <?php
+        if (!isset($artifact)):
+        ?>
+            <form action="edit-artifact" method="post" name="select-artifact-form">
                 <div class="form-label">
                     <label for="artifact">Set d'artéfacts à éditer</label>
                     <select name="artifact" id="artifact">
                         <option value=""></option>
-                        <!--generated in js-->
+        <?php
+            foreach ($artifacts as $artifact){
+                echo '
+                        <option value="'.$artifact['artifact_id'].'">'.$artifact['name'].'</option>';
+            }
+        ?>
                     </select>
                 </div>
                 <input type="submit" value="Valider" class="btn">
             </form>
-            <form action="#" method="post" name="edit-artifact-form">
+        <?php else:?>
+            <form action="edit-artifact" method="post" name="edit-artifact-form" enctype="multipart/form-data" >
                 <div class="form-label">
                     <label for="name">Nom du set</label>
-                    <input type="text" id="name" name="name">
+                    <input type="text" id="name" name="name" value="<?= $artifact['name'] ?>">
+                    <input type="hidden" name="id" value="<?= $artifact['artifact_id']?>">
                 </div>
                 <div id="group2">
                     <span>Rareté max</span>
@@ -36,38 +46,47 @@
                         <div>
                             <label for="rarity3">3<sup><img src="assets/img/icons/1_star.png" alt="étoile"></sup></label>
                         </div>
-                        <input type="radio" name="rarity" id="rarity3" value="3">
+                        <?php $chk = $artifact['rarity'] === 3 ? 'checked' : '';?>
+                        <input type="radio" name="rarity" id="rarity3" value="3" <?= $chk ?>>
                     </div>
                     <div class="rarity">
                         <div>
                             <label for="rarity4">4<sup><img src="assets/img/icons/1_star.png" alt="étoile"></sup></label>
                         </div>
-                        <input type="radio" name="rarity" id="rarity4" value="4">
+                        <?php $chk = $artifact['rarity'] === 4 ? 'checked' : '';?>
+                        <input type="radio" name="rarity" id="rarity4" value="4" <?= $chk ?>>
                     </div>
                     <div class="rarity">
                         <div>
                             <label for="rarity5">5<sup><img src="assets/img/icons/1_star.png" alt="étoile"></sup></label>
                         </div>
-                        <input type="radio" name="rarity" id="rarity5" value="5">
+                        <?php $chk = $artifact['rarity'] === 5 ? 'checked' : '';?>
+                        <input type="radio" name="rarity" id="rarity5" value="5" <?= $chk ?>>
                     </div>
                 </div>
                 <div class="form-label">
                     <label for="description">Bonus de set</label>
-                    <textarea name="description" id="description" rows="5"></textarea>
+                    <textarea name="description" id="description" rows="5"><?= $artifact['description'];?>
+                    </textarea>
                 </div>
                 <div class="form-label-groups">
                     <div class="form-label">
                         <fieldset>
                             <legend>Miniature</legend>
+                            <img src="<?= $artifact['image']?>" alt="<?= $artifact['name']?>">
                             <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
                         </fieldset>
                     </div>
                 </div>
                 <input type="submit" value="Valider" class="btn">
             </form>
+        <?php
+        endif;
+        ?>
         </div>
     </main>
-    <?php include "template/footer.php"; ?>
-    <script src="assets/js/edit-artifact.js"></script>
+    <?php include "templates/footer.php"; ?>
+    <script src="assets/js/validate.js"></script>
+    <script src="assets/js/validate_edit-artifact.js"></script>
 </body>
 </html>
