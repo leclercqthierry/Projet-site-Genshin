@@ -3,53 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Common style-->
+    <?php // Common style ?>
     <link rel="stylesheet" href="assets/css/style.css">
-    <!--add-character style-->
+    <?php // add-character style ?>
     <link rel="stylesheet" href="assets/css/edit-character.css">
     <title>Panneau Admin - Edition d'un personnage</title>
 </head>
 <body>
-    <?php include "template/header.php"; ?>
+    <?php include "templates/header.php"; ?>
     <main>
         <h1>Edition d'un personnage</h1>
         <div class="container">
-            <form action="#" method="post" name="select-character-form">
+    <?php
+    if(!isset($character)):
+    ?>
+            <form action="edit-character" method="post" name="select-character-form">
                 <div class="form-label">
                     <label for="character">Personnage à éditer</label>
                     <select name="character" id="character">
                         <option value=""></option>
-                        <!--generated in js-->
+    <?php
+    foreach ($characters as $character) {
+        echo '
+                        <option value="'.$character['character_id'].'">'.$character['name'].'</option>';
+    }
+    ?>
                     </select>
                 </div>
                 <input type="submit" value="Valider" class="btn">
             </form>
-            <form action="#" method="post" name="edit-character-form">
-                <div id="group1">
+    <?php else:?>
+            <form action="edit-character" method="post" name="edit-character-form" enctype="multipart/form-data">
+            <div id="group1">
                     <div class="form-label">
                         <label for="name">Nom</label>
-                        <input type="text" id="name" name="name" title="Uniquement des lettres et commence par une majuscule">
+                        <input type="text" id="name" name="name" value="<?= $character['name']?>">
+                        <input type="hidden" name="id" value="<?= $character['character_id']?>">
                     </div>
                     <div class="form-label">
                         <label for="element">Elément</label>
                         <select name="element" id="element">
-                            <option value="anemo">Anemo</option>
-                            <option value="geo">Geo</option>
-                            <option value="electro">Electro</option>
-                            <option value="dendro">Dendro</option>
-                            <option value="hydro">Hydro</option>
-                            <option value="pyro">Pyro</option>
-                            <option value="cryo">Cryo</option>
+                        <?php
+                        foreach($elements as $element){
+                            $selected = $element['element_id'] === $character['element_id'] ? ' selected="selected"' : '';
+                            echo '<option value="' . $element['element_id'] . '"'.$selected.'>' . $element['name'] . '</option>';
+                        }
+                        ?>
                         </select>
                     </div>
                     <div class="form-label">
                         <label for="weapon">Arme</label>
                         <select name="weapon" id="weapon">
-                            <option value="sword">Epée à une main</option>
-                            <option value="claymore">Epée à deux mains</option>
-                            <option value="bow">Arc</option>
-                            <option value="polearm">Arme d'hast</option>
-                            <option value="catalyst">Catalyseur</option>
+                        <?php
+                        foreach($weaponTypes as $weaponType){
+                            $selected = $weaponType['weapon_type_id'] === $character['weapon_type_id'] ? ' selected="selected"' : '';
+                            echo '<option value="'. $weaponType['weapon_type_id']. '"'.$selected.'>'. $weaponType['name']. '</option>';
+                        }
+                        ?>
                         </select>
                     </div>
                 </div>
@@ -59,41 +69,36 @@
                         <div>
                             <label for="rarity4">4<sup><img src="assets/img/icons/1_star.png" alt="étoile"></sup></label>
                         </div>
-                        <input type="radio" name="rarity" id="rarity4" value="4">
+                        <?php  $chk = $character['rarity'] === 4 ? 'checked' : ''; ?>
+                        <input type="radio" name="rarity" id="rarity4" value="4" <?= $chk ?>>
                     </div>
                     <div class="rarity">
                         <div>
                             <label for="rarity5">5<sup><img src="assets/img/icons/1_star.png" alt="étoile"></sup></label>
                         </div>
-                        <input type="radio" name="rarity" id="rarity5" value="5">
+                        <?php  $chk = $character['rarity'] === 5 ? 'checked' : ''; ?>
+                        <input type="radio" name="rarity" id="rarity5" value="5" <?= $chk ?>>
                     </div>
                     <div class="form-label">
                         <label for="bonus">Bonus type</label>
                         <select name="bonus" id="bonus">
-                            <option value="atq">ATQ%</option>
-                            <option value="def">DEF%</option>
-                            <option value="pv">PV%</option>
-                            <option value="dgt-anemo">DGT Anemo</option>
-                            <option value="dgt-geo">DGT Geo</option>
-                            <option value="dgt-electro">DGT Electro</option>
-                            <option value="dgt-dendro">DGT Dendro</option>
-                            <option value="dgt-hydro">DGT Hydro</option>
-                            <option value="dgt-pyro">DGT Pyro</option>
-                            <option value="dgt-cryo">DGT Cryo</option>
-                            <option value="dgt-phy">DGT Physique</option>
-                            <option value="crit-rate">TC</option>
-                            <option value="crit-dgt">DC</option>
-                            <option value="re">RE</option>
-                            <option value="me">ME</option>
-                            <option value="heal">Soin</option>
+                        <?php
+                        foreach($stats as $stat){
+                            $selected = $stat['stat_id'] === $character['stat_id'] ? ' selected="selected"' : '';
+                            echo '<option value="'.$stat['stat_id'].'"'.$selected.'>'.$stat['nameFr']. '</option>';
+                        }
+                        ?>
                         </select>
                     </div>
                     <div class="form-label">
                         <label for="farm-days">Jours de farm aptitudes</label>
                         <select name="farm-days" id="farm-days">
-                            <option value="mo-th-su">Lundi / Jeudi / Dimanche</option>
-                            <option value="tu-fr-su">Mardi / Vendredi / Dimanche</option>
-                            <option value="we-sa-su">Mercredi / Samedi / Diamnche</option>
+                        <?php
+                        foreach($days as $day){
+                            $selected = $day['farm_day_id'] === $character['farm_day_id'] ? ' selected="selected"' : '';
+                            echo '<option value="'.$day['farm_day_id'].'"'.$selected.'>'.$day['daysFr']. '</option>';
+                        }
+                        ?>
                         </select>
                     </div>
                 </div>
@@ -101,81 +106,84 @@
                     <div class="form-label">
                         <fieldset>
                             <legend>Miniature</legend>
+                            <img src="<?= $character['image']?>" alt="<?= $character['name']?>">
                             <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
                             <legend>Card</legend>
+                            <img src="<?= $character['card']?>" alt="<?= $character['card']?>">
                             <input type="file" name="card" id="card" accept="image/*">
                         </fieldset>
                     </div>
                 </div>
                 <div class="form-label-groups">
                     <div class="form-label">
-                        <fieldset>
-                            <legend>Boss matériel</legend>
-                            <input type="file" name="boss-mat" id="boss-mat" accept="image/*">
-                        </fieldset>
+                        <label for="boss-drop">Boss matériel</label>
+                        <select name="boss-drop" id="boss-drop">
+                        <?php
+                        foreach($bossDrops as $bossDrop){
+                            $selected = $bossDrop['boss_drop_id'] === $character['boss_drop_id'] ? ' selected="selected"' : '';
+                            echo '<option value="' . $bossDrop['boss_drop_id'] . '"'.$selected.'>' . $bossDrop['name'] . '</option>';
+                        }
+                        ?>
+                        </select>
                     </div>
                     <div class="form-label">
-                        <fieldset>
-                            <legend>Local matériel</legend>
-                            <input type="file" name="local-mat" id="local-mat" accept="image/*">
-                        </fieldset>
+                        <label for="local-mat">Local matériel</label>
+                        <select name="local-mat" id="local-mat">
+                        <?php
+                        foreach($localMaterials as $localMaterial){
+                            $selected = $localMaterial['local_material_id'] === $character['local_material_id'] ? ' selected="selected"' : '';
+                            echo '<option value="' . $localMaterial['local_material_id'] . '"'.$selected.'>' . $localMaterial['name'] . '</option>';
+                        }
+                        ?>
+                        </select>
                     </div>
                     <div class="form-label">
-                        <fieldset>
-                            <legend>World Boss matériel</legend>
-                            <input type="file" name="wb-mat" id="wb-mat" accept="image/*">
-                        </fieldset>
-                    </div>
-                </div>
-                <div class="form-label-groups">
-                    <div class="form-label">
-                        <fieldset>
-                            <legend>Mob matériel rareté 1</legend>
-                            <input type="file" name="mob-mat-r1" id="mob-mat-r1" accept="image/*">
-                        </fieldset>
-                    </div>
-                    <div class="form-label">
-                        <fieldset>
-                            <legend>Mob matériel rareté 2</legend>
-                            <input type="file" name="mob-mat-r2" id="mob-mat-r2" accept="image/*">
-                        </fieldset>
-                    </div>
-                    <div class="form-label">
-                        <fieldset>
-                            <legend>Mob matériel rareté 3</legend>
-                            <input type="file" name="mob-mat-r3" id="mob-mat-r3" accept="image/*">
-                        </fieldset>
+                        <label for="wb-drop">World Boss matériel</label>
+                        <select name="wb-drop" id="wb-drop">
+                        <?php
+                        foreach($wbDrops as $wbDrop){
+                            $selected = $wbDrop['world_boss_drop_id'] === $character['world_boss_drop_id'] ? ' selected="selected"' : '';
+                            echo '<option value="' . $wbDrop['world_boss_drop_id'] . '"'.$selected.'>' . $wbDrop['name'] . '</option>';
+                        }
+                        ?>
+                        </select>
                     </div>
                 </div>
                 <div class="form-label-groups">
                     <div class="form-label">
-                        <fieldset>
-                            <legend>Donjon matériel rareté 2</legend>
-                            <input type="file" name="dj-mat-r2" id="dj-mat-r2" accept="image/*">
-                        </fieldset>
+                        <label for="mob-drop-category">Mob drop catégorie</label>
+                        <select name="mob-drop-category" id="mob-drop-category">
+                        <?php
+                        foreach($mobMaterials as $mobMaterial){
+                            $selected = $mobMaterial['mob_drop_id'] === $character['mob_drop_id'] ? ' selected="selected"' : '';
+                            echo '<option value="'.$mobMaterial['mob_drop_id'].'"'.$selected.'>'.$mobMaterial['category']. '</option>';
+                        }
+                        ?>
+                        </select>
                     </div>
                     <div class="form-label">
-                        <fieldset>
-                            <legend>Donjon matériel rareté 3</legend>
-                            <input type="file" name="dj-mat-r3" id="dj-mat-r3" accept="image/*">
-                        </fieldset>
-                    </div>
-                    <div class="form-label">
-                        <fieldset>
-                            <legend>Donjon matériel rareté 4</legend>
-                            <input type="file" name="dj-mat-r4" id="dj-mat-r4" accept="image/*">
-                        </fieldset>
+                        <label for="dj-drop-category">Dj drop catégorie</label>
+                        <select name="dj-drop-category" id="dj-drop-category">
+                        <?php
+                        foreach($djMaterials as $djMaterial){
+                            $selected = $djMaterial['dungeon_drop_id'] === $character['dungeon_drop_id'] ? ' selected="selected"' : '';
+                            echo '<option value="'.$djMaterial['dungeon_drop_id'].'"'.$selected.'>'.$djMaterial['category']. '</option>';
+                        }
+                        ?>
+                        </select>
                     </div>
                 </div>
                 <input type="submit" value="Valider" class="btn">
             </form>
+    <?php endif; ?>
         </div>
     </main>
-    <?php include "template/footer.php"; ?>
-    <script src="assets/js/edit-character.js"></script>
+    <?php include "templates/footer.php"; ?>
+    <script src="assets/js/validate.js"></script>
+    <script src="assets/js/validate_edit-character.js"></script>
 </body>
 </html>

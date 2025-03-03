@@ -38,7 +38,13 @@ if ($_SESSION['role'] === 'Administrator'){
         }
 
         // validate the description
-        $description = htmlspecialchars($_POST['description']);
+        if (trim($_POST['description']).length === 0){
+            $error = "Veuillez saisir une description pour l'arme.";
+            require_once "views/error.php";
+            exit;
+        }else {
+            $description = htmlspecialchars($_POST['description']);
+        }
 
         // validate the selects
         $selects = ['type', 'bonus', 'farm-days', 'obtaining', 'mob-drop-category', 'dj-drop-category', 'elevation-drop-category'];

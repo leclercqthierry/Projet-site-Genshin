@@ -3,23 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Common style-->
+    <?php // Common style ?>
     <link rel="stylesheet" href="assets/css/style.css">
-    <!--delete-character style-->
+    <?php // delete-character style ?>
     <link rel="stylesheet" href="assets/css/delete-form.css">
     <title>Panneau Admin - Suppression d'arme</title>
 </head>
 <body>
-    <?php include "template/header.php"; ?>
+    <?php include "templates/header.php"; ?>
     <main>
         <h1>Suppression d'une arme</h1>
         <div class="container">
-            <form action="#" method="post" name="delete-weapon-form">
+            <form action="delete-weapon" method="post" name="delete-weapon-form">
                 <div class="form-label">
                     <label for="weapon">Arme à supprimer</label>
                     <select name="weapon" id="weapon">
                         <option value=""></option>
-                        <!--generated in js-->
+    <?php
+        foreach ($weapons as $weapon){
+            echo '
+                        <option value="'.$weapon['weapon_id'].'">'.$weapon['name'].'</option>';
+        }
+    ?>
                     </select>
                 </div>
                 <input type="submit" value="Valider" class="btn">
@@ -35,7 +40,7 @@
             </div>
         </div>
     </main>
-    <?php include "template/footer.php"; ?>
+    <?php include "templates/footer.php"; ?>
     <script src="assets/js/delete-weapon.js"></script>
 </body>
 </html>

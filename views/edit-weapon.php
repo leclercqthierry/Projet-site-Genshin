@@ -175,6 +175,7 @@
         </div>
     </main>
     <?php include "templates/footer.php"; ?>
-    <!-- <script src="assets/js/edit-weapon.js"></script> -->
+    <script src="assets/js/validate.js"></script>
+    <script src="assets/js/validate_edit-weapon.js"></script>
 </body>
 </html>

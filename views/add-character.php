@@ -150,6 +150,6 @@
     </main>
     <?php include "templates/footer.php"; ?>
     <script src="assets/js/validate.js"></script>
-    <script src="assets/js/validate_add_char.js"></script>
+    <script src="assets/js/validate_add-char.js"></script>
 </body>
 </html>

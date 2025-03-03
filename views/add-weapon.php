@@ -142,6 +142,6 @@
     </main>
     <?php include "templates/footer.php"; ?>
     <script src="assets/js/validate.js"></script>
-    <script src="assets/js/validate_add_weapon.js"></script>
+    <script src="assets/js/validate_add-weapon.js"></script>
 </body>
 </html>

@@ -89,5 +89,16 @@ function editWeapon($id, $name, $rarity, $cardPath, $thumbnailPath, $description
         require_once "views/error.php";
         exit;
     }
+}
 
+function deleteWeapon($id){
+    $pdo = getConnexion();
+    try{
+        $stmt = $pdo->prepare("DELETE FROM zell_weapons WHERE `weapon_id` =?");
+        $stmt->execute([$id]);
+    } catch(PDOException $e){
+        $error = "Erreur lors de la suppression d'une arme: ".$e->getMessage();
+        require_once "views/error.php";
+        exit;
+    }
 }

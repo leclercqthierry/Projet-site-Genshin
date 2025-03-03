@@ -7,6 +7,7 @@ const rarities = document.getElementsByName('rarity');
 const selects = document.querySelectorAll('select');
 const thumbnail = document.getElementById('thumbnail');
 const card = document.getElementById('card');
+const description = document.getElementById('description');
 
 
 // Regex pattern for validation
@@ -51,6 +52,10 @@ form.addEventListener('submit', (e) =>{
             showError('Veuillez choisir une valeur valide pour votre arme dans les menus déroulants.', errorForm);
         }
     });
+
+    if (description.value.length === 0){
+        showError('Veuillez entrer une description pour votre set d\'artefact.', errorForm);
+    }
     
     if (errorForm.textContent === '') {
         form.submit();
