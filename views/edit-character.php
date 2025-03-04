@@ -21,7 +21,6 @@
                 <div class="form-label">
                     <label for="character">Personnage à éditer</label>
                     <select name="character" id="character">
-                        <option value=""></option>
     <?php
     foreach ($characters as $character) {
         echo '

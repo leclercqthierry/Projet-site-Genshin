@@ -131,11 +131,11 @@ if ($_SESSION['role'] === 'Administrator'){
             $weaponTypes = getAllWeaponTypesOrderedByName();
             $stats = getStats();
             $days = getFarmDays();
-            $bossDrops = getBossDrops();
-            $localMaterials = getLocalMaterials();
-            $wbDrops = getWorldBossDrops();
-            $mobMaterials = getMobMaterials();
-            $djMaterials = getDjMaterials();
+            $bossDrops = getAllBossDrops();
+            $localMaterials = getAllLocalMaterials();
+            $wbDrops = getAllWorldBossDrops();
+            $mobMaterials = getAllMobMaterials();
+            $djMaterials = getAllDjMaterials();
             $character = getCharacterById($id);
 
             require_once "views/edit-character.php";

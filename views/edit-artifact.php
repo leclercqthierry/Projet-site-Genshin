@@ -22,7 +22,6 @@
                 <div class="form-label">
                     <label for="artifact">Set d'artéfacts à éditer</label>
                     <select name="artifact" id="artifact">
-                        <option value=""></option>
         <?php
             foreach ($artifacts as $artifact){
                 echo '

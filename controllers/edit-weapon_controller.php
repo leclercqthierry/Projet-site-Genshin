@@ -129,9 +129,9 @@ if ($_SESSION['role'] === 'Administrator'){
             $subStats = getStats();
             $obtainings = howToGet();
             $days = getFarmDays();
-            $mobMats = getMobMaterials();
-            $elevationMats = getElevationMaterials();
-            $djElevationMats = getDjElevationMaterials();
+            $mobMats = getAllMobMaterials();
+            $elevationMats = getAllElevationMaterials();
+            $djElevationMats = getAllDjElevationMaterials();
             $weapon = getWeaponById($id);
 
             require_once "views/edit-weapon.php";

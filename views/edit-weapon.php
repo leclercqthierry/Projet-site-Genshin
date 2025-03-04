@@ -23,7 +23,6 @@
                 <div class="form-label">
                     <label for="weapon">Arme à éditer</label>
                     <select name="weapon" id="weapon">
-                        <option value=""></option>
     <?php
         foreach($weapons as $weapon){
             echo '

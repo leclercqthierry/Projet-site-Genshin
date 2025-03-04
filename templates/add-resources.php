@@ -60,4 +60,3 @@ function addMultiplesResourcesForm($title, $names, $images){
     </div>';
     return $html;
 }
-?>
