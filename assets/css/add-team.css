@@ -55,9 +55,9 @@ fieldset{
     row-gap: 15px;
 }
 
-.form-label:nth-child(3){
+/* .form-label:nth-child(3){
     display:none;
-}
+} */
 
 textarea{
     resize:none;

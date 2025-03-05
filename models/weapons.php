@@ -51,6 +51,24 @@ function getAllWeapons(){
     }
 }
 
+/**
+ * Collect all weapons of the same type
+ * @param int $id
+ * @return array
+ */
+function getAllWeaponsOfType($id){
+    $pdo = getConnexion();
+    try{
+        $stmt = $pdo->prepare("SELECT * FROM zell_weapons WHERE `weapon_type_id` =?");
+        $stmt->execute([$id]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch(Exception $e){
+        $error =  "Erreur lors de la récupération des armes du type dont l'ID est: ".$id.": ".$e->getMessage();
+        require_once "views/error.php";
+        exit;
+    }
+}
+
 function getWeaponById($id){
     $pdo = getConnexion();
     try{
@@ -67,7 +85,7 @@ function getWeaponById($id){
 function createWeapon($name, $rarity, $cardPath, $thumbnailPath, $description, $ids){
     $pdo = getConnexion();
     try{
-        $stmt = $pdo->prepare("INSERT INTO zell_weapons (`name`, `rarity`, `card`, `image`, `description`, `weapon_type_id`, `stat_id`, `farm_day_id`, `obtaining`, `mob_drop_id`, `dungeon_drop_id`, `elevation_weapon_drop_id` ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
+        $stmt = $pdo->prepare("INSERT INTO zell_weapons (`name`, `rarity`, `card`, `image`, `description`, `weapon_type_id`, `stat_id`, `farm_day_id`, `obtaining_id`, `mob_drop_id`, `dungeon_drop_id`, `elevation_weapon_drop_id` ) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)");
         $datas = array_merge([$name, $rarity, $cardPath, $thumbnailPath, $description], $ids);
         $stmt->execute($datas);
         
@@ -81,7 +99,7 @@ function createWeapon($name, $rarity, $cardPath, $thumbnailPath, $description, $
 function editWeapon($id, $name, $rarity, $cardPath, $thumbnailPath, $description, $ids){
     $pdo = getConnexion();
     try{
-        $stmt = $pdo->prepare("UPDATE zell_weapons SET `name` =?, `rarity` =?, `card` =?, `image` =?, `description` =?, `weapon_type_id` =?, `stat_id` =?, `farm_day_id` =?, `obtaining` =?, `mob_drop_id` =?, `dungeon_drop_id` =?, `elevation_weapon_drop_id` =? WHERE `weapon_id` =?");
+        $stmt = $pdo->prepare("UPDATE zell_weapons SET `name` =?, `rarity` =?, `card` =?, `image` =?, `description` =?, `weapon_type_id` =?, `stat_id` =?, `farm_day_id` =?, `obtaining_id` =?, `mob_drop_id` =?, `dungeon_drop_id` =?, `elevation_weapon_drop_id` =? WHERE `weapon_id` =?");
         $datas = array_merge([$name, $rarity, $cardPath, $thumbnailPath, $description], $ids, [$id]);
         $stmt->execute($datas);
     } catch(PDOException $e){

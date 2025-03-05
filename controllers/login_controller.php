@@ -39,12 +39,14 @@ if (isset($_POST['nickname']) && isset($_POST['password'])){
             case 1: {
                 $_SESSION['nickname'] = $user['nickname'];
                 $_SESSION['role'] = 'Administrator';
+                $_SESSION['user_id'] = $user['user_id'];
                 header("Location: admin-menu");
                 break;
             }
             case 2: {
                 $_SESSION['nickname'] = $user['nickname'];
                 $_SESSION['role'] = 'Member';
+                $_SESSION['user_id'] = $user['user_id'];
                 header("Location: member");
                 break;
             }
