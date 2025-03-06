@@ -2,7 +2,7 @@
 session_start();
 
 // If it's the admin
-if ($_SESSION['role'] === 'Administrator'){
+if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
     require_once "templates/sub_menu.php";
     require_once "views/admin-menu.php";
 } else {

@@ -15,19 +15,14 @@
     <main>
         <h1>Edition d'un set d'artéfact</h1>
         <div class="container">
-        <?php
-        if (!isset($artifact)):
-        ?>
+        <?php if (!isset($artifact)): ?>
             <form action="edit-artifact" method="post" name="select-artifact-form">
                 <div class="form-label">
                     <label for="artifact">Set d'artéfacts à éditer</label>
                     <select name="artifact" id="artifact">
-        <?php
-            foreach ($artifacts as $artifact){
-                echo '
-                        <option value="'.$artifact['artifact_id'].'">'.$artifact['name'].'</option>';
-            }
-        ?>
+                    <?php foreach ($artifacts as $artifact): ?>
+                        <option value="<?= $artifact['artifact_id'] ?>"><?= $artifact['name'] ?></option>
+                    <?php endforeach; ?>
                     </select>
                 </div>
                 <input type="submit" value="Valider" class="btn">
@@ -79,9 +74,7 @@
                 </div>
                 <input type="submit" value="Valider" class="btn">
             </form>
-        <?php
-        endif;
-        ?>
+        <?php endif; ?>
         </div>
     </main>
     <?php include "templates/footer.php"; ?>

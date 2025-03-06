@@ -18,13 +18,9 @@
                 <div class="form-label">
                     <label for="character">Personnage à supprimer</label>
                     <select name="character" id="character">
-                        <option value=""></option>
-    <?php
-        foreach ($characters as $character){
-            echo '
-                        <option value="'.$character['character_id'].'">'.$character['name'].'</option>';
-        }
-    ?>
+                        <?php foreach ($characters as $character): ?>
+                            <option value="<?= $character['character_id'] ?>"><?= $character['name'] ?></option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
                 <input type="submit" value="Valider" class="btn">

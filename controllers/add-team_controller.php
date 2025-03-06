@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if($_SESSION['role'] === 'Administrator' || $_SESSION['role'] === 'Member'){
+if(isset($_SESSION['role']) && ($_SESSION['role'] === 'Administrator' || $_SESSION['role'] === 'Member')){
 
     $regexName = "/^[A-Z][a-zA-Z \-éèêëàâûô']+[a-zA-Zé]$/";
     $errorName = "Le nom doit commencer par une majuscule et ne pas comporter de chiffres (caractères spéciaux autorisés: -, é, è, ê, ë, à, â, û, ô et ') et avoir au moins 3 lettres.";

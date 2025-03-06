@@ -43,19 +43,15 @@
         </div>
         <?php // Artefacts gallery ?>
         <div class="gallery">
-            <?php // Generated in php ?>
-            <?php
-            foreach($artifacts as $artifact) {
-                $item = "
-                <a href='artifact.php?id=".$artifact['artifact_id']."'>
-                    <div class='card' data-rarity=".$artifact['rarity'].">
-                        <img src=".$artifact['image']." alt=".$artifact['name']." class='rarity".$artifact['rarity']." artifact'>
-                        <strong>".$artifact['name']."</strong>
+            <?php // Generated in php
+            foreach($artifacts as $artifact): ?>
+                <a href='artifact.php?id=<?= $artifact['artifact_id'] ?>'>
+                    <div class='card' data-rarity="<?= $artifact['rarity'] ?>">
+                        <img src="<?= $artifact['image'] ?>" alt="<?= $artifact['name'] ?>" class='rarity<?= $artifact['rarity'] ?> artifact'>
+                        <strong><?= $artifact['name'] ?></strong>
                     </div>
-                </a>";
-                echo $item;
-            };
-            ?>
+                </a>
+            <?php endforeach; ?>
         </div>
     </main>
     <?php include "templates/footer.php"; ?>

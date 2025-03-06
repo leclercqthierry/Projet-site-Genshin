@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if ($_SESSION['role'] === 'Administrator') {
+if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
 
     if (isset($_POST['name']) && isset($_POST['rarity']) && isset($_POST['description']) && isset($_FILES['thumbnail'])){
 

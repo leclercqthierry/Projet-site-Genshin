@@ -76,6 +76,11 @@ function validateEditFile($fileName){
     }
 }
 
+/**
+ * @param string $select
+ * @param string $errorMessage
+ * @return int
+ */
 function validateSelect($select, $errorMessage){
     if (!is_numeric($_POST[$select])){
         $error = $errorMessage;

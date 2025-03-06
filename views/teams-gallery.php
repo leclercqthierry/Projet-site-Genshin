@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Common style-->
+    <?php // Common style ?>
     <link rel="stylesheet" href="assets/css/style.css">
-    <!-- teams gallery style-->
+    <?php // teams gallery style ?>
     <link rel="stylesheet" href="assets/css/teams-gallery.css">
     <title>Gallerie de teams</title>
 </head>
 <body>
-    <?php include "template/header.php"; ?>
+    <?php include "templates/header.php"; ?>
     <main>
         <h1>Gallerie de teams</h1>
         <div class="search">
@@ -81,7 +81,7 @@
             ?>
         </div>
     </main>
-    <?php include "template/footer.php"; ?>
+    <?php include "templates/footer.php"; ?>
     <script src="assets/js/teams-gallery.js"></script>
 </body>
 </html>

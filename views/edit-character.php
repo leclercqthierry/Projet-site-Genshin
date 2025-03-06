@@ -14,19 +14,14 @@
     <main>
         <h1>Edition d'un personnage</h1>
         <div class="container">
-    <?php
-    if(!isset($character)):
-    ?>
+    <?php if(!isset($character)): ?>
             <form action="edit-character" method="post" name="select-character-form">
                 <div class="form-label">
                     <label for="character">Personnage à éditer</label>
                     <select name="character" id="character">
-    <?php
-    foreach ($characters as $character) {
-        echo '
-                        <option value="'.$character['character_id'].'">'.$character['name'].'</option>';
-    }
-    ?>
+                    <?php foreach ($characters as $character): ?>
+                        <option value="<?= $character['character_id'] ?>"><?= $character['name'] ?></option>
+                    <?php endforeach; ?>
                     </select>
                 </div>
                 <input type="submit" value="Valider" class="btn">
@@ -42,23 +37,19 @@
                     <div class="form-label">
                         <label for="element">Elément</label>
                         <select name="element" id="element">
-                        <?php
-                        foreach($elements as $element){
-                            $selected = $element['element_id'] === $character['element_id'] ? ' selected="selected"' : '';
-                            echo '<option value="' . $element['element_id'] . '"'.$selected.'>' . $element['name'] . '</option>';
-                        }
-                        ?>
+                        <?php foreach($elements as $element):
+                            $selected = $element['element_id'] === $character['element_id'] ? ' selected="selected"' : ''; ?>
+                            <option value="<?= $element['element_id'] ?>" <?= $selected ?>><?= $element['name'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-label">
                         <label for="weapon">Arme</label>
                         <select name="weapon" id="weapon">
-                        <?php
-                        foreach($weaponTypes as $weaponType){
-                            $selected = $weaponType['weapon_type_id'] === $character['weapon_type_id'] ? ' selected="selected"' : '';
-                            echo '<option value="'. $weaponType['weapon_type_id']. '"'.$selected.'>'. $weaponType['name']. '</option>';
-                        }
-                        ?>
+                        <?php foreach($weaponTypes as $weaponType):
+                            $selected = $weaponType['weapon_type_id'] === $character['weapon_type_id'] ? ' selected="selected"' : ''; ?>
+                            <option value="<?= $weaponType['weapon_type_id'] ?>" <?= $selected ?>><?= $weaponType['name'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
@@ -81,23 +72,19 @@
                     <div class="form-label">
                         <label for="bonus">Bonus type</label>
                         <select name="bonus" id="bonus">
-                        <?php
-                        foreach($stats as $stat){
-                            $selected = $stat['stat_id'] === $character['stat_id'] ? ' selected="selected"' : '';
-                            echo '<option value="'.$stat['stat_id'].'"'.$selected.'>'.$stat['nameFr']. '</option>';
-                        }
-                        ?>
+                        <?php foreach($stats as $stat):
+                            $selected = $stat['stat_id'] === $character['stat_id'] ? ' selected="selected"' : ''; ?>
+                            <option value="<?= $stat['stat_id'] ?>" <?= $selected ?>><?= $stat['nameFr'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-label">
                         <label for="farm-days">Jours de farm aptitudes</label>
                         <select name="farm-days" id="farm-days">
-                        <?php
-                        foreach($days as $day){
-                            $selected = $day['farm_day_id'] === $character['farm_day_id'] ? ' selected="selected"' : '';
-                            echo '<option value="'.$day['farm_day_id'].'"'.$selected.'>'.$day['daysFr']. '</option>';
-                        }
-                        ?>
+                        <?php foreach($days as $day):
+                            $selected = $day['farm_day_id'] === $character['farm_day_id'] ? ' selected="selected"' : ''; ?>
+                            <option value="<?= $day['farm_day_id'] ?>" <?= $selected ?>><?= $day['daysFr'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
@@ -121,34 +108,28 @@
                     <div class="form-label">
                         <label for="boss-drop">Boss matériel</label>
                         <select name="boss-drop" id="boss-drop">
-                        <?php
-                        foreach($bossDrops as $bossDrop){
-                            $selected = $bossDrop['boss_drop_id'] === $character['boss_drop_id'] ? ' selected="selected"' : '';
-                            echo '<option value="' . $bossDrop['boss_drop_id'] . '"'.$selected.'>' . $bossDrop['name'] . '</option>';
-                        }
-                        ?>
+                        <?php foreach($bossDrops as $bossDrop):
+                            $selected = $bossDrop['boss_drop_id'] === $character['boss_drop_id'] ? ' selected="selected"' : ''; ?>
+                            <option value="<?= $bossDrop['boss_drop_id'] ?>" <?= $selected ?>><?= $bossDrop['name'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-label">
                         <label for="local-mat">Local matériel</label>
                         <select name="local-mat" id="local-mat">
-                        <?php
-                        foreach($localMaterials as $localMaterial){
-                            $selected = $localMaterial['local_material_id'] === $character['local_material_id'] ? ' selected="selected"' : '';
-                            echo '<option value="' . $localMaterial['local_material_id'] . '"'.$selected.'>' . $localMaterial['name'] . '</option>';
-                        }
-                        ?>
+                        <?php foreach($localMaterials as $localMaterial):
+                            $selected = $localMaterial['local_material_id'] === $character['local_material_id'] ? ' selected="selected"' : ''; ?>
+                            <option value="<?= $localMaterial['local_material_id'] ?>" <?= $selected ?>><?= $localMaterial['name'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-label">
                         <label for="wb-drop">World Boss matériel</label>
                         <select name="wb-drop" id="wb-drop">
-                        <?php
-                        foreach($wbDrops as $wbDrop){
-                            $selected = $wbDrop['world_boss_drop_id'] === $character['world_boss_drop_id'] ? ' selected="selected"' : '';
-                            echo '<option value="' . $wbDrop['world_boss_drop_id'] . '"'.$selected.'>' . $wbDrop['name'] . '</option>';
-                        }
-                        ?>
+                        <?php foreach($wbDrops as $wbDrop):
+                            $selected = $wbDrop['world_boss_drop_id'] === $character['world_boss_drop_id'] ? ' selected="selected"' : ''; ?>
+                            <option value="<?= $wbDrop['world_boss_drop_id'] ?>" <?= $selected ?>><?= $wbDrop['name'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
@@ -156,23 +137,19 @@
                     <div class="form-label">
                         <label for="mob-drop-category">Mob drop catégorie</label>
                         <select name="mob-drop-category" id="mob-drop-category">
-                        <?php
-                        foreach($mobMaterials as $mobMaterial){
-                            $selected = $mobMaterial['mob_drop_id'] === $character['mob_drop_id'] ? ' selected="selected"' : '';
-                            echo '<option value="'.$mobMaterial['mob_drop_id'].'"'.$selected.'>'.$mobMaterial['category']. '</option>';
-                        }
-                        ?>
+                        <?php foreach($mobMaterials as $mobMaterial):
+                            $selected = $mobMaterial['mob_drop_id'] === $character['mob_drop_id'] ? ' selected="selected"' : ''; ?>
+                            <option value="<?= $mobMaterial['mob_drop_id'] ?>" <?= $selected ?>><?= $mobMaterial['category'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-label">
                         <label for="dj-drop-category">Dj drop catégorie</label>
                         <select name="dj-drop-category" id="dj-drop-category">
-                        <?php
-                        foreach($djMaterials as $djMaterial){
-                            $selected = $djMaterial['dungeon_drop_id'] === $character['dungeon_drop_id'] ? ' selected="selected"' : '';
-                            echo '<option value="'.$djMaterial['dungeon_drop_id'].'"'.$selected.'>'.$djMaterial['category']. '</option>';
-                        }
-                        ?>
+                        <?php foreach($djMaterials as $djMaterial):
+                            $selected = $djMaterial['dungeon_drop_id'] === $character['dungeon_drop_id'] ? ' selected="selected"' : ''; ?>
+                            <option value="<?= $djMaterial['dungeon_drop_id'] ?>" <?= $selected ?>><?= $djMaterial['category'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                 </div>

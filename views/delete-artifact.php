@@ -18,13 +18,9 @@
                 <div class="form-label">
                     <label for="artifact">Set d'artéfacts à supprimer</label>
                     <select name="artifact" id="artifact">
-                        <option value=""></option>
-    <?php
-        foreach ($artifacts as $artifact){
-            echo '
-                        <option value="'.$artifact['artifact_id'].'">'.$artifact['name'].'</option>';
-        }
-    ?>
+                        <?php foreach ($artifacts as $artifact): ?>
+                        <option value="<?= $artifact['artifact_id'] ?>"><?= $artifact['name'] ?></option>
+                        <?php endforeach; ?>
                     </select>
                 </div>
                 <input type="submit" value="Valider" class="btn">

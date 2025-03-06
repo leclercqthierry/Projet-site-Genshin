@@ -14,43 +14,33 @@
     <main>
         <h1>Suppression de ressources</h1>
             <div class="container">
-    <?php
-    if(!isset($_POST['resource-type']) && !isset($_POST['resource']) && !isset($_POST['type'])):
-    ?>
+            <?php if(!isset($_POST['resource-type']) && !isset($_POST['resource']) && !isset($_POST['type'])): ?>
                 <form action="delete-resources" method="post" name="select-resource-type-form" enctype="multipart/form-data">
                     <div class="form-label">
                         <label for="resource-type">Type de la ressources à supprimer</label>
                         <select name="resource-type" id="resource-type">
-    <?php
-    for($i = 0; $i < count($resourceTypes); $i++){
-        echo '
-                            <option value="'.$i.'">'.$resourceTypes[$i].'</option>';
-    }
-    ?>
+                        <?php for($i = 0; $i < count($resourceTypes); $i++): ?>
+                            <option value="<?= $i ?>"><?= $resourceTypes[$i] ?></option>
+                        <?php endfor; ?>
                         </select>
                     </div>
                     <input type="submit" value="Valider" class="btn">
                 </form>
-    <?php endif;
-    if(isset($_POST['resource-type']) && !isset($_POST['resource']) && !isset($_POST['type'])):
-    ?>
+            <?php endif;
+            if(isset($_POST['resource-type']) && !isset($_POST['resource']) && !isset($_POST['type'])): ?>
                 <form action="delete-resources" method="post" name="select-resource-form" enctype="multipart/form-data">
                     <div class="form-label">
                         <label for="resource">Choix de la Ressource à supprimer</label>
                         <select name="resource" id="resource">
-
-    <?php
-    for($i = 0; $i < count($resources); $i++){
-        echo '
-                            <option value="'.$resources[$i][$resource_id].'">'.$resources[$i][$type].'</option>';
-    }
-    ?>
+                        <?php for($i = 0; $i < count($resources); $i++): ?>
+                            <option value="<?= $resources[$i][$resource_id] ?>"><?= $resources[$i][$type] ?></option>
+                        <?php endfor;?>
                         </select>
                         <input type="hidden" name="type" value="<?= $res_key ?>">
                     </div>
                     <input type="submit" value="Valider" class="btn">
                 </form>
-    <?php endif;?>
+            <?php endif;?>
             </div>
     </main>
     <?php include_once "templates/footer.php"; ?>

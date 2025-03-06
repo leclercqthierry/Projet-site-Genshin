@@ -13,6 +13,7 @@ function subMenu($title, $action){
             <a href="'.$action.'-character">Personnage</a>
             <a href="'.$action.'-weapon">Arme</a>
             <a href="'.$action.'-artifact">Artefact</a>
+            <a href="'.$action.'-build">Build</a>
             <a href="'.$action.'-team">Team</a>
         </div>
     </div>';

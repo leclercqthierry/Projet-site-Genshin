@@ -16,24 +16,19 @@
     <main>
         <h1>Edition d'une arme</h1>
         <div class="container">
-    <?php 
-    if(!isset($weapon)): 
-    ?>
+        <?php if(!isset($weapon)): ?>
             <form action="edit-weapon" method="post" name="select-weapon-form">
                 <div class="form-label">
                     <label for="weapon">Arme à éditer</label>
                     <select name="weapon" id="weapon">
-    <?php
-        foreach($weapons as $weapon){
-            echo '
-                        <option value="'.$weapon['weapon_id'].'">'.$weapon['name'].'</option>';
-        }
-    ?>
+                    <?php foreach($weapons as $weapon): ?>
+                        <option value="<?= $weapon['weapon_id'] ?>"><?= $weapon['name'] ?></option>
+                    <?php endforeach; ?>
                     </select>
                 </div>
                 <input type="submit" value="Valider" class="btn">
             </form>
-    <?php else:?>
+        <?php else:?>
             <form action="edit-weapon" method="post" name="edit-weapon-form" enctype="multipart/form-data">
             <div id="group1">
                     <div class="form-label">
@@ -44,12 +39,10 @@
                     <div class="form-label">
                         <label for="type">Type</label>
                         <select name="type" id="type">
-                        <?php
-                        foreach($weaponTypes as $weaponType){
-                            $selected = $weaponType['weapon_type_id'] === $weapon['weapon_type_id'] ? ' selected="selected"' : '';
-                            echo '<option value="'. $weaponType['weapon_type_id']. '"' .$selected.'>'. $weaponType['name']. '</option>';
-                        }
-                        ?>
+                        <?php foreach($weaponTypes as $weaponType):
+                            $selected = $weaponType['weapon_type_id'] === $weapon['weapon_type_id'] ? ' selected="selected"' : ''; ?>
+                            <option value="<?= $weaponType['weapon_type_id'] ?>" <?= $selected ?>><?= $weaponType['name'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
@@ -79,23 +72,19 @@
                     <div class="form-label">
                         <label for="bonus">Sous-stat</label>
                         <select name="bonus" id="bonus">
-                        <?php
-                        foreach($subStats as $subStat){
-                            $selected = $subStat['stat_id'] === $weapon['stat_id'] ? ' selected="selected"' : '';
-                            echo '<option value="'.$subStat['stat_id'].'"'.$selected.'>'.$subStat['nameFr']. '</option>';
-                        }
-                        ?>
+                        <?php foreach($subStats as $subStat):
+                            $selected = $subStat['stat_id'] === $weapon['stat_id'] ? ' selected="selected"' : ''; ?>
+                            <option value="<?= $subStat['stat_id'] ?>" <?= $selected ?>><?= $subStat['nameFr'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-label">
                         <label for="obtaining">Obtention</label>
                         <select name="obtaining" id="obtaining">
-                        <?php
-                        foreach($obtainings as $obtaining){
-                            $selected = $obtaining['obtaining_id'] === $weapon['obtaining'] ? ' selected="selected"' : '';
-                            echo '<option value="'.$obtaining['obtaining_id'].'"'.$selected.'>'.$obtaining['name']. '</option>';
-                        }
-                        ?>
+                        <?php foreach($obtainings as $obtaining):
+                            $selected = $obtaining['obtaining_id'] === $weapon['obtaining'] ? ' selected="selected"' : ''; ?>
+                            <option value="<?= $obtaining['obtaining_id'] ?>" <?= $selected ?>><?= $obtaining['name'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
@@ -103,12 +92,10 @@
                     <div class="form-label">
                         <label for="farm-days">Jours de farm élévation</label>
                         <select name="farm-days" id="farm-days">
-                        <?php
-                        foreach($days as $day){
-                            $selected = $day['farm_day_id'] === $weapon['farm_day_id'] ? ' selected="selected"' : '';
-                            echo '<option value="'.$day['farm_day_id'].'"'.$selected.'>'.$day['daysFr']. '</option>';
-                        }
-                        ?>
+                        <?php foreach($days as $day):
+                            $selected = $day['farm_day_id'] === $weapon['farm_day_id'] ? ' selected="selected"' : ''; ?>
+                            <option value="<?= $day['farm_day_id'] ?>" <?= $selected ?>><?= $day['daysFr'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-label">
@@ -137,40 +124,34 @@
                     <div class="form-label">
                         <label for="mob-drop-category">Mob drop catégorie</label>
                         <select name="mob-drop-category" id="mob-drop-category">
-                        <?php
-                        foreach($mobMats as $mobMat){
-                            $selected = $mobMat['mob_drop_id'] === $weapon['mob_drop_id'] ? ' selected="selected"' : '';
-                            echo '<option value="'.$mobMat['mob_drop_id'].'"'.$selected.'>'.$mobMat['category']. '</option>';
-                        }
-                        ?>
+                        <?php foreach($mobMats as $mobMat):
+                            $selected = $mobMat['mob_drop_id'] === $weapon['mob_drop_id'] ? ' selected="selected"' : ''; ?>
+                            <option value="<?= $mobMat['mob_drop_id'] ?>" <?= $selected ?>><?= $mobMat['category'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-label">
                         <label for="elevation-drop-category">Elévation drop catégorie</label>
                         <select name="elevation-drop-category" id="elevation-drop-category">
-                        <?php
-                        foreach($elevationMats as $elevationMat){
-                            $selected = $elevationMat['elevation_weapon_drop_id'] === $weapon['elevation_weapon_drop_id'] ? ' selected="selected"' : '';
-                            echo '<option value="'.$elevationMat['elevation_weapon_drop_id'].'"'.$selected.'>'.$elevationMat['category']. '</option>';
-                        }
-                        ?>
+                        <?php foreach($elevationMats as $elevationMat):
+                            $selected = $elevationMat['elevation_weapon_drop_id'] === $weapon['elevation_weapon_drop_id'] ? ' selected="selected"' : ''; ?>
+                            <option value="<?= $elevationMat['elevation_weapon_drop_id'] ?>" <?= $selected ?>><?= $elevationMat['category'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-label">
                         <label for="dj-drop-category">Donjon drop catégorie</label>
                         <select name="dj-drop-category" id="dj-drop-category">
-                        <?php
-                        foreach($djElevationMats as $djElevationMat){
-                            $selected = $djElevationMat['dungeon_drop_id'] === $weapon['dungeon_drop_id'] ? ' selected="selected"' : '';
-                            echo '<option value="'.$djElevationMat['dungeon_drop_id'].'"'.$selected.'>'.$djElevationMat['category']. '</option>';
-                        }
-                        ?>
+                        <?php foreach($djElevationMats as $djElevationMat):
+                            $selected = $djElevationMat['dungeon_drop_id'] === $weapon['dungeon_drop_id'] ? ' selected="selected"' : ''; ?>
+                            <option value="<?= $djElevationMat['dungeon_drop_id'] ?>" <?= $selected ?>><?= $djElevationMat['category'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
                 <input type="submit" value="Valider" class="btn">
             </form>
-    <?php endif;?>
+        <?php endif;?>
         </div>
     </main>
     <?php include "templates/footer.php"; ?>

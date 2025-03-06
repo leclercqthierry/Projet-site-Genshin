@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if($_SESSION['role'] === 'Administrator'){
+if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
 
     $resourceTypes = ['Boss drop', 'Matériel local', 'World boss drop', 'Mob drops', 'Donjon drops', 'Drop pour élévation d\'armes', 'Donjon de drop d\'armes'];
     

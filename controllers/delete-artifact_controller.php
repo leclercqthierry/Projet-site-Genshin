@@ -2,7 +2,7 @@
 
 session_start();
 
-if ($_SESSION['role'] === 'Administrator') {
+if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
 
     require_once "models/artifacts.php";
 

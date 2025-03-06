@@ -62,3 +62,39 @@ function insertTeamArtifact($pdo, $teamId, $artifactId){
         exit;
     }
 }
+
+function getAllteams(){
+    $pdo = getConnexion();
+    try{
+        $stmt = $pdo->query("SELECT
+        t.name,
+        c.name,
+        c.rarity,
+        c.image,
+        w.name,
+        w.rarity,
+        w.image,
+        a.name,
+        a.rarity,
+        a.image
+        FROM zell_teams AS t
+        JOIN zell_team_characters AS tc
+            ON t.team_id = tc.team_id
+        JOIN zell_characters AS c 
+            ON tc.character_id = c.character_id
+        JOIN zell_team_weapons AS tw
+            ON t.team_id = tw.team_id
+        JOIN zell_weapons AS w
+            ON tw.weapon_id = w.weapon_id
+        JOIN zell_team_artifacts AS ta
+            ON t.team_id = ta.team_id
+        JOIN zell_artifacts AS a 
+            ON ta.artifact_id = a.artifact_id;
+        ");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }catch(Exception $e){
+        $error = "Erreur lors de récupération des équipes: ".$e->getMessage();
+        require_once "views/error.php";
+        exit;
+    }
+}

@@ -18,13 +18,9 @@
                 <div class="form-label">
                     <label for="weapon">Arme à supprimer</label>
                     <select name="weapon" id="weapon">
-                        <option value=""></option>
-    <?php
-        foreach ($weapons as $weapon){
-            echo '
-                        <option value="'.$weapon['weapon_id'].'">'.$weapon['name'].'</option>';
-        }
-    ?>
+                    <?php foreach ($weapons as $weapon): ?>
+                        <option value="<?= $weapon['weapon_id'] ?>"><?= $weapon['name'] ?></option>
+                    <?php endforeach; ?>
                     </select>
                 </div>
                 <input type="submit" value="Valider" class="btn">

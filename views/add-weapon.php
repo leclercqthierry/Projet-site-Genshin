@@ -25,11 +25,9 @@
                     <div class="form-label">
                         <label for="type">Type</label>
                         <select name="type" id="type">
-                        <?php
-                        foreach($weaponTypes as $weaponType){
-                            echo '<option value="'. $weaponType['weapon_type_id']. '">'. $weaponType['name']. '</option>';
-                        }
-                        ?>
+                        <?php foreach($weaponTypes as $weaponType): ?>
+                            <option value="<?= $weaponType['weapon_type_id'] ?>"><?= $weaponType['name'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
@@ -56,21 +54,17 @@
                     <div class="form-label">
                         <label for="bonus">Sous-stat</label>
                         <select name="bonus" id="bonus">
-                        <?php
-                        foreach($subStats as $subStat){
-                            echo '<option value="'.$subStat['stat_id'].'">'.$subStat['nameFr']. '</option>';
-                        }
-                        ?>
+                        <?php foreach($subStats as $subStat): ?>
+                            <option value="<?= $subStat['stat_id'] ?>"><?= $subStat['nameFr'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-label">
                         <label for="obtaining">Obtention</label>
                         <select name="obtaining" id="obtaining">
-                        <?php
-                        foreach($obtainings as $obtaining){
-                            echo '<option value="'.$obtaining['obtaining_id'].'">'.$obtaining['name']. '</option>';
-                        }
-                        ?>
+                        <?php foreach($obtainings as $obtaining): ?>
+                            <option value="<?= $obtaining['obtaining_id'] ?>"><?= $obtaining['name'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                 </div>
@@ -78,11 +72,9 @@
                     <div class="form-label">
                         <label for="farm-days">Jours de farm élévation</label>
                         <select name="farm-days" id="farm-days">
-                        <?php
-                        foreach($days as $day){
-                            echo '<option value="'.$day['farm_day_id'].'">'.$day['daysFr']. '</option>';
-                        }
-                        ?>
+                        <?php foreach($days as $day): ?>
+                            <option value="<?= $day['farm_day_id'] ?>"><?= $day['daysFr'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-label">
@@ -108,31 +100,25 @@
                     <div class="form-label">
                         <label for="mob-drop-category">Mob drop catégorie</label>
                         <select name="mob-drop-category" id="mob-drop-category">
-                        <?php
-                        foreach($mobMats as $mobMat){
-                            echo '<option value="'.$mobMat['mob_drop_id'].'">'.$mobMat['category']. '</option>';
-                        }
-                        ?>
+                        <?php foreach($mobMats as $mobMat): ?>
+                            <option value="<?= $mobMat['mob_drop_id'] ?>"><?= $mobMat['category'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-label">
                         <label for="elevation-drop-category">Elévation drop catégorie</label>
                         <select name="elevation-drop-category" id="elevation-drop-category">
-                        <?php
-                        foreach($elevationMats as $elevationMat){
-                            echo '<option value="'.$elevationMat['elevation_weapon_drop_id'].'">'.$elevationMat['category']. '</option>';
-                        }
-                        ?>
+                        <?php foreach($elevationMats as $elevationMat): ?>
+                            <option value="<?= $elevationMat['elevation_weapon_drop_id'] ?>"><?= $elevationMat['category'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                     <div class="form-label">
                         <label for="dj-drop-category">Donjon drop catégorie</label>
                         <select name="dj-drop-category" id="dj-drop-category">
-                        <?php
-                        foreach($djElevationMats as $djElevationMat){
-                            echo '<option value="'.$djElevationMat['dungeon_drop_id'].'">'.$djElevationMat['category']. '</option>';
-                        }
-                        ?>
+                        <?php foreach($djElevationMats as $djElevationMat): ?>
+                            <option value="<?= $djElevationMat['dungeon_drop_id'] ?>"><?= $djElevationMat['category'] ?></option>
+                        <?php endforeach; ?>
                         </select>
                     </div>
                 </div>

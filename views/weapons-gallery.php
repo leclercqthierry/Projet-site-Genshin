@@ -41,17 +41,14 @@
                 </fieldset>
                 <fieldset class="weapons">
                     <legend>Armes</legend>
-                    <?php
-                    foreach($weaponTypes as $weaponType){
-                        echo '
+                    <?php foreach($weaponTypes as $weaponType): ?>
                         <div class="weapon-container">
-                            <label for="'.$weaponType['type'].'">
-                                <img src="'.$weaponType['image'].'" alt="'.$weaponType['name'].'">
+                            <label for="<?= $weaponType['type'] ?>">
+                                <img src="<?= $weaponType['image'] ?>" alt="<?= $weaponType['name'] ?>">
                             </label>
-                            <input type="radio" name="weapon" id="'.$weaponType['type'].'">
-                        </div>';
-                    }
-                    ?>
+                            <input type="radio" name="weapon" id="<?= $weaponType['type'] ?>">
+                        </div>
+                    <?php endforeach; ?>
                     <div class="weapon-container">
                         <label for="all-weapons">Toutes</label>
                         <input type="radio" name="weapon" id="all-weapons" checked>
@@ -66,19 +63,15 @@
         </div>
         <?php // Weapons gallery ?>
         <div class="gallery">
-            <?php // Generated in php ?>
-            <?php
-            foreach($weapons as $weapon) {
-                $item = "
-                <a href='weapon.php?id=".$weapon['weapon_id']."'>
-                    <div class='card' data-rarity=".$weapon['rarity']." data-weapon=".getWeaponTypeById($weapon['weapon_type_id'])['type'].">
-                        <img src=".$weapon['image']." alt=".$weapon['name']." class='rarity".$weapon['rarity']." weapon'>
-                        <strong>".$weapon['name']."</strong>
+            <?php // Generated in php
+            foreach($weapons as $weapon): ?>
+                <a href='weapon.php?id=<?= $weapon['weapon_id'] ?>'>
+                    <div class='card' data-rarity="<?= $weapon['rarity'] ?>" data-weapon="<?= getWeaponTypeById($weapon['weapon_type_id'])['type'] ?>">
+                        <img src="<?= $weapon['image'] ?>" alt="<?= $weapon['name'] ?>" class='rarity<?= $weapon['rarity'] ?> weapon'>
+                        <strong><?= $weapon['name'] ?></strong>
                     </div>
-                </a>";
-                echo $item;
-            };
-            ?>
+                </a>
+            <?php endforeach;?>
         </div>
     </main>
     <?php include "templates/footer.php"; ?>
