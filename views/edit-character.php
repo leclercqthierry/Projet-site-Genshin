@@ -13,8 +13,8 @@
     <?php include "templates/header.php"; ?>
     <main>
         <h1>Edition d'un personnage</h1>
-        <div class="container">
     <?php if(!isset($character)): ?>
+        <div class="container" id="first-form">
             <form action="edit-character" method="post" name="select-character-form">
                 <div class="form-label">
                     <label for="character">Personnage à éditer</label>
@@ -26,7 +26,9 @@
                 </div>
                 <input type="submit" value="Valider" class="btn">
             </form>
+        </div>
     <?php else:?>
+        <div class="container">
             <form action="edit-character" method="post" name="edit-character-form" enctype="multipart/form-data">
             <div id="group1">
                     <div class="form-label">
@@ -88,19 +90,19 @@
                         </select>
                     </div>
                 </div>
-                <div class="form-label-groups">
+                <div class="form-label-groups" id="the-first">
                     <div class="form-label">
                         <fieldset>
                             <legend>Miniature</legend>
-                            <img src="<?= $character['image']?>" alt="<?= $character['name']?>">
                             <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
+                            <img src="<?= $character['image']?>" alt="<?= $character['name']?>">
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
                             <legend>Card</legend>
-                            <img src="<?= $character['card']?>" alt="<?= $character['card']?>">
                             <input type="file" name="card" id="card" accept="image/*">
+                            <img src="<?= $character['card']?>" alt="<?= $character['card']?>">
                         </fieldset>
                     </div>
                 </div>
@@ -153,13 +155,16 @@
                         </select>
                     </div>
                 </div>
-                <input type="submit" value="Valider" class="btn">
+                <div class="submit">
+                    <input type="submit" value="Valider" class="btn">
+                </div>
             </form>
     <?php endif; ?>
         </div>
     </main>
     <?php include "templates/footer.php"; ?>
+    <script src="assets/js/preview-img.js"></script>
     <script src="assets/js/validate.js"></script>
-    <script src="assets/js/validate_edit-character.js"></script>
+    <script src="assets/js/validate_edit-char.js"></script>
 </body>
 </html>

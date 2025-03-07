@@ -32,7 +32,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
         // Validate the element
         if (!is_numeric($_POST['element'])) {
             $error = "L'élément choisi n'est pas valide.";
-            require_once "views/error.php";
+            include_once "views/error.php";
             exit;
         } else{
             $element_id = $_POST['element'];
@@ -42,7 +42,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
         // Validate the rarity
         if ($_POST['rarity'] !== '4' && $_POST['rarity'] !== '5') {
             $error = "La rareté choisie n'est pas valide.";
-            require_once "views/error.php";
+            include_once "views/error.php";
             exit;
         } else{
             $rarity = $_POST['rarity'];
@@ -80,7 +80,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
                 move_uploaded_file($_FILES['thumbnail']['tmp_name'], $thumbnailPath);
             }else{
                 $error = "Le fichier existe déjà.";
-                require_once "views/error.php";
+                include_once "views/error.php";
                 exit;
             }
         } else {
@@ -102,7 +102,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
                 move_uploaded_file($_FILES['card']['tmp_name'], $cardPath);
             }else{
                 $error = "Le fichier existe déjà.";
-                require_once "views/error.php";
+                include_once "views/error.php";
                 exit;
             }
         } else {
@@ -120,7 +120,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
         
         if(!checkExist('zell_characters','character_id', $id)){
             $error = "Ce personnage n'existe pas.";
-            require_once "views/error.php";
+            include_once "views/error.php";
             exit;
         }else {
             require_once "models/resources.php";
@@ -138,15 +138,15 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
             $djMaterials = getAllDjMaterials();
             $character = getCharacterById($id);
 
-            require_once "views/edit-character.php";
+            include_once "views/edit-character.php";
         }
     }else {
         $characters = getAllCharacters();
-        require_once "views/edit-character.php";
+        include_once "views/edit-character.php";
     }
 
 }else{
     $error = "Accès interdit!!";
-    require_once "views/error.php";
+    include_once "views/error.php";
     exit;
 }

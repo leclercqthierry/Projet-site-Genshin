@@ -15,8 +15,8 @@
     <?php include "templates/header.php"; ?>
     <main>
         <h1>Edition d'une arme</h1>
-        <div class="container">
         <?php if(!isset($weapon)): ?>
+        <div class="container" id="first-form">
             <form action="edit-weapon" method="post" name="select-weapon-form">
                 <div class="form-label">
                     <label for="weapon">Arme à éditer</label>
@@ -28,7 +28,9 @@
                 </div>
                 <input type="submit" value="Valider" class="btn">
             </form>
+        </div>
         <?php else:?>
+        <div class="container">
             <form action="edit-weapon" method="post" name="edit-weapon-form" enctype="multipart/form-data">
             <div id="group1">
                     <div class="form-label">
@@ -104,19 +106,19 @@
                         </textarea>
                     </div>
                 </div>
-                <div class="form-label-groups">
+                <div class="form-label-groups" id="the-first">
                     <div class="form-label">
                         <fieldset>
                             <legend>Miniature</legend>
-                            <img src="<?= $weapon['image']?>" alt="<?= $weapon['name']?>">
                             <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
+                            <img src="<?= $weapon['image']?>" alt="<?= $weapon['name']?>">
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
                             <legend>Card</legend>
-                            <img src="<?= $weapon['card']?>" alt="<?= $weapon['name']?>">
                             <input type="file" name="card" id="card" accept="image/*">
+                            <img src="<?= $weapon['card']?>" alt="<?= $weapon['name']?>">
                         </fieldset>
                     </div>
                 </div>
@@ -149,12 +151,16 @@
                         </select>
                     </div>
                 </div>
-                <input type="submit" value="Valider" class="btn">
+                <div class="submit">
+                    <input type="submit" value="Valider" class="btn">
+                </div>
             </form>
+        </div>
         <?php endif;?>
         </div>
     </main>
     <?php include "templates/footer.php"; ?>
+    <script src="assets/js/preview-img.js"></script>
     <script src="assets/js/validate.js"></script>
     <script src="assets/js/validate_edit-weapon.js"></script>
 </body>

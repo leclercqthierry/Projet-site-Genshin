@@ -83,7 +83,7 @@
                     </div>
                 </div>
                 <div class="form-label-groups">
-                    <div class="form-label">
+                    <div class="form-label thumb">
                         <fieldset>
                             <legend>Miniature</legend>
                             <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
@@ -127,6 +127,7 @@
         </div>
     </main>
     <?php include "templates/footer.php"; ?>
+    <script src="assets/js/preview-img.js"></script>
     <script src="assets/js/validate.js"></script>
     <script src="assets/js/validate_add-weapon.js"></script>
 </body>

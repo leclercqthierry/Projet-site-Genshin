@@ -11,7 +11,7 @@ function createCharacter($name, $element_id, $char_jewels_id, $rarity, $cardPath
 
     } catch(PDOException $e){
         $error = "Erreur lors de la création d'un personnage: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -23,7 +23,7 @@ function getAllCharacters(){
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(PDOException $e){
         $error = "Erreur lors de la récupération de tous les personnages: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -36,7 +36,7 @@ function getCharacterById($id){
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch(PDOException $e){
         $error = "Erreur lors de la récupération du personnage: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -49,7 +49,7 @@ function editCharacter($id, $name, $element_id, $char_jewels_id, $rarity, $cardP
         $stmt->execute($datas);
     } catch(PDOException $e){
         $error = "Erreur lors de la modification du personnage: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -61,7 +61,7 @@ function deleteCharacter($id){
         $stmt->execute([$id]);
     } catch(PDOException $e){
         $error = "Erreur lors de la suppression du personnage: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }

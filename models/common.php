@@ -9,7 +9,7 @@ function getStats(){
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(Exception $e){
         $error = "Erreur lors de la récupération des statistiques: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -21,7 +21,7 @@ function getFarmDays(){
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(Exception $e){
         $error = "Erreur lors de la récupération des jours de farm: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -33,7 +33,7 @@ function getAllElementsOrderedByName(){
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(Exception $e){
         $error =  "Erreur lors de la récupération des éléments ordonnés par nom: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -45,7 +45,7 @@ function getAllElementsOrderedById(){
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(Exception $e){
         $error =  "Erreur lors de la récupération des éléments ordonnés par Id: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -59,7 +59,7 @@ function getElementById($id){
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch(Exception $e){
         $error =  "Erreur lors de la récupération de l'élément par son Id: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -71,7 +71,7 @@ function howToGet(){
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (Exception $e) {
         $error = "Erreur lors de la récupération du moyen d'obtention: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }

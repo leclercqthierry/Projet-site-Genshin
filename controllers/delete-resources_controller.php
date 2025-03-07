@@ -9,7 +9,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
     if(count($_POST) ===0){
 
         // We will display the first form
-        require_once "views/delete-resources.php";
+        include_once "views/delete-resources.php";
     }else{
 
         // First Form submitted
@@ -117,14 +117,14 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
                     break;
                 default:
                     $error = "Type de ressources inconnu";
-                    require_once "views/error.php";
+                    include_once "views/error.php";
                     exit;
             }
         }
-        require_once "views/delete-resources.php";
+        include_once "views/delete-resources.php";
     }
 }else{
     $error = "Accès interdit !!";
-    require_once "views/error.php";
+    include_once "views/error.php";
     exit;
 }

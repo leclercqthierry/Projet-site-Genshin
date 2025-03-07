@@ -18,7 +18,7 @@ forms.forEach(form => {
         e.preventDefault();
         images.forEach(image => {
             if (image.files.length === 0) {
-                showError('Vous n\'avez pas chargé d\'image.', errorForm);
+                showError('Vous n\'avez pas chargé toutes les images.', errorForm);
             } else if (image.files[0].size > 1048576) {
                 showError('Votre image ne doit pas dépasser 1MB.', errorForm)
             } else if (!(image.value.match(/\.(jpg|jpeg|png|gif|webp)$/))){
@@ -29,7 +29,7 @@ forms.forEach(form => {
         });
         names.forEach(name => {
             if (!(regexName.test(name.value)) || name.value === '') {
-                showError('Le nom doit avoir entre 2 et 100 lettres uniquement (espaces inclus) mais ne pas comporter d\'espaces dans les 2 premiers caractères.', errorForm);
+                showError(errorN, errorForm);
             }
         });
 

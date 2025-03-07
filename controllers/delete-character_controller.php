@@ -20,10 +20,10 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
     }
 
     $characters = getAllCharacters();
-    require_once "views/delete-character.php";
+    include_once "views/delete-character.php";
 
 } else {
     $error = "Accès interdit!!";
-    require_once "views/error.php";
+    include_once "views/error.php";
     exit;
 }

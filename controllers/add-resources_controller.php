@@ -7,19 +7,25 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
 
     if(count($_POST) === 0){
         require_once "templates/add-resources.php";
-        require_once "views/add-resources.php";
+        include_once "views/add-resources.php";
     }else {
         require_once "utilities/validate.php";
         
         if(isset($_POST['bd_name']) && isset($_FILES['bd_image'])){
+
             $data = validateSimpleResource('bd_name', 'bd_image', 'boss_drop');
             createBossDrop($data);
+
         }else if(isset($_POST['lc_name']) && isset($_FILES['lc_image'])){
+
             $data = validateSimpleResource('lc_name', 'lc_image', 'local_material');
             createLocalMaterial($data);
+
         }else if(isset($_POST['wbd_name']) && isset($_FILES['wbd_image'])){
+
             $data = validateSimpleResource('wbd_name', 'wbd_image', 'world_boss_drop');
             createWorldBossDrop($data);
+
         }else if (isset($_POST['category']) && isset($_POST['md_name1']) && isset($_POST['md_name2']) && isset($_POST['md_name3']) && isset($_FILES['md_image1']) && isset($_FILES['md_image2']) && isset($_FILES['md_image3'])) {
 
             $names = [$_POST['category'], $_POST['md_name1'], $_POST['md_name2'], $_POST['md_name3']];
@@ -29,8 +35,9 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
             $data = validateMultipleResources($names, $images, $files, $strNames, 'mob_drop');
 
             require_once "models/resources.php";
-            createMobDrop($data);
+            createMobMaterials($data);
             header("location: admin-menu");
+
         }else if(isset($_POST['category']) && isset($_POST['djd_name1']) && isset($_POST['djd_name2']) && isset($_POST['djd_name3']) && isset($_FILES['djd_image1']) && isset($_FILES['djd_image2']) && isset($_FILES['djd_image3'])) {
 
             $names = [$_POST['category'], $_POST['djd_name1'], $_POST['djd_name2'], $_POST['djd_name3']];
@@ -43,6 +50,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
             require_once "models/resources.php";
             createDjDrop($data);
             header("location: admin-menu");
+
         }else if (isset($_POST['category']) && isset($_POST['ewd_name1']) && isset($_POST['ewd_name2']) && isset($_POST['ewd_name3']) && isset($_FILES['ewd_image1']) && isset($_FILES['ewd_image2']) && isset($_FILES['ewd_image3'])) {
 
             $names = [$_POST['category'], $_POST['ewd_name1'], $_POST['ewd_name2'], $_POST['ewd_name3']];
@@ -55,6 +63,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
             require_once "models/resources.php";
             createElevationDrop($data);
             header("location: admin-menu");
+
         }else if (isset($_POST['category']) && isset($_POST['dwd_name1']) && isset($_POST['dwd_name2']) && isset($_POST['dwd_name3']) && isset($_POST['dwd_name4'])&& isset($_FILES['dwd_image1']) && isset($_FILES['dwd_image2']) && isset($_FILES['dwd_image3']) && isset($_FILES['dwd_image4'])) {
 
             $names = [$_POST['category'], $_POST['dwd_name1'], $_POST['dwd_name2'], $_POST['dwd_name3'], $_POST['dwd_name4']];
@@ -72,6 +81,6 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
 
 }else{
     $error = "Accès interdit !!";
-    require_once "views/error.php";
+    include_once "views/error.php";
     exit;
 }

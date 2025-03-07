@@ -18,9 +18,13 @@ textarea{
     padding-left: 5px;
 }
 
+fieldset{
+    margin:auto;
+}
+
 @media screen and (min-width: 441px){
     main{
-        width:60%;
+        width:500px;
         margin:auto;
     }
 
@@ -28,7 +32,7 @@ textarea{
         max-width: none;
     }
 
-    fieldset{
-        margin:auto;
+    input[type="submit"]{
+        width:50%;
     }
 }

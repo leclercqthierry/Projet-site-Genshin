@@ -2,7 +2,7 @@ main{
     display:flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
 }
 
 .container{
@@ -38,11 +38,13 @@ form{
 fieldset{
     padding:10px;
     border:2px solid var(--bg-primary);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 button,
 input{
-    max-width: 240px;
     font-family: 'Roboto', sans-serif;
 }
 
@@ -54,6 +56,15 @@ select{
     border-radius:5px;
 }
 
+input[type="file"]::file-selector-button{
+    margin:auto;
+    padding: 5px 10px;
+    background-color: var(--bg-primary);
+    color:var(--font-color);
+    border:none;
+    border-radius: 20px;
+}
+
 .btn{
     max-height: 40px;
     padding: 5px 10px;
@@ -63,12 +74,58 @@ select{
     border-radius: 20px;
 }
 
+img{
+    max-width:100px;
+}
+
+.resource-container{
+    width:100%;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap:15px;
+}
+
+.submit-container{
+    width:100%;
+    display:flex;
+    justify-content: center;
+}
+
+button[type="submit"]{
+    width:100%;
+}
+
 @media screen and (min-width: 768px) {
+    h1+.container {
+        width:fit-content;
+    }
+
+    .container{
+        width:auto;
+        max-width:80%;
+    }
+
+    .btn,
+    input[type="file"]::file-selector-button{
+        
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
     .btn:hover,
     input[type="file"]::file-selector-button:hover{
         background-color: var(--font-color);
         color:var(--bg-primary);
         transition: background-color 0.4s ease, color 0.4s ease;
         cursor: pointer;
+    }
+
+    button[type="submit"]{
+        width:300px;
+    }
+
+    .cat{
+        width:500px;
+        align-self: center;
     }
 }

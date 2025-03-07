@@ -12,7 +12,7 @@ if (isset($_POST['nickname']) && (isset($_POST['email'])) && isset($_POST['passw
     
     } catch (Exception $e) {
         $error = $e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
     
@@ -26,7 +26,7 @@ if (isset($_POST['nickname']) && (isset($_POST['email'])) && isset($_POST['passw
         }
     } catch (Exception $e) {
         $error = $e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 
@@ -39,12 +39,12 @@ if (isset($_POST['nickname']) && (isset($_POST['email'])) && isset($_POST['passw
         }
     } catch (Exception $e) {
         $error = $e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 
     require_once "models/register_model.php";
 
 } else {
-    require_once "views/register.php";
+    include_once "views/register.php";
 }

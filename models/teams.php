@@ -25,7 +25,7 @@ function createTeam($teamName, $teamChars, $teamWeapons, $teamArtifacts, $userId
         }
     }catch(PDOException $e){
         $error = "Erreur lors de la création d'une équipe: ". $e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -36,7 +36,7 @@ function insertTeamCharacter($pdo, $teamId, $charId){
         $stmt->execute([$teamId, $charId]);
     } catch(PDOException $e){
         $error = "Erreur lors de l'insertion d'un personnage dans une équipe: ". $e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -47,7 +47,7 @@ function insertTeamWeapon($pdo, $teamId, $weaponId){
         $stmt->execute([$teamId, $weaponId]);
     } catch(PDOException $e){
         $error = "Erreur lors de l'insertion d'une arme dans une équipe: ". $e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -58,7 +58,7 @@ function insertTeamArtifact($pdo, $teamId, $artifactId){
         $stmt->execute([$teamId, $artifactId]);
     } catch(PDOException $e){
         $error = "Erreur lors de l'insertion d'un artéfact dans une équipe: ". $e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -94,7 +94,7 @@ function getAllteams(){
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }catch(Exception $e){
         $error = "Erreur lors de récupération des équipes: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }

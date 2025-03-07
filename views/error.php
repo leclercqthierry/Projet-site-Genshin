@@ -14,7 +14,6 @@
         <h1>Erreur</h1>
         <div class="container">
             <p><?= $error?></p>
-            <a href="index">Retour à la page d'accueil</a>
         </div>
     </main>
     <?php include_once "templates/footer.php"?>

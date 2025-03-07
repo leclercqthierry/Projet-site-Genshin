@@ -20,7 +20,7 @@ const errorS = 'Valeur incorrecte !';
 
 // When we have chosen our set to edit
 if(weaponName !== null && description !== null && form !== null && selects !== null){
-    const errorName = addErrorMessage(charName, errorN);
+    const errorName = addErrorMessage(weaponName, errorN);
     const errorForm = addErrorMessage(form, '');
     
     validateTextField(weaponName, regexName, errorName);

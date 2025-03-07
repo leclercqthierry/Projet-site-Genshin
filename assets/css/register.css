@@ -17,7 +17,11 @@
 }
 
 .btn-container{
-    justify-content: end;
+    justify-content: center;
+}
+
+.btn{
+    width:100%;
 }
 
 @media screen and (min-width: 769px){

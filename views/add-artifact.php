@@ -58,6 +58,7 @@
         </div>
     </main>
     <?php include "templates/footer.php"; ?>
+    <script src="assets/js/preview-img.js"></script>
     <script src="assets/js/validate.js"></script>
     <script src="assets/js/validate_add-artifact.js"></script>
 </body>

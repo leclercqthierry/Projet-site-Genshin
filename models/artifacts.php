@@ -16,7 +16,7 @@ function createArtifact($name, $rarity, $description, $thumbnailPath){
 
     } catch(PDOException $e){
         $error = "Erreur lors de la création d'un set d'artefacts: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -28,7 +28,7 @@ function getAllArtifacts(){
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(PDOException $e){
         $error = "Erreur lors de la récupération de tous les sets d'artefacts: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -44,7 +44,7 @@ function getArtifactById($id){
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch(Exception $e){
         $error =  "Erreur lors de la récupération d'un artéfact par l'ID: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -63,7 +63,7 @@ function editArtifact($id, $name, $rarity, $description, $thumbnailPath){
         $stmt->execute([$name, $rarity, $thumbnailPath, $description, $id]);
     } catch(PDOException $e){
         $error = "Erreur lors de la modification d'un artéfact: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -78,7 +78,7 @@ function deleteArtifact($id){
         $stmt->execute([$id]);
     } catch(PDOException $e){
         $error = "Erreur lors de la suppression d'un artéfact: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }

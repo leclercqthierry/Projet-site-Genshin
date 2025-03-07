@@ -19,10 +19,10 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
     }
 
     $artifacts = getAllArtifacts();
-    require_once "views/delete-artifact.php";
+    include_once "views/delete-artifact.php";
 
 } else {
     $error = "Accès interdit!!";
-    require_once "views/error.php";
+    include_once "views/error.php";
     exit;
 }

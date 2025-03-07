@@ -9,7 +9,7 @@ function getAllWeaponTypesOrderedByName(){
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(Exception $e){
         $error =  "Erreur lors de la récupération des types d'armes: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -21,7 +21,7 @@ function getAllWeaponTypesOrderedById(){
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(Exception $e){
         $error =  "Erreur lors de la récupération des types d'armes: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -34,7 +34,7 @@ function getWeaponTypeById($id){
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch(Exception $e){
         $error =  "Erreur lors de la récupération du type d'arme avec l'ID ".$id.": ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -46,7 +46,7 @@ function getAllWeapons(){
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(Exception $e){
         $error =  "Erreur lors de la récupération de tous les armes: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -64,7 +64,7 @@ function getAllWeaponsOfType($id){
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(Exception $e){
         $error =  "Erreur lors de la récupération des armes du type dont l'ID est: ".$id.": ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -77,7 +77,7 @@ function getWeaponById($id){
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch(Exception $e){
         $error =  "Erreur lors de la récupération de l'arme avec l'ID ".$id.": ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -91,7 +91,7 @@ function createWeapon($name, $rarity, $cardPath, $thumbnailPath, $description, $
         
     } catch(PDOException $e){
         $error = "Erreur lors de la création d'une arme: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -104,7 +104,7 @@ function editWeapon($id, $name, $rarity, $cardPath, $thumbnailPath, $description
         $stmt->execute($datas);
     } catch(PDOException $e){
         $error = "Erreur lors de la modification d'une arme: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -116,7 +116,7 @@ function deleteWeapon($id){
         $stmt->execute([$id]);
     } catch(PDOException $e){
         $error = "Erreur lors de la suppression d'une arme: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }

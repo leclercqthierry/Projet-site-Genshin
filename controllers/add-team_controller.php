@@ -9,7 +9,7 @@ if(isset($_SESSION['role']) && ($_SESSION['role'] === 'Administrator' || $_SESSI
     // If no form has been submitted yet
     if(!isset($_POST['form-name'])){
 
-        require_once "views/add-team.php";
+        include_once "views/add-team.php";
     }else{
 
         // If the team name creation form has been submitted
@@ -25,7 +25,7 @@ if(isset($_SESSION['role']) && ($_SESSION['role'] === 'Administrator' || $_SESSI
             $characters  = getAllCharacters();
 
             // We return to the page to continue creating the team
-            require_once "views/add-team.php";
+            include_once "views/add-team.php";
         }else{
 
             // The character selection form has been submitted.
@@ -46,7 +46,7 @@ if(isset($_SESSION['role']) && ($_SESSION['role'] === 'Administrator' || $_SESSI
                     // Check if the characters are differents
                     if (count(array_unique($ids)) !== count($ids)){
                         $error = "Les personnages doivent être differents.";
-                        require_once "views/error.php";
+                        include_once "views/error.php";
                         exit;
                     }
 
@@ -67,11 +67,11 @@ if(isset($_SESSION['role']) && ($_SESSION['role'] === 'Administrator' || $_SESSI
                     }
 
                     // We return to the page to continue creating the team
-                    require_once "views/add-team.php";
+                    include_once "views/add-team.php";
 
                 }else{
                     $error = "Erreur lors de la sélection des personnages.";
-                    require_once "views/add-team.php";
+                    include_once "views/add-team.php";
                     exit;
                 }
             }else if($_POST['form-name'] === 'add-weapons'){
@@ -109,10 +109,10 @@ if(isset($_SESSION['role']) && ($_SESSION['role'] === 'Administrator' || $_SESSI
                     $artifacts = getAllArtifacts();
 
                     // We return to the page to continue creating the team
-                    require_once "views/add-team.php";
+                    include_once "views/add-team.php";
                 }else {
                     $error = "Erreur lors de la sélection des armes.";
-                    require_once "views/error.php";
+                    include_once "views/error.php";
                     exit;
                 }
             }else if($_POST['form-name'] === 'add-artifacts'){
@@ -133,7 +133,7 @@ if(isset($_SESSION['role']) && ($_SESSION['role'] === 'Administrator' || $_SESSI
 
                     require_once "models/teams.php";
                     $error = $teamName;
-                    require_once "views/error.php";
+                    include_once "views/error.php";
                     createTeam($_SESSION['teamName'], $_SESSION['teamChars'], $_SESSION['teamWeapons'], $teamArtifacts, $_SESSION['user_id']);
 
                     unset($_SESSION['teamName']);
@@ -145,13 +145,13 @@ if(isset($_SESSION['role']) && ($_SESSION['role'] === 'Administrator' || $_SESSI
 
             }else{
                 $error = "Erreur le nom du formulaire est incorrect.";
-                require_once "views/error.php";
+                include_once "views/error.php";
                 exit;
             }
         }
     }
 }else{
     $error = "Accès interdit!!";
-    require_once "views/error.php";
+    include_once "views/error.php";
     exit;
 }

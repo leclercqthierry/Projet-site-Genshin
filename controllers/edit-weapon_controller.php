@@ -31,7 +31,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
         // validate the rarity
         if ($_POST['rarity'] !== '3' && $_POST['rarity'] !== '4' && $_POST['rarity'] !== '5') {
             $error = "La rareté choisie n'est pas valide.";
-            require_once "views/error.php";
+            include_once "views/error.php";
             exit;
         } else{
             $rarity = $_POST['rarity'];
@@ -40,7 +40,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
         // validate the description
         if (trim($_POST['description']).length === 0){
             $error = "Veuillez saisir une description pour l'arme.";
-            require_once "views/error.php";
+            include_once "views/error.php";
             exit;
         }else {
             $description = htmlspecialchars($_POST['description']);
@@ -78,7 +78,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
                 move_uploaded_file($_FILES['thumbnail']['tmp_name'], $thumbnailPath);
             }else{
                 $error = "Le fichier existe déjà.";
-                require_once "views/error.php";
+                include_once "views/error.php";
                 exit;
             }
         } else {
@@ -100,7 +100,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
                 move_uploaded_file($_FILES['card']['tmp_name'], $cardPath);
             }else{
                 $error = "Le fichier existe déjà.";
-                require_once "views/error.php";
+                include_once "views/error.php";
                 exit;
             }
         } else {
@@ -119,7 +119,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
 
         if(!checkExist('zell_weapons','weapon_id', $id)){
             $error = "Erreur! L'arme n'existe pas!!!";
-            require_once "views/error.php";
+            include_once "views/error.php";
             exit;
         }else{
             require_once "models/common.php";
@@ -134,16 +134,16 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
             $djElevationMats = getAllDjElevationMaterials();
             $weapon = getWeaponById($id);
 
-            require_once "views/edit-weapon.php";
+            include_once "views/edit-weapon.php";
         }
 
     }else{
 
         $weapons = getAllWeapons();
-        require_once "views/edit-weapon.php";
+        include_once "views/edit-weapon.php";
     }
 }else {
     $error = "Accès interdit !!";
-    require_once "views/error.php";
+    include_once "views/error.php";
     exit;
 }

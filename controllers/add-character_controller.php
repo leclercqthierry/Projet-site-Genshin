@@ -30,7 +30,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
         // Validate the element
         if (!is_numeric($_POST['element'])) {
             $error = "L'élément choisi n'est pas valide.";
-            require_once "views/error.php";
+            include_once "views/error.php";
             exit;
         } else{
             $element_id = $_POST['element'];
@@ -40,7 +40,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
         // Validate the rarity
         if ($_POST['rarity'] !== '4' && $_POST['rarity'] !== '5') {
             $error = "La rareté choisie n'est pas valide.";
-            require_once "views/error.php";
+            include_once "views/error.php";
             exit;
         } else{
             $rarity = $_POST['rarity'];
@@ -80,7 +80,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
                 header("Location: admin-menu");
             } else {
                 $error = "Le fichier existe déjà.";
-                require_once "views/error.php";
+                include_once "views/error.php";
                 exit;
             }
         }
@@ -99,10 +99,10 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
         $mobMaterials = getAllMobMaterials();
         $djMaterials = getAllDjMaterials();
     
-        require_once "views/add-character.php";
+        include_once "views/add-character.php";
     }
 } else {
     $error = "Accès interdit !!";
-    require_once "views/error.php";
+    include_once "views/error.php";
     exit;
 }

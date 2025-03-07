@@ -5,4 +5,4 @@ require_once "models/artifacts.php";
 
 $artifacts = getAllArtifacts();
 
-require_once "views/artifacts-gallery.php";
+include_once "views/artifacts-gallery.php";

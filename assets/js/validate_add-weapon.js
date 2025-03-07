@@ -18,7 +18,7 @@ const errorN = "Le nom doit commencer par une majuscule et ne pas comporter de c
 
 const errorS = 'Valeur incorrecte !';
 
-const errorName = addErrorMessage(charName, errorN);
+const errorName = addErrorMessage(weaponName, errorN);
 const errorForm = addErrorMessage(form, '');
 
 validateTextField(weaponName, regexName, errorName);

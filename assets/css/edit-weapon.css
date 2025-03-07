@@ -34,4 +34,10 @@ textarea{
     }
 }
 
-/* 790+px good */
+@media screen and (min-width: 769px){
+
+    #first-form{
+        width:290px;
+    }
+
+}

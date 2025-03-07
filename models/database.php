@@ -11,11 +11,17 @@ function getConnexion() {
         return $pdo;
     } catch(PDOException $e) {
         $error = "Erreur de connexion à la base de donnée: " . $e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
 
+/**
+ * @param string $table
+ * @param string $col
+ * @param string $value
+ * @return array
+ */
 // Check in $table if $value exists in $col
 function checkExist($table, $col, $value){
     $pdo = getConnexion();
@@ -25,7 +31,7 @@ function checkExist($table, $col, $value){
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch(PDOException $e){
         $error = "Erreur lors de l'utilisation de la fonction checkExist: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }

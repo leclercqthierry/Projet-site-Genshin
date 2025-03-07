@@ -14,8 +14,8 @@
     <?php include "templates/header.php"; ?>
     <main>
         <h1>Edition d'un set d'artéfact</h1>
-        <div class="container">
         <?php if (!isset($artifact)): ?>
+        <div class="container" id="first-form">
             <form action="edit-artifact" method="post" name="select-artifact-form">
                 <div class="form-label">
                     <label for="artifact">Set d'artéfacts à éditer</label>
@@ -27,7 +27,9 @@
                 </div>
                 <input type="submit" value="Valider" class="btn">
             </form>
+        </div>
         <?php else:?>
+        <div class="container">
             <form action="edit-artifact" method="post" name="edit-artifact-form" enctype="multipart/form-data" >
                 <div class="form-label">
                     <label for="name">Nom du set</label>
@@ -67,17 +69,20 @@
                     <div class="form-label">
                         <fieldset>
                             <legend>Miniature</legend>
-                            <img src="<?= $artifact['image']?>" alt="<?= $artifact['name']?>">
                             <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
+                            <img src="<?= $artifact['image']?>" alt="<?= $artifact['name']?>">
                         </fieldset>
                     </div>
                 </div>
-                <input type="submit" value="Valider" class="btn">
+                <div class="submit">
+                    <input type="submit" value="Valider" class="btn">
+                </div>
             </form>
-        <?php endif; ?>
         </div>
+        <?php endif; ?>
     </main>
     <?php include "templates/footer.php"; ?>
+    <script src="assets/js/preview-img.js"></script>
     <script src="assets/js/validate.js"></script>
     <script src="assets/js/validate_edit-artifact.js"></script>
 </body>

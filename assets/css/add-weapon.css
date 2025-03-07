@@ -22,7 +22,17 @@
 }
 
 @media screen and (min-width: 769px){
-    form>.form-label-groups:nth-child(4){
-        width:66%;
+
+    .thumb{
+        justify-content: center;
+    }
+
+    .form-label-groups:nth-child(4){
+        width:100%;
+    }
+
+    .form-label-groups:nth-child(4) .form-label{
+        display: flex;
+        align-items: center;
     }
 }

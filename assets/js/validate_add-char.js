@@ -48,7 +48,7 @@ form.addEventListener('submit', (e) =>{
 
     selects.forEach(select =>{
         if (!regexSelect.test(select.value) || select.value===''){
-            showError('Veuillez choisir une valeur valide pour votre personnage dans les menus déroulants.', errorForm);
+            showError('Veuillez choisir une valeur valide pour votre personnage.', errorForm);
         }
     });
     

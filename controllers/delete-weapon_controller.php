@@ -20,10 +20,10 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
     }
 
     $weapons = getAllWeapons();
-    require_once "views/delete-weapon.php";
+    include_once "views/delete-weapon.php";
 
 } else {
     $error = "Accès interdit!!";
-    require_once "views/error.php";
+    include_once "views/error.php";
     exit;
 }

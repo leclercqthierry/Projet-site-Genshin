@@ -16,7 +16,7 @@ function checkUser($nickname, $password){
 
     } catch (PDOException $e){
         $error =  "Erreur lors de la vérification de l'existence d'un utilisateur: ".$e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }

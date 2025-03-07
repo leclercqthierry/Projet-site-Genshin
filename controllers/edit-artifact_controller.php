@@ -17,7 +17,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
         // Validate the rarity
         if ($_POST['rarity'] !== '3' && $_POST['rarity'] !== '4' && $_POST['rarity'] !== '5') {
             $error = "La rareté choisie n'est pas valide.";
-            require_once "views/error.php";
+            include_once "views/error.php";
             exit;
         } else{
             $rarity = $_POST['rarity'];
@@ -44,7 +44,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
                 move_uploaded_file($_FILES['thumbnail']['tmp_name'], $thumbnailPath);
             }else{
                 $error = "Le fichier existe déjà.";
-                require_once "views/error.php";
+                include_once "views/error.php";
                 exit;
             }
         } else {
@@ -61,21 +61,21 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
         
         if(!checkExist('zell_artifacts','artifact_id', $id)){
             $error = "Erreur ! L'artéfact n'existe pas !!!";
-            require_once "views/error.php";
+            include_once "views/error.php";
             exit;
         }else{
             $artifact = getArtifactById($id);
-            require_once "views/edit-artifact.php";
+            include_once "views/edit-artifact.php";
         }
 
     // If no form has been submitted
     }else{
         $artifacts = getAllArtifacts();
     
-        require_once "views/edit-artifact.php";
+        include_once "views/edit-artifact.php";
     }
 }else {
     $error = "Accès interdit !!";
-    require_once "views/error.php";
+    include_once "views/error.php";
     exit;
 }

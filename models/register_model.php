@@ -12,7 +12,7 @@ function createUser($nickname, $email, $password){
         $stmt->execute([$nickname, $email, $password, 2]);
     } catch(PDOException $e){
         $error = "Echec lors la création de l'utilisateur: ". $e->getMessage();
-        require_once "views/error.php";
+        include_once "views/error.php";
         exit;
     }
 }
@@ -20,14 +20,14 @@ function createUser($nickname, $email, $password){
 // check if the nickname is already taken
 if (checkExist("zell_users", "nickname", $nickname)){
     $error = "Ce pseudo est déjà utilisé.";
-    require_once "views/error.php";
+    include_once "views/error.php";
     exit;
 }
 
 // check if the email is already taken
 if (checkExist("zell_users", "email", $email)) {
     $error = "Cette adresse email est déjà utilisée.";
-    require_once "views/error.php";
+    include_once "views/error.php";
     exit;
 }
 

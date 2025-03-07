@@ -6,7 +6,7 @@ main{
     justify-content: space-evenly;
 }
 
-.news-container{
+.container{
     margin: 0 15px 20px 15px;
     padding:15px;
     background-color: var(--bg-secondary);
@@ -22,20 +22,18 @@ main ul{
     margin: auto 15px;
 }
 
+p{
+    text-align: center;
+}
+
 main li{
     margin-bottom:10px;
 }
 /* ############################# */
 
 @media screen and (min-width: 441px){
-    main{
-        display:flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    }
 
-    .news-container{
+    .container{
         min-height:fit-content;
         max-width:70%;
     }
@@ -44,7 +42,7 @@ main li{
 
 @media screen and (min-width:769px) {
 
-    .news-container{
+    .container{
         width:82.7%;
         margin:0 auto 20px auto;
     }

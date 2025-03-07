@@ -12,7 +12,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
         $characters = getAllCharacters();
         $artifacts = getAllArtifacts();
     
-        require_once "views/add-build.php";
+        include_once "views/add-build.php";
 
     }else{
 
@@ -36,7 +36,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
             // To only offer weapons that match the character's weapon type
             $weapons = getAllWeaponsOfType($chosenChar['weapon_type_id']);
 
-            require_once "views/add-build.php";
+            include_once "views/add-build.php";
 
         }elseif(isset($_POST['form']) && isset($_POST['weapon'])){ // The second form submitted
 
@@ -53,30 +53,32 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
             if(getBuild($_SESSION['character_id'], $_SESSION['weapon_id'], $_SESSION['artifact_id'])){
 
                 $error = 'Le build existe déjà.';
-                require_once "views/error.php";
+                include_once "views/error.php";
                 exit;
 
             }else{
 
                 // We can create the new build
-                createBuild($_SESSION['character_id'], $_SESSION['weapon_id'], $_SESSION['artifact_id']);
+                createBuild($_SESSION['character_id'], $_SESSION['weapon_id'], $_SESSION['artifact_id'], $_SESSION['user_id']);
 
                 // we delete variables stored in session that have become useless
                 unset($_SESSION['character_id']);
                 unset($_SESSION['weapon_id']);
                 unset($_SESSION['artifact_id']);
+
+                header('Location: admin-menu');
             }
 
         }else{
 
             $error = "Veuillez remplir correctement le formulaire.";
-            require_once "views/error.php";
+            include_once "views/error.php";
             exit;
         }
     }
 }else{
 
     $error = "Accès interdit !!";
-    require_once "views/error.php";
+    include_once "views/error.php";
     exit;
 }

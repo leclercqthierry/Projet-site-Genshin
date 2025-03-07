@@ -13,7 +13,7 @@
     <?php include_once "templates/header.php"; ?>
     <main>
         <h1>News</h1>
-        <div class="news-container">
+        <div class="container">
             <p>Bienvenue sur Genshin Team, un fan-site non officiel basé sur le jeu Genshin Impact de Hoyoverse. Vous y trouverez:</p>
             <ul>
                 <li>Une galerie des personnages jouables du jeu</li>

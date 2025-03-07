@@ -9,7 +9,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
     if(count($_POST) ===0){
 
         // We will display the first form
-        require_once "views/edit-resources.php";
+        include_once "views/edit-resources.php";
     }else{
 
         // First Form submitted
@@ -49,7 +49,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
                     break;
                 default:
                     $error = "Type de ressources inconnu";
-                    require_once "views/error.php";
+                    include_once "views/error.php";
                     exit;
             }
             $type = ($res_key < 3) ? 'name' : 'category';
@@ -171,10 +171,10 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
             $resource = editDjElevationMaterials($id, $data);
             header("location: admin-menu");
         }
-        require_once "views/edit-resources.php";
+        include_once "views/edit-resources.php";
     }
 }else{
     $error = "Accès interdit!!";
-    require_once "views/error.php";
+    include_once "views/error.php";
     exit;
 }

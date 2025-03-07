@@ -40,6 +40,11 @@ form{
     row-gap: 15px;
 }
 
+.input-file{
+    align-items: center;
+    justify-content: center;
+}
+
 #group2{
     display: flex;
     flex-wrap: wrap;
@@ -88,13 +93,14 @@ input[type="file"]::file-selector-button{
 
 .form-label-groups .form-label{
     flex-direction: column;
-    height:70px;
     margin-bottom: 15px;
 }
 
 fieldset{
     max-width:260px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     padding:5px;
     border: var(--bg-primary) 3px solid;
     border-radius: 5px;
@@ -103,6 +109,10 @@ fieldset{
 form+p{
     margin-top: 5px;
     text-align: center;
+}
+
+input[type="file"]+img{
+    width:100px;
 }
 
 @media screen and (min-width:769px) {
