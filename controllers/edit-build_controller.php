@@ -82,6 +82,10 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
             require_once "models/builds.php";
             editBuild($_SESSION['character_id'], $weaponId, $artifactId, $_SESSION['build_id']);
 
+            // Variables stored in the session that have become useless can be deleted.
+            unset($_SESSION['character_id']);
+            unset($_SESSION['build_id']);
+
             header("Location: admin-menu");
         }else{
             $error = "Erreur lors de l'édition du build!";

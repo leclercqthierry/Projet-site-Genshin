@@ -64,38 +64,23 @@ main{
     column-gap: 30px;
 }
 
-@media screen and (min-width:441px) {
-    *{
-        font-size: 20px;
-    }
-
-    .container{
-        width:70%;
-    }
-
-    .form-label{
-        height:100px;
-    }
-
-    .btn{
-        max-height: 80px;
-        border-radius: 40px;
-    }
-
-    input[type="submit"]{
-        width:30%;
-        align-self: center;
-    }
+button{
+    width:100px;
 }
 
 @media screen and (min-width: 1024px) {
     .container{
-        width:30%;
+        width:300px;
+    }
+
+    .btn{
+        transition: background-color 0.4s ease, color 0.4s ease;
     }
 
     .btn:hover{
         background-color: var(--font-color);
         color:var(--bg-primary);
         transition: background-color 0.4s ease, color 0.4s ease;
+        cursor: pointer;
     }
 }

@@ -37,6 +37,6 @@
         </div>
     </main>
     <?php include "templates/footer.php"; ?>
-    <script src="assets/js/delete-character.js"></script>
+    <script src="assets/js/delete-form.js"></script>
 </body>
 </html>

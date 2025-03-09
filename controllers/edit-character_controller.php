@@ -110,6 +110,9 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
         }
 
         $character = editCharacter($id, $name, $element_id, $char_jewels_id, $rarity, $cardPath, $thumbnailPath, $ids);
+
+        header("Location: admin-menu");
+        exit;
     }
 
     // the form for choosing the character to be edited has been submitted

@@ -33,7 +33,7 @@
 
         <?php else: 
         // We offer all the weapon/artifact pairs corresponding to the character in the list of builds 
-            if($_POST['form'] === 'edit-build-char'): ?>
+            if($_POST['form'] === 'edit-build-char' && count($builds) > 0): ?>
             <form action="edit-build" method="post">
                 <p> Choisissez le complément du build à éditer </p>
                 <ul>
@@ -57,7 +57,9 @@
                 <input type="submit" class="btn" value="Valider">
             </form>
             <?php endif;?>
-
+            <?php if($_POST['form'] === 'edit-build-char' && count($builds) === 0):?>
+                <p>Aucun build disponible pour ce personnage.</p>
+            <?php endif;?>
             <?php if($_POST['form'] === 'choose-weapon/artifact'): ?>
             <form action="edit-build" method="post">
                 <p> Faites les changements nécessaires: </p>

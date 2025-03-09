@@ -72,3 +72,18 @@ function editBuild($characterId, $weaponId, $artifactId, $buildId){
         exit;
     }
 }
+
+/**
+ * @param int $buildId
+ */
+ function deleteBuild($buildId){
+    $pdo = getConnexion();
+    try{
+        $stmt = $pdo->prepare("DELETE FROM zell_builds WHERE `build_id`=?");
+        $stmt->execute([$buildId]);
+    }catch(PDOException $e){
+        $error = "Erreur lors de la suppression du build: ".$e->getMessage();
+        include_once "views/error.php";
+        exit;
+    }
+}
