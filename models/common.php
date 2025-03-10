@@ -132,6 +132,24 @@ function howToGet(){
     }
 }
 
+
+/**
+ * @param int $id
+ * @return array
+ */
+ function howToGetById($id) {
+    $pdo = getConnexion();
+    try{
+        $stmt = $pdo->prepare("SELECT * FROM zell_obtainings WHERE `obtaining_id` =?");
+        $stmt->execute([$id]);
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        $error = "Erreur lors de la récupération du moyen d'obtention par son Id: ".$id.": ".$e->getMessage();
+        include_once "views/error.php";
+        exit;
+    }
+ }
+
 /**
  * @param int $id
  * @return array

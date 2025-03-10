@@ -12,6 +12,9 @@ if ($path === '/GenshinTeam/' || $path === '/GenshinTeam/index'){
 
     require_once "controllers/character_controller.php";
 
+}else if($path === '/GenshinTeam/weapon.php'){
+
+    require_once "controllers/weapon_controller.php";
 }else {
 
     // we retrieve the name of the route to determine its controller
