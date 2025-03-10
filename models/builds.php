@@ -22,6 +22,23 @@ function getBuild($charId, $weaponId, $artifactId){
 }
 
 /**
+ * @param int $teamId
+ * @return array
+ */
+function getBuildsByTeamId($teamId){
+    $pdo = getConnexion();
+    try{
+        $stmt = $pdo->prepare("SELECT * FROM zell_builds JOIN zell_team_builds ON zell_team_builds.build_id = zell_builds.build_id WHERE zell_team_builds.team_id = ?");
+        $stmt->execute([$teamId]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }catch(PDOException $e){
+        $error = "Erreur lors de la récupération des builds par équipe: ".$e->getMessage();
+        include_once "views/error.php";
+        exit;
+    }
+}
+
+/**
  * @param int $charId
  * @param int $weaponId
  * @param int $artifactId

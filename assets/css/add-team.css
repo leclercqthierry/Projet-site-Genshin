@@ -4,6 +4,10 @@ main{
     justify-content: space-evenly;
 }
 
+h1+p{
+    margin-bottom: 10px;
+}
+
 input{
     font-family: 'Roboto', sans-serif;
 }
@@ -29,11 +33,11 @@ form{
 }
 
 .container{
+    width:290px;
     margin:0 auto 20px auto;
     background-color: var(--bg-secondary);
     border-radius:20px;
     padding:15px;
-    width:290px;
 }
 
 .btn{
@@ -45,8 +49,14 @@ form{
     max-height: 40px;
 }
 
+.fieldset-container{
+    display: flex;
+    flex-wrap: wrap;
+    gap:10px;
+}
+
 fieldset{
-    max-width:260px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     padding:5px;
@@ -55,24 +65,75 @@ fieldset{
     row-gap: 15px;
 }
 
-/* .form-label:nth-child(3){
-    display:none;
-} */
-
+h2,p{
+    text-align: center;
+}
 textarea{
     resize:none;
     padding-left: 5px;
 }
 
+li{
+    display:flex;
+    margin-top: 10px;
+}
+
+.card{
+    display:flex;
+    flex-direction: column;
+    height:140px;
+}
+
+.rarity3{
+    background-color: var(--rarity-color-3);
+}
+
+.rarity4{
+    background-color: var(--rarity-color-4);
+}
+
+.rarity5{
+    background-color: var(--rarity-color-5);
+}
+
+.weapon{
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    width:100px;
+    height:100px;
+}
+
+.card p{
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width:100px;
+    height:40px;
+    font-size:11.5px;
+    background-color: var(--bg-primary);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+hr{
+    margin-top:10px;
+    border: 1px solid var(--font-color);
+}
+
+label{
+    width: 100%;
+    text-align: center;
+    display:flex;
+    justify-content: space-evenly;
+    gap:10px;
+}
+
 @media screen and (min-width:441px) {
+
     .form-container{
         display: flex;
         flex-wrap: wrap;
         justify-content: space-evenly;
-    }
-
-    .container{
-        width:80%;
     }
 
     input[type="submit"]{
@@ -80,16 +141,38 @@ textarea{
         width:30%;
         margin:auto;
     }
+
+    fieldset{
+        width: 290px;
+    }
 }
 
-@media screen and (min-width:970px){
+@media screen and (min-width:1030px){
+    #first-form{
+        width:290px;
+    }
+    
+
+    #second-form{
+        width:70%;
+    }
+
     fieldset{
         flex:1;
+    }
+
+    .btn{
+        transition: background-color 0.4s ease, color 0.4s ease;
     }
 
     .btn:hover{
         background-color: var(--font-color);
         color:var(--bg-primary);
         transition: background-color 0.4s ease, color 0.4s ease;
-    }                                                                                                            
+        cursor:pointer;
+    }
+    
+    form[name="add-equipment-form"] label:hover{
+        cursor: pointer;
+    }
 }

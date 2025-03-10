@@ -31,7 +31,9 @@ if (isset($_POST['nickname']) && isset($_POST['password'])){
     }
 
     // Ready to compare with the BDD
-    require "models/login_model.php";
+    require "models/users.php";
+
+    $user = checkUser($nickname, $password);
 
     // We look at the user's role and redirect them to their page
     if ($user){

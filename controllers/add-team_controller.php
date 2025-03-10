@@ -52,18 +52,33 @@ if(isset($_SESSION['role']) && ($_SESSION['role'] === 'Administrator' || $_SESSI
 
                     $_SESSION['teamChars'] = $ids;
 
+                    require_once "models/builds.php";
                     require_once "models/characters.php";
                     require_once "models/weapons.php";
+                    require_once "models/artifacts.php";
 
-                    // For each character I have to determine the type of weapon allowed
-                    $allowedWeaponsByChar = [];
-                    $charNames = [];
+                    // For each character you must choose a build from their existing builds.
+
+                    $weaponsTeam = [];
+                    $artifactsTeam = [];
                     foreach ($ids as $id){
-                        $character = getCharacterById($id);
-                        $allowedWeaponTypeId = $character['weapon_type_id'];
-                        $allowedWeapons = getAllWeaponsOfType($allowedWeaponTypeId);
-                        array_push($allowedWeaponsByChar, $allowedWeapons);
-                        array_push($charNames, $character['name']);
+                        $builds = getAllBuildsByCharacterId($id);
+                        if (count($builds) === 0){
+                            $error = "Le personnage ". getCharacterById($id)['name']. " n'a aucun build.";
+                            include_once "views/error.php";
+                            exit;
+                        }
+                        // We offer all the weapon/artifact pairs corresponding to the character in the list of builds
+                        $weapons = [];
+                        $artifacts = [];
+                        foreach ($builds as $build){
+                            $weapon = getWeaponById($build['weapon_id']);
+                            array_push($weapons, $weapon);
+                            $artifact = getArtifactById($build['artifact_id']);
+                            array_push($artifacts, $artifact);
+                        }
+                        array_push($weaponsTeam, $weapons);
+                        array_push($artifactsTeam, $artifacts);
                     }
 
                     // We return to the page to continue creating the team
@@ -74,73 +89,34 @@ if(isset($_SESSION['role']) && ($_SESSION['role'] === 'Administrator' || $_SESSI
                     include_once "views/add-team.php";
                     exit;
                 }
-            }else if($_POST['form-name'] === 'add-weapons'){
+            }else if($_POST['form-name'] === 'add-build'){
 
-                if (
-                isset($_POST['weapon1']) && 
-                isset($_POST['weapon2']) && 
-                isset($_POST['weapon3']) && 
-                isset($_POST['weapon4']) && 
-                isset($_POST['char-name1']) && 
-                isset($_POST['char-name2']) && 
-                isset($_POST['char-name3']) && 
-                isset($_POST['char-name4'])){
+                if (isset($_POST['build0']) && isset($_POST['build1']) && isset($_POST['build2']) && isset($_POST['build3'])){
 
-                    require_once "utilities/validate.php";
+                    require_once "models/builds.php";
 
-                    $errorMessage = "Valeur incorrecte de l'id de l'arme";
-                    $weapon1Id = validateSelect('weapon1',$errorMessage);
-                    $weapon2Id = validateSelect('weapon2',$errorMessage);
-                    $weapon3Id = validateSelect('weapon3',$errorMessage);
-                    $weapon4Id = validateSelect('weapon4',$errorMessage);
+                    $teamBuildsId = [];
 
-                    $_SESSION['teamWeapons'] = [$weapon1Id, $weapon2Id, $weapon3Id, $weapon4Id];
-                    $charNames = 
-                    [
-                        htmlspecialchars($_POST['char-name1']),
-                        htmlspecialchars($_POST['char-name2']),
-                        htmlspecialchars($_POST['char-name3']),
-                        htmlspecialchars($_POST['char-name4'])
-                    ];
+                    for($j = 0; $j < 4; $j++){
+                        $ids = explode("_", $_POST['build'.$j]);
+                        $weaponId = (int)($ids[0]);
+                        $artifactId = (int)($ids[1]);
+                        $teamBuildId = getBuild($_SESSION['teamChars'][$j], $weaponId, $artifactId)['build_id'];
+                        array_push($teamBuildsId, $teamBuildId);
+                    }
 
-                    require_once "models/weapons.php";
-                    require_once "models/artifacts.php";
-
-                    $artifacts = getAllArtifacts();
-
-                    // We return to the page to continue creating the team
-                    include_once "views/add-team.php";
-                }else {
-                    $error = "Erreur lors de la sélection des armes.";
-                    include_once "views/error.php";
-                    exit;
-                }
-            }else if($_POST['form-name'] === 'add-artifacts'){
-                
-                if (isset($_POST['artifact1']) && isset($_POST['artifact2']) && isset($_POST['artifact3']) && isset($_POST['artifact4'])){
-
-                    require_once "utilities/validate.php";
-
-                    $errorMessage = "Valeur incorrecte de l'id de l'artefact";
-                    $artifact1Id = validateSelect('artifact1',$errorMessage);
-                    $artifact2Id = validateSelect('artifact2',$errorMessage);
-                    $artifact3Id = validateSelect('artifact3',$errorMessage);
-                    $artifact4Id = validateSelect('artifact4',$errorMessage);
-                    
-                    $teamArtifacts = [$artifact1Id, $artifact2Id, $artifact3Id, $artifact4Id];
-
-                    // We have all the necessary information so we can create the team.
+                    // We add the builds to the database
 
                     require_once "models/teams.php";
-                    $error = $teamName;
-                    include_once "views/error.php";
-                    createTeam($_SESSION['teamName'], $_SESSION['teamChars'], $_SESSION['teamWeapons'], $teamArtifacts, $_SESSION['user_id']);
-
-                    unset($_SESSION['teamName']);
+                    createTeam($_SESSION['teamName'], $teamBuildsId, $_SESSION['user_id']);
                     unset($_SESSION['teamChars']);
-                    unset($_SESSION['teamWeapons']);
 
-                    header('location: '.($_SESSION['role'] === 'Administrator' ? 'admin-menu' : 'member'));
+                    header('location: '.($_SESSION['role'] === 'Administrator' ? 'admin-menu' :'member'));
+                    
+                }else {
+                    $error = "Erreur lors de la sélection des builds.";
+                    include_once "views/error.php";
+                    exit;
                 }
 
             }else{
