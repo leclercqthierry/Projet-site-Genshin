@@ -30,7 +30,7 @@ input[type="search"]{
     margin: 0 15px 20px 15px;
     background-color: var(--bg-secondary);
     border-radius: 20px;
-    padding:10px;
+    padding:10px 20px;
     display: flex;
     flex-direction: column;
 }
@@ -177,7 +177,7 @@ p{
     }
 
     a:hover{
-        transform: scale(1.05);
+        transform: scale(1.02);
         transition: transform 0.3s ease;
     }
 
@@ -188,5 +188,11 @@ p{
     .img-element{
         width:25px;
     }
+}
 
+@media screen and (min-width:1366px) {
+    .gallery{
+        width:960px;
+        flex-direction: row;
+    }
 }

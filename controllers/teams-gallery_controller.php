@@ -10,22 +10,20 @@ require_once "models/artifacts.php";
 require_once "models/common.php";
 
 $teams = getAllTeams();
-foreach ($teams as $team){
-    $names[] = $team['name'];
-    $authors[] = getUserById($team['user_id'])['nickname'];
-    $teamBuilds[] = getBuildsByTeamId($team['team_id']); // 4 per team
-    foreach ($teamBuilds as $teamBuild){
-        foreach ($teamBuild as $build){
-        $teamCharacters[] = getCharacterById($build['character_id']);
-        $teamElement[] = getElementById(getCharacterById($build['character_id'])['element_id']);
-        $teamWeapons[] = getWeaponById($build['weapon_id']);
-        $teamArtifacts[] = getArtifactById($build['artifact_id']);
-        }
+for ($i = 0; $i < count($teams); $i++){
+    $names[$i] = $teams[$i]['name'];
+    $authors[$i] = getUserById($teams[$i]['user_id'])['nickname'];
+    $teamBuilds[$i] = getBuildsByTeamId($teams[$i]['team_id']); // 4 per team
+    for($j = 0; $j < 4; $j++){
+        $teamCharacters[$j] = getCharacterById($teamBuilds[$i][$j]['character_id']);
+        $teamElement[$j] = getElementById(getCharacterById($teamBuilds[$i][$j]['character_id'])['element_id']);
+        $teamWeapons[$j] = getWeaponById($teamBuilds[$i][$j]['weapon_id']);
+        $teamArtifacts[$j] = getArtifactById($teamBuilds[$i][$j]['artifact_id']);
     }
-    $characters[] = $teamCharacters;
-    $elements[] = $teamElement;
-    $weapons[] = $teamWeapons;
-    $artifacts[] = $teamArtifacts;
+    $characters[$i] = $teamCharacters;
+    $elements[$i] = $teamElement;
+    $weapons[$i] = $teamWeapons;
+    $artifacts[$i] = $teamArtifacts;
 }
 
 include_once "views/teams-gallery.php";

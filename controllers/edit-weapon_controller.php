@@ -38,7 +38,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
         }
 
         // validate the description
-        if (trim($_POST['description']).length === 0){
+        if (trim($_POST['description']) === ''){
             $error = "Veuillez saisir une description pour l'arme.";
             include_once "views/error.php";
             exit;
