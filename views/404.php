@@ -14,7 +14,6 @@
         <h1>Erreur 404</h1>
         <div class="container">
             <p>La page demandée n'existe pas.</p>
-            <a href="index">Retour à la page d'accueil</a>
         </div>
     </main>
     <?php include_once "templates/footer.php"?>

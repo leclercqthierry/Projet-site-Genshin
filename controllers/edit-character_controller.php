@@ -132,8 +132,8 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
 
             $elements = getAllElementsOrderedByName();
             $weaponTypes = getAllWeaponTypesOrderedByName();
-            $stats = getStats();
-            $days = getFarmDays();
+            $stats = getAllStats();
+            $days = getAllFarmDays();
             $bossDrops = getAllBossDrops();
             $localMaterials = getAllLocalMaterials();
             $wbDrops = getAllWorldBossDrops();

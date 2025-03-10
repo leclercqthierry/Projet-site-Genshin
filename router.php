@@ -5,8 +5,14 @@
 $path = $_SERVER['REDIRECT_URL'];
 
 if ($path === '/GenshinTeam/' || $path === '/GenshinTeam/index'){
+
     require_once "controllers/index_controller.php";
-} else {
+
+} else if($path === '/GenshinTeam/character.php'){
+
+    require_once "controllers/character_controller.php";
+
+}else {
 
     // we retrieve the name of the route to determine its controller
     $path = explode("/GenshinTeam/", $path)[1];

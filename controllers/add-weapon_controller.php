@@ -85,9 +85,9 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
         require_once "models/weapons.php";
 
         $weaponTypes = getAllWeaponTypesOrderedByName();
-        $subStats = getStats();
+        $subStats = getAllStats();
         $obtainings = howToGet();
-        $days = getFarmDays();
+        $days = getAllFarmDays();
         $mobMats = getAllMobMaterials();
         $elevationMats = getAllElevationMaterials();
         $djElevationMats = getAllDjElevationMaterials();

@@ -80,10 +80,10 @@
                     }
                 }
             ?>
-                <a href='character.php?id="<?= $character['character_id'] ?>"'>
+                <a href='character.php?id=<?= $character['character_id'] ?>'>
                     <div class='card' data-rarity="<?= $character['rarity'] ?>" data-weapon="<?= getWeaponTypeById($character['weapon_type_id'])['type'] ?>" data-element="<?= getElementById($character['element_id'])['name'] ?>">
                         <div class='img-container'>
-                            <img src="<?= $character['image'] ?>" alt="<?= $character['name'] ?>" class='rarity<?=$character['rarity'] ?> character' width='100'>
+                            <img src="<?= $character['image'] ?>" alt="<?= $character['name'] ?>" class='rarity<?=$character['rarity'] ?> character' width="100" height="100">
                             <img src="<?= $character_element_image ?>" class='img-element'>
                         </div>
                         <strong><?= $character['name'] ?></strong>
