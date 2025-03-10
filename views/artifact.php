@@ -1,55 +1,26 @@
-<?php
-include "base.php";
-$currentArtifact = [];
-
-// We retrieve the artifact through the link
-foreach ($artifacts as $artifact) {
-    if ($artifact['id'] === htmlspecialchars($_GET['id'])){
-        $currentArtifact = $artifact;
-        break;
-    }
-}
-
-################ En attendant une page 404 ################
-// If the artifact isn't found, we redirect to the artifacts gallery
-if (empty($currentArtifact)) {
-    header("Location: artifacts-gallery.php");
-    exit;
-}
-
-// artifact was found
-$name = $currentArtifact['name'];
-$rarity = $currentArtifact['rarity'];
-$image = $currentArtifact['image'];
-$description = $currentArtifact['description'];
-
-echo '
 <!DOCTYPE html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Common style-->
+    <?php // Common style ?>
     <link rel="stylesheet" href="assets/css/style.css">
-    <!--artefact style-->
+    <?php // artefact style ?>
     <link rel="stylesheet" href="assets/css/artifact.css">
-    <title>Set Berserker</title>
+    <title><?= $name ?></title>
 </head>
-<body>';
-    include "template/header.php";
-    echo nl2br('
+<body>
+    <?php include "templates/header.php"; ?>
     <main>
-        <h1>Fiche de set d\'artefact</h1>
+        <h1>Fiche de set d'artefact</h1>
         <div class="container">
             <div>
-                <img src='.$image.' alt='.$name.' class="rarity'.$rarity.'">
-                <h2>'.$name.'</h2>
+                <img src='<?= $image ?>' alt='<?= $name ?>' class="rarity'<?= $rarity ?>">
+                <h2><?= $name ?></h2>
             </div>
-            <p>'.$description.'</p>  
+            <p><?php echo nl2br($description); ?></p>  
         </div>
-    </main>');
-    include "template/footer.php";
-    echo '
+    </main>
+    <?php include "templates/footer.php"; ?>
 </body>
-</html>';
-?>
+</html>
