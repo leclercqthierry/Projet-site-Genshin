@@ -18,6 +18,9 @@ if ($path === '/GenshinTeam/' || $path === '/GenshinTeam/index'){
 }else if($path === '/GenshinTeam/artifact.php'){
 
     require_once "controllers/artifact_controller.php";
+}else if($path === '/GenshinTeam/team.php'){
+
+    require_once "controllers/team_controller.php";
 }else {
 
     // we retrieve the name of the route to determine its controller

@@ -48,7 +48,7 @@ function getAllTeams(){
 function getTeamById($teamId){
     $pdo = getConnexion();
     try{
-        $stmt = $pdo->prepare("SELECT * FROM zell_teams WHERE id = ?");
+        $stmt = $pdo->prepare("SELECT * FROM zell_teams WHERE team_id = ?");
         $stmt->execute([$teamId]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }catch(PDOException $e){

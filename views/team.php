@@ -3,38 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--Common style-->
+    <?php // Common style ?>
     <link rel="stylesheet" href="assets/css/style.css">
-    <!--team style-->
+    <?php // team style ?>
     <link rel="stylesheet" href="assets/css/team.css">
-    <title>Meilleure équipe pour Emilie</title>
+    <title><?= $team['name'] ?></title>
 </head>
 <body>
-    <?php include "template/header.php"; ?>
+    <?php include "templates/header.php"; ?>
     <main>
-        <h1>Meilleure équipe pour Emilie</h1>
+        <h1><?= $team['name'] ?></h1>
         <div class="container">
+            <?php for($i = 0; $i < 4; $i++): ?>
             <div class="character">
                 <div class="cards-container">
                     <div class="card">
-                        <img src="assets/img/gallery/Characters/Alhaitham.webp" alt="Alhaitham" class="rarity5">
-                        <img src="assets/img/icons/Dendro.png" alt="Dendro">
-                        <p>Alhaitham</p>
+                        <img src="<?= $characters[$i]['image'] ?>" alt="<?= $characters[$i]['name'] ?>" class="rarity<?= $characters[$i]['rarity'] ?>">
+                        <img src="<?= $elements[$i]['image'] ?>" alt="<?= $elements[$i]['name'] ?>">
+                        <p><?= $characters[$i]['name'] ?></p>
                     </div>
                     <div class="card">
-                        <img src="assets/img/gallery/Weapons/lumiere_d_incision_foliaire.webp" alt="lumiere d'incision foliaire" class="rarity5">
-                        <p>lumière d'incision foliaire</p>
+                        <img src="<?= $weapons[$i]['image'] ?>" alt="<?= $weapons[$i]['name'] ?>" class="rarity<?= $weapons[$i]['rarity'] ?>">
+                        <p><?= $weapons[$i]['name'] ?></p>
                     </div>
                     <div class="card">
-                        <img src="assets/img/gallery/Artefacts_set/reve_dore.webp" alt="rêve doré" class="rarity5">
-                        <p>Rêve doré</p>
+                        <img src="<?= $artifacts[$i]['image'] ?>" alt="<?= $artifacts[$i]['name'] ?>" class="rarity<?= $artifacts[$i]['rarity'] ?>">
+                        <p><?= $artifacts[$i]['name'] ?></p>
                     </div>
                 </div>
-                <p><u>Sablier</u>: Maîtrise élémentaire / ATQ%<br><br>
-                <u>Gobelet</u>: Bonus de DGT Dendro<br><br>
-                <u>Coiffe</u>: Taux CRIT / DGT CRIT</p>
             </div>
-            <div class="character">
+            <?php endfor;?>
+            <!-- <div class="character">
                 <div class="cards-container">
                     <div class="card">
                         <img src="assets/img/gallery/Characters/Emilie.webp" alt="Emilie" class="rarity5">
@@ -50,9 +49,6 @@
                         <p>Rêverie incomplète</p>
                     </div>
                 </div>
-                <p><u>Sablier</u>: ATQ%<br><br>
-                <u>Gobelet</u>: Bonus de DGT Dendro<br><br>
-                <u>Coiffe</u>: Taux CRIT / DGT CRIT</p>
             </div>
             <div class="character">
                 <div class="cards-container">
@@ -70,9 +66,6 @@
                         <p>Emblème du destin brisé</p>
                     </div>
                 </div>
-                <p><u>Sablier</u>: Recharge d'énergie / ATQ% /Maîtrise élémentaire<br><br>
-                <u>Gobelet</u>: Bonus de DGT Pyro<br><br>
-                <u>Coiffe</u>: Taux CRIT / DGT CRIT</p>
             </div>
             <div class="character">
                 <div class="cards-container">
@@ -90,10 +83,7 @@
                         <p>Sorcières des flammes ardentes</p>
                     </div>
                 </div>
-                <p><u>Sablier</u>: Maîtrise élémentaire / ATQ%<br><br>
-                <u>Gobelet</u>: Bonus de DGT Pyro<br><br>
-                <u>Coiffe</u>: Taux CRIT / DGT CRIT</p>
-            </div>
+            </div> -->
         </div>
         <button>Voter</button>
         <form action="#" method="post" class="vote">
@@ -102,7 +92,7 @@
             <input type="submit" value="Valider">
         </form>
     </main>
-    <?php include "template/footer.php"; ?>
+    <?php include "templates/footer.php"; ?>
     <script src="assets/js/team.js"></script>
 </body>
 </html>

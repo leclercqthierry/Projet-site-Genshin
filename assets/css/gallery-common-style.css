@@ -76,10 +76,13 @@ a{
 }
 
 strong{
+    /* Height calculated to take up the rest of the available space in the card*/
+    height:calc(100% - 100px);
     display:flex;
     align-items: center;
     justify-content: center;
     font-weight: normal;
+    text-align: center;
 }
 
 .rarity4{

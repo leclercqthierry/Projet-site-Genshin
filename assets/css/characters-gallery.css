@@ -19,6 +19,7 @@
 .card{
     background-color: var(--bg-primary);
     width:120px;
+    height:100%;
     padding: 10px 10px;
     border-radius: 10px;
 }

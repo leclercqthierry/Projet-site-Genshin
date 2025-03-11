@@ -19,9 +19,9 @@
         </div>
         <div class="gallery">
             <?php for($i = 0; $i < count($teams); $i++): ?>
-            <a href='team'>
+            <a href='team.php?id=<?= $teams[$i]['team_id'] ?>'>
                 <div class='team-container'>
-                    <h2><?= $names[$i] ?> de <?= $authors[$i] ?></h2>
+                    <h2><?= $names[$i] ?> de <i><?= $authors[$i] ?></i></h2>
                     <div class='team'>
                         <div class='card' data-rarity="<?= $characters[$i][0]['rarity'] ?>">
                             <div class='img-container'>

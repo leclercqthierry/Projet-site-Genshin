@@ -91,8 +91,8 @@
                 <table>
                     <tr>
                         <th>Seuil</th>
-                        <th>Joyau<br>X de personnage</th>
-                        <th>Matériau<br>X de boss</th>
+                        <th>Joyaux de personnage</th>
+                        <th>Matériaux de boss</th>
                         <th>Ressource locale</th>
                         <th>Ressources de mobs</th>
                         <th><img src='assets/img/other/mora.webp' alt='moras' title='moras'></th>
@@ -154,7 +154,7 @@
                         <th>Niveau</th>
                         <th>Ressource de donjon</th>
                         <th>Ressources de mobs</th>
-                        <th>Matériau<br>X de boss de monde</th>
+                        <th>Matériaux de boss de monde</th>
                         <th>Ressource d'event</th>
                     </tr>
                     <tr>
