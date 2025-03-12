@@ -27,9 +27,8 @@ form{
     border:none;
 }
 
-#nickname+p,
-#password+p{
-    padding-top:1em;
+.error{
+    padding-top:0.5em;
     font-size:12px;
     font-weight: bold;
     font-style: italic;
@@ -95,8 +94,7 @@ a.btn{
         border: 2px solid var(--bg-primary);
     }
 
-    #nickname+p,
-    #password+p{
+    .error{
         font-size:14px;
     }
 

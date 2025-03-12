@@ -10,6 +10,7 @@ if(isset($_SESSION['role']) && ($_SESSION['role'] === 'Administrator' || $_SESSI
     if(!isset($_POST['form-name'])){
 
         include_once "views/add-team.php";
+
     }else{
 
         // If the team name creation form has been submitted
@@ -106,9 +107,10 @@ if(isset($_SESSION['role']) && ($_SESSION['role'] === 'Administrator' || $_SESSI
                     }
 
                     // We add the builds to the database
-
                     require_once "models/teams.php";
+                    
                     createTeam($_SESSION['teamName'], $teamBuildsId, $_SESSION['user_id']);
+                    unset($_SESSION['teamName']);
                     unset($_SESSION['teamChars']);
 
                     header('location: '.($_SESSION['role'] === 'Administrator' ? 'admin-menu' :'member'));

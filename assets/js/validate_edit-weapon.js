@@ -54,7 +54,7 @@ if(weaponName !== null && description !== null && form !== null && selects !== n
         });
     
         if (description.value.length === 0){
-            showError('Veuillez entrer une description pour votre set d\'artefact.', errorForm);
+            showError('Veuillez entrer une description pour votre arme.', errorForm);
         }
         
         if (errorForm.textContent === '') {

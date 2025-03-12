@@ -19,7 +19,7 @@ validateTextField(artifactName, regexName, errorName);
 form.addEventListener('submit', (e) =>{
     e.preventDefault();
     if (thumbnail.files.length === 0) {
-        showError('Vous n\'avez pas chargé d\'image.', errorForm);
+        showError("Vous n'avez pas chargé d'image.", errorForm);
     } else if (thumbnail.files[0].size > 1048576) {
         showError('Votre image ne doit pas dépasser 1MB.', errorForm)
     } else if (!(thumbnail.value.match(/\.(jpg|jpeg|png|gif|webp)$/))){
@@ -28,13 +28,13 @@ form.addEventListener('submit', (e) =>{
         errorForm.style.display = 'none';
     }
     if (!regexName.test(artifactName.value) || artifactName.value===''){
-        showError('Veuillez entrer un nom valide pour votre personnage.', errorForm);
+        showError("Veuillez entrer un nom valide pour votre set d'artéfacts.", errorForm);
     }
     if (!rarities[0].checked && !rarities[1].checked && !rarities[2].checked){
-        showError('Veuillez selectionner une rareté pour votre personnage.', errorForm);
+        showError("Veuillez selectionner une rareté pour votre set d'artéfacts.", errorForm);
     };
     if (description.value === ''){
-        showError('Veuillez entrer une description pour votre set d\'artefact.', errorForm);
+        showError("Veuillez entrer une description pour votre set d'artefacts.", errorForm);
     }
     if (errorForm.textContent === '') {
         form.submit();

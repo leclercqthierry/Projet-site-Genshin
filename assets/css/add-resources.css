@@ -56,8 +56,8 @@ form{
 }
 
 /* error messages*/
-p{
-    padding-top:1em;
+.error{
+    padding-top:0.5em;
     font-size:12px;
     font-weight: bold;
     font-style: italic;
@@ -123,5 +123,9 @@ input[type="file"]+img{
 
     .fa-solid:hover{
         cursor:pointer;
+    }
+
+    .error{
+        font-size:14px;
     }
 }

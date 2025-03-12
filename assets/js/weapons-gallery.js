@@ -1,12 +1,13 @@
+// The purpose of the script is to process in javascript the sorting and filters of the weapons-gallery page
+
 const weapons = document.getElementsByName('weapon');
 const rarities = document.querySelectorAll('main input[type=checkbox]');
 const select = document.querySelector('select');
 const cards = document.querySelectorAll('.card');
-console.log(weapons);
 
-// Checks the radio weapons and returns the id of the one that is checked
 /**
- * @return {string}
+ * Checks the radio weapons and returns the id of the one that is checked
+ * @returns {string}
  */
 function checkWeapons(){
     let id;
@@ -18,10 +19,9 @@ function checkWeapons(){
     return id; 
 }
 
-// Checks the checkbox rarity and returns the values of the ones that are checked
-
 /**
- * @return {Array}
+ * Checks the checkbox rarity and returns the values of the ones that are checked
+ * @returns {Array}
  */
 function checkRarity(){
     let values = [];

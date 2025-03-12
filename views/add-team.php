@@ -44,10 +44,10 @@
                         <div class="form-label">
                             <label for="char<?= $i ?>">Choix du personnage</label>
                             <select name="char<?= $i ?>" id="char<?= $i ?>">
-                        <?php foreach($characters as $character):?>
+                            <?php foreach($characters as $character):?>
                                 <option value="<?= $character['character_id'] ?>"><?= $character['name'] ?></option>
-                        <?php endforeach;?>
-                    </select>
+                            <?php endforeach;?>
+                            </select>
                         </div>
                     </fieldset>
                 <?php endfor;?>
@@ -94,6 +94,7 @@
         <?php endif;?>
     </main>
     <?php include "templates/footer.php"; ?>
-    <!-- <script src="assets/js/add-team.js"></script> -->
+    <script src="assets/js/validate.js"></script>
+    <script src="assets/js/validate_add-team.js"></script>
 </body>
 </html>

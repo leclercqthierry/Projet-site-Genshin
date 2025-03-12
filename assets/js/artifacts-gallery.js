@@ -1,3 +1,5 @@
+// The purpose of the script is to process in javascript the sorting and filters of the artifacts-gallery page
+
 const artifact = document.getElementsByName('artifact');
 const rarities = document.querySelectorAll('main input[type=checkbox]');
 const select = document.querySelector('select');

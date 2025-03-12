@@ -12,11 +12,15 @@ input{
     font-family: 'Roboto', sans-serif;
 }
 
-select{
+select,
+input[type="text"]{
     width:100%;
     padding:5px;
     border:none;
     border-radius:5px;
+}
+
+select{
     overflow: scroll;
 }
 
@@ -128,6 +132,14 @@ label{
     gap:10px;
 }
 
+.error{
+    padding-top:0.5em;
+    font-size:12px;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
 @media screen and (min-width:441px) {
 
     .form-container{
@@ -174,5 +186,9 @@ label{
     
     form[name="add-equipment-form"] label:hover{
         cursor: pointer;
+    }
+
+    .error{
+        font-size:14px;
     }
 }

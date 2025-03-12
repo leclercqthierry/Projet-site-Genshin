@@ -7,15 +7,6 @@
     border:none;
 }
 
-#email+p,
-#confirm-password+p{
-    padding-top:1em;
-    font-size:12px;
-    font-weight: bold;
-    font-style: italic;
-    letter-spacing: 1px;
-}
-
 .btn-container{
     justify-content: center;
 }
@@ -31,8 +22,4 @@
         border: 2px solid var(--bg-primary);
     }
 
-    #email+p,
-    #confirm-password+p{
-        font-size:14px;
-    }
 } 

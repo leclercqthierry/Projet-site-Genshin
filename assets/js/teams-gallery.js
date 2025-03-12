@@ -1,3 +1,5 @@
+// The purpose of the script is to process in javascript the team search by character
+
 const teamLinks = document.querySelectorAll('.gallery a');
 const characterArray = document.querySelectorAll('.gallery a p');
 let teamCharacters = [];
