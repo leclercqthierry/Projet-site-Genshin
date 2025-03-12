@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php //Common style ?>
     <link rel="stylesheet" href="assets/css/style.css">
-    <?php //add-character style ?>
+    <?php //delete-build style ?>
     <link rel="stylesheet" href="assets/css/delete-build.css">
     <title>Panneau Admin - Suppression d'un build de personnage</title>
 </head>

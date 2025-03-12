@@ -65,14 +65,39 @@ function getTeamById($teamId){
 function editTeam($teamName, $oldBuildIds, $newBuildIds, $teamId){
     $pdo = getConnexion();
     try{
+
+        // If necessary, edit the team name in the zell_teams table.
         $stmt = $pdo->prepare("UPDATE zell_teams SET `name`=? WHERE `team_id`=?");
         $stmt->execute([$teamName, $teamId]);
+
+        // Then we edit the builds in the team_builds table
         for ($i = 0; $i < 4; $i++){
             $stmt = $pdo->prepare("UPDATE zell_team_builds tb SET tb.build_id=? WHERE tb.build_id=? AND tb.team_id=?");
             $stmt->execute([$newBuildIds[$i], $oldBuildIds[$i], $teamId]);
         }
     }catch(PDOException $e) {
         $error = "Erreur lors de la modification de l'équipe: ". $e->getMessage();
+        include_once "views/error.php";
+        exit;
+    }
+}
+
+/**
+ * @param int $teamId
+ */
+ function deleteTeam($teamId){
+    $pdo = getConnexion();
+    try{
+
+        // Delete the team from the team_builds table first to avoid foreign key constraint issues.
+        $stmt = $pdo->prepare("DELETE FROM zell_team_builds WHERE team_id=?");
+        $stmt->execute([$teamId]);
+
+        // Finally, delete the team from the teams table.
+        $stmt = $pdo->prepare("DELETE FROM zell_teams WHERE team_id=?");
+        $stmt->execute([$teamId]);
+    }catch(PDOException $e) {
+        $error = "Erreur lors de la suppression de l'équipe: ". $e->getMessage();
         include_once "views/error.php";
         exit;
     }

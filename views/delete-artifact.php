@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <?php // Common style ?>
     <link rel="stylesheet" href="assets/css/style.css">
-    <?php // delete-character style ?>
+    <?php // delete-form style ?>
     <link rel="stylesheet" href="assets/css/delete-form.css">
     <title>Panneau Admin - Suppression d'un set d'artéfacts</title>
 </head>
