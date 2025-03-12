@@ -4,12 +4,12 @@ main{
 }
 
 .container{
+    margin: 0 15px 15px 15px;
+    padding: 15px;
     background-color: var(--bg-secondary);
     border-radius:20px;
-    margin: 0 15px 15px 15px;
     display: flex;
     flex-direction: column;
-    padding: 15px;
 }
 
 .img-description{
@@ -20,23 +20,24 @@ main{
 
 .img-description img{
     width:66px;
+    border-radius: 15px;
 }
 
 .description{
+    max-width:60%;
+    padding: 15px;
+    background-color: var(--bg-primary);
+    border-radius:15px;
     display:flex;
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    background-color: var(--bg-primary);
-    border-radius:15px;
-    padding: 15px;
-    max-width:60%;
 }
 
 h2{
+    margin: 15px auto;
     font-size: 20px;
     text-align: center;
-    margin: 15px auto;
 }
 
 .sub-container{
@@ -47,36 +48,37 @@ h2{
 }
 
 .sub-container p{
+    margin:15px;
+    padding:20px 15px;
     background-color: var(--bg-primary);
     border-radius:15px;
-    padding:20px 15px;
-    margin:15px;
     text-align: justify;
 }
 
 table{
-    display: block;
-    overflow-x: auto;
-    border-collapse: collapse;
+    max-width: 100%;
     margin: 0 auto;
     text-align: center;
-    max-width: 100%;
     background-color: var(--bg-primary);
-}
-
-td,
-th{
-    border: 1px solid var(--font-color);
-    padding:5px;
-    min-width:75px;
-    max-width: 85px;
-    text-wrap:wrap;
-    font-size: 14px;
+    border-collapse: collapse;
+    display: block;
+    overflow-x: auto;
 }
 
 table img{
     width:40px;
     height:40px;
+    border-radius: 6px;
+}
+
+td,
+th{
+    min-width:75px;
+    max-width: 85px;
+    padding:5px;
+    border: 1px solid var(--font-color);
+    text-wrap:wrap;
+    font-size: 14px;
 }
 
 .rarity1{
@@ -111,10 +113,10 @@ table img{
 
 @media screen and (min-width:769px) {
     .container{
+        padding:30px;
         flex-direction: row;
         flex-wrap: wrap;
         align-items: center;
-        padding:30px;
     }
 
     .img-description, .p1{

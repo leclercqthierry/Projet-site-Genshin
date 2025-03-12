@@ -57,6 +57,23 @@ function getTeamById($teamId){
 }
 
 /**
+ * @param int $userId
+ * @return array
+ */
+function getAllUserTeams($userId){
+    $pdo = getConnexion();
+    try{
+        $stmt = $pdo->prepare("SELECT * FROM zell_teams WHERE user_id =?");
+        $stmt->execute([$userId]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }catch(PDOException $e){
+        $error = "Erreur lors de la récupération des équipes de l'utilisateur d'id: $userId".$e->getMessage();
+        include_once "views/error.php";
+        exit;
+    }
+}
+
+/**
  * @param string $teamName
  * @param array $oldBuildIds
  * @param array $newBuildIds

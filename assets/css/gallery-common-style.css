@@ -1,20 +1,25 @@
 /* Filters / Sort CSS */
 .filters-container{
+    margin:15px;
+    padding:10px;
     background-color: var(--bg-secondary);
     border-radius: 20px;
     display:flex;
     flex-direction: column;
-    margin:15px;
-    padding:10px;
 }
 
 .weapons-rarity-container{
+    margin: 0 auto 15px auto;
     display:flex;
     justify-content: space-around;
     align-items: center;
-    margin: 0 auto 15px auto;
     flex-wrap: wrap;
     gap:15px;
+}
+
+fieldset{
+    padding:0 10px 10px 10px;
+    border-radius: 10px;
 }
 
 .weapons,
@@ -45,29 +50,29 @@ sup img{
 }
 
 .weapon-container label{
+    height:30px;
     display:flex;
     align-items: center;
-    height:30px;
 }
 
 select{
     width:245px;
     height:2em;
-    border-radius:5px;
     margin: 15px auto;
     padding-left: 5px;
+    border-radius:5px;
 }
 
 /* Gallery CSS */
 .gallery{
+    margin: 0 15px 20px 15px;
+    padding:10px 0;
+    background-color: var(--bg-secondary);
+    border-radius: 20px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
     gap:15px;
-    margin: 0 15px 20px 15px;
-    background-color: var(--bg-secondary);
-    border-radius: 20px;
-    padding:10px 0;
 }
 
 a{
@@ -78,11 +83,11 @@ a{
 strong{
     /* Height calculated to take up the rest of the available space in the card*/
     height:calc(100% - 100px);
+    font-weight: normal;
+    text-align: center;
     display:flex;
     align-items: center;
     justify-content: center;
-    font-weight: normal;
-    text-align: center;
 }
 
 .rarity4{
@@ -93,16 +98,7 @@ strong{
     background-color: var(--rarity-color-5);
 }
 
-fieldset{
-    border-radius: 10px;
-    padding:0 10px 10px 10px;
-}
-
 @media screen and (min-width: 426px){
-    .gallery{
-        gap:15px;
-        padding: 15px;
-    }
 
     .filters-container{
         flex-direction: row;
@@ -113,6 +109,11 @@ fieldset{
         margin-bottom:0;
     }
 
+    .gallery{
+        padding: 15px;
+        gap:15px;
+    }
+
     select{
         font-size: 1em;
     }
@@ -120,7 +121,6 @@ fieldset{
 
 @media screen and (min-width:769px){
     main{
-        min-height: calc(100vh - 7.32vh - 7.32vh); /* screen - header - footer */
         display:flex;
         flex-direction: column;
     }

@@ -15,7 +15,7 @@
         <h1>Fiche de set d'artefact</h1>
         <div class="container">
             <div>
-                <img src='<?= $image ?>' alt='<?= $name ?>' class="rarity'<?= $rarity ?>">
+                <img src='<?= $image ?>' alt='<?= $name ?>' class="rarity<?= $rarity ?>">
                 <h2><?= $name ?></h2>
             </div>
             <p><?php echo nl2br($description); ?></p>  

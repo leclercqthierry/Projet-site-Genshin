@@ -4,12 +4,16 @@ form[name="select-artifact-form"]{
 }
 
 textarea{
-    resize:none;
-    padding-left: 5px;
     margin-bottom: 10px;
+    padding-left: 5px;
+    resize:none;
 }
 
 fieldset img{
     width:100px;
     align-self:center;
+}
+
+select:hover{
+    cursor:pointer;
 }

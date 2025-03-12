@@ -1,14 +1,20 @@
 <?php
-session_start();
+if(session_status() !== PHP_SESSION_ACTIVE || session_status() === PHP_SESSION_NONE){
+    session_start();
+} 
 
-if(isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
+if (isset($_SESSION['role']) && ($_SESSION['role'] === 'Administrator' || $_SESSION['role'] === 'Member')){
 
     // If no form has been submitted yet.
-    if(count($_POST) === 0){
+    if (count($_POST) === 0 || isset($_POST['delete-team'])){
 
         require_once "models/teams.php";
 
-        $teams = getAllTeams();
+        if (count($_POST) === 0){
+            $teams = getAllTeams();
+        } else {
+            $teams[] = getTeamById($_POST['delete-team']);
+        }
 
         include_once "views/delete-team.php";
     }else{
@@ -22,7 +28,7 @@ if(isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
             require_once "models/teams.php";
 
             deleteTeam($teamId);
-            header('location: admin-menu');
+            header('Location: '.($_SESSION['role'] === 'Administrator' ? 'admin-menu' : 'member'));
         }
     }
 

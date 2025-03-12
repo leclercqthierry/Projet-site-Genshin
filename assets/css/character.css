@@ -4,12 +4,12 @@ main{
 }
 
 .container{
+    margin: 0 15px 15px 15px;
+    padding: 15px;
     background-color: var(--bg-secondary);
     border-radius:20px;
-    margin: 0 15px 15px 15px;
     display: flex;
     flex-direction: column;
-    padding: 15px;
 }
 
 .img-description{
@@ -20,23 +20,18 @@ main{
 
 .img-description img{
     width:66px;
+    border-radius: 10px;
 }
 
 .description{
+    max-width:60%;
+    padding: 15px;
+    background-color: var(--bg-primary);
+    border-radius:15px;
     display:flex;
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    background-color: var(--bg-primary);
-    border-radius:15px;
-    padding: 15px;
-    max-width:60%;
-}
-
-h2{
-    font-size: 20px;
-    text-align: center;
-    margin: 15px auto;
 }
 
 .sub-container{
@@ -46,31 +41,38 @@ h2{
     align-items: center;
 }
 
-table{
-    display: block;
-    overflow-x: auto;
-    border-collapse: collapse;
-    margin: 0 auto;
+h2{
+    margin: 15px auto;
+    font-size: 20px;
     text-align: center;
-    max-width: 100%;
-    background-color: var(--bg-primary);
 }
 
-td,
-th{
-    border: 1px solid var(--font-color);
-    padding:5px;
-    min-width:75px;
-    max-width: 85px;
-    text-wrap:wrap;
-    font-size: 14px;
-
+table{
+    max-width: 100%;
+    margin: 0 auto;
+    text-align: center;
+    background-color: var(--bg-primary);
+    border-collapse: collapse;
+    display: block;
+    overflow-x: auto;
 }
 
 table img{
     width:40px;
     height:40px;
     padding:2px;
+    border-radius: 6px;
+}
+
+td,
+th{
+    min-width:75px;
+    max-width: 85px;
+    padding:5px;
+    font-size: 14px;
+    border: 1px solid var(--font-color);
+    text-wrap:wrap;
+
 }
 
 .rarity1{
@@ -116,14 +118,9 @@ table img{
         flex-wrap: wrap;
     }
 
-    td,th{
-        font-size: 18px;
-        min-width:90px;
-        max-width: 110px;
-    }
-
     .img-description img{
         width:120px;
+        border-radius: 15px;
     }
 
     .sub-container{
@@ -134,6 +131,13 @@ table img{
         width:70px;
         height: 70px;
     }
+
+    td,th{
+        min-width:90px;
+        max-width: 110px;
+        font-size: 18px;
+    }
+
 }
 
 @media screen and (min-width:1025px) {
@@ -150,11 +154,11 @@ table img{
 
     .img-description{
         width: 50%;
-        /* align-self: center; */
     }
 
     .img-description img{
         width:174px;
+        border-radius: 20px;
     }
 
     .sub-container{
@@ -175,5 +179,4 @@ table img{
     p{
         margin: 15px 0;
     }
-
 }

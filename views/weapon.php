@@ -36,48 +36,48 @@
                         <th>Ressource de donjon</th>
                         <th>Ressources de mobs 1</th>
                         <th>Ressources de mobs 2</th>
-                        <th><img src="assets/img/other/mora.webp" alt="moras" title="moras"></th>
+                        <th><img class="rarity1" src="assets/img/other/mora.webp" alt="moras"></th>
                     </tr>
                     <tr>
                         <td>Niveau 20</td>
-                        <td><img src='<?= $dungeonWeapon['image1'] ?>' alt='<?= $dungeonWeapon['name1'] ?>' title='<?= $dungeonWeapon['name1'] ?>' class="rarity2"><br>X3</td>
-                        <td><img src='<?= $elevationWeaponDrop['image1'] ?>' alt='<?= $elevationWeaponDrop['name1'] ?>' title='<?= $elevationWeaponDrop['name1'] ?>' class="rarity2"><br>X3</td>
-                        <td><img src='<?= $mobDrop['image1'] ?>' alt='<?= $mobDrop['name1'] ?>' title='<?= $mobDrop['name1'] ?>' class="rarity1"><br>X2</td>
+                        <td><img src='<?= $dungeonWeapon['image1'] ?>' alt='<?= $dungeonWeapon['name1'] ?>' class="rarity2"><br>X3</td>
+                        <td><img src='<?= $elevationWeaponDrop['image1'] ?>' alt='<?= $elevationWeaponDrop['name1'] ?>' class="rarity2"><br>X3</td>
+                        <td><img src='<?= $mobDrop['image1'] ?>' alt='<?= $mobDrop['name1'] ?>' class="rarity1"><br>X2</td>
                         <td>5 000</td>
                     </tr>
                     <tr>
                         <td>Niveau 40</td>
-                        <td><img src='<?= $dungeonWeapon['image2'] ?>' alt='<?= $dungeonWeapon['name2'] ?>' title='<?= $dungeonWeapon['name2'] ?>' class="rarity3"><br>X3</td>
-                        <td><img src='<?= $elevationWeaponDrop['image1'] ?>' alt='<?= $elevationWeaponDrop['name1'] ?>' title='<?= $elevationWeaponDrop['name1'] ?>' class="rarity2"><br>X12</td>
-                        <td><img src='<?= $mobDrop['image1'] ?>' alt='<?= $mobDrop['name1'] ?>' title='<?= $mobDrop['name1'] ?>' class="rarity1"><br>X8</td>
+                        <td><img src='<?= $dungeonWeapon['image2'] ?>' alt='<?= $dungeonWeapon['name2'] ?>' class="rarity3"><br>X3</td>
+                        <td><img src='<?= $elevationWeaponDrop['image1'] ?>' alt='<?= $elevationWeaponDrop['name1'] ?>' class="rarity2"><br>X12</td>
+                        <td><img src='<?= $mobDrop['image1'] ?>' alt='<?= $mobDrop['name1'] ?>' class="rarity1"><br>X8</td>
                         <td>15 000</td>
                     </tr>
                     <tr>
                         <td>Niveau 50</td>
-                        <td><img src='<?= $dungeonWeapon['image2'] ?>' alt='<?= $dungeonWeapon['name2'] ?>' title='<?= $dungeonWeapon['name2'] ?>' class="rarity3"><br>X6</td>
-                        <td><img src='<?= $elevationWeaponDrop['image2'] ?>' alt='<?= $elevationWeaponDrop['name2'] ?>' title='<?= $elevationWeaponDrop['name2'] ?>' class="rarity3"><br>X6</td>
-                        <td><img src='<?= $mobDrop['image2'] ?>' alt='<?= $mobDrop['name2'] ?>' title='<?= $mobDrop['name2'] ?>' class="rarity2"><br>X6</td>
+                        <td><img src='<?= $dungeonWeapon['image2'] ?>' alt='<?= $dungeonWeapon['name2'] ?>' class="rarity3"><br>X6</td>
+                        <td><img src='<?= $elevationWeaponDrop['image2'] ?>' alt='<?= $elevationWeaponDrop['name2'] ?>' class="rarity3"><br>X6</td>
+                        <td><img src='<?= $mobDrop['image2'] ?>' alt='<?= $mobDrop['name2'] ?>' class="rarity2"><br>X6</td>
                         <td>20 000</td>
                     </tr>
                     <tr>
                         <td>Niveau 60</td>
-                        <td><img src='<?= $dungeonWeapon['image3'] ?>' alt='<?= $dungeonWeapon['name3'] ?>' title='<?= $dungeonWeapon['name3'] ?>' class="rarity4"><br>X3</td>
-                        <td><img src='<?= $elevationWeaponDrop['image2'] ?>' alt='<?= $elevationWeaponDrop['name2'] ?>' title='<?= $elevationWeaponDrop['name2'] ?>' class="rarity3"><br>X12</td>
-                        <td><img src='<?= $mobDrop['image2'] ?>' alt='<?= $mobDrop['name2'] ?>' title='<?= $mobDrop['name2'] ?>' class="rarity2"><br>X9</td>
+                        <td><img src='<?= $dungeonWeapon['image3'] ?>' alt='<?= $dungeonWeapon['name3'] ?>' class="rarity4"><br>X3</td>
+                        <td><img src='<?= $elevationWeaponDrop['image2'] ?>' alt='<?= $elevationWeaponDrop['name2'] ?>' class="rarity3"><br>X12</td>
+                        <td><img src='<?= $mobDrop['image2'] ?>' alt='<?= $mobDrop['name2'] ?>' class="rarity2"><br>X9</td>
                         <td>30 000</td>
                     </tr>
                     <tr>
                         <td>Niveau 70</td>
-                        <td><img src='<?= $dungeonWeapon['image3'] ?>' alt='<?= $dungeonWeapon['name3'] ?>' title='<?= $dungeonWeapon['name3'] ?>' class="rarity4"><br>X6</td>
-                        <td><img src='<?= $elevationWeaponDrop['image3'] ?>' alt='<?= $elevationWeaponDrop['name3'] ?>' title='<?= $elevationWeaponDrop['name3'] ?>' class="rarity4"><br>X9</td>
-                        <td><img src='<?= $mobDrop['image3'] ?>' alt='<?= $mobDrop['name3'] ?>' title='<?= $mobDrop['name3'] ?>' class="rarity3"><br>X9</td>
+                        <td><img src='<?= $dungeonWeapon['image3'] ?>' alt='<?= $dungeonWeapon['name3'] ?>' class="rarity4"><br>X6</td>
+                        <td><img src='<?= $elevationWeaponDrop['image3'] ?>' alt='<?= $elevationWeaponDrop['name3'] ?>' class="rarity4"><br>X9</td>
+                        <td><img src='<?= $mobDrop['image3'] ?>' alt='<?= $mobDrop['name3'] ?>' class="rarity3"><br>X9</td>
                         <td>35 000</td>
                     </tr>
                     <tr>
                         <td>Niveau 80</td>
-                        <td><img src='<?= $dungeonWeapon['image4'] ?>' alt='<?= $dungeonWeapon['name4'] ?>' title='<?= $dungeonWeapon['name4'] ?>' class="rarity5"><br>X4</td>
-                        <td><img src='<?= $elevationWeaponDrop['image3'] ?>' alt='<?= $elevationWeaponDrop['name3'] ?>' title='<?= $elevationWeaponDrop['name3'] ?>' class="rarity4"><br>X18</td>
-                        <td><img src='<?= $mobDrop['image3'] ?>' alt='<?= $mobDrop['name3'] ?>' title='<?= $mobDrop['name3'] ?>' class="rarity3"><br>X12</td>
+                        <td><img src='<?= $dungeonWeapon['image4'] ?>' alt='<?= $dungeonWeapon['name4'] ?>' class="rarity5"><br>X4</td>
+                        <td><img src='<?= $elevationWeaponDrop['image3'] ?>' alt='<?= $elevationWeaponDrop['name3'] ?>' class="rarity4"><br>X18</td>
+                        <td><img src='<?= $mobDrop['image3'] ?>' alt='<?= $mobDrop['name3'] ?>' class="rarity3"><br>X12</td>
                         <td>45 000</td>
                     </tr>
                 </table>

@@ -26,20 +26,20 @@ main{
 }
 
 .container{
+    width:290px;
     margin:0 auto 20px auto;
+    padding:15px;
     background-color: var(--bg-secondary);
     border-radius:20px;
-    padding:15px;
-    width:290px;
 }
 
 .btn{
-    background-color: var(--bg-primary);
+    max-height: 40px;
     padding: 5px 10px;
+    color:var(--font-color);
+    background-color: var(--bg-primary);
     border:none;
     border-radius: 20px;
-    color:var(--font-color);
-    max-height: 40px;
 }
 
 #confirm-dialog{
@@ -82,5 +82,9 @@ button{
         color:var(--bg-primary);
         transition: background-color 0.4s ease, color 0.4s ease;
         cursor: pointer;
+    }
+
+    select:hover{
+        cursor:pointer;
     }
 }

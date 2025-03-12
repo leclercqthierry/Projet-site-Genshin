@@ -18,6 +18,10 @@ form{
     gap:15px;
 }
 
+label{
+    padding-left:5px;
+}
+
 #nickname,
 #password{
     width:100%;
@@ -25,18 +29,6 @@ form{
     padding: 0 10px;
     border-radius: 7px;
     border:none;
-}
-
-.error{
-    padding-top:0.5em;
-    font-size:12px;
-    font-weight: bold;
-    font-style: italic;
-    letter-spacing: 1px;
-}
-
-label{
-    padding-left:5px;
 }
 
 form a{
@@ -69,6 +61,14 @@ a.btn{
     align-items: center;
 }
 
+.error{
+    padding-top:0.5em;
+    font-size:12px;
+    font-weight: bold;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
 @media screen and (min-width: 700px){
 
     .btn{
@@ -77,6 +77,11 @@ a.btn{
 } 
 
 @media screen and (min-width: 769px){
+
+    #nickname:hover,
+    #password:hover{
+        border: 2px solid var(--bg-primary);
+    }
 
     form .btn:hover{
         background-color: var(--font-color);
@@ -87,11 +92,6 @@ a.btn{
 
     form .btn{
         transition: background-color 0.4s ease, color 0.4s ease;
-    }
-
-    #nickname:hover,
-    #password:hover{
-        border: 2px solid var(--bg-primary);
     }
 
     .error{

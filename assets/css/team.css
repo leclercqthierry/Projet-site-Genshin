@@ -6,19 +6,19 @@ main{
 
 .container{
     width:290px;
-    background-color: var(--bg-secondary);
-    border-radius:20px;
     margin: auto 15px 15px 15px;
     padding:20px;
+    background-color: var(--bg-secondary);
+    border-radius:20px;
     display: flex;
     flex-direction: column;
     gap:15px;
 }
 
 .character{
+    padding: 15px;
     background-color: var(--bg-primary);
     border-radius: 15px;
-    padding: 15px;
     display:flex;
     flex-direction: column;
     gap:15px;
@@ -30,13 +30,13 @@ main{
 }
 
 .card{
-    background-color: var(--bg-primary);
     width:67px;
+    height:125px;
     padding: 2px;
+    background-color: var(--bg-primary);
     border: 1px solid var(--font-color);
     display:flex;
     flex-direction: column;
-    height:125px;
 }
 
 .card img:first-child{
@@ -46,16 +46,16 @@ main{
 
 .card img:nth-child(2){
     width:15px;
+    margin-bottom:-15px;
     position:relative;
     bottom:60px;
     left:45px;
-    margin-bottom:-15px;
 }
 
 .card p{
+    height: 100%;
     text-align: center;
     font-size: 12px;
-    height: 100%;
     display:flex;
     justify-content: center;
     align-items: center;
@@ -75,17 +75,16 @@ main{
 
 /* button "voter" style */
 button{
-    background-color: var(--bg-secondary);
-    color:var(--font-color);
     width:120px;
-    padding:10px 10px;
-    border-radius:25px;
-    font-size:20px;
-    font-family: 'Roboto';
-    align-self:end;
     margin-right: 20px;
     margin-bottom:15px;
+    padding:10px 10px;
+    background-color: var(--bg-secondary);
+    color:var(--font-color);
+    border-radius:25px;
+    font-family: 'Roboto';
     border:none;
+    align-self:end;
 }
 
 button:disabled{
@@ -94,16 +93,15 @@ button:disabled{
 
 .vote{
     width:70vw;
+    margin: 0 auto 15px auto;
+    padding:15px;
+    border-radius:20px;
+    text-align: center;
     background-color: var(--bg-secondary);
-    display:flex;
+    display:none;
     flex-direction: column;
     flex-wrap: wrap;
     gap: 15px;
-    padding:15px;
-    border-radius:20px;
-    margin: 0 auto 15px auto;
-    text-align: center;
-    display:none;
 }
 
 .vote input[type="number"]{
@@ -114,13 +112,13 @@ button:disabled{
 
 .vote input[type="submit"]{
     width:100px;
+    margin:auto;
+    padding: 10px 15px;
     background-color: var(--bg-primary);
     border-radius:15px;
     border:none;
     color:var(--font-color);
-    padding: 10px 15px;
     text-align: center;
-    margin:auto;
     cursor:pointer;
     font-family: 'Roboto';
     font-size:16px;
@@ -149,9 +147,9 @@ button:disabled{
 
     .card img:nth-child(2){
         width:20px;
+        margin-bottom:-15px;
         bottom:90px;
         left:73px;
-        margin-bottom:-15px;
     }
 
     .card p{
@@ -166,8 +164,8 @@ button:disabled{
 @media screen and (min-width: 1025px) {
     .container{
         width:700px;
-        flex-direction: row;
         padding:20px;
+        flex-direction: row;
         gap:20px;
     }
 
@@ -192,9 +190,9 @@ button:disabled{
 
     .card img:nth-child(2){
         width:25px;
+        margin-bottom:-25px;
         bottom:105px;
         left:80px;
-        margin-bottom:-25px;
     }
 
     .card p{

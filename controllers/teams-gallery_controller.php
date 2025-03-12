@@ -5,8 +5,6 @@ require_once "models/teams.php";
 require_once "models/users.php";
 require_once "models/builds.php";
 require_once "models/characters.php";
-require_once "models/weapons.php";
-require_once "models/artifacts.php";
 require_once "models/common.php";
 
 $teams = getAllTeams();
@@ -17,13 +15,9 @@ for ($i = 0; $i < count($teams); $i++){
     for($j = 0; $j < 4; $j++){
         $teamCharacters[$j] = getCharacterById($teamBuilds[$i][$j]['character_id']);
         $teamElement[$j] = getElementById(getCharacterById($teamBuilds[$i][$j]['character_id'])['element_id']);
-        $teamWeapons[$j] = getWeaponById($teamBuilds[$i][$j]['weapon_id']);
-        $teamArtifacts[$j] = getArtifactById($teamBuilds[$i][$j]['artifact_id']);
     }
     $characters[$i] = $teamCharacters;
     $elements[$i] = $teamElement;
-    $weapons[$i] = $teamWeapons;
-    $artifacts[$i] = $teamArtifacts;
 }
 
 include_once "views/teams-gallery.php";

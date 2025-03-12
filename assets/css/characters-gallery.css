@@ -11,16 +11,16 @@
 }
 
 .element label{
+    height:30px;
     display:flex;
     align-items: center;
-    height:30px;
 }
 
 .card{
-    background-color: var(--bg-primary);
     width:120px;
     height:100%;
     padding: 10px 10px;
+    background-color: var(--bg-primary);
     border-radius: 10px;
 }
 
@@ -34,11 +34,11 @@
 }
 
 .img-element{
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius:50%;
     position:relative;
     bottom:90px;
     left: 64px;
-    background-color: rgba(0, 0, 0, 0.2);
-    border-radius:50%;
 }
 
 @media screen and (min-width: 426px){

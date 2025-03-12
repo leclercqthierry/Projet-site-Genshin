@@ -1,20 +1,26 @@
 <?php
-session_start();
+if(session_status() !== PHP_SESSION_ACTIVE || session_status() === PHP_SESSION_NONE){
+    session_start();
+} 
 
-if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
+if (isset($_SESSION['role']) && ($_SESSION['role'] === 'Administrator' || $_SESSION['role'] === 'Member')){
 
     // If no form has been submitted yet.
-    if (count($_POST) === 0){
+    if (count($_POST) === 0 || isset($_POST['edit-team'])){
 
-    require_once "models/teams.php";
+        require_once "models/teams.php";
 
-    $teams = getAllTeams();
+        if (count($_POST) === 0){
+            $teams = getAllTeams();
+        } else {
+            $teams[] = getTeamById($_POST['edit-team']);
+        }
 
     include_once "views/edit-team.php";
 
     }else {
 
-        if (isset($_POST['form-name']) && $_POST['form-name'] === 'select-team-form' && isset($_POST['team'])){
+        if (isset($_POST['form-name']) && $_POST['form-name'] === 'select-team-form' && isset($_POST['team'])) {
 
             require_once "utilities/validate.php";
 
@@ -132,7 +138,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
             unset($_SESSION['oldBuildIds']);
             unset($_SESSION['teamChars']);
 
-            header('location: admin-menu');
+            header('Location: '.($_SESSION['role'] === 'Administrator' ? 'admin-menu' : 'member'));
         }
     }
 

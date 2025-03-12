@@ -14,8 +14,8 @@ form>.form-label:nth-child(4){
 }
 
 textarea{
-    resize:none;
     padding-left: 5px;
+    resize:none;
 }
 
 fieldset{

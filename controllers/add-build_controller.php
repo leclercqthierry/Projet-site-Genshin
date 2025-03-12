@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
+if (isset($_SESSION['role']) && ($_SESSION['role'] === 'Administrator' || $_SESSION['role'] === 'Member')) {
 
     // If no form has been submitted yet.
     if(!isset($_POST['form'])){
@@ -66,7 +66,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
                 unset($_SESSION['weapon_id']);
                 unset($_SESSION['artifact_id']);
 
-                header('Location: admin-menu');
+                header('Location: '.($_SESSION['role'] === 'Administrator' ? 'admin-menu' : 'member'));
             }
 
         }else{

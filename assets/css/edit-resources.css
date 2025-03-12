@@ -128,4 +128,8 @@ button[type="submit"]{
         width:500px;
         align-self: center;
     }
+
+    select:hover{
+        cursor:pointer;
+    }
 }

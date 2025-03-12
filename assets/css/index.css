@@ -4,6 +4,7 @@ main{
     display:flex;
     flex-direction: column;
     justify-content: space-evenly;
+    align-items: center;
 }
 
 .container{
@@ -17,13 +18,13 @@ main{
     gap:15px;
 }
 
+p{
+    text-align: center;
+}
+
 main ul{
     padding: 0 15px;
     margin: auto 15px;
-}
-
-p{
-    text-align: center;
 }
 
 main li{
@@ -35,7 +36,7 @@ main li{
 
     .container{
         min-height:fit-content;
-        max-width:70%;
+        max-width:610px;
     }
 
 }
@@ -43,7 +44,8 @@ main li{
 @media screen and (min-width:769px) {
 
     .container{
-        width:82.7%;
+        width:80%;
+        max-width: 1000px;
         margin:0 auto 20px auto;
     }
 }

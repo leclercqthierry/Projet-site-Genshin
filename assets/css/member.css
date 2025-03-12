@@ -1,22 +1,19 @@
 main{
-    min-height: calc(100vh - 11.77vh - 8.17vh); /* screen - header - footer */
     display:flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-}
-
-h1{
-    margin-top:20px;
+    justify-content: space-evenly;
 }
 
 .gallery{
-    margin: 0 15px 20px 15px;
+    width:330px;
+    margin-bottom:10px;
+    padding:10px;
     background-color: var(--bg-secondary);
     border-radius: 20px;
-    padding:10px;
     display: flex;
     flex-direction: column;
+    gap:10px;
 }
 
 h2{
@@ -25,31 +22,29 @@ h2{
 }
 
 .team-container{
+    padding: 15px;
     background-color: var(--bg-primary);
     border-radius: 10px;
     display:flex;
     flex-direction: column;
     align-items: center;
     gap:10px;
-    padding: 15px 5px;
-    margin:10px auto;
-    width:90vw;
 }
 
 .team{
+    margin-top:10px;
+    padding: 10px;
     display: flex;
     justify-content: space-evenly;
-    width: 280px;
     gap:3px;
     background-color: var(--bg-secondary);
-    padding: 5px;
     border-radius: 5px;
 }
 
 .card{
-    background-color: var(--bg-primary);
     width:65px;
     padding: 2px;
+    background-color: var(--bg-primary);
     border: 1px solid var(--font-color);
     display:flex;
     flex-direction: column;
@@ -59,14 +54,17 @@ h2{
     width:60px;
 }
 
+.img-container{
+    height:60px;
+}
+
 .img-element{
+    width:15px;
     position:relative;
-    bottom:43px;
-    left: 43px;
+    bottom:63px;
+    left: 22px;
     background-color: rgba(0, 0, 0, 0.2);
     border-radius:50%;
-    width:15px;
-    margin-top:-15px;
 }
 
 .rarity4{
@@ -78,37 +76,37 @@ h2{
 }
 
 p{
+    padding: 3px 0;
+    font-size:12px;
     display:flex;
     text-align: center;
     align-items: center;
     justify-content: center;
-    font-size:12px;
-    padding: 3px 0;
     flex-grow: 1;
 }
 
 .btn-container1{
+    width: 270px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 270px;
 }
 
 .btn{
+    width:100px;
+    padding: 5px 10px;
     background-color: var(--bg-secondary);
     color: var(--font-color);
-    padding: 5px 10px;
     border: none;
     border-radius: 15px;
     cursor: pointer;
-    width:100px;
 }
 
 .btn-container2{
+    width: 280px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 280px;
 }
 
 .btn-container2 .btn{
@@ -120,15 +118,22 @@ p{
 main a{
     text-decoration: none;
     text-align: center;
+    color: var(--text-color);
+    font-size:14px;
 }
+
+button:disabled{
+    opacity:0.3;
+}
+
 
 @media screen and (min-width:610px) {
     .gallery{
-        width:70%;
+        width:400px;
     }
 
-    .team-container{
-        width:90%;
+    .img-container{
+        height:75px;
     }
 
     h2{
@@ -149,8 +154,8 @@ main a{
     }
 
     .img-element{
-        bottom:60px;
-        left: 55px;
+        bottom:77px;
+        left: 26px;
         width:20px;
     }
 
@@ -165,32 +170,30 @@ main a{
 }
 
 @media screen and (min-width:1025px) {
-    main{
-        min-height: calc(85.36vh - 20px);
-    }
 
     .gallery{
+        min-width: 400px;
+        width:auto;
+        max-width:800px;
         flex-direction: row;
         flex-wrap: wrap;
-        gap:20px;
-        padding:20px;
     }
 
     .team-container{
-        flex:1;
-        margin:0 auto;
-        justify-content: space-evenly;
+        height:100%;
     }
 
-    .img-element{
-        bottom:60px;
-        left: 50px;
-        width:25px;
+    .btn{
+        transition: background-color 0.4s ease, color 0.4s ease;
     }
 
     .btn:hover{
         background-color: var(--font-color);
         color:var(--bg-secondary);
         transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    button:disabled:hover{
+        cursor: not-allowed;
     }
 }

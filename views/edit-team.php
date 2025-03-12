@@ -14,7 +14,7 @@
     <?php include "templates/header.php"; ?>
     <main>
         <h1>Edition d'une team</h1>
-        <?php if (count($_POST) === 0): ?>
+        <?php if (count($_POST) === 0 || isset($_POST['edit-team'])): ?>
         <div class="container">
             <form action="edit-team" method="post" name="select-team-form">
                 <div class="form-label">
@@ -42,7 +42,7 @@
             </form>
         </div>
             <?php endif;
-            if(isset($_POST['form-name']) && $_POST['form-name'] === 'edit-team-name' && isset($_POST['team-name'])) : ?>
+            if(isset($_POST['form-name']) && $_POST['form-name'] === 'edit-team-name'): ?>
         <div class="container" id="second-form">
             <form action="edit-team" method="post" name="edit-characters-form">
                 <h2>Choix des personnages</h2>

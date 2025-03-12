@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <?php //add-character style ?>
     <link rel="stylesheet" href="assets/css/add-build.css">
-    <title>Panneau Admin - Ajout de build de personnage</title>
+    <title><?= $_SESSION['role'] === 'Administrator' ? 'Panneau Admin' : 'Membre' ?> - Ajout de build de personnage</title>
 </head>
 <body>
     <?php include "templates/header.php"; ?>
