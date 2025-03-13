@@ -3,9 +3,9 @@
 <head>
     <meta charset='UTF-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <!--Common style-->
+    <?php // Common style ?>
     <link rel='stylesheet' href='assets/css/style.css'>
-    <!--character style-->
+    <?php // character style ?>
     <link rel='stylesheet' href='assets/css/character.css'>
     <title><?= $name ?></title>
 </head>
@@ -223,6 +223,7 @@
                 </table>
             </div>
         </div>
+        <a href="builds.php?id=<?= $id ?>" class="btn">Ses builds</a>
     </main>
     <?php include "templates/footer.php"; ?>
 </body>

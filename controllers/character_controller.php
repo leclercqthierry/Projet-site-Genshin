@@ -13,6 +13,7 @@ if (isset($_GET['id'])){
     require_once "models/common.php";
     require_once "models/resources.php";
 
+    // All datas needed to display the character characteristics
     $character = getCharacterById($id);
     $card = $character['card'];
     $name = $character['name'];

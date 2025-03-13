@@ -95,6 +95,19 @@ th{
     background-color:var(--rarity-color-5);
 }
 
+a.btn{
+    width:100px;
+    margin: 15px auto;
+    padding: 5px 10px;
+    background-color: var(--bg-secondary);
+    text-decoration: none;
+    color: var(--font-color);
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    align-self: center;
+}
+
 @media screen and (min-width:426px) {
     .container{
         width:85%;
@@ -113,7 +126,7 @@ th{
 
     .container{
         max-width:85%;
-        margin: 0 auto 50px auto;
+        margin: 0 auto auto auto;
         flex-direction: row;
         flex-wrap: wrap;
     }
@@ -147,7 +160,7 @@ th{
 
     .container{
         max-width:85%;
-        margin: 0 auto 50px auto;
+        margin: 0 auto auto auto;
         flex-direction: row;
         flex-wrap: wrap;
     }
@@ -178,5 +191,15 @@ th{
     
     p{
         margin: 15px 0;
+    }
+
+    .btn{
+        transition: background-color 0.4s ease, color 0.4s ease;
+    }
+
+    .btn:hover{
+        background-color: var(--font-color);
+        color:var(--bg-secondary);
+        transition: background-color 0.4s ease, color 0.4s ease;
     }
 }
