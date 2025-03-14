@@ -38,10 +38,10 @@ form.addEventListener('submit', (e) => {
     }
 });
 
-const forgottenPassword = document.querySelector('form a:not(.btn)');
+// const forgottenPassword = document.querySelector('form a:not(.btn)');
 
-forgottenPassword.addEventListener('click', ()=> {
-    // En attendant le back-end 
-    let email = prompt('Si vous avez oublié votre mot de passe, veuillez entrez votre pseudo:');
-    // forgottenPassword.href = `mailto:${email}?subject=Réinitialisation du mot de passe&body=Veuillez cliquer sur ce lien pour réinitialiser votre mot de passe: https://www.genshin.com/reset-password`;
-});
+// forgottenPassword.addEventListener('click', ()=> {
+     // En attendant le back-end 
+//     let email = prompt('Si vous avez oublié votre mot de passe, veuillez entrez votre pseudo:');
+     // forgottenPassword.href = `mailto:${email}?subject=Réinitialisation du mot de passe&body=Veuillez cliquer sur ce lien pour réinitialiser votre mot de passe: https://www.genshin.com/reset-password`;
+// });

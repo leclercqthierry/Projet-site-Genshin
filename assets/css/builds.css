@@ -6,6 +6,10 @@
     margin: 15px auto;
 }
 
+i {
+    max-width:80%;
+}
+
 .container{
     width:fit-content;
     max-width:290px;
