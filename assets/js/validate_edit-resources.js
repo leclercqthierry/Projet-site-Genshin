@@ -2,7 +2,7 @@
 
 const form = document.querySelector('form[name="edit-resource-form"]');
 
-const regexName = /^[a-zéèê][a-zA-Z \-éèêëàâûô']+[a-zA-Zé]$/;
+const regexName = /^[a-zéèê][a-zA-Z \-éèêëàâûôî']+[a-zA-Zé]$/;
 const errorN = "Le nom ne commence pas par un espace ni une majuscule (caractères -éèêëàûô' autorisés à l'intérieur).";
 
 if(form !== null){

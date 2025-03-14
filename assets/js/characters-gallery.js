@@ -7,6 +7,12 @@ const elements = document.getElementsByName('element');
 const select = document.querySelector('select');
 const cards = document.querySelectorAll('.card');
 
+// paragraph that will host a message if no characters is to be displayed
+const p = document.createElement('p');
+p.textContent = "Aucun personnage ne correspond à vos critères.";
+document.querySelector('.gallery').appendChild(p);
+p.style.display = 'none';
+
 // Checks the radio weapons and returns the id of the one that is checked
 function checkWeapons(){
     let id;
@@ -65,6 +71,7 @@ sortArray.forEach((sort) => {
                 }
             }
         });
+        p.style.display = raritiesChoise.length === 0 ? "block" : "none";
     });
 });
 

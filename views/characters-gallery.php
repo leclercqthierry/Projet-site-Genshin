@@ -70,6 +70,7 @@
                 <option value="element">Elément</option>
             </select>
         </div>
+        <p>Il y a actuellement un total de <?= $number ?> personnages </p>
         <?php // Characters gallery ?>
         <div class="gallery">
             <?php // Generate the gallery

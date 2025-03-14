@@ -6,6 +6,12 @@ const select = document.querySelector('select');
 const cards = document.querySelectorAll('.card');
 
 
+// paragraph that will host a message if no artifact is to be displayed
+const p = document.createElement('p');
+p.textContent = "Aucuns set d'artéfacts ne correspond à vos critères.";
+document.querySelector('.gallery').appendChild(p);
+p.style.display = 'none';
+
 // the function checks the checkbox rarity and returns the values of the ones that are checked
 function checkRarity(){
     let values = [];
@@ -28,6 +34,7 @@ rarities.forEach((rarity) => {
                 card.parentElement.style.display = 'none';
             }
         });
+        p.style.display = raritiesChoise.length === 0 ? "block" : "none";
     });
 });
 

@@ -100,7 +100,7 @@ function validateSelect($select, $errorMessage){
 function validateSimpleResource($strName, $strImage, $directory){
 
     // Validate the name
-    $regex = "/^[a-zéèê][a-zA-Z \-éèêëàâûô']+[a-zA-Zé]$/";
+    $regex = "/^[a-zéèê][a-zA-Z \-éèêëàâûôî']+[a-zA-Zé]$/";
     $errorMessage = "Le nom ne doit pas commencer par un espace ni une majuscule (caractères -éèêëàûô' autorisés à l'intérieur).";
     $name = validateTextField($strName, $regex, $errorMessage);
 
@@ -141,7 +141,7 @@ function validateSimpleResource($strName, $strImage, $directory){
  * @return array
  */
 function validateMultipleResources($names, $images, $files, $strNames, $directory){
-    $regex = "/^[a-zéèê][a-zA-Z \-éèêëàâûô']+[a-zA-Zé]$/";
+    $regex = "/^[a-zéèê][a-zA-Z \-éèêëàâûôî']+[a-zA-Zé]$/";
     $errorMessage = "Le nom ne doit pas commencer par un espace ni une majuscule (caractères -éèêëàûô' autorisés à l'intérieur).";
 
     // check if there are duplicates values

@@ -5,6 +5,12 @@ const rarities = document.querySelectorAll('main input[type=checkbox]');
 const select = document.querySelector('select');
 const cards = document.querySelectorAll('.card');
 
+// paragraph that will host a message if no weapons is to be displayed
+const p = document.createElement('p');
+p.textContent = "Aucune arme ne correspond à vos critères.";
+document.querySelector('.gallery').appendChild(p);
+p.style.display = 'none';
+
 /**
  * Checks the radio weapons and returns the id of the one that is checked
  * @returns {string}
@@ -56,6 +62,7 @@ sortArray.forEach((sort) => {
                 }
             }
         });
+        p.style.display = raritiesChoise.length === 0 ? "block" : "none";
     });
 });
 

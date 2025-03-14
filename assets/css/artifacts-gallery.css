@@ -1,3 +1,10 @@
+main{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 /* Filters / Sort CSS */
 .filters-container{
     margin:15px;
@@ -8,6 +15,10 @@
     justify-content: space-evenly;
     align-items: center;
     gap:15px;
+}
+
+.filters-container+p{
+    margin-bottom: 15px;
 }
 
 fieldset{

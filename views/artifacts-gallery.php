@@ -41,6 +41,7 @@
                 <option value="rarity">Rareté</option>
             </select>
         </div>
+        <p>Il y a actuellement un total de <?= $number ?> set d'artéfacts</p>
         <?php // Artefacts gallery ?>
         <div class="gallery">
             <?php // Generated in php

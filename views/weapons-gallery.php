@@ -61,6 +61,7 @@
                 <option value="type">Type</option>
             </select>
         </div>
+        <p>Il y a actuellement un total de <?= $number ?> armes </p>
         <?php // Weapons gallery ?>
         <div class="gallery">
             <?php // Generated in php

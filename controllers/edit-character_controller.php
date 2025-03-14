@@ -25,7 +25,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
         $character = getCharacterById($id);
 
         // Validate the character name
-        $regexName = "/^[A-Z][a-zA-Z \-éèêëàâûô']+[a-zA-Zé]$/";
+        $regexName = "/^[A-Z][a-zA-Z \-éèêëàâûôî']+[a-zA-Zé]$/";
         $errorName = "Le nom du personnage doit commencer par une majuscule et ne pas comporter de chiffres (caractères spéciaux autorisés: -, é, è, ê, ë, à, â, û, ô et ') et avoir au moins 3 lettres.";
         $name = validateTextField('name', $regexName, $errorName);
 

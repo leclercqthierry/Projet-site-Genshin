@@ -7,7 +7,7 @@
     <link rel='stylesheet' href='assets/css/style.css'>
     <?php // builds style ?>
     <link rel='stylesheet' href='assets/css/builds.css'>
-    <title>Builds pour <?= $chrName ?></title>
+    <title>Builds pour <?= $charName ?></title>
 </head>
 <body>
     <?php include "templates/header.php"; ?>

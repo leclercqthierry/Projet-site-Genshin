@@ -1,7 +1,7 @@
 // The purpose of this script is to validate the add resources form on the front side
 
 const forms = document.querySelectorAll('form');
-const regexName = /^[a-zéèê][a-zA-Z \-éèêëàâûô']+[a-zA-Zé]$/;
+const regexName = /^[a-zéèê][a-zA-Z \-éèêëàâûôî']+[a-zA-Zé]$/;
 const errorN = "Le nom ne commence pas par un espace ni une majuscule (caractères -éèêëàûô' autorisés à l'intérieur).";
 
 forms.forEach(form => {

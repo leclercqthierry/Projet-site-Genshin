@@ -84,7 +84,7 @@
                         <label for="obtaining">Obtention</label>
                         <select name="obtaining" id="obtaining">
                         <?php foreach($obtainings as $obtaining):
-                            $selected = $obtaining['obtaining_id'] === $weapon['obtaining'] ? ' selected="selected"' : ''; ?>
+                            $selected = $obtaining['obtaining_id'] === $weapon['obtaining_id'] ? ' selected="selected"' : ''; ?>
                             <option value="<?= $obtaining['obtaining_id'] ?>" <?= $selected ?>><?= $obtaining['name'] ?></option>
                         <?php endforeach; ?>
                         </select>

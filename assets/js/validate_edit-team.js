@@ -5,7 +5,7 @@ const form2 = document.querySelector('form[name="edit-characters-form"]');
 
 if(form1 !== null){
     const teamName = form.querySelector('#team-name');
-    const regexName = /^[A-Z][a-zA-Z \-éèêëàâûô']+[a-zA-Zé]$/;
+    const regexName = /^[A-Z][a-zA-Z \-éèêëàâûôî']+[a-zA-Zé]$/;
     const errorN = "Le nom doit commencer par une majuscule et ne pas comporter de chiffres (caractères spéciaux autorisés: -, é, è, ê, ë, à, â, û, ô et ') et avoir au moins 3 lettres.";
 
     const errorName = addErrorMessage(teamName, errorN);
