@@ -1,0 +1,47 @@
+services:
+  php:
+    container_name: php-container
+    image: genshinteam
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/var/www/html
+    environment:
+      XDEBUG_MODE: debug,developper
+      XDEBUG_CONFIG: remote_enable=1 remote_autostart=1
+    ports: 
+      - "80:80"
+    networks:
+      - app-network
+
+  mysql:
+    container_name: mysql-container
+    image: mysql
+    volumes:
+      - ./database:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: genshinteam
+      MYSQL_USER: Thierry
+      MYSQL_PASSWORD: Aubvu7k7
+      # MYSQL_ALLOW_EMPTY_PASSWORD: true
+    networks:
+      - app-network
+
+  phpmyadmin:
+    container_name: phpmyadmin-container
+    image: phpmyadmin
+    depends_on:
+      - mysql
+    environment:
+      PMA_HOST: mysql-container
+      PMA_USER: Thierry
+      PMA_PASSWORD: Aubvu7k7
+    ports:
+      - "8080:80"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

@@ -1,0 +1,158 @@
+:root{
+    --bg-primary: #081C15;
+    --bg-secondary: #1B4332;
+    --font-color: #DADADA;
+    --font-alternate-color: #1E1E1E;
+    --rarity-color-5:#E9AF67;
+    --rarity-color-4:#BDABD4;
+    --rarity-color-3: #009CF0;
+    --rarity-color-2: rgb(134, 250, 134);
+    --rarity-color-1: gray;
+}
+
+/* ########### Reset CSS* ########### */
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+/* ################################## */
+/* ########### Font ########### */
+@font-face {
+    font-family: "Roboto Condensed";
+    src: url(../font/RobotoCondensed-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Roboto";
+    src: url(../font/Roboto-Regular.ttf);
+}
+/* ############################# */
+/* ######### Body CSS ########## */
+body {
+    font-family: "Roboto", sans-serif;
+    font-size: 1em;
+    color: var(--font-color);
+    background-color: var(--bg-primary);
+}
+/* ########### Header ########### */
+
+#logo{
+    height:37px;
+}
+
+nav{
+    height:80px;
+    padding:15px;
+    background-color: var(--bg-secondary);
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#burger,
+#cross{
+    width:50px;
+    height:50px;
+    padding: 20px;
+    font-size:25px;
+    background-color: var(--bg-primary);
+    border-radius: 15px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*We hide:
+- the checkbox permanently
+- the cross (X) when checkbox not checked
+- the burger when checkbox checked*/
+#menu_toggle,
+#cross,
+#menu_toggle:checked ~ #burger,
+.menu{
+    display:none;
+}
+
+/* We display the menu and the character X when the checkbox is checked */
+#menu_toggle:checked ~ .menu,
+#menu_toggle:checked ~ #cross{
+    display: flex;
+}
+
+.menu{
+    width:100%;
+    background-color: var(--bg-secondary);
+    flex-direction: column;
+    align-items: center;
+    position:absolute;
+    top:80px;
+    left:0;
+    z-index: 9999;
+}
+
+.menu li{
+    width: 100%;
+    padding: 10px 0;
+    list-style: none;
+}
+
+h1{
+    margin: 20px auto;
+    font-family: "Roboto condensed";
+    text-align: center;
+}
+
+.menu a,
+footer a{
+    margin:auto;
+    text-decoration:none;
+    color: var(--font-color);
+    display: block;
+    text-align: center;
+    cursor:pointer;
+}
+/* ############################## */
+/* ###### Common main CSS ####### */
+
+main{
+    /* main min-height = 100vh - header height - footer height 
+    to have the footer always at the bottom of the page */
+    min-height: calc(100vh - 80px - 40px);
+}
+/* ########### Footer ########### */
+footer{
+    height:40px;
+    font-size:0.8em;
+    background-color: var(--bg-secondary);
+    display:flex;
+    align-items: center;
+}
+/* ############################# */
+
+@media screen and (min-width: 441px){
+
+    footer{
+        font-size: 1em;
+    }
+}
+@media screen and (min-width: 1024px) {
+    #burger,
+    #cross{
+        display: none;
+    }
+
+    .menu{
+        display:flex;
+        flex-direction: row;
+        position:static;
+    }
+
+    header a:hover{
+        transform: scale(1.1);
+    }
+
+    footer a:hover{
+        text-decoration: underline;
+    }
+}
