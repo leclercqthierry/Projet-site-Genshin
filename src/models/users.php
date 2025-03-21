@@ -4,9 +4,12 @@ require_once "models/database.php";
 
 // returns the user with the nickname $nickname and the password $password if it exists otherwise false
 /**
- * @param string $nickname, $password
+ * returns the user with the nickname $nickname and the password $password if it exists otherwise false
+ * @param string $nickname the nickname of the user
+ * @param string $password the password of the user
+ * @return array the user if it exists otherwise false 
  */
-function checkUser($nickname, $password){
+function getUser($nickname, $password){
     $pdo = getConnexion();
     try{
         $stmt = $pdo->prepare("SELECT * FROM zell_users WHERE nickname = ?");
@@ -22,7 +25,10 @@ function checkUser($nickname, $password){
 }
 
 /**
- * @param string $nickname, $email, $password
+ * Create a new user
+ * @param string $nickname the nickname of the user
+ * @param string $email the email address of the user
+ * @param string $password the hashed password of the user
  */
 function createUser($nickname, $email, $password){
     $pdo = getConnexion();
@@ -37,8 +43,9 @@ function createUser($nickname, $email, $password){
 }
 
 /**
+ * Get the user with the given id
  * @param int $id
- * @return array
+ * @return array the corresponding user
  */
 function getUserById($id){
     $pdo = getConnexion();

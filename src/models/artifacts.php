@@ -3,10 +3,11 @@
 require_once "models/database.php";
 
 /**
- * @param string $name
- * @param string $rarity
- * @param string $description
- * @param string $thumbnailPath
+ * Create a new artifact set
+ * @param string $name The name of the artifact set
+ * @param string $rarity The maximum rarity of the artifact set
+ * @param string $description The description of the artifact set
+ * @param string $thumbnailPath The path of the artifact set thumbnail file
  */
 function createArtifact($name, $rarity, $description, $thumbnailPath){
     $pdo = getConnexion();
@@ -21,6 +22,10 @@ function createArtifact($name, $rarity, $description, $thumbnailPath){
     }
 }
 
+/**
+ * Get all artifact sets
+ * @return array the list of artifact sets
+ */
 function getAllArtifacts(){
     $pdo = getConnexion();
     try{
@@ -34,7 +39,9 @@ function getAllArtifacts(){
 }
 
 /**
- * @param string $id
+ * Get the artifact with the given id
+ * @param string $id The artifact id
+ * @return array the corresponding artifact set
  */
 function getArtifactById($id){
     $pdo = getConnexion();
@@ -50,11 +57,12 @@ function getArtifactById($id){
 }
 
 /**
- * @param int $id
- * @param string $name
- * @param string $rarity
- * @param string $description
- * @param string $thumbnailPath
+ * Edit an artifact set with the given id
+ * @param int $id the artifact set id
+ * @param string $name the name of the artifact set
+ * @param string $rarity the rarity of the artifact set
+ * @param string $description  the description of the artifact set
+ * @param string $thumbnailPath the thumbnail path of the artifact set
  */
 function editArtifact($id, $name, $rarity, $description, $thumbnailPath){
     $pdo = getConnexion();
@@ -69,7 +77,8 @@ function editArtifact($id, $name, $rarity, $description, $thumbnailPath){
 }
 
 /**
- * @param int $id
+ * Delete the artifact set with the given id
+ * @param int $id the artifact set id
  */
 function deleteArtifact($id){
     $pdo = getConnexion();

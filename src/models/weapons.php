@@ -2,6 +2,9 @@
 
 require_once "models/database.php";
 
+/**
+ * Get all weapon types ordered by name in the database
+ */
 function getAllWeaponTypesOrderedByName(){
     $pdo = getConnexion();
     try{
@@ -14,6 +17,9 @@ function getAllWeaponTypesOrderedByName(){
     }
 }
 
+/**
+ * Get all weapon types ordered by id in the database
+ */
 function getAllWeaponTypesOrderedById(){
     $pdo = getConnexion();
     try{
@@ -26,6 +32,11 @@ function getAllWeaponTypesOrderedById(){
     }
 }
 
+/**
+ * Get weapon type by its id in the database
+ * @param int $id
+ * @return array the weapon type
+ */
 function getWeaponTypeById($id){
     $pdo = getConnexion();
     try{
@@ -39,6 +50,9 @@ function getWeaponTypeById($id){
     }
 }
 
+/**
+ * Get all weapons ordered by name in the database
+ */
 function getAllWeapons(){
     $pdo = getConnexion();
     try{
@@ -52,9 +66,9 @@ function getAllWeapons(){
 }
 
 /**
- * Collect all weapons of the same type
+ * Get all weapons of the same type
  * @param int $id
- * @return array
+ * @return array list of weapons of the same type
  */
 function getAllWeaponsOfType($id){
     $pdo = getConnexion();
@@ -69,6 +83,11 @@ function getAllWeaponsOfType($id){
     }
 }
 
+/**
+ * Get weapon by its id in the database
+ * @param int $id
+ * @return array the weapon
+ */
 function getWeaponById($id){
     $pdo = getConnexion();
     try{
@@ -82,6 +101,15 @@ function getWeaponById($id){
     }
 }
 
+/**
+ * Create a new weapon in the database
+ * @param string $name name of the new weapon
+ * @param int $rarity rarity of the new weapon
+ * @param string $cardPath path to the new weapon card
+ * @param string $thumbnailPath path to the new weapon thumbnail
+ * @param string $description description of the new weapon
+ * @param array $ids array of all ids needed to create the new weapon
+ */
 function createWeapon($name, $rarity, $cardPath, $thumbnailPath, $description, $ids){
     $pdo = getConnexion();
     try{
@@ -96,6 +124,16 @@ function createWeapon($name, $rarity, $cardPath, $thumbnailPath, $description, $
     }
 }
 
+/**
+ * Edit a weapon in the database
+ * @param int $id id of the weapon to edit
+ * @param string $name name of the new weapon
+ * @param int $rarity rarity of the new weapon
+ * @param string $cardPath path to the new weapon card
+ * @param string $thumbnailPath path to the new weapon thumbnail
+ * @param string $description description of the new weapon
+ * @param array $ids array of all ids needed to create the new weapon
+ */
 function editWeapon($id, $name, $rarity, $cardPath, $thumbnailPath, $description, $ids){
     $pdo = getConnexion();
     try{
@@ -109,6 +147,10 @@ function editWeapon($id, $name, $rarity, $cardPath, $thumbnailPath, $description
     }
 }
 
+/**
+ * Delete a weapon from the database
+ * @param int $id id of the weapon to delete
+ */
 function deleteWeapon($id){
     $pdo = getConnexion();
     try{

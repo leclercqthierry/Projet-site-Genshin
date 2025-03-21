@@ -4,7 +4,8 @@ require_once "models/database.php";
 
 
 /**
- * @return array
+ * Get all stats from database
+ * @return array the list of stats
  */
 function getAllStats(){
     $pdo = getConnexion();
@@ -19,8 +20,9 @@ function getAllStats(){
 }
 
 /**
- * @param int $id
- * @return array
+ * get the stat with the given id
+ * @param int $id the stat id
+ * @return array the corresponding stat
  */
 function getStatById($id){
     $pdo = getConnexion();
@@ -37,7 +39,8 @@ function getStatById($id){
 }
 
 /**
- * @return array
+ * get all farm days from database
+ * @return array the list of farm days
  */
 function getAllFarmDays(){
     $pdo = getConnexion();
@@ -52,8 +55,9 @@ function getAllFarmDays(){
 }
 
 /**
- * @param int $id
- * @return array
+ * get the farm days with the given id
+ * @param int $id the farm days id
+ * @return array the corresponding farm days
  */
 function getFarmDaysById($id){
     $pdo = getConnexion();
@@ -70,7 +74,8 @@ function getFarmDaysById($id){
 }
 
 /**
- * @return array
+ * get all elements from the database ordered by name
+ * @return array list of elements ordered by name
  */
 function getAllElementsOrderedByName(){
     $pdo = getConnexion();
@@ -85,7 +90,8 @@ function getAllElementsOrderedByName(){
 }
 
 /**
- * @return array
+ * get all elements from database ordered by id
+ * @return array the list of elements ordered by id
  */
 function getAllElementsOrderedById(){
     $pdo = getConnexion();
@@ -100,8 +106,9 @@ function getAllElementsOrderedById(){
 }
 
 /**
- * @param int $id
- * @return array
+ * get the element with the given id
+ * @param int $id the element id
+ * @return array the corresponding element
  */
 function getElementById($id){
     $pdo = getConnexion();
@@ -118,7 +125,8 @@ function getElementById($id){
 }
 
 /**
- * @return array
+ * get all obtaining means from the database
+ * @return array the list of obtaining means
  */
 function howToGet(){
     $pdo = getConnexion();
@@ -134,8 +142,9 @@ function howToGet(){
 
 
 /**
- * @param int $id
- * @return array
+ * get the obtaining mean with the given id
+ * @param int $id the obtaining mean id
+ * @return array the corresponding obtaining mean
  */
  function howToGetById($id) {
     $pdo = getConnexion();
@@ -151,8 +160,9 @@ function howToGet(){
  }
 
 /**
- * @param int $id
- * @return array
+ * Get the character jewel from the database with the given id
+ * @param int $id the character jewel id
+ * @return array the corresponding character jewel
  */
 function getCharJewelById($id){
     $pdo = getConnexion();

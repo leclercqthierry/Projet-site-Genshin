@@ -1,9 +1,13 @@
 <?php
 
 /**
- * @param string $title, $names, $images, $resource_id
- * @param array $resource
- * @return string $html
+ * Template for the simple resource form to edit
+ * @param string $title title of the resource form
+ * @param string $name name of the resource
+ * @param string $image name of the image file
+ * @param array $resource array of the resource informations
+ * @param string $resource_id id of the resource in the database
+ * @return string the template to be used with an echo
  */
 function editSimpleResourceForm($title, $name, $image, $resource, $resource_id){
     $html ='
@@ -27,9 +31,13 @@ function editSimpleResourceForm($title, $name, $image, $resource, $resource_id){
 }
 
 /**
- * @param string $controller, $title
- * @param array $names, $images
- * @return string $html
+ * Template for the multiple resources form to edit
+ * @param string $title title of the resource form
+ * @param array $names names of the resources
+ * @param array $images names of the image file
+ * @param array $resource array of the resource informations
+ * @param string $resource_id id of the resource in the database
+ * @return string the template to be used with an echo
  */
 function editMultiplesResourcesForm($title, $names, $images, $resource, $resource_id){
     $html ='

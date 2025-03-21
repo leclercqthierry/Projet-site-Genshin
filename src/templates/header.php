@@ -22,15 +22,18 @@
             <li>
                 <a href="teams-gallery">Galerie teams</a>
             </li>
-            <?php
-                if (isset($_SESSION['role'])){
-                    $link = ($_SESSION['role'] === 'Member') ? '<li><a href="member">Mes Teams</a></li>' : '<li><a href="admin-menu">Admin Menu</a></li>';
-                    $link .= '<li><a href="deconnect">Déconnexion</a></li>';
-                    echo $link;                    
-                }else {
-                    echo '<li><a href="login">Se connecter</a></li>';
-                }
-            ?>
+        <?php if (isset($_SESSION['role'])): ?>
+            <li>
+                <a <?= $_SESSION['role'] === 'Member' ? "href='Member'>Mes Teams" : "href='admin-menu'>Admin Menu" ?>></a>
+            </li>
+            <li>
+                <a href="deconnect">Déconnexion</a>
+            </li>                  
+        <?php else: ?>
+            <li>
+                <a href="login">Se connecter</a>
+            </li>
+        <?php endif; ?>
         </ul>
         <label for="menu_toggle" id="cross">X</label>
     </nav>

@@ -1,10 +1,12 @@
 <?php
 
 /**
- * @param string $filename
- * @param string $regex
- * @param string $errorMessage
- * @return string
+ * Validates a text field
+ * @param string $fieldname the name of the field to be validated
+ * @param string $regex the regular expression to match against
+ * @param string $errorMessage the error message
+ * @throws exception with the error message
+ * @return string the validated field
  */
 function validateTextField($fieldName, $regex, $errorMessage){
     try{
@@ -20,13 +22,12 @@ function validateTextField($fieldName, $regex, $errorMessage){
         exit;
     }
     return $field;
-}
-
-// file validation function
+} 
 
 /**
- * @param string $filename
- * @return true
+ * File validation function
+ * @param string $filename the name of the field to be validated
+ * @return true if the file is valid
  */
 function validateFile($fileName){
     if ($_FILES[$fileName]['size'] === 0){
@@ -51,8 +52,9 @@ function validateFile($fileName){
 }
 
 /**
- * @param string $filename
- * @return true
+ * File validation function when editing
+ * @param string $filename the name of the file to be validated
+ * @return true if validation succeeded
  */
 function validateEditFile($fileName){
     if ($_FILES[$fileName] === null){
@@ -77,8 +79,9 @@ function validateEditFile($fileName){
 }
 
 /**
- * @param string $select
- * @param string $errorMessage
+ * Validation function of a select, here we verify if the value is a number
+ * @param string $select the value of the select that was submitted
+ * @param string $errorMessage the error message
  * @return int
  */
 function validateSelect($select, $errorMessage){
@@ -87,15 +90,16 @@ function validateSelect($select, $errorMessage){
         require_once "views/error.php";
         exit;
     } else {
-        return $_POST[$select];
+        return (int)$_POST[$select];
     }
 }
 
 /**
- * @param string $strName
- * @param string $strImage
- * @param string $directory
- * @return array
+ * Validates data submitted by a simple resource form
+ * @param string $strName the name of the resource to validate
+ * @param string $strImage the image of the image to validate
+ * @param string $directory the directory where the image will be saved
+ * @return array the array that contains the validated name and directory
  */
 function validateSimpleResource($strName, $strImage, $directory){
 
@@ -133,12 +137,13 @@ function validateSimpleResource($strName, $strImage, $directory){
 }
 
 /** 
- * @param array $names
- * @param array $images
- * @param array $files
- * @param array $strNames
- * @param string $directory
- * @return array
+ * Validates data submitted by a multiple resources form
+ * @param array $names an array of names of the resources
+ * @param array $images an array of filenames of the images
+ * @param array $files the files to upload
+ * @param array $strNames the names of the text fields in the form
+ * @param string $directory the directory where the images will be saved
+ * @return array an array of the names of the resources validated and the paths of the images to save
  */
 function validateMultipleResources($names, $images, $files, $strNames, $directory){
     $regex = "/^[a-zéèê][a-zA-Z \-éèêëàâûôî']+[a-zA-Zé]$/";
@@ -193,17 +198,17 @@ function validateMultipleResources($names, $images, $files, $strNames, $director
     for ($i = 0; $i < count($images); $i++) {
         move_uploaded_file($_FILES[$images[$i]]['tmp_name'], $imagePaths[$i]);
     }
-    // header("Location: admin-menu");
 
     return array_merge($names, $imagePaths);
 }
 
 /**
- * @param string $strName
- * @param string $strImage
- * @param string $directory
- * @param array $resource
- * @return array
+ * Validates data submitted by a simple resource form when editing
+ * @param string $strName the name of the text field to be validated
+ * @param string $strImage the name of the image to be validated
+ * @param string $directory the directory where the image should be saved
+ * @param array $resource an array witch contains the resource informations
+ * @return array an array of the name of the resource and the file path of the image corresponding
  */
 function validateEditSimpleResource($strName, $strImage, $directory, $resource){
 
@@ -237,13 +242,14 @@ function validateEditSimpleResource($strName, $strImage, $directory, $resource){
 }
 
 /** 
- * @param array $names
- * @param array $images
- * @param array $files
- * @param array $strNames
- * @param string $directory
- * @param array $resource
- * @return array
+ * Validates data submitted by a multiple resources form when editing
+ * @param array $names an array of names of the resources
+ * @param array $images an array of filenames of the images
+ * @param array $files the files to upload
+ * @param array $strNames the names of the text fields in the form
+ * @param string $directory the directory where the images will be saved
+ * @param array $resource an array witch contains the resource informations
+ * @return array an array of the names of the resources validated and the paths of the images to save
  */
 function validateEditMultipleResources($names, $images, $files, $strNames, $directory, $resource){
     $regex = "/^[a-zéèê][a-zA-Z \-éèêëàâûô']+[a-zA-Zé]$/";
@@ -317,6 +323,11 @@ function validateEditMultipleResources($names, $images, $files, $strNames, $dire
     return array_merge($names, $imagePaths);
 }
 
+/**
+ * Determines whether a file is empty or not
+ * @param string $file the file name
+ * @return boolean whether the file is empty or not
+ */
 function fileEmpty($file){
     return $_FILES[$file]['size'] === 0;
 }

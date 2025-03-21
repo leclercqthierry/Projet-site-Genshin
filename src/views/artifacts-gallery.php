@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <?php // Artifact gallery style ?>
     <link rel="stylesheet" href="assets/css/artifacts-gallery.css">
-    <title>Gallerie d'artefacts</title>
+    <title>Galerie d'artefacts</title>
 </head>
 <body>
     <?php include "templates/header.php"; ?>
     <main>
-        <h1>Gallerie d'artéfacts</h1>
+        <h1>Galerie d'artéfacts</h1>
         <?php // Filter/Sort Elements ?>
         <div class="filters-container">
             <fieldset class="rarity-container">

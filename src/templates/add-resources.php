@@ -1,8 +1,11 @@
 <?php
 
 /**
- * @param string $title, $names, $images
- * @return string $html
+ * Template for the simple resource form to add
+ * @param string $title title of the resource form
+ * @param string $name name of the resource
+ * @param string $image name of the image file
+ * @return string the template to be used with an echo
  */
 function addSimpleResourceForm($title, $name, $image){
     $html ='
@@ -27,9 +30,11 @@ function addSimpleResourceForm($title, $name, $image){
 }
 
 /**
- * @param string $controller, $title
- * @param array $names, $images
- * @return string $html
+ * Template for the multiple resources form to add
+ * @param string $title title of the resource form
+ * @param array $names names of the resources
+ * @param array $images names of the image files
+ * @return string the template to be used with an echo
  */
 function addMultiplesResourcesForm($title, $names, $images){
     $html ='

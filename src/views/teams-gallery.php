@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <?php // teams gallery style ?>
     <link rel="stylesheet" href="assets/css/teams-gallery.css">
-    <title>Gallerie de teams</title>
+    <title>Galerie de teams</title>
 </head>
 <body>
     <?php include "templates/header.php"; ?>
     <main>
-        <h1>Gallerie de teams</h1>
+        <h1>Galerie de teams</h1>
         <div class="search">
             <input type="search" placeholder="Par personnage">
             <img src="assets/img/icons/chercher.png" class="search-icon" alt="chercher">

@@ -4,6 +4,10 @@ require_once "models/database.php";
 
 ################# GET #################
 
+/**
+ * Get all boss drops from the database
+ * @return array the list of boss drops
+ */
 function getAllBossDrops(){
     $pdo = getConnexion();
     try{
@@ -16,6 +20,10 @@ function getAllBossDrops(){
     }
 }
 
+/**
+ * Get the boss drop with the given id
+ * @return array the corresponding boss drop
+ */
 function getBossDropById($id){
     $pdo = getConnexion();
     try{
@@ -30,6 +38,10 @@ function getBossDropById($id){
     }
 }
 
+/**
+ * Get all Local Materials from the database
+ * @return array the list of local materials
+ */
 function getAllLocalMaterials() {
     $pdo = getConnexion();
     try {
@@ -42,6 +54,10 @@ function getAllLocalMaterials() {
     }
 }
 
+/**
+ * Get the local material with the given id
+ * @return array the corresponding local material
+ */
 function getLocalMaterialById($id) {
     $pdo = getConnexion();
     try {
@@ -56,6 +72,10 @@ function getLocalMaterialById($id) {
     }
 }
 
+/**
+ * Get all World boss drops from the database
+ * @return array the list of the world boss drops
+ */
 function getAllWorldBossDrops() {
     $pdo = getConnexion();
     try {
@@ -68,6 +88,10 @@ function getAllWorldBossDrops() {
     }
 }
 
+/**
+ * Get the world boss drop with the given id
+ * @return array the corresponding world boss drop
+ */
 function getWorldBossDropById($id) {
     $pdo = getConnexion();
     try {
@@ -82,6 +106,10 @@ function getWorldBossDropById($id) {
     }
 }
 
+/**
+ * Get all Dungeon materials from the database
+ * @return array the list of the dungeon materials
+ */
 function getAllDjMaterials() {
     $pdo = getConnexion();
     try {
@@ -94,6 +122,10 @@ function getAllDjMaterials() {
     } 
 }
 
+/**
+ * Get the dungeon material with the given id
+ * @return array the corresponding dungeon material
+ */
 function getDjMaterialsById($id) {
     $pdo = getConnexion();
     try {
@@ -108,6 +140,10 @@ function getDjMaterialsById($id) {
     }
 }
 
+/**
+ * Get all Mob materials from the database
+ * @return array the list of the mob materials
+ */
 function getAllMobMaterials() {
     $pdo = getConnexion();
     try {
@@ -120,6 +156,10 @@ function getAllMobMaterials() {
     }
 }
 
+/**
+ * Get the mob material with the given id
+ * @return array the corresponding mob material
+ */
 function getMobMaterialsById($id) {
     $pdo = getConnexion();
     try {
@@ -134,6 +174,10 @@ function getMobMaterialsById($id) {
     }
 }
 
+/**
+ * Get all elevation materials from the database
+ * @return array the list of elevation materials
+ */
 function getAllElevationMaterials(){
     $pdo = getConnexion();
     try{
@@ -147,6 +191,10 @@ function getAllElevationMaterials(){
     }
 }
 
+/**
+ * Get the elevation material with the given id
+ * @return array the corresponding elevation material
+ */
 function getElevationMaterialsById($id){
     $pdo = getConnexion();
     try{
@@ -162,6 +210,10 @@ function getElevationMaterialsById($id){
     }
 }
 
+/**
+ * Get all Dungeon elevation materials from the database
+ * @return array the list of Dungeon elevation materials
+ */
 function getAllDjElevationMaterials(){
     $pdo = getConnexion();
     try{
@@ -175,6 +227,10 @@ function getAllDjElevationMaterials(){
     }
 }
 
+/**
+ * Get the Dungeon elevation material with the given id
+ * @return array the corresponding Dungeon elevation material
+ */
 function getDjElevationMaterialsById($id){
     $pdo = getConnexion();
     try{
@@ -193,7 +249,8 @@ function getDjElevationMaterialsById($id){
 ################# CREATE #################
 
 /**
- * @param array $data
+ * Create a new Dungeon drop
+ * @param array $data the data to create the new dungeon drop
  */
 function createDjDrop($data){
     $pdo = getConnexion();
@@ -208,7 +265,8 @@ function createDjDrop($data){
 }
 
 /**
- * @param array $data
+ * Create a new boss drop
+ * @param array $data the data to create the new boss drop
  */
 function createBossDrop($data){
     $pdo = getConnexion();
@@ -223,7 +281,8 @@ function createBossDrop($data){
 }
 
 /**
- * @param array $data
+ * Create a new dungeon weapon drop
+ * @param array $data the data to create the new dungeon weapon drop
  */
 function createDjWeaponDrop($data){
     $pdo = getConnexion();
@@ -238,7 +297,8 @@ function createDjWeaponDrop($data){
 }
 
 /**
- * @param array $data
+ * Create a new elevation drop
+ * @param array $data the data to create the new elevation drop
  */
 function createElevationDrop($data){
     $pdo = getConnexion();
@@ -253,7 +313,8 @@ function createElevationDrop($data){
 }
 
 /**
- * @param array $data
+ * Create a new local material
+ * @param array $data the data to create the new local material
  */
 function createLocalMaterial($data){
     $pdo = getConnexion();
@@ -268,7 +329,8 @@ function createLocalMaterial($data){
 }
 
 /**
- * @param array $data
+ * Create a new mob material
+ * @param array $data the data to create the new mob materials
  */
 function createMobMaterials($data){
     $pdo = getConnexion();
@@ -283,7 +345,8 @@ function createMobMaterials($data){
 }
 
 /**
- * @param array $data
+ * Create a new World boss drop
+ * @param array $data the data to create the new world boss drop
  */
 function createWorldBossDrop($data){
     $pdo = getConnexion();
@@ -300,8 +363,9 @@ function createWorldBossDrop($data){
 ################# UPDATE #################
 
 /**
- * @param int $id
- * @param array $data
+ * Edit the boss drop with the id
+ * @param int $id the boss drop id
+ * @param array $data the new boss drop data
  */
 function editBossDrop($id, $data){
     $pdo = getConnexion();
@@ -317,8 +381,9 @@ function editBossDrop($id, $data){
 }
 
 /**
- * @param int $id
- * @param array $data
+ * Edit the local material with the given id
+ * @param int $id the local material id
+ * @param array $data the new local material data
  */
 function editLocalMaterial($id, $data){
     $pdo = getConnexion();
@@ -334,8 +399,9 @@ function editLocalMaterial($id, $data){
 }
 
 /**
- * @param int $id
- * @param array $data
+ * Edit the world boss drop with the given id
+ * @param int $id the boss drop id
+ * @param array $data the new boss drop data
  */
 function editWorldBossDrop($id, $data){
     $pdo = getConnexion();
@@ -351,8 +417,9 @@ function editWorldBossDrop($id, $data){
 }
 
 /**
- * @param int $id
- * @param array $data
+ * Edit the Mob material with the given id
+ * @param int $id the mob material id
+ * @param array $data the new mob material data
  */
 function editMobMaterials($id, $data){
     $pdo = getConnexion();
@@ -368,8 +435,9 @@ function editMobMaterials($id, $data){
 }
 
 /**
- * @param int $id
- * @param array $data
+ * Edit the dungeon materials with the given id
+ * @param int $id the dungeon materials id
+ * @param array $data the new dungeon materials data
  */
 function editDjMaterials($id, $data){
     $pdo = getConnexion();
@@ -385,8 +453,9 @@ function editDjMaterials($id, $data){
 }
 
 /**
- * @param int $id
- * @param array $data
+ * Edit the elevation materials with the given id
+ * @param int $id the elevation  materials id
+ * @param array $data the new elevation materials data
  */
 function editElevationMaterials($id, $data){
     $pdo = getConnexion();
@@ -402,8 +471,9 @@ function editElevationMaterials($id, $data){
 }
 
 /**
- * @param int $id
- * @param array $data
+ * Edit a dungeon elevation materials with the given id
+ * @param int $id the dungeon elevation materials id
+ * @param array $data the new dungeon elevation materials data
  */
 function editDjElevationMaterials($id, $data){
     $pdo = getConnexion();
@@ -421,7 +491,8 @@ function editDjElevationMaterials($id, $data){
 ################# DELETE #################
 
 /**
- * @param int $id
+ * Delete the boss drop from the database with the given id 
+ * @param int $id the boss drop id
  */
 function deleteBossDrop($id){
     $pdo = getConnexion();
@@ -436,7 +507,8 @@ function deleteBossDrop($id){
 }
 
 /**
- * @param int $id
+ * Delete the local material from the database with the given id 
+ * @param int $id the local material id
  */
 function deleteLocalMaterial($id){
     $pdo = getConnexion();
@@ -451,7 +523,8 @@ function deleteLocalMaterial($id){
 }
 
 /**
- * @param int $id
+ * Delete the world boss drop from the database with the given id 
+ * @param int $id the world boss drop id
  */
 function deleteWorldBossDrop($id){
     $pdo = getConnexion();
@@ -466,7 +539,8 @@ function deleteWorldBossDrop($id){
 }
 
 /**
- * @param int $id
+ * Delete the mob materials from the database with the given id 
+ * @param int $id the mob materials id
  */
 function deleteMobMaterials($id){
     $pdo = getConnexion();
@@ -481,7 +555,8 @@ function deleteMobMaterials($id){
 }
 
 /**
- * @param int $id
+ * Delete the dungeon materials from the database with the given id 
+ * @param int $id the dungeon material id
  */
 function deleteDjMaterials($id){
     $pdo = getConnexion();
@@ -496,7 +571,8 @@ function deleteDjMaterials($id){
 }
 
 /**
- * @param int $id
+ * Delete the elevation materials from the database with the given id 
+ * @param int $id the elevation materials id
  */
 function deleteElevationMaterials($id){
     $pdo = getConnexion();
@@ -511,7 +587,8 @@ function deleteElevationMaterials($id){
 }
 
 /**
- * @param int $id
+ * Delete the dungeon elevation materials from the database with the given id 
+ * @param int $id the dungeon elevation materials id
  */
 function deleteDjElevationMaterials($id){
     $pdo = getConnexion();

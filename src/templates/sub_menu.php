@@ -1,7 +1,10 @@
 <?php
 
 /**
- * @param string $title, $action
+ * Admin side submenu template
+ * @param string $title title of the menu section
+ * @param string $action action to perform when selected
+ * @return string template to be used with an echo
  */
 function subMenu($title, $action){
     $html = '

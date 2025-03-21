@@ -1,6 +1,8 @@
 <?php
 
-// Database connection
+/**
+ * Database connexion
+ */
 function getConnexion() {
     try {
         $dsn = "mysql:host=mysql-container;dbname=genshinteam;charset=utf8";
@@ -17,10 +19,11 @@ function getConnexion() {
 }
 
 /**
- * @param string $table
- * @param string $col
- * @param string $value
- * @return array
+ * Get the element in the given table, in the given column with the given value
+ * @param string $table the table name
+ * @param string $col the column name
+ * @param string $value the value
+ * @return array the element
  */
 // Check in $table if $value exists in $col
 function checkExist($table, $col, $value){

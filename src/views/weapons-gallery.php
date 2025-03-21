@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="assets/css/gallery-common-style.css">
     <?php // Weapons gallery style ?>
     <link rel="stylesheet" href="assets/css/weapons-gallery.css">
-    <title>Gallerie d'armes</title>
+    <title>Galerie d'armes</title>
 </head>
 <body>
     <?php include "templates/header.php"; ?>
     <main>
-        <h1>Gallerie d'armes</h1>
+        <h1>Galerie d'armes</h1>
         <?php // Filter/Sort Elements ?>
         <div class="filters-container">
             <div class="weapons-rarity-container">

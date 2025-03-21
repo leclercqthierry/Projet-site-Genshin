@@ -9,12 +9,12 @@
     <link rel="stylesheet" href="assets/css/gallery-common-style.css">
     <?php // characters gallery style ?>
     <link rel="stylesheet" href="assets/css/characters-gallery.css">
-    <title>Gallerie de personnages</title>
+    <title>Galerie de personnages</title>
 </head>
 <body>
     <?php include "templates/header.php";?>
     <main>
-        <h1>Gallerie de personnages</h1>
+        <h1>Galerie de personnages</h1>
         <?php // Filter/Sort Elements ?>
         <div class="filters-container">
             <div class="weapons-rarity-container">

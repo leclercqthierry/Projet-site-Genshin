@@ -3,10 +3,11 @@
 require_once "models/database.php";
 
 /**
- * @param int $charId
- * @param int $weaponId
- * @param int $artifactId
- * @return array
+ * Get a specific build from the database
+ * @param int $charId the character id
+ * @param int $weaponId the weapon id
+ * @param int $artifactId the artifact id
+ * @return array the corresponding build
  */
 function getBuild($charId, $weaponId, $artifactId){
     $pdo = getConnexion();
@@ -22,8 +23,9 @@ function getBuild($charId, $weaponId, $artifactId){
 }
 
 /**
- * @param int $teamId
- * @return array
+ * get all builds of a team with the given team id
+ * @param int $teamId the team id
+ * @return array all corresponding builds (4)
  */
 function getBuildsByTeamId($teamId){
     $pdo = getConnexion();
@@ -39,9 +41,11 @@ function getBuildsByTeamId($teamId){
 }
 
 /**
- * @param int $charId
- * @param int $weaponId
- * @param int $artifactId
+ * create a new build
+ * @param int $charId The character id
+ * @param int $weaponId the weapon id
+ * @param int $artifactId the artifact id
+ * @param int $userId the user id of the creator
  */
 function createBuild($charId, $weaponId, $artifactId, $userId){
     $pdo = getConnexion();
@@ -56,8 +60,9 @@ function createBuild($charId, $weaponId, $artifactId, $userId){
 }
 
 /**
- * @param int $characterId
- * @return array
+ * Get all builds by a character id
+ * @param int $characterId the character id
+ * @return array all corresponding builds
  */
 function getAllBuildsByCharacterId($characterId){
     $pdo = getConnexion();
@@ -73,10 +78,11 @@ function getAllBuildsByCharacterId($characterId){
 }
 
 /**
- * @param int $characterId
- * @param int $weaponId
- * @param int $artifactId
- * @param int $buildId
+ * Edit the build with the given build id
+ * @param int $characterId the new character id
+ * @param int $weaponId the new weapon id
+ * @param int $artifactId the new artifact id
+ * @param int $buildId the given build id
  */
 function editBuild($characterId, $weaponId, $artifactId, $buildId){
     $pdo = getConnexion();
@@ -91,7 +97,8 @@ function editBuild($characterId, $weaponId, $artifactId, $buildId){
 }
 
 /**
- * @param int $buildId
+ * Delete the build with the given id
+ * @param int $buildId the build id
  */
  function deleteBuild($buildId){
     $pdo = getConnexion();

@@ -3,9 +3,10 @@
 require_once "models/database.php";
 
 /**
- * @param string $teamName
- * @param $array $buildIds
- * @param int $userId
+ * Create a new team
+ * @param string $teamName the name of the team
+ * @param $array $buildIds the builds needed to create the team
+ * @param int $userId the user id
  */
 function createTeam($teamName, $buildIds, $userId){
     $pdo = getConnexion();
@@ -25,7 +26,8 @@ function createTeam($teamName, $buildIds, $userId){
 }
 
 /**
- * @return array
+ * Get all teams from the database
+ * @return array list of teams
  */
 function getAllTeams(){
     $pdo = getConnexion();
@@ -40,8 +42,9 @@ function getAllTeams(){
 }
 
 /**
- * @param int $teamId
- * @return array
+ * Get the team with the given id
+ * @param int $teamId the team id
+ * @return array the team
  */
 function getTeamById($teamId){
     $pdo = getConnexion();
@@ -57,8 +60,9 @@ function getTeamById($teamId){
 }
 
 /**
- * @param int $userId
- * @return array
+ * Get all the teams created by the user with the given id
+ * @param int $userId the user id
+ * @return array the teams created by the user
  */
 function getAllUserTeams($userId){
     $pdo = getConnexion();
@@ -74,10 +78,11 @@ function getAllUserTeams($userId){
 }
 
 /**
- * @param string $teamName
- * @param array $oldBuildIds
- * @param array $newBuildIds
- * @param int $teamId
+ * Editing the team with the given id
+ * @param string $teamName the name of the team
+ * @param array $oldBuildIds the old build IDs of the team
+ * @param array $newBuildIds the new build IDs of the team
+ * @param int $teamId the team id
  */
 function editTeam($teamName, $oldBuildIds, $newBuildIds, $teamId){
     $pdo = getConnexion();
@@ -100,7 +105,8 @@ function editTeam($teamName, $oldBuildIds, $newBuildIds, $teamId){
 }
 
 /**
- * @param int $teamId
+ * Delete a team from the database with the given id
+ * @param int $teamId the team id
  */
  function deleteTeam($teamId){
     $pdo = getConnexion();
