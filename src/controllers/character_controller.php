@@ -15,7 +15,7 @@ if (isset($_GET['id'])){
 
     // All datas needed to display the character characteristics
     $character = getCharacterById($id);
-    $card = $character['card'];
+    $card = substr($character['card'],0,strlen($character['card'])-5);
     $name = $character['name'];
     $rarity = $character['rarity'];
     $element = getElementById($character['element_id'])['name'];

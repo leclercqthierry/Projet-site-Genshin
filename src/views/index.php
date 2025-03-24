@@ -3,10 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" href="assets/css/style.css" as="style">
+    <link rel="preload" href="assets/css/index.css" as="style">
     <?php // Common style ?>
     <link rel="stylesheet" href="assets/css/style.css">
     <?php // Specific style ?>
     <link rel="stylesheet" href="assets/css/index.css">
+    <meta name="description" content="Vous trouverez sur Genshin Team des équipes créés et partagées par la communauté pour vous faciliter la vie en jeu, ainsi que des fiches détaillées pour monter vos personnages favoris ainsi que leurs armes, leurs sets de prédilection, ainsi que leur(s) builds(s).">
     <title>Accueil</title>
 </head>
 <body>

@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <?php // artefact style ?>
     <link rel="stylesheet" href="assets/css/artifact.css">
+    <meta name="description" content="Fiche descriptive du set d'artéfact: <?= $name ?> avec ses bonus 2 et 4 pièces.">
     <title><?= $name ?></title>
 </head>
 <body>
     <?php include "templates/header.php"; ?>
     <main>
-        <h1>Fiche de set d'artefact</h1>
+        <h1>Fiche du set d'artefact: <?= $name ?></h1>
         <div class="container">
             <div>
                 <img src='<?= $image ?>' alt='<?= $name ?>' class="rarity<?= $rarity ?>">

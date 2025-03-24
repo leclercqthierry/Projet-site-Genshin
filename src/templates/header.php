@@ -3,7 +3,7 @@
     <nav>
         <!--Logo-->
         <a href="index">
-            <img src="assets/img/Logo.webp" alt="Accueil" id="logo">
+            <img src="assets/img/Logo.webp" alt="Accueil" id="logo" height="37">
         </a>
         <!--Menu toggle-->
         <input type="checkbox" id="menu_toggle">
@@ -24,7 +24,7 @@
             </li>
         <?php if (isset($_SESSION['role'])): ?>
             <li>
-                <a <?= $_SESSION['role'] === 'Member' ? "href='Member'>Mes Teams" : "href='admin-menu'>Admin Menu" ?>></a>
+                <a <?= $_SESSION['role'] === 'Member' ? "href='Member'" : "href='admin-menu'" ?>><?= $_SESSION['role'] === 'Member' ? "Mes Teams" : "Admin Menu" ?></a>
             </li>
             <li>
                 <a href="deconnect">Déconnexion</a>

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/gallery-common-style.css">
     <?php // characters gallery style ?>
     <link rel="stylesheet" href="assets/css/characters-gallery.css">
+    <meta name="description" content="Galerie présentant les <?= $number ?> personnages actuellement en jeu et pour laquelle une fiche individuelle est proposée. ">
     <title>Galerie de personnages</title>
 </head>
 <body>
@@ -64,13 +65,13 @@
                     <input type="radio" name="element" id="all-elements" checked>
                 </div>
             </fieldset>
-            <select name="sort" id="sort">
+            <select name="sort" id="sort" aria-label="Triez par:">
                 <option value="alphabetic-order">Ordre alphabétique</option>
                 <option value="rarity">Rareté</option>
                 <option value="element">Elément</option>
             </select>
         </div>
-        <p>Il y a actuellement un total de <?= $number ?> personnages </p>
+        <p>Il y a actuellement un total de <?= $number ?> personnages en jeu.</p>
         <?php // Characters gallery ?>
         <div class="gallery">
             <?php // Generate the gallery
@@ -78,14 +79,15 @@
                 foreach ($elements as $element){
                     if ($element['element_id'] === $character['element_id']){
                         $character_element_image = $element['image'];
+                        $alt_element = $element['name'];
                     }
                 }
             ?>
                 <a href='character.php?id=<?= $character['character_id'] ?>'>
                     <div class='card' data-rarity="<?= $character['rarity'] ?>" data-weapon="<?= getWeaponTypeById($character['weapon_type_id'])['type'] ?>" data-element="<?= getElementById($character['element_id'])['name'] ?>">
                         <div class='img-container'>
-                            <img src="<?= $character['image'] ?>" alt="<?= $character['name'] ?>" class='rarity<?=$character['rarity'] ?> character' width="100" height="100">
-                            <img src="<?= $character_element_image ?>" class='img-element'>
+                            <img src="<?= $character['image'] ?>" alt="Personnage <?= $character['name'] ?>" class='rarity<?=$character['rarity'] ?> character' width="100" height="100">
+                            <img src="<?= $character_element_image ?>" class='img-element' alt="<?= $alt_element ?>">
                         </div>
                         <strong><?= $character['name'] ?></strong>
                     </div>

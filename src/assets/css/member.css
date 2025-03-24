@@ -145,6 +145,10 @@ button:disabled{
         width:350px;
     }
 
+    .team{
+        height: 126px;
+    }
+    
     .card{
         width:80px;
     }

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <?php // Specific style ?>
     <link rel="stylesheet" href="assets/css/admin-menu.css">
+    <meta name="robots" content="noindex,nofollow">
     <title>Panneau Admin - Menu</title>
 </head>
 <body>

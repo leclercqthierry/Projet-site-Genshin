@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <?php // Artifact gallery style ?>
     <link rel="stylesheet" href="assets/css/artifacts-gallery.css">
+    <meta name="description" content="Galerie de l'ensemble des sets d'artéfacts du jeu (<?= $number ?>). Chaque set possède sa propre fiche descriptive.">
     <title>Galerie d'artefacts</title>
 </head>
 <body>
@@ -36,7 +37,7 @@
                     <input type="checkbox" name="rarity5" id="rarity5" value="5" checked>
                 </div>
             </fieldset>
-            <select name="sort" id="sort">
+            <select name="sort" id="sort" aria-label="Triez par:">
                 <option value="alphabetic-order">Ordre alphabétique</option>
                 <option value="rarity">Rareté</option>
             </select>

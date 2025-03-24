@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/login.css">
     <?php // Specific style ?>
     <link rel="stylesheet" href="assets/css/register.css">
+    <meta name="description" content="Formulaire d'enregistrement afin de devenir membre du site et pouvoir créer vos builds et teams/équipes personnelles">
     <title>S'inscrire</title>
 </head>
 <body>

@@ -109,10 +109,16 @@ th{
     .sub-container p{
         width:70vw;
     }
+
+    .container{
+        width:85%;
+        margin:0 auto 25px auto;
+    }
 }
 
 @media screen and (min-width:769px) {
     .container{
+        max-width:85%;
         padding:30px;
         flex-direction: row;
         flex-wrap: wrap;

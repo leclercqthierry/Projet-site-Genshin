@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <?php // weapon style ?>
     <link rel="stylesheet" href="assets/css/weapon.css">
+    <meta name="description" content="Fiche détaillée de l'arme <?= $name ?> avec son coût d'élévation.">
     <title><?= $name ?></title>
 </head>
 <body>
     <?php include "templates/header.php"; ?>
     <main>
-        <h1>Fiche Arme</h1>
+        <h1>Fiche Arme: <?= $name ?></h1>
         <div class="container">
             <div class="img-description">
                 <img src='<?= $card ?>' alt='<?= $name ?>' class="rarity<?= $rarity ?>">

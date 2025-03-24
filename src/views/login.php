@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <?php // Specific style ?>
     <link rel="stylesheet" href="assets/css/login.css">
+    <meta name="description" content="Formulaire de connexion pour entrer vos identifiants afin d'accéder à votre page de membre du site. ">
     <title>Se connecter</title>
 </head>
 <body>
@@ -22,7 +23,7 @@
                 <label for="password">mot de passe</label>
                 <input type="password" id="password" name="password" placeholder="********">
             </div>
-            <a href="#">mot de passe oublié</a>
+            <a href="#" aria-disabled="true">mot de passe oublié</a>
             <div class="btn-container">
                 <a href="register" class="btn">S'inscrire</a>
                 <button type="submit" class="btn">Valider</button>

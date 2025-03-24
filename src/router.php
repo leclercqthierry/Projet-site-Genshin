@@ -24,6 +24,9 @@ if ($path === '/' || $path === '/index'){
 }else if ($path === '/builds.php'){
 
     require_once "controllers/builds_controller.php";
+}else if ($path === '/robots.txt'){
+
+    include_once "robots.txt";
 }else {
 
     // we retrieve the name of the route to determine its controller

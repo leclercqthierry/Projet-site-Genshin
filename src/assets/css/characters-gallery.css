@@ -36,9 +36,14 @@
 .img-element{
     background-color: rgba(0, 0, 0, 0.2);
     border-radius:50%;
+    width:30px;
     position:relative;
     bottom:90px;
     left: 64px;
+}
+
+p{
+    margin-bottom: 15px;
 }
 
 @media screen and (min-width: 426px){

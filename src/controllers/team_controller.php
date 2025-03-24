@@ -1,10 +1,11 @@
 <?php
 session_start();
 
-if (isset($_GET['id'])){
+if (isset($_GET['id']) && isset($_GET['author'])){
 
-    $id = $_GET['id'];
-    if (!is_numeric($id)){
+    $teamId = $_GET['id'];
+    $author = htmlspecialchars($_GET['author']);
+    if (!is_numeric($teamId)){
         header('Location: 404');
         exit;
     }
@@ -17,8 +18,8 @@ if (isset($_GET['id'])){
     require_once "models/common.php";
 
     // We start by getting the team and builds using the id
-    $team = getTeamById($id);
-    $builds = getBuildsByTeamId($id);
+    $team = getTeamById($teamId);
+    $builds = getBuildsByTeamId($teamId);
 
 
     // From the builds we get the characters, weapons and artifacts

@@ -21,11 +21,13 @@
 @font-face {
     font-family: "Roboto Condensed";
     src: url(../font/RobotoCondensed-Bold.ttf);
+    font-display: swap;
 }
 
 @font-face {
     font-family: "Roboto";
     src: url(../font/Roboto-Regular.ttf);
+    font-display: swap;
 }
 /* ############################# */
 /* ######### Body CSS ########## */

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <?php // teams gallery style ?>
     <link rel="stylesheet" href="assets/css/teams-gallery.css">
+    <meta name="description" content="Galerie des équipes/teams créées et partagées par les membres du site.">
     <title>Galerie de teams</title>
 </head>
 <body>
@@ -19,7 +20,7 @@
         </div>
         <div class="gallery">
             <?php for($i = 0; $i < count($teams); $i++): ?>
-            <a href='team.php?id=<?= $teams[$i]['team_id'] ?>'>
+            <a href='team.php?id=<?= $teams[$i]['team_id'] ?>&author=<?= $authors[$i] ?>'>
                 <div class='team-container'>
                     <h2><?= $names[$i] ?> de <i><?= $authors[$i] ?></i></h2>
                     <div class='team'>

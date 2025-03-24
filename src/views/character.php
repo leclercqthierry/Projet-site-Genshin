@@ -7,15 +7,21 @@
     <link rel='stylesheet' href='assets/css/style.css'>
     <?php // character style ?>
     <link rel='stylesheet' href='assets/css/character.css'>
+    <meta name="description" content="Fiche détaillée du personnage <?= $name ?> où l'on trouve les resources nécessaire à son augmentation de niveau, de ses aptitudes ainsi que de ses coûts d'élévation. Un lien vers les builds créer par la communauté y est aussi présent.">
     <title><?= $name ?></title>
 </head>
 <body>
     <?php include "templates/header.php"; ?>
     <main>
-        <h1>Fiche Personnage</h1>
+        <h1>Fiche Personnage: <?= $name ?></h1>
         <div class='container'>
             <div class='img-description'>
-                <img src="<?= $card ?>" alt="<?= $name ?>" class="rarity<?= $rarity ?>">
+                <img 
+                    src="<?= $card ?>_w174.webp"
+                    srcset="<?= $card ?>_w66.webp 66w, <?= $card ?>_w120.webp 120w, <?= $card ?>_w174.webp 174w"
+                    sizes="(max-width: 425px) 66w, (max-width:1024px) 120w, 174w"
+                    alt="<?= $name ?>" 
+                    class="rarity<?= $rarity ?>"> 
                 <div class='description'>
                     <p><b>Nom:</b> <span><?= $name ?></span></p>
                     <p><b>Element:</b> <span><?= $element ?></span></p>

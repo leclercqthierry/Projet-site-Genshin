@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/gallery-common-style.css">
     <?php // Weapons gallery style ?>
     <link rel="stylesheet" href="assets/css/weapons-gallery.css">
+    <meta name="description" content="Galerie présentant les <?= $number ?> armes actuellement en jeu et pour laquelle une fiche individuelle est proposée pour chacune d'elles.">
     <title>Galerie d'armes</title>
 </head>
 <body>
@@ -55,7 +56,7 @@
                     </div>
                 </fieldset>
             </div>
-            <select name="sort" id="sort">
+            <select name="sort" id="sort" aria-label="Triez par:">
                 <option value="alphabetic-order">Ordre alphabétique</option>
                 <option value="rarity">Rareté</option>
                 <option value="type">Type</option>

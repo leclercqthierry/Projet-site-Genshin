@@ -7,12 +7,13 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <?php // team style ?>
     <link rel="stylesheet" href="assets/css/team.css">
+    <meta name="description" content="Fiche descriptive de l'équipe/team: <?= $team['name'] ?> proposée par <?= $author ?>">
     <title><?= $team['name'] ?></title>
 </head>
 <body>
     <?php include "templates/header.php"; ?>
     <main>
-        <h1><?= $team['name'] ?></h1>
+        <h1><?= $team['name'] ?> crée par <?= $author ?></h1>
         <div class="container">
             <?php for($i = 0; $i < 4; $i++): ?>
             <div class="character">
@@ -35,7 +36,7 @@
             <?php endfor;?>
         </div>
         <button disabled>Voter</button>
-        <form action="#" method="post" class="vote">
+        <form action="#" method="post" class="vote" aria-disabled="true">
             <label for="rating">Attribuez une note entre 0 et 10 à cette team:</label>
             <input type="number" step="1" min="0" max="10" id="rating" name="rating">
             <input type="submit" value="Valider">
