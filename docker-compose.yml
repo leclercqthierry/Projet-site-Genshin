@@ -24,7 +24,6 @@ services:
       MYSQL_DATABASE: genshinteam
       MYSQL_USER: Thierry
       MYSQL_PASSWORD: Aubvu7k7
-      # MYSQL_ALLOW_EMPTY_PASSWORD: true
     networks:
       - app-network
 

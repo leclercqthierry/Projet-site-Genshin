@@ -1,3 +1,3 @@
 <footer>
-    <a href="#">Mentions légales</a>
+    <a href="legal_notices.php">Mentions légales</a>
 </footer>

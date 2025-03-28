@@ -15,13 +15,13 @@ function editSimpleResourceForm($title, $name, $image, $resource, $resource_id){
     <form action="edit-resources" name ="edit-resource-form" method="post" enctype="multipart/form-data">
         <div class="form-label">
             <label for="'.$name.'">Nom</label>
-            <input type="text" id="'.$name.'" name="'.$name.'" value="'.$resource['name'].'">
+            <input type="text" id="'.$name.'" name="'.$name.'" value="'.$resource['name'].'" aria-required="true">
             <input type="hidden" name="id" value="'.$resource_id.'">
         </div>
         <div class="form-label">
             <fieldset>
                 <legend>Image</legend>
-                <input type="file" id="'.$image.'" name="'.$image.'" accept="image/*">
+                <input type="file" id="'.$image.'" name="'.$image.'" accept="image/*" aria-required="true">
                 <img src="'.$resource['image'].'" alt="'.$resource['name'].'">
             </fieldset>
         </div>
@@ -45,7 +45,7 @@ function editMultiplesResourcesForm($title, $names, $images, $resource, $resourc
     <form action="edit-resources" name ="edit-resource-form" method="post" enctype="multipart/form-data">
         <div class="form-label cat">
             <label for="category">Catégorie</label>
-            <input type="text" id="category" name="category" value="'.$resource['category'].'">
+            <input type="text" id="category" name="category" value="'.$resource['category'].'" aria-required="true">
             <input type="hidden" name="id" value="'.$resource_id.'">
         </div>
         <div class="resource-container">';
@@ -55,12 +55,12 @@ function editMultiplesResourcesForm($title, $names, $images, $resource, $resourc
             <div>
                 <div class="form-label">
                     <label for="'.$names[$i].'">Nom</label>
-                    <input type="text" id="'.$names[$i].'" name="'.$names[$i].'" value="'.$resource['name'.$j].'">
+                    <input type="text" id="'.$names[$i].'" name="'.$names[$i].'" value="'.$resource['name'.$j].'" aria-required="true">
                 </div>
                 <div class="form-label">
                     <fieldset>
                         <legend>Image</legend>
-                        <input type="file" id="'.$images[$i].'" name="'.$images[$i].'" accept="image/*">
+                        <input type="file" id="'.$images[$i].'" name="'.$images[$i].'" accept="image/*" aria-required="true">
                         <img src="'.$resource['image'.$j].'" alt="'.$resource['name'.$j].'">
                     </fieldset>
                 </div>

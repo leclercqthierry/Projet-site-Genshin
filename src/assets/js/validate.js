@@ -9,6 +9,7 @@ function addErrorMessage(field, errorMessage){
     error.classList.add('error');
     error.textContent = errorMessage;
     error.style.display = 'none';
+    error.setAttribute('role', 'alert');
     field.insertAdjacentElement('afterend', error);
     return error;
 }
@@ -23,6 +24,7 @@ function validateTextField(field, regex, error) {
 
     field.addEventListener('input', () => {
         error.style.display =!regex.test(field.value)? 'block' : 'none';
+        field.setAttribute('aria-invalid',!regex.test(field.value)? 'true' : 'false');
     });
 }
 

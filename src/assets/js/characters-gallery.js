@@ -14,7 +14,7 @@ document.querySelector('.gallery').appendChild(p);
 p.style.display = 'none';
 
 // Checks the radio weapons and returns the id of the one that is checked
-function checkWeapons(){
+function getWeapons(){
     let id;
     weapons.forEach((weapon) => {
         if (weapon.checked) {
@@ -24,7 +24,7 @@ function checkWeapons(){
     return id; 
 }
 // Checks the radio elements and returns the id of the one that is checked
-function checkElements(){
+function getElements(){
     let id;
     elements.forEach((element) => {
         if (element.checked) {
@@ -35,7 +35,7 @@ function checkElements(){
 }
 
 // Checks the checkbox rarity and returns the values of the ones that are checked
-function checkRarity(){
+function getRarity(){
     let values = [];
     rarities.forEach((rarity) => {
         if (rarity.checked) {
@@ -53,9 +53,9 @@ elements.forEach((element) =>sortArray.push(element));
 
 sortArray.forEach((sort) => {
     sort.addEventListener('change', () => {
-        let weaponChoise = checkWeapons();
-        let elementChoise = checkElements();
-        let raritiesChoise = checkRarity();
+        let weaponChoise = getWeapons();
+        let elementChoise = getElements();
+        let raritiesChoise = getRarity();
         cards.forEach((card) => {
             // Reveal all cards by default
             card.parentElement.style.display = 'block';
@@ -75,7 +75,7 @@ sortArray.forEach((sort) => {
     });
 });
 
-// alphabetic, rarity and element filter
+// alphabetic, rarity and element order
 select.addEventListener('change', () => {
     switch(select.value){
         case "rarity": {

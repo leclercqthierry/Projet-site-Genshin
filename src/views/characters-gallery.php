@@ -10,12 +10,14 @@
     <?php // characters gallery style ?>
     <link rel="stylesheet" href="assets/css/characters-gallery.css">
     <meta name="description" content="Galerie présentant les <?= $number ?> personnages actuellement en jeu et pour laquelle une fiche individuelle est proposée. ">
+    <meta name="keywords" content="galerie, personnage, personnages">
     <title>Galerie de personnages</title>
 </head>
 <body>
     <?php include "templates/header.php";?>
     <main>
         <h1>Galerie de personnages</h1>
+        <p>Ici est centralisé l'ensemble des personnages disponibles pour créer des équipes/teams. Il y a actuellement un total de <span><?= $number ?></span> personnages dans la galerie, chacun donnant accès à une fiche individuelle décrivant les ressources nécessaires à la montée du personnage ainsi qu'un accès à une page de builds créés par les membres du site. </p>
         <?php // Filter/Sort Elements ?>
         <div class="filters-container">
             <div class="weapons-rarity-container">
@@ -71,7 +73,6 @@
                 <option value="element">Elément</option>
             </select>
         </div>
-        <p>Il y a actuellement un total de <?= $number ?> personnages en jeu.</p>
         <?php // Characters gallery ?>
         <div class="gallery">
             <?php // Generate the gallery

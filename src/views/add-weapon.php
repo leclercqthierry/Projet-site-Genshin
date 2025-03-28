@@ -20,7 +20,7 @@
                 <div id="group1">
                     <div class="form-label">
                         <label for="name">Nom</label>
-                        <input type="text" id="name" name="name">
+                        <input type="text" id="name" name="name" aria-required="true">
                     </div>
                     <div class="form-label">
                         <label for="type">Type</label>
@@ -86,13 +86,13 @@
                     <div class="form-label thumb">
                         <fieldset>
                             <legend>Miniature</legend>
-                            <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
+                            <input type="file" name="thumbnail" id="thumbnail" accept="image/*" aria-required="true">
                         </fieldset>
                     </div>
                     <div class="form-label">
                         <fieldset>
                             <legend>Card</legend>
-                            <input type="file" name="card" id="card" accept="image/*">
+                            <input type="file" name="card" id="card" accept="image/*" aria-required="true">
                         </fieldset>
                     </div>
                 </div>

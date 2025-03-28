@@ -14,6 +14,7 @@
     <?php include "templates/header.php"; ?>
     <main>
         <h1>Galerie d'artéfacts</h1>
+        <p>Ici est centralisé l'ensemble des set d'artefacts disponibles pour créer des équipes/teams. Il y a actuellement un total de <span><?= $number ?></span> set d'artefacts dans la galerie, chacune donnant accès à une fiche descriptive de ces bonus. </p>
         <?php // Filter/Sort Elements ?>
         <div class="filters-container">
             <fieldset class="rarity-container">
@@ -42,7 +43,6 @@
                 <option value="rarity">Rareté</option>
             </select>
         </div>
-        <p>Il y a actuellement un total de <?= $number ?> set d'artéfacts</p>
         <?php // Artefacts gallery ?>
         <div class="gallery">
             <?php // Generated in php

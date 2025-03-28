@@ -25,6 +25,16 @@ strong{
     text-align: center;
 }
 
+p{
+    margin: auto 15px 15px 15px;
+    text-align: justify;
+    text-indent: 30px;
+}
+
+span{
+    color:var(--rarity-color-5);
+}
+
 @media screen and (min-width: 426px){
     .weapons-rarity-container{
         flex:2;

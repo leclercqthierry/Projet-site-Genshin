@@ -10,12 +10,14 @@
     <?php // Weapons gallery style ?>
     <link rel="stylesheet" href="assets/css/weapons-gallery.css">
     <meta name="description" content="Galerie présentant les <?= $number ?> armes actuellement en jeu et pour laquelle une fiche individuelle est proposée pour chacune d'elles.">
+    <meta name="keywords" content="galerie, armes">
     <title>Galerie d'armes</title>
 </head>
 <body>
     <?php include "templates/header.php"; ?>
     <main>
         <h1>Galerie d'armes</h1>
+        <p>Ici est centralisé l'ensemble des armes disponibles pour créer des équipes/teams. Il y a actuellement un total de <span><?= $number ?></span> armes dans la galerie, chacune donnant accès à une fiche individuelle décrivant les ressources nécessaires à la montée de l'arme. </p>
         <?php // Filter/Sort Elements ?>
         <div class="filters-container">
             <div class="weapons-rarity-container">
@@ -62,7 +64,6 @@
                 <option value="type">Type</option>
             </select>
         </div>
-        <p>Il y a actuellement un total de <?= $number ?> armes </p>
         <?php // Weapons gallery ?>
         <div class="gallery">
             <?php // Generated in php

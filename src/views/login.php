@@ -17,11 +17,11 @@
         <form action="login" method="post">
             <div class="form-group">
                 <label for="nickname">Pseudo</label>
-                <input type="text" id="nickname" name="nickname" placeholder="user887">
+                <input type="text" id="nickname" name="nickname" placeholder="user887" aria-required="true">
             </div>
             <div class="form-group">
                 <label for="password">mot de passe</label>
-                <input type="password" id="password" name="password" placeholder="********">
+                <input type="password" id="password" name="password" placeholder="********" aria-required="true">
             </div>
             <a href="#" aria-disabled="true">mot de passe oublié</a>
             <div class="btn-container">

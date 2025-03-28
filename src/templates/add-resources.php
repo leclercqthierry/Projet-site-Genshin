@@ -15,12 +15,12 @@ function addSimpleResourceForm($title, $name, $image){
         <form action="add-resources" method="post" enctype="multipart/form-data">
             <div class="form-label">
                 <label for="'.$name.'">Nom</label>
-                <input type="text" id="'.$name.'" name="'.$name.'">
+                <input type="text" id="'.$name.'" name="'.$name.'" aria-required="true">
             </div>
             <div class="form-label">
                 <fieldset>
                     <legend>Image</legend>
-                    <input type="file" id="'.$image.'" name="'.$image.'" accept="image/*">
+                    <input type="file" id="'.$image.'" name="'.$image.'" accept="image/*" aria-required="true">
                 </fieldset>
             </div>
             <button type="submit" class="btn">Ajouter</button>
@@ -44,18 +44,18 @@ function addMultiplesResourcesForm($title, $names, $images){
         <form action="add-resources" method="post" enctype="multipart/form-data">
             <div class="form-label">
                 <label for="category">Catégorie</label>
-                <input type="text" id="category" name="category">
+                <input type="text" id="category" name="category" aria-required="true">
             </div>';
     for ($i = 0; $i < count($names); $i++){
         $html .= '
             <div class="form-label">
                 <label for="'.$names[$i].'">Nom</label>
-                <input type="text" id="'.$names[$i].'" name="'.$names[$i].'">
+                <input type="text" id="'.$names[$i].'" name="'.$names[$i].'" aria-required="true">
             </div>
             <div class="form-label">
                 <fieldset>
                     <legend>Image</legend>
-                    <input type="file" id="'.$images[$i].'" name="'.$images[$i].'" accept="image/*">
+                    <input type="file" id="'.$images[$i].'" name="'.$images[$i].'" accept="image/*" aria-required="true">
                 </fieldset>
             </div>';
     }
