@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <?php // add-character style ?>
     <link rel="stylesheet" href="assets/css/edit-character.css">
+    <meta name="robots" content="noindex,nofollow">
     <title>Panneau Admin - Edition d'un personnage</title>
 </head>
 <body>

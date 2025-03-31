@@ -39,7 +39,6 @@ if (isset($_GET['id'])){
     include_once "views/builds.php";
 
 }else{
-    var_dump("ok");
     header('Location: 404');
     exit;
 }

@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <?php // Specific style ?>
     <link rel="stylesheet" href="assets/css/edit-resources.css">
+    <meta name="robots" content="noindex,nofollow">
     <title>Edition de ressources</title>
 </head>
 <body>

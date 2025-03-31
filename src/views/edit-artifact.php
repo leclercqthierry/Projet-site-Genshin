@@ -8,6 +8,7 @@
     <?php // add-artifacts style ?>
      <link rel="stylesheet" href="assets/css/edit-character.css">
      <link rel="stylesheet" href="assets/css/edit-artifact.css">
+     <meta name="robots" content="noindex,nofollow">
     <title>Panneau Admin - Edition d'un set d'artéfacts</title>
 </head>
 <body>

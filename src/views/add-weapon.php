@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/add-character.css">
     <?php // add-weapon style ?>
     <link rel="stylesheet" href="assets/css/add-weapon.css">
+    <meta name="robots" content="noindex,nofollow">
     <title>Panneau Admin - Ajout d'une arme</title>
 </head>
 <body>

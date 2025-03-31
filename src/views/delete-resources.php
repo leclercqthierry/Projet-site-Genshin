@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <?php // Specific style ?>
     <link rel="stylesheet" href="assets/css/delete-resources.css">
+    <meta name="robots" content="noindex,nofollow">
     <title>Suppression de ressources</title>
 </head>
 <body>

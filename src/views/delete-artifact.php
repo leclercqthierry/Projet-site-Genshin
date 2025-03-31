@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <?php // delete-form style ?>
     <link rel="stylesheet" href="assets/css/delete-form.css">
+    <meta name="robots" content="noindex,nofollow">
     <title>Panneau Admin - Suppression d'un set d'artéfacts</title>
 </head>
 <body>

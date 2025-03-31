@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/css/add-character.css">
     <!-- add-artifacts style-->
      <link rel="stylesheet" href="assets/css/add-artifact.css">
+     <meta name="robots" content="noindex,nofollow">
     <title>Panneau Admin - Ajout d'un set d'artéfacts</title>
 </head>
 <body>

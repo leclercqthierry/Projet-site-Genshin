@@ -3,35 +3,18 @@ session_start();
 
 if (isset($_POST['nickname']) && isset($_POST['password'])){
 
-    // Validate the nickname
-    try{
-        if (!preg_match("/^[\w\d]{4,}$/", $_POST['nickname'])){
-            throw new Exception('Votre pseudo doit contenir au moins 4 caractères alphanumériques sans espaces ni caractères spéciaux!');
-        } else {
-            $nickname = htmlspecialchars($_POST['nickname']);
-        }
+    require_once "utilities/validate.php";
     
-    } catch (Exception $e) {
-        $error = $e->getMessage();
-        include_once "views/error.php";
-        exit;
-    }
+    // Validate the nickname
+    $nickname = validateTextField('nickname', "/^[\w\d]{4,}$/", 'Votre pseudo doit contenir au moins 4 caractères 
+    alphanumériques sans espaces ni caractères spéciaux!');
 
     // Validate the password
-    try{
-        if (!preg_match("/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/", $_POST['password'])){
-            throw new Exception('Le mot de passe doit contenir au moins un nombre, une lettre majuscule et minuscule et comporter au moins 8 caractères');
-        } else {
-            $password = htmlspecialchars($_POST['password']);
-        }
-    } catch (Exception $e) {
-        $error = $e->getMessage();
-        include_once "views/error.php";
-        exit;
-    }
+    $password = validateTextField('password', "/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/", 'Le mot de passe doit 
+    contenir au moins un nombre, une lettre majuscule et minuscule et comporter au moins 8 caractères!');
 
     // Ready to compare with the BDD
-    require "models/users.php";
+    require_once "models/users.php";
 
     $user = getUser($nickname, $password);
 

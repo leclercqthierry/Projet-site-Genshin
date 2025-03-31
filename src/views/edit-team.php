@@ -8,6 +8,7 @@
     <?php // add-team common style ?>
     <link rel="stylesheet" href="assets/css/add-team.css">
     <link rel="stylesheet" href="assets/css/edit-team.css">
+    <meta name="robots" content="noindex,nofollow">
     <title>Panneau Admin - Edition d'une team</title>
 </head>
 <body>

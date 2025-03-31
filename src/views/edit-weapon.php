@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="assets/css/edit-character.css">
     <?php // add-weapon style ?>
     <link rel="stylesheet" href="assets/css/edit-weapon.css">
+    <meta name="robots" content="noindex,nofollow">
     <title>Panneau Admin - Edition d'une arme</title>
 </head>
 <body>

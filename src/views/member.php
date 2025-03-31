@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <?php // Specific style ?>
     <link rel="stylesheet" href="assets/css/member.css">
+    <meta name="robots" content="noindex,nofollow">
     <title>Mon profil</title>
 </head>
 <body>

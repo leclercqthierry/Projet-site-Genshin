@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <?php // add-team style ?>
     <link rel="stylesheet" href="assets/css/add-team.css">
+    <meta name="robots" content="noindex,nofollow">
     <title>Panneau Admin - Ajout d'une team</title>
 </head>
 <body>

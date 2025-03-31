@@ -94,7 +94,7 @@ th{
     background-color:var(--rarity-color-5);
 }
 
-a.btn{
+.btn{
     width:100px;
     margin: 15px auto;
     padding: 5px 10px;
@@ -118,13 +118,13 @@ a.btn{
     }
 }
 
-@media screen and (min-width:769px) and (max-width:1024px) {
+@media screen and (min-width:769px) and (max-width:1199px) {
     h1{
         margin: 50px auto;
     }
 
     .container{
-        max-width:85%;
+        width:min-content;
         margin: 0 auto auto auto;
         flex-direction: row;
         flex-wrap: wrap;
@@ -135,26 +135,16 @@ a.btn{
         border-radius: 15px;
     }
 
-    .sub-container{
-        padding: 30px;
-    }
-
-    .sub-container:nth-child(2) img{
-        width:70px;
-        height: 70px;
-    }
-
-    td,th{
-        min-width:90px;
-        max-width: 110px;
-        font-size: 18px;
-    }
-
 }
 
-@media screen and (min-width:1025px) {
+@media screen and (min-width:1200px) {
     h1{
         margin: 50px auto;
+    }
+
+    .container{
+        flex-direction: initial;
+        flex-wrap: wrap;
     }
 
     .img-description{
@@ -186,6 +176,7 @@ a.btn{
     }
 
     .btn{
+        margin: auto auto 20px auto;
         transition: background-color 0.4s ease, color 0.4s ease;
     }
 

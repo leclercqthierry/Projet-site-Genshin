@@ -8,6 +8,7 @@
     <?php // character style ?>
     <link rel='stylesheet' href='assets/css/character.css'>
     <meta name="description" content="Fiche détaillée du personnage <?= $name ?> où l'on trouve les resources nécessaire à son augmentation de niveau, de ses aptitudes ainsi que de ses coûts d'élévation. Un lien vers les builds créer par la communauté y est aussi présent.">
+    <meta name="keywords" content="<?= $name ?>, personnage, fiche, ressources, coût, élévation, aptitude, build">
     <title><?= $name ?></title>
 </head>
 <body>
@@ -93,7 +94,7 @@
                 </table>
             </div>
             <div class='sub-container'>
-                <h2>Coût d'élévation de personnage</h2>
+                <h2>Coût d'élévation pour <?= $name ?></h2>
                 <table>
                     <tr>
                         <th>Seuil</th>

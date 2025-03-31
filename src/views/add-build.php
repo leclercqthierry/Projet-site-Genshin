@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <?php //add-character style ?>
     <link rel="stylesheet" href="assets/css/add-build.css">
+    <meta name="robots" content="noindex,nofollow">
     <title><?= $_SESSION['role'] === 'Administrator' ? 'Panneau Admin' : 'Membre' ?> - Ajout de build de personnage</title>
 </head>
 <body>

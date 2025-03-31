@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <?php //delete-build style ?>
     <link rel="stylesheet" href="assets/css/delete-build.css">
+    <meta name="robots" content="noindex,nofollow">
     <title>Panneau Admin - Suppression d'un build de personnage</title>
 </head>
 <body>
