@@ -85,16 +85,20 @@
                 </div>
                 <div class="form-label-groups">
                     <div class="form-label thumb">
-                        <fieldset>
-                            <legend>Miniature</legend>
-                            <input type="file" name="thumbnail" id="thumbnail" accept="image/*" aria-required="true">
-                        </fieldset>
+                        <label for="thumbnail">
+                            <fieldset>
+                                <legend>Miniature</legend>
+                                <input type="file" name="thumbnail" id="thumbnail" accept="image/*" aria-required="true">
+                            </fieldset>
+                        </label>
                     </div>
                     <div class="form-label">
-                        <fieldset>
-                            <legend>Card</legend>
-                            <input type="file" name="card" id="card" accept="image/*" aria-required="true">
-                        </fieldset>
+                        <label for="card">
+                            <fieldset>
+                                <legend>Card</legend>
+                                <input type="file" name="card" id="card" accept="image/*" aria-required="true">
+                            </fieldset>
+                        </label>
                     </div>
                 </div>
                 <div class="form-label-groups">

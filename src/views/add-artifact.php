@@ -48,10 +48,12 @@
                 </div>
                 <div class="form-label-groups">
                     <div class="form-label">
-                        <fieldset>
-                            <legend>Miniature</legend>
-                            <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
-                        </fieldset>
+                        <label for="thumbnail">
+                            <fieldset>
+                                <legend>Miniature</legend>
+                                <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
+                            </fieldset>
+                        </label>
                     </div>
                 </div>
                 <input type="submit" value="Valider" class="btn">

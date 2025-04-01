@@ -71,16 +71,20 @@
                 </div>
                 <div class="form-label-groups">
                     <div class="form-label input-file">
+                    <label for="thumbnail">
                         <fieldset>
-                            <legend>Miniature</legend>
+                                <legend>Miniature</legend>
                             <input type="file" name="thumbnail" id="thumbnail" accept="image/*">
                         </fieldset>
+                    </label>
                     </div>
                     <div class="form-label input-file">
+                    <label for="card">
                         <fieldset>
                             <legend>Card</legend>
                             <input type="file" name="card" id="card" accept="image/*">
                         </fieldset>
+                    </label>
                     </div>
                 </div>
                 <div class="form-label-groups">
