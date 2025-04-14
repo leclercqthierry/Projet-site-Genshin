@@ -70,7 +70,7 @@
             foreach($weapons as $weapon): ?>
                 <a href='weapon.php?id=<?= $weapon['weapon_id'] ?>'>
                     <div class='card' data-rarity="<?= $weapon['rarity'] ?>" data-weapon="<?= getWeaponTypeById($weapon['weapon_type_id'])['type'] ?>">
-                        <img src="<?= $weapon['image'] ?>" alt="<?= $weapon['name'] ?>" class='rarity<?= $weapon['rarity'] ?> weapon'>
+                        <img src="<?= $weapon['image'] ?>" alt="L'arme <?= $weapon['name'] ?>" class='rarity<?= $weapon['rarity'] ?> weapon'>
                         <strong><?= $weapon['name'] ?></strong>
                     </div>
                 </a>

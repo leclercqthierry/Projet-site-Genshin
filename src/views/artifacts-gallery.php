@@ -49,7 +49,7 @@
             foreach($artifacts as $artifact): ?>
                 <a href='artifact.php?id=<?= $artifact['artifact_id'] ?>'>
                     <div class='card' data-rarity="<?= $artifact['rarity'] ?>">
-                        <img src="<?= $artifact['image'] ?>" alt="<?= $artifact['name'] ?>" class='rarity<?= $artifact['rarity'] ?> artifact'>
+                        <img src="<?= $artifact['image'] ?>" alt="Set <?= $artifact['name'] ?>" class='rarity<?= $artifact['rarity'] ?> artifact'>
                         <strong><?= $artifact['name'] ?></strong>
                     </div>
                 </a>

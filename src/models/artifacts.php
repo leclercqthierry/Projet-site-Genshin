@@ -29,7 +29,7 @@ function createArtifact($name, $rarity, $description, $thumbnailPath){
 function getAllArtifacts(){
     $pdo = getConnexion();
     try{
-        $stmt = $pdo->query("SELECT * FROM zell_artifacts ORDER BY `name`");
+        $stmt = $pdo->query("SELECT `artifact_id`, `name`, `image`, `rarity` FROM zell_artifacts ORDER BY `name`");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(PDOException $e){
         $error = "Erreur lors de la récupération de tous les sets d'artefacts: ".$e->getMessage();

@@ -16,7 +16,7 @@
     <main>
         <h1>Fiche Personnage: <?= $name ?></h1>
         <div class='container'>
-            <div class='img-description'>
+            <section class='img-description'>
                 <img 
                     src="<?= $card ?>_w174.webp"
                     srcset="<?= $card ?>_w66.webp 66w, <?= $card ?>_w120.webp 120w, <?= $card ?>_w174.webp 174w"
@@ -31,8 +31,8 @@
                     <p><b>Bonus Elévation:</b> <span><?= $bonus ?></span></p>
                     <p><b>Jours de farm aptitudes:</b> <span><?= $days ?></span></p>
                 </div>
-            </div>
-            <div class='sub-container'>
+            </section>
+            <section class='sub-container'>
                 <h2>Coût de montée de niveau</h2>
                 <table>
                     <tr>
@@ -92,8 +92,8 @@
                         <td>684 600</td>
                     </tr>
                 </table>
-            </div>
-            <div class='sub-container'>
+            </section>
+            <section class='sub-container'>
                 <h2>Coût d'élévation pour <?= $name ?></h2>
                 <table>
                     <tr>
@@ -153,8 +153,8 @@
                         <td>120 000</td>
                     </tr>
                 </table>
-            </div>
-            <div class='sub-container'>
+            </section>
+            <section class='sub-container'>
                 <h2>Coût d'élévation d'une aptitude</h2>
                 <table>
                     <tr>
@@ -228,7 +228,7 @@
                         <td><img src='assets/img/other/couronne_de_la_sagesse.webp' alt='Couronne de la sagesse' class='rarity5'><br>X1</td>
                     </tr>
                 </table>
-            </div>
+            </section>
         </div>
         <a href="builds.php?id=<?= $id ?>" class="btn">Ses builds</a>
     </main>

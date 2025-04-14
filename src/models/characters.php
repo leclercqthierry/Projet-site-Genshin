@@ -33,7 +33,7 @@ function createCharacter($name, $element_id, $char_jewels_id, $rarity, $cardPath
 function getAllCharacters(){
     $pdo = getConnexion();
     try{
-        $stmt = $pdo->query("SELECT * FROM zell_characters ORDER BY `name`");
+        $stmt = $pdo->query("SELECT `element_id`, `character_id`, `rarity`, `name`, `image`, `weapon_type_id` FROM zell_characters ORDER BY `name`");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(PDOException $e){
         $error = "Erreur lors de la récupération de tous les personnages: ".$e->getMessage();

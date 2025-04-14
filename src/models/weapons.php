@@ -56,7 +56,7 @@ function getWeaponTypeById($id){
 function getAllWeapons(){
     $pdo = getConnexion();
     try{
-        $stmt = $pdo->query("SELECT * FROM zell_weapons ORDER BY `name`");
+        $stmt = $pdo->query("SELECT `weapon_id`, `weapon_type_id`, `rarity`, `name`, `image` FROM zell_weapons ORDER BY `name`");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(Exception $e){
         $error =  "Erreur lors de la récupération de tous les armes: ".$e->getMessage();

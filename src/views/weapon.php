@@ -15,7 +15,7 @@
     <main>
         <h1>Fiche Arme: <?= $name ?></h1>
         <div class="container">
-            <div class="img-description">
+            <section class="img-description">
                 <img src='<?= $card ?>' alt='<?= $name ?>' class="rarity<?= $rarity ?>">
                 <div class="description">
                     <p><b>Nom:</b> <span><?= $name ?></span></p>
@@ -25,11 +25,11 @@
                     <p><b>Obtention: </b> <span><?= $obtaining ?></span></p>
                     <p><b>Jours de farm élévation:</b> <span><?= $days ?></span></p>
                 </div>
-            </div>
-            <div class="sub-container p1">
+            </section>
+            <section class="sub-container p1">
                 <p><?= $description ?></p>
-            </div>
-            <div class="sub-container">
+            </section>
+            <section class="sub-container">
                 <h2>Coût d'élévation de l'arme</h2>
                 <table>
                     <tr>
@@ -82,7 +82,7 @@
                         <td>45 000</td>
                     </tr>
                 </table>
-            </div>
+            </section>
         </div>
     </main>
     <?php include "templates/footer.php"; ?>
