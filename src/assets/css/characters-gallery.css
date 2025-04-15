@@ -1,73 +1,73 @@
-.elements{
-    display:flex;
+.elements {
+    display: flex;
     justify-content: center;
-    width:fit-content;
-    margin:auto;
+    width: fit-content;
+    margin: auto;
 }
 
-.element{
-    display:flex;
+.element {
+    display: flex;
     flex-direction: column;
 }
 
-.element label{
-    height:30px;
-    display:flex;
+.element label {
+    height: 30px;
+    display: flex;
     align-items: center;
 }
 
-.card{
-    width:120px;
-    height:100%;
+.card {
+    width: 120px;
+    height: 100%;
     padding: 10px 10px;
     background-color: var(--bg-primary);
     border-radius: 10px;
 }
 
-.img-container{
-    width:100px;
-    height:100px;
+.img-container {
+    width: 100px;
+    height: 100px;
 }
 
-.character{
+.character {
     border-radius: 50%;
 }
 
-.img-element{
+.img-element {
     background-color: rgba(0, 0, 0, 0.2);
-    border-radius:50%;
-    width:30px;
-    position:relative;
-    bottom:90px;
+    border-radius: 50%;
+    width: 30px;
+    position: relative;
+    bottom: 90px;
     left: 64px;
 }
 
-p{
+p {
     margin: auto 15px 15px 15px;
     text-indent: 30px;
 }
 
-span{
+span {
     color: var(--rarity-color-5);
 }
 
-@media screen and (min-width: 426px){
-    .filters-container{
+@media screen and (min-width: 426px) {
+    .filters-container {
         flex-direction: row;
         flex-wrap: wrap;
     }
 
-    .weapons-rarity-container{
-        margin-bottom:0;
+    .weapons-rarity-container {
+        margin-bottom: 0;
     }
 
-    select{
+    select {
         font-size: 1em;
     }
 }
 
-@media screen and (min-width:769px){
-    .filters-container{
-        width:80%;
+@media screen and (min-width: 769px) {
+    .filters-container {
+        width: 80%;
     }
 }

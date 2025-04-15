@@ -1,90 +1,94 @@
-input{
-    font-family: 'Roboto', sans-serif;
+input {
+    font-family: "Roboto", sans-serif;
 }
 
-select{
-    width:100%;
-    padding:5px;
-    border:none;
-    border-radius:5px;
+select {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
 }
 
 form,
 .form-label,
-main{
-    display:flex;
+main {
+    display: flex;
     flex-direction: column;
 }
 
-form{
-    width:100%;
+form {
+    width: 100%;
     row-gap: 15px;
 }
 
-main{
+main {
     justify-content: space-evenly;
 }
 
-.container{
-    width:290px;
-    margin:0 auto 20px auto;
-    padding:15px;
+.container {
+    width: 290px;
+    margin: 0 auto 20px auto;
+    padding: 15px;
     background-color: var(--bg-secondary);
-    border-radius:20px;
-}
-
-.btn{
-    max-height: 40px;
-    padding: 5px 10px;
-    color:var(--font-color);
-    background-color: var(--bg-primary);
-    border:none;
     border-radius: 20px;
 }
 
-#confirm-dialog{
-    display:none;
+.btn {
+    max-height: 40px;
+    padding: 5px 10px;
+    color: var(--font-color);
+    background-color: var(--bg-primary);
+    border: none;
+    border-radius: 20px;
 }
 
-#confirm-dialog label{
+#confirm-dialog {
+    display: none;
+}
+
+#confirm-dialog label {
     text-align: center;
 }
 
-#confirm-dialog .container{
-    row-gap:15px;
+#confirm-dialog .container {
+    row-gap: 15px;
 }
 
-#confirm-dialog .form-label{
-    height:auto;
+#confirm-dialog .form-label {
+    height: auto;
 }
 
-.btn-container{
-    display:flex;
+.btn-container {
+    display: flex;
     justify-content: center;
     column-gap: 30px;
 }
 
-button{
-    width:100px;
+button {
+    width: 100px;
 }
 
 @media screen and (min-width: 1024px) {
-    .container{
-        width:300px;
+    .container {
+        width: 300px;
     }
 
-    .btn{
-        transition: background-color 0.4s ease, color 0.4s ease;
+    .btn {
+        transition:
+            background-color 0.4s ease,
+            color 0.4s ease;
     }
 
-    .btn:hover{
+    .btn:hover {
         background-color: var(--font-color);
-        color:var(--bg-primary);
-        transition: background-color 0.4s ease, color 0.4s ease;
+        color: var(--bg-primary);
+        transition:
+            background-color 0.4s ease,
+            color 0.4s ease;
         cursor: pointer;
     }
 
-    select:hover{
-        cursor:pointer;
+    select:hover {
+        cursor: pointer;
     }
 }

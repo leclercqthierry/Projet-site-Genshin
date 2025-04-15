@@ -1,147 +1,147 @@
-main{
-    display:flex;
+main {
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 }
 
 /* Filters / Sort CSS */
-.filters-container{
-    margin:15px;
-    padding:10px;
+.filters-container {
+    margin: 15px;
+    padding: 10px;
     background-color: var(--bg-secondary);
     border-radius: 20px;
-    display:flex;
+    display: flex;
     justify-content: space-evenly;
     align-items: center;
-    gap:15px;
+    gap: 15px;
 }
 
-.filters-container+p{
+.filters-container + p {
     margin-bottom: 15px;
 }
 
-fieldset{
-    padding:0 10px 10px 10px;
+fieldset {
+    padding: 0 10px 10px 10px;
     border-radius: 10px;
 }
 
-.rarity-container{
+.rarity-container {
     padding: 0 10px;
-    display:flex;
+    display: flex;
     width: fit-content;
 }
 
-sup img{
-    width:20px;
+sup img {
+    width: 20px;
 }
 
-select{
+select {
     padding-left: 5px;
-    height:2em;
-    border-radius:5px;
+    height: 2em;
+    border-radius: 5px;
 }
 
 /* Gallery CSS */
-.gallery{
+.gallery {
     margin: 0 15px 20px 15px;
-    padding:10px 0;
+    padding: 10px 0;
     background-color: var(--bg-secondary);
     border-radius: 20px;
     display: flex;
     justify-content: space-evenly;
     flex-wrap: wrap;
-    gap:15px;
+    gap: 15px;
 }
 
-a{
+a {
     text-decoration: none;
     color: var(--text-color);
 }
 
-.rarity3{
+.rarity3 {
     background-color: var(--rarity-color-3);
 }
 
-.rarity4{
+.rarity4 {
     background-color: var(--rarity-color-4);
 }
 
-.rarity5{
+.rarity5 {
     background-color: var(--rarity-color-5);
 }
 
-.card{
-    height:140px;
-    display:flex;
+.card {
+    height: 140px;
+    display: flex;
     flex-direction: column;
 }
 
-.artifact{
-    width:100px;
-    height:100px;
+.artifact {
+    width: 100px;
+    height: 100px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
 }
 
-strong{
-    width:100px;
-    height:40px;
-    font-size:12px;
+strong {
+    width: 100px;
+    height: 40px;
+    font-size: 12px;
     text-align: center;
     font-weight: normal;
     background-color: var(--bg-primary);
     border-bottom-left-radius: 10px;
     border-bottom-right-radius: 10px;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
 
-p{
+p {
     margin: auto 15px 15px 15px;
     text-indent: 30px;
 }
 
-span{
-    color:var(--rarity-color-5);
+span {
+    color: var(--rarity-color-5);
 }
 
-@media screen and (min-width: 426px){
-    main{
-        display:flex;
+@media screen and (min-width: 426px) {
+    main {
+        display: flex;
         flex-direction: column;
     }
 
-    .filters-container{
-        width:fit-content;
-        margin:0 auto 20px auto;
-        padding:20px;
+    .filters-container {
+        width: fit-content;
+        margin: 0 auto 20px auto;
+        padding: 20px;
     }
 
-    select{
+    select {
         font-size: 1em;
     }
 
-    .gallery{
-        width:80%;
+    .gallery {
+        width: 80%;
         margin: 0 auto 20px auto;
-        padding:20px;
+        padding: 20px;
     }
 }
 
-@media screen and (min-width:769px){
-    .gallery{
-        gap:20px;
+@media screen and (min-width: 769px) {
+    .gallery {
+        gap: 20px;
     }
-    .card:hover{
+    .card:hover {
         transform: scale(1.1);
         transition: transform 0.3s ease;
     }
 
     select:hover,
     input:hover,
-    label:hover{
-        cursor:pointer;
+    label:hover {
+        cursor: pointer;
     }
 }

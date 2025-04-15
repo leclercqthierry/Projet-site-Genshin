@@ -1,12 +1,12 @@
-form[name="edit-team-form"]{
-    display:none;
+form[name="edit-team-form"] {
+    display: none;
 }
 
-form[name="select-team-form"]{
-    display:flex;
+form[name="select-team-form"] {
+    display: flex;
     flex-direction: column;
 }
 
-.form-label:nth-child(3){
-    display:flex;
+.form-label:nth-child(3) {
+    display: flex;
 }

@@ -1,18 +1,18 @@
-const containers = document.querySelectorAll('.container');
+const containers = document.querySelectorAll(".container");
 
-containers.forEach(container => {
-    const chevron = container.querySelector('i');
-    const div = container.querySelector('div.link-container');
+containers.forEach((container) => {
+    const chevron = container.querySelector("i");
+    const div = container.querySelector("div.link-container");
 
-    chevron.addEventListener("click", () =>{
-        if (chevron.classList.contains('fa-chevron-down')){
-            chevron.classList.remove('fa-chevron-down');
-            chevron.classList.add('fa-chevron-up');
-            div.style.display = 'flex';
+    chevron.addEventListener("click", () => {
+        if (chevron.classList.contains("fa-chevron-down")) {
+            chevron.classList.remove("fa-chevron-down");
+            chevron.classList.add("fa-chevron-up");
+            div.style.display = "flex";
         } else {
-            chevron.classList.remove('fa-chevron-up');
-            chevron.classList.add('fa-chevron-down');
-            div.style.display = 'none';
+            chevron.classList.remove("fa-chevron-up");
+            chevron.classList.add("fa-chevron-down");
+            div.style.display = "none";
         }
     });
 });

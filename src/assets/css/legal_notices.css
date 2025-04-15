@@ -1,26 +1,25 @@
-main{
-    display:flex;
+main {
+    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 }
 
-.container{
+.container {
     margin: 0 15px 20px 15px;
-    padding:15px;
+    padding: 15px;
     background-color: var(--bg-secondary);
     border-radius: 20px;
-    display:flex;
+    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    gap:15px;
+    gap: 15px;
 }
 
-@media screen and (min-width:769px) {
-
-    .container{
-        width:80%;
+@media screen and (min-width: 769px) {
+    .container {
+        width: 80%;
         max-width: 1000px;
-        margin:0 auto 20px auto;
+        margin: 0 auto 20px auto;
     }
 }

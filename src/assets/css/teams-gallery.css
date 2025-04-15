@@ -1,184 +1,182 @@
-main{
-    display:flex;
+main {
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.search{
-    display:flex;
+.search {
+    display: flex;
 }
 
-.search-icon{
-    width:14px;
-    height:14px;
-    position:relative;
-    right:25px;
-    top:9px;
+.search-icon {
+    width: 14px;
+    height: 14px;
+    position: relative;
+    right: 25px;
+    top: 9px;
 }
 
-input[type="search"]{
-    width:200px;
-    height:2.3em;
+input[type="search"] {
+    width: 200px;
+    height: 2.3em;
     margin: 0 auto 15px auto;
     padding-left: 10px;
-    border-radius:1em;
+    border-radius: 1em;
 }
 
-.gallery{
-    width:324px;
+.gallery {
+    width: 324px;
     margin: 0 15px 20px 15px;
-    padding:10px 20px;
+    padding: 10px 20px;
     background-color: var(--bg-secondary);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
 }
 
-a{
+a {
     text-decoration: none;
     color: var(--text-color);
 }
 
-h2{
+h2 {
     font-size: 16px;
     text-align: center;
 }
 
-.team-container{
-    margin:10px auto;
+.team-container {
+    margin: 10px auto;
     padding: 15px 5px;
     background-color: var(--bg-primary);
     border-radius: 10px;
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap:10px;
+    gap: 10px;
 }
 
-.team{
-    width:100%;
+.team {
+    width: 100%;
     display: flex;
     justify-content: space-evenly;
 }
 
-.card{
-    width:65px;
+.card {
+    width: 65px;
     padding: 2px;
     background-color: var(--bg-primary);
     border: 1px solid var(--font-color);
 }
 
-.img-container{
-    height:60px;
+.img-container {
+    height: 60px;
 }
 
-.img-element{
-    width:15px;
+.img-element {
+    width: 15px;
     background-color: rgba(0, 0, 0, 0.2);
-    border-radius:50%;
-    position:relative;
-    bottom:62px;
+    border-radius: 50%;
+    position: relative;
+    bottom: 62px;
     left: 45px;
 }
 
-.character{
-    width:60px;
+.character {
+    width: 60px;
 }
 
-.rarity4{
+.rarity4 {
     background-color: var(--rarity-color-4);
 }
 
-.rarity5{
+.rarity5 {
     background-color: var(--rarity-color-5);
 }
 
-p{
+p {
     height: 40px;
     padding: 3px 0;
-    font-size:12px;
-    display:flex;
+    font-size: 12px;
+    display: flex;
     align-items: center;
     justify-content: center;
 }
 
-@media screen and (min-width:769px){
-
-    main{
-        display:flex;
+@media screen and (min-width: 769px) {
+    main {
+        display: flex;
         flex-direction: column;
     }
 
-    .search-icon{
-        width:18px;
-        height:18px;
+    .search-icon {
+        width: 18px;
+        height: 18px;
         right: 35px;
         top: 8px;
     }
 
-    .search-icon:hover{
+    .search-icon:hover {
         cursor: pointer;
     }
 
-    input[type="search"]{
-        width:250px;
+    input[type="search"] {
+        width: 250px;
         border-radius: 20px;
     }
 
-    input:hover{
-        cursor:pointer;
+    input:hover {
+        cursor: pointer;
     }
 
-    .gallery{
-        width:520px;
+    .gallery {
+        width: 520px;
         margin: 0 auto 20px auto;
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    a:hover{
+    a:hover {
         transform: scale(1.02);
         transition: transform 0.3s ease;
     }
 
-    .team-container{
-        width:initial;
-        padding:15px;
+    .team-container {
+        width: initial;
+        padding: 15px;
     }
 
-    h2{
-        font-size:20px;
+    h2 {
+        font-size: 20px;
     }
 
-    .card{
-        width:105px;
+    .card {
+        width: 105px;
     }
 
-    .img-container{
+    .img-container {
         height: 100px;
     }
 
-    .character{
-        width:100px;
+    .character {
+        width: 100px;
     }
 
-
-    .img-element{
-        width:25px;
-        bottom:100px;
-        left:72px;
+    .img-element {
+        width: 25px;
+        bottom: 100px;
+        left: 72px;
     }
 
-    p{
-        padding:10px;
+    p {
+        padding: 10px;
         font-size: 16px;
     }
 }
 
-@media screen and (min-width:1366px) {
-    .gallery{
-        width:960px;
+@media screen and (min-width: 1366px) {
+    .gallery {
+        width: 960px;
         flex-direction: row;
         column-gap: 20px;
     }

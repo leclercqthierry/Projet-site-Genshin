@@ -1,99 +1,99 @@
-main{
-    display:flex;
+main {
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.gallery{
-    width:330px;
-    margin-bottom:10px;
-    padding:10px;
+.gallery {
+    width: 330px;
+    margin-bottom: 10px;
+    padding: 10px;
     background-color: var(--bg-secondary);
     border-radius: 20px;
     display: flex;
     flex-direction: column;
-    gap:10px;
+    gap: 10px;
 }
 
-h2{
+h2 {
     font-size: 16px;
     text-align: center;
 }
 
-.team-container{
+.team-container {
     padding: 15px;
     background-color: var(--bg-primary);
     border-radius: 10px;
-    display:flex;
+    display: flex;
     flex-direction: column;
     align-items: center;
-    gap:10px;
+    gap: 10px;
 }
 
-.team{
-    margin-top:10px;
+.team {
+    margin-top: 10px;
     padding: 10px;
     display: flex;
     justify-content: space-evenly;
-    gap:3px;
+    gap: 3px;
     background-color: var(--bg-secondary);
     border-radius: 5px;
 }
 
-.card{
-    width:65px;
+.card {
+    width: 65px;
     padding: 2px;
     background-color: var(--bg-primary);
     border: 1px solid var(--font-color);
-    display:flex;
+    display: flex;
     flex-direction: column;
 }
 
-.character{
-    width:60px;
+.character {
+    width: 60px;
 }
 
-.img-container{
-    height:60px;
+.img-container {
+    height: 60px;
 }
 
-.img-element{
-    width:15px;
-    position:relative;
-    bottom:63px;
+.img-element {
+    width: 15px;
+    position: relative;
+    bottom: 63px;
     left: 22px;
     background-color: rgba(0, 0, 0, 0.2);
-    border-radius:50%;
+    border-radius: 50%;
 }
 
-.rarity4{
+.rarity4 {
     background-color: var(--rarity-color-4);
 }
 
-.rarity5{
+.rarity5 {
     background-color: var(--rarity-color-5);
 }
 
-p{
+p {
     padding: 3px 0;
-    font-size:12px;
-    display:flex;
+    font-size: 12px;
+    display: flex;
     text-align: center;
     align-items: center;
     justify-content: center;
     flex-grow: 1;
 }
 
-.btn-container1{
+.btn-container1 {
     width: 270px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.btn{
-    width:100px;
+.btn {
+    width: 100px;
     padding: 5px 10px;
     background-color: var(--bg-secondary);
     color: var(--font-color);
@@ -102,102 +102,104 @@ p{
     cursor: pointer;
 }
 
-.btn-container2{
+.btn-container2 {
     width: 280px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.btn-container2 .btn{
-    width:100%;
+.btn-container2 .btn {
+    width: 100%;
     margin-bottom: 20px;
-    padding:7px 0;
+    padding: 7px 0;
 }
 
-main a{
+main a {
     text-decoration: none;
     text-align: center;
     color: var(--text-color);
-    font-size:14px;
+    font-size: 14px;
 }
 
-button:disabled{
-    opacity:0.3;
+button:disabled {
+    opacity: 0.3;
 }
 
-
-@media screen and (min-width:610px) {
-    .gallery{
-        width:400px;
+@media screen and (min-width: 610px) {
+    .gallery {
+        width: 400px;
     }
 
-    .img-container{
-        height:75px;
+    .img-container {
+        height: 75px;
     }
 
-    h2{
+    h2 {
         font-size: 20px;
     }
 
     .team,
-    .btn-container1{
-        width:350px;
+    .btn-container1 {
+        width: 350px;
     }
 
-    .team{
+    .team {
         height: 126px;
     }
-    
-    .card{
-        width:80px;
+
+    .card {
+        width: 80px;
     }
 
-    .character{
-        width:75px;
+    .character {
+        width: 75px;
     }
 
-    .img-element{
-        bottom:77px;
+    .img-element {
+        bottom: 77px;
         left: 26px;
-        width:20px;
+        width: 20px;
     }
 
     p,
-    .btn{
-        font-size:16px;
+    .btn {
+        font-size: 16px;
     }
 
-    .btn{
-        width:140px;
+    .btn {
+        width: 140px;
     }
 }
 
-@media screen and (min-width:1025px) {
-
-    .gallery{
+@media screen and (min-width: 1025px) {
+    .gallery {
         min-width: 400px;
-        width:auto;
-        max-width:800px;
+        width: auto;
+        max-width: 800px;
         flex-direction: row;
         flex-wrap: wrap;
     }
 
-    .team-container{
-        height:100%;
+    .team-container {
+        height: 100%;
     }
 
-    .btn{
-        transition: background-color 0.4s ease, color 0.4s ease;
+    .btn {
+        transition:
+            background-color 0.4s ease,
+            color 0.4s ease;
     }
 
-    .btn:hover{
+    .btn:hover {
         background-color: var(--font-color);
-        color:var(--bg-secondary);
-        transition: background-color 0.4s ease, color 0.4s ease;
+        color: var(--bg-secondary);
+        transition:
+            background-color 0.4s ease,
+            color 0.4s ease;
     }
 
-    button:disabled:hover{
+    button:disabled:hover {
         cursor: not-allowed;
     }
 }

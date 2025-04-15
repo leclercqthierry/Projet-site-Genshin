@@ -1,52 +1,52 @@
-main{
+main {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-#group2{
+#group2 {
     margin: 15px 0;
 }
 
-form>.form-label:nth-child(3),
-form>.form-label:nth-child(4){
+form > .form-label:nth-child(3),
+form > .form-label:nth-child(4) {
     margin-bottom: 15px;
 }
 
-textarea{
+textarea {
     padding-left: 5px;
-    resize:none;
+    resize: none;
 }
 
-fieldset{
-    margin:auto;
+fieldset {
+    margin: auto;
 }
 
-.error{
-    padding-top:0.5em;
-    font-size:12px;
+.error {
+    padding-top: 0.5em;
+    font-size: 12px;
     font-weight: bold;
     font-style: italic;
     letter-spacing: 1px;
 }
 
-@media screen and (min-width: 441px){
-    main{
-        width:500px;
-        margin:auto;
+@media screen and (min-width: 441px) {
+    main {
+        width: 500px;
+        margin: auto;
     }
 
-    input[type="file"]{
+    input[type="file"] {
         max-width: none;
     }
 
-    input[type="submit"]{
-        width:50%;
+    input[type="submit"] {
+        width: 50%;
     }
 }
 
-@media screen and (min-width:769px) {
-    .error{
-        font-size:14px;
+@media screen and (min-width: 769px) {
+    .error {
+        font-size: 14px;
     }
 }

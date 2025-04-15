@@ -1,45 +1,44 @@
-main{
-    display:flex;
+main {
+    display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 }
 
-h1{
-    margin-top:20px;
+h1 {
+    margin-top: 20px;
 }
 
-.main-container{
-    width:290px;
-    margin:0 auto 20px auto;
-    padding:15px;
+.main-container {
+    width: 290px;
+    margin: 0 auto 20px auto;
+    padding: 15px;
     background-color: var(--bg-secondary);
-    border-radius:20px;
-    display:flex;
-    flex-direction:column;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 15px;
-
 }
 
-.container{
-    padding:15px;
-    width:100%;
+.container {
+    padding: 15px;
+    width: 100%;
     background-color: var(--bg-primary);
-    border-radius:15px;
-    display:flex;
-    flex-direction:column;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 15px;
 }
 
-h2{
-    font-family: 'Roboto condensed', sans-serif;
+h2 {
+    font-family: "Roboto condensed", sans-serif;
     font-size: 1.2em;
 }
 
-.link-container{
-    width:100%;
-    display:none;
+.link-container {
+    width: 100%;
+    display: none;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
@@ -47,51 +46,58 @@ h2{
 }
 
 /* chevron animation */
-.fa-solid{
+.fa-solid {
     animation: upAndDown 0.4s infinite alternate;
 }
 
 @keyframes upAndDown {
-    0% {transform: translateY(5px);}
-    100% {transform: translateY(-5px);}
+    0% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
 }
 
-main a{
-    min-width:100px;
-    padding:10px;
+main a {
+    min-width: 100px;
+    padding: 10px;
     color: var(--font-color);
     text-decoration: none;
     background-color: var(--bg-secondary);
-    border-radius:20px;
+    border-radius: 20px;
     display: inline-block;
     text-align: center;
 }
 
 @media screen and (min-width: 610px) {
-
-    .main-container{
-        width:580px;
+    .main-container {
+        width: 580px;
     }
 
-    .link-container{
-        width:100%;
-        display:flex;
+    .link-container {
+        width: 100%;
+        display: flex;
         justify-content: space-evenly;
     }
 
-    .fa-solid{
-        display:none;
+    .fa-solid {
+        display: none;
     }
 }
 
 @media screen and (min-width: 769px) {
-    main a:hover{
+    main a:hover {
         background-color: var(--font-color);
-        color:var(--bg-secondary);
-        transition: background-color 0.4s ease, color 0.4s ease;
+        color: var(--bg-secondary);
+        transition:
+            background-color 0.4s ease,
+            color 0.4s ease;
     }
 
-    main a{
-        transition: background-color 0.4s ease, color 0.4s ease;
+    main a {
+        transition:
+            background-color 0.4s ease,
+            color 0.4s ease;
     }
-} 
+}

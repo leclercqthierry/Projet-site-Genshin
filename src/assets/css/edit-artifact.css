@@ -1,19 +1,19 @@
-form[name="select-artifact-form"]{
-    display:flex;
+form[name="select-artifact-form"] {
+    display: flex;
     flex-direction: column;
 }
 
-textarea{
+textarea {
     margin-bottom: 10px;
     padding-left: 5px;
-    resize:none;
+    resize: none;
 }
 
-fieldset img{
-    width:100px;
-    align-self:center;
+fieldset img {
+    width: 100px;
+    align-self: center;
 }
 
-select:hover{
-    cursor:pointer;
+select:hover {
+    cursor: pointer;
 }

@@ -1,93 +1,97 @@
-main{
-    display:flex;
+main {
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
 }
 
-.container{
-    width:290px;
-    height:fit-content;
-    margin:0 auto 20px auto;
-    padding:15px;
+.container {
+    width: 290px;
+    height: fit-content;
+    margin: 0 auto 20px auto;
+    padding: 15px;
     background-color: var(--bg-secondary);
-    border-radius:20px;
-    display:flex;
+    border-radius: 20px;
+    display: flex;
     flex-direction: column;
 }
 
-form{
-    width:100%;
-    display:flex;
+form {
+    width: 100%;
+    display: flex;
     flex-direction: column;
-    gap:15px;
+    gap: 15px;
 }
 
-.form-label{
-    display:flex;
+.form-label {
+    display: flex;
     flex-direction: column;
 }
 
-input{
-    font-family: 'Roboto', sans-serif;
+input {
+    font-family: "Roboto", sans-serif;
 }
 
-select{
-    width:100%;
-    padding:5px;
-    border:none;
-    border-radius:5px;
+select {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
 }
 
-.btn{
-    width:100%;
+.btn {
+    width: 100%;
     max-height: 40px;
     padding: 5px 10px;
-    color:var(--font-color);
+    color: var(--font-color);
     background-color: var(--bg-primary);
-    border:none;
+    border: none;
     border-radius: 20px;
 }
 
-#confirm-dialog{
-    display:none;
+#confirm-dialog {
+    display: none;
 }
 
-#confirm-dialog label{
+#confirm-dialog label {
     text-align: center;
 }
 
-#confirm-dialog .container{
-    row-gap:15px;
+#confirm-dialog .container {
+    row-gap: 15px;
 }
 
-#confirm-dialog .form-label{
-    height:auto;
+#confirm-dialog .form-label {
+    height: auto;
 }
 
-.btn-container{
-    display:flex;
+.btn-container {
+    display: flex;
     justify-content: center;
     column-gap: 30px;
 }
 
-button{
-    width:100px;
+button {
+    width: 100px;
 }
 
 @media screen and (min-width: 768px) {
-    .btn:hover{
+    .btn:hover {
         background-color: var(--font-color);
-        color:var(--bg-primary);
-        transition: background-color 0.4s ease, color 0.4s ease;
+        color: var(--bg-primary);
+        transition:
+            background-color 0.4s ease,
+            color 0.4s ease;
         cursor: pointer;
     }
 
-    .btn{
-        transition: background-color 0.4s ease, color 0.4s ease;
+    .btn {
+        transition:
+            background-color 0.4s ease,
+            color 0.4s ease;
     }
 
-    select:hover{
-        cursor:pointer;
+    select:hover {
+        cursor: pointer;
     }
 }

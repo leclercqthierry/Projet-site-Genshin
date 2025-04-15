@@ -1,4 +1,4 @@
-#group3{
+#group3 {
     margin: 15px auto;
     display: flex;
     flex-wrap: wrap;
@@ -6,32 +6,31 @@
     gap: 20px;
 }
 
-#group3 .form-label{
-    width:100%;
+#group3 .form-label {
+    width: 100%;
 }
 
-@media screen and (min-width:441px){
-    #group3{
-        margin:15px 0;
+@media screen and (min-width: 441px) {
+    #group3 {
+        margin: 15px 0;
     }
 
-    textarea{
+    textarea {
         padding-left: 5px;
-        resize:none;
+        resize: none;
     }
 }
 
-@media screen and (min-width: 769px){
-
-    .thumb{
+@media screen and (min-width: 769px) {
+    .thumb {
         justify-content: center;
     }
 
-    .form-label-groups:nth-child(4){
-        width:100%;
+    .form-label-groups:nth-child(4) {
+        width: 100%;
     }
 
-    .form-label-groups:nth-child(4) .form-label{
+    .form-label-groups:nth-child(4) .form-label {
         display: flex;
         align-items: center;
     }

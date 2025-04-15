@@ -1,30 +1,30 @@
 // The purpose of the script is to process in javascript the sorting and filters of the characters-gallery page
 
 // Radio, checkbox, sort and filters
-const weapons = document.getElementsByName('weapon');
-const rarities = document.querySelectorAll('main input[type=checkbox]');
-const elements = document.getElementsByName('element');
-const select = document.querySelector('select');
-const cards = document.querySelectorAll('.card');
+const weapons = document.getElementsByName("weapon");
+const rarities = document.querySelectorAll("main input[type=checkbox]");
+const elements = document.getElementsByName("element");
+const select = document.querySelector("select");
+const cards = document.querySelectorAll(".card");
 
 // paragraph that will host a message if no characters is to be displayed
-const p = document.createElement('p');
+const p = document.createElement("p");
 p.textContent = "Aucun personnage ne correspond à vos critères.";
-document.querySelector('.gallery').appendChild(p);
-p.style.display = 'none';
+document.querySelector(".gallery").appendChild(p);
+p.style.display = "none";
 
 // Checks the radio weapons and returns the id of the one that is checked
-function getWeapons(){
+function getWeapons() {
     let id;
     weapons.forEach((weapon) => {
         if (weapon.checked) {
             id = weapon.id;
         }
     });
-    return id; 
+    return id;
 }
 // Checks the radio elements and returns the id of the one that is checked
-function getElements(){
+function getElements() {
     let id;
     elements.forEach((element) => {
         if (element.checked) {
@@ -35,7 +35,7 @@ function getElements(){
 }
 
 // Checks the checkbox rarity and returns the values of the ones that are checked
-function getRarity(){
+function getRarity() {
     let values = [];
     rarities.forEach((rarity) => {
         if (rarity.checked) {
@@ -49,25 +49,33 @@ function getRarity(){
 let sortArray = [];
 weapons.forEach((weapon) => sortArray.push(weapon));
 rarities.forEach((rarity) => sortArray.push(rarity));
-elements.forEach((element) =>sortArray.push(element));
+elements.forEach((element) => sortArray.push(element));
 
 sortArray.forEach((sort) => {
-    sort.addEventListener('change', () => {
+    sort.addEventListener("change", () => {
         let weaponChoise = getWeapons();
         let elementChoise = getElements();
         let raritiesChoise = getRarity();
         cards.forEach((card) => {
             // Reveal all cards by default
-            card.parentElement.style.display = 'block';
-            let test1 = weaponChoise == 'all-weapons' ? true : card.dataset.weapon == weaponChoise;
-            let test2 = raritiesChoise.length == 0? false : raritiesChoise.includes(String(card.dataset.rarity));
-            let test3 = elementChoise == 'all-elements' ? true : card.dataset.element == elementChoise;
-            if (!test2){
-                card.parentElement.style.display = 'none';
-            }
-            else{
-                if (!test1 || !test3){
-                    card.parentElement.style.display = 'none';
+            card.parentElement.style.display = "block";
+            let test1 =
+                weaponChoise == "all-weapons"
+                    ? true
+                    : card.dataset.weapon == weaponChoise;
+            let test2 =
+                raritiesChoise.length == 0
+                    ? false
+                    : raritiesChoise.includes(String(card.dataset.rarity));
+            let test3 =
+                elementChoise == "all-elements"
+                    ? true
+                    : card.dataset.element == elementChoise;
+            if (!test2) {
+                card.parentElement.style.display = "none";
+            } else {
+                if (!test1 || !test3) {
+                    card.parentElement.style.display = "none";
                 }
             }
         });
@@ -76,33 +84,48 @@ sortArray.forEach((sort) => {
 });
 
 // alphabetic, rarity and element order
-select.addEventListener('change', () => {
-    switch(select.value){
+select.addEventListener("change", () => {
+    switch (select.value) {
         case "rarity": {
-            cards.forEach(card => {
-                if (card.dataset.rarity == 4){
+            cards.forEach((card) => {
+                if (card.dataset.rarity == 4) {
                     card.parentElement.style.order = 2;
-                }
-                else {
+                } else {
                     card.parentElement.style.order = 1;
                 }
-            });break;
+            });
+            break;
         }
         case "element": {
-            cards.forEach(card => {
-                switch(card.dataset.element){
-                    case "Anemo": card.parentElement.style.order = 1;break;
-                    case "Geo": card.parentElement.style.order = 2;break;
-                    case "Electro": card.parentElement.style.order = 3;break;
-                    case "Dendro": card.parentElement.style.order = 4;break;
-                    case "Hydro": card.parentElement.style.order = 5;break;
-                    case "Pyro": card.parentElement.style.order = 6;break;
-                    case "Cryo": card.parentElement.style.order = 7;break;
+            cards.forEach((card) => {
+                switch (card.dataset.element) {
+                    case "Anemo":
+                        card.parentElement.style.order = 1;
+                        break;
+                    case "Geo":
+                        card.parentElement.style.order = 2;
+                        break;
+                    case "Electro":
+                        card.parentElement.style.order = 3;
+                        break;
+                    case "Dendro":
+                        card.parentElement.style.order = 4;
+                        break;
+                    case "Hydro":
+                        card.parentElement.style.order = 5;
+                        break;
+                    case "Pyro":
+                        card.parentElement.style.order = 6;
+                        break;
+                    case "Cryo":
+                        card.parentElement.style.order = 7;
+                        break;
                 }
-            }); break;
+            });
+            break;
         }
         case "alphabetic-order": {
-            cards.forEach(card => {
+            cards.forEach((card) => {
                 card.parentElement.style.order = 1;
             });
         }

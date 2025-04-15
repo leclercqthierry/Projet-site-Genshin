@@ -1,30 +1,30 @@
-main{
-    display:flex;
+main {
+    display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.main-container{
-    max-width:1200px;
-    display:flex;
+.main-container {
+    max-width: 1200px;
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap:15px;
+    gap: 15px;
 }
 
-.container{
-    width:290px;
-    height:fit-content;
-    margin:0 auto 20px auto;
-    padding:15px;
+.container {
+    width: 290px;
+    height: fit-content;
+    margin: 0 auto 20px auto;
+    padding: 15px;
     background-color: var(--bg-secondary);
-    border-radius:20px;
-    display:flex;
+    border-radius: 20px;
+    display: flex;
     flex-direction: column;
 }
 
-h2{
+h2 {
     margin-bottom: 10px;
     font-size: 18px;
     text-align: center;
@@ -32,100 +32,108 @@ h2{
 }
 
 /* chevron animation */
-.fa-solid{
-    width:100%;
-    text-align:center;
+.fa-solid {
+    width: 100%;
+    text-align: center;
     animation: upAndDown 0.4s infinite alternate;
 }
 
 @keyframes upAndDown {
-    0% {transform: translateY(5px);}
-    100% {transform: translateY(-5px);}
+    0% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(-5px);
+    }
 }
 
-form{
-    width:100%;
-    display:none;
+form {
+    width: 100%;
+    display: none;
     flex-direction: column;
-    gap:15px;
+    gap: 15px;
 }
 
-.form-label{
-    display:flex;
+.form-label {
+    display: flex;
     flex-direction: column;
 }
 
 /* error messages*/
-.error{
-    padding-top:0.5em;
-    font-size:12px;
+.error {
+    padding-top: 0.5em;
+    font-size: 12px;
     font-weight: bold;
     font-style: italic;
     letter-spacing: 1px;
 }
 
-fieldset{
-    padding:10px;
-    border:2px solid var(--bg-primary);
-    display:flex;
+fieldset {
+    padding: 10px;
+    border: 2px solid var(--bg-primary);
+    display: flex;
     flex-direction: column;
     align-items: center;
 }
 
 button,
-input{
+input {
     max-width: 240px;
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
 }
 
-input[type="text"]{
-    width:100%;
-    padding:5px;
-    border:none;
-    border-radius:5px;
+input[type="text"] {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
 }
 
-input[type="file"]::file-selector-button{
-    margin:auto;
+input[type="file"]::file-selector-button {
+    margin: auto;
     padding: 5px 10px;
     background-color: var(--bg-primary);
-    color:var(--font-color);
-    border:none;
+    color: var(--font-color);
+    border: none;
     border-radius: 20px;
 }
 
-input[type="file"]+img{
-    width:100px;
+input[type="file"] + img {
+    width: 100px;
 }
 
-.btn{
+.btn {
     max-height: 40px;
     padding: 5px 10px;
-    color:var(--font-color);
+    color: var(--font-color);
     background-color: var(--bg-primary);
-    border:none;
+    border: none;
     border-radius: 20px;
 }
 
 @media screen and (min-width: 768px) {
     .btn:hover,
-    input[type="file"]::file-selector-button:hover{
+    input[type="file"]::file-selector-button:hover {
         background-color: var(--font-color);
-        color:var(--bg-primary);
-        transition: background-color 0.4s ease, color 0.4s ease;
+        color: var(--bg-primary);
+        transition:
+            background-color 0.4s ease,
+            color 0.4s ease;
         cursor: pointer;
     }
 
     .btn,
-    input[type="file"]::file-selector-button{
-        transition: background-color 0.4s ease, color 0.4s ease;
+    input[type="file"]::file-selector-button {
+        transition:
+            background-color 0.4s ease,
+            color 0.4s ease;
     }
 
-    .fa-solid:hover{
-        cursor:pointer;
+    .fa-solid:hover {
+        cursor: pointer;
     }
 
-    .error{
-        font-size:14px;
+    .error {
+        font-size: 14px;
     }
 }

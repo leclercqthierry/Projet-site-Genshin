@@ -1,9 +1,9 @@
-form[name="select-weapon-form"]{
-    display:flex;
+form[name="select-weapon-form"] {
+    display: flex;
     flex-direction: column;
 }
 
-#group3{
+#group3 {
     margin: 15px auto;
     display: flex;
     flex-wrap: wrap;
@@ -11,37 +11,35 @@ form[name="select-weapon-form"]{
     gap: 20px;
 }
 
-#group3 .form-label{
-    width:100%;
+#group3 .form-label {
+    width: 100%;
 }
 
-textarea{
+textarea {
     padding-left: 5px;
-    resize:none;
+    resize: none;
 }
 
-@media screen and (min-width:441px){
-    #group3{
-        margin:15px 0;
+@media screen and (min-width: 441px) {
+    #group3 {
+        margin: 15px 0;
     }
 
-    .form-label-groups{
-        flex-wrap:nowrap;
+    .form-label-groups {
+        flex-wrap: nowrap;
     }
 
-    .form-label-groups:nth-child(7){
+    .form-label-groups:nth-child(7) {
         flex-wrap: wrap;
     }
 }
 
-@media screen and (min-width: 769px){
-
-    #first-form{
-        width:290px;
+@media screen and (min-width: 769px) {
+    #first-form {
+        width: 290px;
     }
 
-    select:hover{
-        cursor:pointer;
+    select:hover {
+        cursor: pointer;
     }
-
 }
