@@ -122,8 +122,20 @@ main a {
     font-size: 14px;
 }
 
-button:disabled {
-    opacity: 0.3;
+label {
+    font-size: 14px;
+}
+
+.btn-container {
+    margin-top: 10px;
+}
+
+#confirm-dialog {
+    display: none;
+}
+
+#delete-account-form {
+    width: 100%;
 }
 
 @media screen and (min-width: 610px) {
@@ -197,9 +209,5 @@ button:disabled {
         transition:
             background-color 0.4s ease,
             color 0.4s ease;
-    }
-
-    button:disabled:hover {
-        cursor: not-allowed;
     }
 }

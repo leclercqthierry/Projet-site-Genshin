@@ -72,10 +72,24 @@
         <div class="btn-container2">
             <a href="add-build" class="btn">Créer un nouveau build</a>
             <a href="add-team" class="btn">Créer une nouvelle team</a>
-            <button class="btn" disabled>Supprimer mon compte</button>
+            <form action="member" id="delete-account-form" name="delete-account-form" method="post">
+                <input type="hidden" name="delete-account" value="<?= $_SESSION['user_id'] ?>">
+                <input type="submit" class="btn" value="Supprimer mon compte">
+            </form>
+        </div>
+        <div id="confirm-dialog">
+            <div class="container">
+                <label>Veuillez confirmer la suppression du compte</label>
+                    <div class="btn-container">
+                        <button type="submit" class="btn">Confirmer</button>
+                        <button id="cancel" type="reset" class="btn">Annuler</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
     <?php include_once "templates/footer.php"; ?>
     <script src="assets/js/member.js"></script>
+    <script src="assets/js/delete-form.js"></script>
 </body>
 </html>

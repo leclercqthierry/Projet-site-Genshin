@@ -78,6 +78,11 @@ function getUserByEmail($email){
     }
 }
 
+/**
+ * Update the user with the given email and new password
+ * @param string $email the email of the user to update
+ * @param string $newPassword the new password of the user
+ */
 function updatePassword($email, $newPassword){
     $pdo = getConnexion();
     try{
@@ -85,6 +90,70 @@ function updatePassword($email, $newPassword){
         $stmt->execute([$newPassword, $email]);
     } catch(PDOException $e){
         $error = "Erreur lors de la mise à jour du mot de passe: ".$e->getMessage();
+        include_once "views/error.php";
+        exit;
+    }
+}
+
+/**
+ * Delete the user with the given id
+ * @note this function will also transfer all the teams and builds created by the user to the user with id 10
+ * @param int $id the id of the user to delete
+ */
+function deleteUser($id){
+    $pdo = getConnexion();
+
+    // We start by looking at whether the user has teams
+    try{
+        $stmt = $pdo->prepare("SELECT * FROM zell_teams WHERE user_id = ?");
+        $stmt->execute([$id]);
+        $teams = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        // If yes, we transfer them to the user with user_id = 10 (deleted member)
+        if(count($teams) > 0){
+            try{
+                $stmt = $pdo->prepare("UPDATE zell_teams SET user_id = ? WHERE user_id = ?");
+                $stmt->execute([10, $id]);
+            } catch(PDOException $e){
+                $error = "Erreur lors de la mise à jour des teams de l'utilisateur: ".$e->getMessage();
+                include_once "views/error.php";
+                exit;
+            }
+        }
+    } catch(PDOException $e){
+        $error = "Erreur lors de la récupération des teams de l'utilisateur: ".$e->getMessage();
+        include_once "views/error.php";
+        exit;
+    }
+
+    // Then we do the same thing with the builds
+    try{
+        $stmt = $pdo->prepare("SELECT * FROM zell_builds WHERE user_id = ?");
+        $stmt->execute([$id]);
+        $builds = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+        if(count($builds) > 0){
+            try{
+                $stmt = $pdo->prepare("UPDATE zell_builds SET user_id = ? WHERE user_id = ?");
+                $stmt->execute([10, $id]);
+            } catch(PDOException $e){
+                $error = "Erreur lors de la mise à jour des builds de l'utilisateur: ".$e->getMessage();
+                include_once "views/error.php";
+                exit;
+            }
+        }
+    } catch(PDOException $e){
+        $error = "Erreur lors de la récupération des builds de l'utilisateur: ".$e->getMessage();
+        include_once "views/error.php";
+        exit;
+    }
+
+    // Finally we delete the user
+    try{
+        $stmt = $pdo->prepare("DELETE FROM zell_users WHERE user_id = ?");
+        $stmt->execute([$id]);
+    } catch(PDOException $e){
+        $error = "Erreur lors de la suppression de l'utilisateur: ".$e->getMessage();
         include_once "views/error.php";
         exit;
     }

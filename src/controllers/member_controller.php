@@ -29,10 +29,19 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Member'){
         if (isset($_POST['edit-team'])){
 
             require_once "controllers/edit-team_controller.php";
+
         }else if(isset($_POST['delete-team'])){
 
             require_once "controllers/delete-team_controller.php";
-        } else{
+
+        }else if(isset($_POST['delete-account'])){
+
+            require_once "models/users.php";
+            deleteUser($_SESSION['user_id']);
+            session_destroy();
+            header("Location: index");
+
+        }else{
             $error = "Action inconnue!";
             include_once "views/error.php";
             exit;
