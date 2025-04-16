@@ -30,8 +30,7 @@ if ($path === '/' || $path === '/index'){
 }else if ($path === '/legal_notices.php'){
 
     include_once "views/legal_notices.php";
-}
-else {
+}else {
 
     // we retrieve the name of the route to determine its controller
     $path = explode("/", $path)[1];

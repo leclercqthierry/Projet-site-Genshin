@@ -23,7 +23,7 @@
                 <label for="password">mot de passe</label>
                 <input type="password" id="password" name="password" placeholder="********" aria-required="true">
             </div>
-            <a href="#" aria-disabled="true">mot de passe oublié</a>
+            <a href="reset-password">mot de passe oublié</a>
             <div class="btn-container">
                 <a href="register" class="btn">S'inscrire</a>
                 <button type="submit" class="btn">Valider</button>

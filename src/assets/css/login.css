@@ -69,10 +69,6 @@ a.btn {
     letter-spacing: 1px;
 }
 
-.form-group + a {
-    cursor: not-allowed;
-}
-
 @media screen and (min-width: 700px) {
     .btn {
         font-size: 1em;
