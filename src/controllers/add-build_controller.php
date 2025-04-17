@@ -1,4 +1,16 @@
 <?php
+/**
+ * This file is the controller for the add-build page.
+ * It handles the logic for displaying the form and processing the form submission.
+ * It checks if the user is logged in and has the appropriate role (Administrator or Member).
+ * If the user is not logged in or does not have the appropriate role, an error message is displayed.
+ * If the first form is not submitted, it displays the form for selecting a character and an artifact.
+ * Otherwise, it displays the second form for selecting a weapon.
+ * If the second form is submitted, it validates the input and checks if the build already exists.
+ * If the build does not exist, it creates a new build and redirects the user to the appropriate page.
+ * Otherwise, an error message is displayed.
+ */
+
 session_start();
 
 if (isset($_SESSION['role']) && ($_SESSION['role'] === 'Administrator' || $_SESSION['role'] === 'Member')) {

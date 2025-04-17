@@ -1,4 +1,10 @@
 <?php
+/**
+ * This file contains templates for the add resources page.
+ * It contains the following functions:
+ * - addSimpleResourceForm: template for the simple resource form to add
+ * - addMultiplesResourcesForm: template for the multiple resources form to add
+ */
 
 /**
  * Template for the simple resource form to add

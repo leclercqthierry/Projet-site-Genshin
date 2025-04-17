@@ -1,4 +1,8 @@
 <?php
+/**
+ * This file is the controller for the delete weapon page.
+ * It handles the deletion of a weapon from the database and the corresponding image file.
+ */
 
 session_start();
 

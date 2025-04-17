@@ -1,4 +1,11 @@
 <?php
+/**
+ * This file is the controller for the edit resources page.
+ * It handles the logic for displaying the edit resources form and processing the form submission.
+ * It also handles the validation of the form data and updating the resources in the database.
+ * It includes the necessary models and views for the edit resources page.
+ */
+
 session_start();
 
 if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){

@@ -1,4 +1,15 @@
 <?php
+/**
+ * This file is the controller for the member page.
+ * It handles the logic for displaying the member page and processing form submissions.
+ * It checks if the user is logged in and has the role of 'Member'.
+ * If the user is not logged in or does not have the correct role, it redirects them to the error page.
+ * Otherwise it retrieves their teams and builds from the database and displays them on the member page.
+ * It also handles form submissions for editing and deleting teams, as well as deleting the user's account.
+ * If the form submission is for editing a team, it includes the edit-team_controller.php file to handle the logic for editing a team.
+ * If the form submission is for deleting a team, it includes the delete-team_controller.php file to handle the logic for deleting a team.
+ * If the form submission is for deleting the user's account, it calls the deleteUser function from the users model and destroys the session.
+ */
 session_start();
 
 if (isset($_SESSION['role']) && $_SESSION['role'] === 'Member'){

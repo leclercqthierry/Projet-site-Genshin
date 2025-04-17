@@ -1,4 +1,8 @@
 <?php
+/**
+ * This file contains all the functions related to the database
+ * and the connection to it.
+ */
 
 /**
  * Database connexion

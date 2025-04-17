@@ -1,4 +1,10 @@
 <?php
+/**
+ * This file contains templates for the edit resources page.
+ * It contains the following functions:
+ * - editSimpleResourceForm: template for the simple resource form to edit
+ * - editMultiplesResourcesForm: template for the multiple resources form to edit
+ */
 
 /**
  * Template for the simple resource form to edit

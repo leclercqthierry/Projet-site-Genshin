@@ -1,4 +1,9 @@
 <?php
+/**
+ * This file contains all the functions related to the resources needed.
+ * It includes functions to get, create, update and delete resources from the database.
+ * The resources include boss drops, local materials, world boss drops, dungeon materials, mob materials, elevation materials and dungeon   elevation materials.
+ */
 
 require_once "models/database.php";
 

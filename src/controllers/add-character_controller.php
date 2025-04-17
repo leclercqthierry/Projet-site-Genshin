@@ -1,4 +1,14 @@
 <?php
+/**
+ * This file is the controller for the add-character page.
+ * It handles the form submission and validation for adding a new character.
+ * It checks if the user is an administrator and if the form is submitted.
+ * If the form is submitted, it validates the inputs and files.
+ * If the inputs are valid, it saves the character in the database and moves the uploaded files to the correct directory.
+ * If the form is not submitted, it displays the form with the necessary data.
+ * If the user is not an administrator, it displays an error message.
+ */
+
 session_start();
 
 // If it's the admin

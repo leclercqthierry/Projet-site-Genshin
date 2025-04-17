@@ -1,4 +1,9 @@
 <?php
+/**
+ * This file is the controller for the weapon page.
+ * It handles the request and response for the weapon page.
+ * It retrieves the weapon data from the database and passes it to the view.
+ */
 session_start();
 
 if (isset($_GET['id'])){

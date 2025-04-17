@@ -1,4 +1,11 @@
 <?php
+/**
+ * This file contains the validation functions for the forms
+ * It is used to validate the data submitted by the user
+ * It also contains the functions to validate the files uploaded by the user
+ * The functions are used in the controllers to validate the data before saving it in the database
+ * The functions are also used to validate the data before displaying it to the user
+ */
 
 /**
  * Validates a text field

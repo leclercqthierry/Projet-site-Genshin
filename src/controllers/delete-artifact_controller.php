@@ -1,4 +1,8 @@
 <?php
+/**
+ * This file is the controller for the delete artifact page.
+ * It handles the deletion of an artifact from the database and the file system.
+ */
 
 session_start();
 

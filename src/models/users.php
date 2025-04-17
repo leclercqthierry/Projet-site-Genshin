@@ -1,8 +1,17 @@
 <?php
+/**
+ * This file contains all the functions related to the users
+ * It contains the following functions:
+ * - getUser: returns the user with the nickname $nickname and the password $password if it exists otherwise false
+ * - createUser: creates a new user with the nickname $nickname, the email $email and the password $password
+ * - getUserById: returns the user with the id $id
+ * - getUserByEmail: returns the user with the email $email
+ * - updatePassword: updates the password of the user with the email $email to $newPassword
+ * - deleteUser: deletes the user with the id $id and transfers all the teams and builds created by the user to the user with id 10
+ */
 
 require_once "models/database.php";
 
-// returns the user with the nickname $nickname and the password $password if it exists otherwise false
 /**
  * returns the user with the nickname $nickname and the password $password if it exists otherwise false
  * @param string $nickname the nickname of the user

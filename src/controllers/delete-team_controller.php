@@ -1,4 +1,9 @@
 <?php
+/**
+ * This file is the controller for the delete team page.
+ * It handles the form submission and displays the delete team page.
+ */
+
 if(session_status() !== PHP_SESSION_ACTIVE || session_status() === PHP_SESSION_NONE){
     session_start();
 } 

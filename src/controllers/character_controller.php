@@ -1,4 +1,10 @@
 <?php
+/**
+ * This file is the controller for the character page.
+ * It handles the request and response for the character page.
+ * It retrieves the character data from the database and displays it on the page.
+ */
+
 session_start();
 
 if (isset($_GET['id'])){

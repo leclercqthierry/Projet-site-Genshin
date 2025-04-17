@@ -1,4 +1,11 @@
 <?php
+/**
+ * This file is the controller for the edit team page.
+ * It handles the logic for editing a team, including selecting a team, editing its name,
+ * editing the characters, and editing the builds.
+ * It also handles the validation of the form inputs and the display of error messages.
+ */
+
 if(session_status() !== PHP_SESSION_ACTIVE || session_status() === PHP_SESSION_NONE){
     session_start();
 } 

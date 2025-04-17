@@ -1,4 +1,13 @@
 <?php
+/**
+ * This file is the controller for the edit artifact page.
+ * It handles the form submission for editing an artifact.
+ * It validates the input data, updates the artifact in the database,
+ * and redirects to the admin menu page.
+ * It also handles the case where no form has been submitted,
+ * in which case it displays the form for selecting an artifact to edit.
+ */
+
 session_start();
 
 if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){

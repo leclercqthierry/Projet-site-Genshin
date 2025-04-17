@@ -1,4 +1,11 @@
 <?php
+/**
+ * This file is the controller for the add-team page.
+ * It handles the logic for creating a new team, including validating the team name and character selections.
+ * It also manages the display of the add-team view and handles form submissions.
+ * The controller checks if the user is logged in and has the appropriate role (Administrator or Member).
+ */
+
 session_start();
 
 if(isset($_SESSION['role']) && ($_SESSION['role'] === 'Administrator' || $_SESSION['role'] === 'Member')){

@@ -1,4 +1,8 @@
 <?php
+/**
+ * This file contains the character model functions.
+ * It includes functions to create, read, update and delete characters from the database.
+ */
 
 require_once "models/database.php";
 

@@ -1,4 +1,9 @@
 <?php
+/**
+ * This file is the controller for the edit build page.
+ * It is used to edit a build of a character.
+ */
+
 session_start();
 
 if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){

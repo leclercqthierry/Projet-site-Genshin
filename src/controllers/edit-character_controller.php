@@ -1,4 +1,11 @@
 <?php
+/**
+ * This file is the controller for the edit character page.
+ * It handles the form submission for editing a character.
+ * It validates the input data and updates the character in the database.
+ * It also handles the file upload for the character's image and card.
+ */
+
 session_start();
 
 if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){

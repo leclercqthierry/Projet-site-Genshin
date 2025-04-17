@@ -1,4 +1,7 @@
 <?php
+/**
+ * This file contains a template for the admin side submenu.
+ */
 
 /**
  * Admin side submenu template

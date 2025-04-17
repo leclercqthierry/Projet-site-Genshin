@@ -1,4 +1,9 @@
 <?php
+/**
+ * This file is the controller for the characters gallery page.
+ * It handles the logic for displaying the characters in the gallery.
+ */
+
 session_start();
 
 require_once "models/weapons.php";

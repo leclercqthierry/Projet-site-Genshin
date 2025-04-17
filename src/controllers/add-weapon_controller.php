@@ -1,4 +1,10 @@
 <?php
+/**
+ * This file is the controller for the add-weapon page.
+ * It handles the form submission and validation for adding a new weapon.
+ * It also includes the necessary models and views for displaying the form and processing the data.
+ */
+
 session_start();
 
 if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){

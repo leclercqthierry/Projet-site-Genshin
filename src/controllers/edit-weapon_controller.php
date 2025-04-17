@@ -1,4 +1,9 @@
 <?php
+/**
+ * This file is the controller for the edit weapon page.
+ * It handles the form submission for editing a weapon and displays the edit weapon form.
+ * It also validates the form data and updates the weapon in the database.
+ */
 session_start();
 
 if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){

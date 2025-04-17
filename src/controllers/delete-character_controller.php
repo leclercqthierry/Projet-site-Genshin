@@ -1,4 +1,8 @@
 <?php
+/**
+ * This file is the controller for the delete character page.
+ * It handles the deletion of a character from the database and the corresponding image file.
+ */
 
 session_start();
 

@@ -1,4 +1,8 @@
 <?php
+/**
+ * This file is the controller for the teams gallery page.
+ * It retrieves all teams and their builds from the database and passes them to the view.
+ */
 session_start();
 
 require_once "models/teams.php";

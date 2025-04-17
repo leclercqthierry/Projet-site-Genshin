@@ -1,4 +1,8 @@
 <?php
+/**
+ * This file is the controller for the registration page.
+ * It handles the form submission, validates the input, and creates a new user in the database.
+ */
 
 if (isset($_POST['nickname']) && (isset($_POST['email'])) && isset($_POST['password'])){
 

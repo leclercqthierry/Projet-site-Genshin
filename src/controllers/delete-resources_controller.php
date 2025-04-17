@@ -1,4 +1,9 @@
 <?php
+/**
+ * This file is the controller for the delete resources page.
+ * It handles the logic for deleting resources from the database.
+ */
+
 session_start();
 
 if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){

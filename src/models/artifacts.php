@@ -1,4 +1,13 @@
 <?php
+/**
+ * This file contains all the function related to the artifacts.
+ * It contains the following functions:
+ * - createArtifact: Create a new artifact set
+ * - getAllArtifacts: Get all artifact sets
+ * - getArtifactById: Get the artifact with the given id
+ * - editArtifact: Edit an artifact set with the given id
+ * - deleteArtifact: Delete the artifact set with the given id
+ */
 
 require_once "models/database.php";
 

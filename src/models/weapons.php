@@ -1,4 +1,9 @@
 <?php
+/**
+ * this file contains all the functions to manage the weapons in the database
+ * it contains functions to get all weapons, get a weapon by its id, create a new weapon, edit a weapon and delete a weapon
+ * it also contains functions to get all weapon types, get a weapon type by its id and get all weapons of the same type
+ */
 
 require_once "models/database.php";
 

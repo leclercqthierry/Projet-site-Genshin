@@ -1,4 +1,8 @@
 <?php
+/**
+ * Thsi file contains all the functions to manage teams in the database.
+ * It includes functions to create, edit, delete and get teams from the database.
+ */
 
 require_once "models/database.php";
 

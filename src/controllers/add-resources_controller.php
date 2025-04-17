@@ -1,4 +1,11 @@
 <?php
+/**
+ * This file is the controller for the add-resources page.
+ * It handles the form submission for adding new resources to the database.
+ * It validates the input data and calls the appropriate model functions to insert the data into the database.
+ * It also includes the necessary views for displaying the form and any error messages.
+ */
+
 session_start();
 
 // The addition of resources being independent most of the time, we therefore process the forms independently.

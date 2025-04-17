@@ -1,4 +1,8 @@
 <?php
+/**
+ * This file is the controller for the team page.
+ * It handles the request and response for the team page.
+ */
 session_start();
 
 if (isset($_GET['id']) && isset($_GET['author'])){

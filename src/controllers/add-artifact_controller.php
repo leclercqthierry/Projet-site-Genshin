@@ -1,4 +1,11 @@
 <?php
+/**
+ * This file is the controller for the add-artifact page.
+ * It handles the form submission for adding a new artifact.
+ * It validates the input data and saves the artifact to the database.
+ * It also handles file uploads for the artifact thumbnail.
+ */
+
 session_start();
 
 if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){

@@ -1,4 +1,10 @@
 <?php
+/**
+ * This file is the controller for the builds page.
+ * It handles the logic for displaying the builds for a specific character.
+ * It retrieves the builds from the database and categorizes them into F2P, hybrid, and premium builds
+ */
+
 session_start();
 
 if (isset($_GET['id'])){

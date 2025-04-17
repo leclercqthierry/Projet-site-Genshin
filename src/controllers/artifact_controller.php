@@ -1,4 +1,9 @@
 <?php
+/**
+ * This file is the controller for the artifact details page.
+ * It retrieves the artifact details from the database and displays them on the page.
+ */
+
 session_start();
 
 if (isset($_GET['id'])){

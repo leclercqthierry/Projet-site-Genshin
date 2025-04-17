@@ -1,4 +1,10 @@
 <?php
+/**
+ * This file is the controller for the login page.
+ * It handles the login form submission, validates the input,
+ * checks the user credentials against the database,
+ * and redirects the user to the appropriate page based on their role.
+ */
 session_start();
 
 if (isset($_POST['nickname']) && isset($_POST['password'])){

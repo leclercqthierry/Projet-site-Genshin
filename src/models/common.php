@@ -1,4 +1,8 @@
 <?php
+/**
+ * This file contains all the functions related to common data
+ * such as stats, farm days, elements and obtaining means.
+ */
 
 require_once "models/database.php";
 

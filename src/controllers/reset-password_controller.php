@@ -1,4 +1,8 @@
 <?php
+/**
+ * This file is the reset password controller.
+ * It handles the logic for resetting a user's password.
+ */
 
 if ((isset($_POST['email'])) && isset($_POST['password'])){
     

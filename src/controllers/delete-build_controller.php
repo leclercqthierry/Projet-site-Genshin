@@ -1,4 +1,11 @@
 <?php
+/**
+ * This file is the controller for the delete build page.
+ * It is only accessible to administrators. 
+ * It allows the administrator to delete a build from the database.
+ * The administrator can choose the character whose build he wants to delete, and then select the build to delete from a list of builds associated with that character.
+ */
+
 session_start();
 
 if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){

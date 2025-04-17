@@ -1,4 +1,8 @@
 <?php
+/**
+ * This file contains all the functions related to the builds
+ * It includes functions to get a build, get all builds of a team, create a build, get all builds by character id, edit a build and delete a build
+ */
 
 require_once "models/database.php";
 

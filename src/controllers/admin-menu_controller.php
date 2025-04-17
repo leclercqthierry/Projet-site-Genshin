@@ -1,4 +1,9 @@
 <?php
+/**
+ * This file is the controller for the admin menu.
+ * It checks if the user is an administrator and includes the admin menu view.
+ */
+
 session_start();
 
 // If it's the admin
