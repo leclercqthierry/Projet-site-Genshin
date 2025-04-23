@@ -15,6 +15,7 @@ require_once "models/database.php";
  * @param string $cardPath Path to the character card
  * @param string $thumbnailPath Path to the character thumbnail
  * @param array $ids array of needed ids for the character
+ * @return void
  */
 function createCharacter($name, $element_id, $char_jewels_id, $rarity, $cardPath, $thumbnailPath, $ids){
     $pdo = getConnexion();
@@ -24,7 +25,7 @@ function createCharacter($name, $element_id, $char_jewels_id, $rarity, $cardPath
         $stmt->execute($datas);
 
     } catch(PDOException $e){
-        $error = "Erreur lors de la création d'un personnage: ".$e->getMessage();
+        $error = "Erreur lors de la création d'un personnage. ";
         include_once "views/error.php";
         exit;
     }
@@ -40,7 +41,7 @@ function getAllCharacters(){
         $stmt = $pdo->query("SELECT `element_id`, `character_id`, `rarity`, `name`, `image`, `weapon_type_id` FROM zell_characters ORDER BY `name`");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(PDOException $e){
-        $error = "Erreur lors de la récupération de tous les personnages: ".$e->getMessage();
+        $error = "Erreur lors de la récupération de tous les personnages. ";
         include_once "views/error.php";
         exit;
     }
@@ -58,7 +59,7 @@ function getCharacterById($id){
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch(PDOException $e){
-        $error = "Erreur lors de la récupération du personnage: ".$e->getMessage();
+        $error = "Erreur lors de la récupération du personnage. ";
         include_once "views/error.php";
         exit;
     }
@@ -74,6 +75,7 @@ function getCharacterById($id){
  * @param string $cardPath Path to the character card
  * @param string $thumbnailPath Path to the character thumbnail
  * @param array $ids array of needed ids for the character
+ * @return void
  */
 function editCharacter($id, $name, $element_id, $char_jewels_id, $rarity, $cardPath, $thumbnailPath, $ids){
     $pdo = getConnexion();
@@ -82,7 +84,7 @@ function editCharacter($id, $name, $element_id, $char_jewels_id, $rarity, $cardP
         $datas = array_merge([$name, $element_id, $char_jewels_id, $rarity, $cardPath, $thumbnailPath], $ids, [$id]);
         $stmt->execute($datas);
     } catch(PDOException $e){
-        $error = "Erreur lors de la modification du personnage: ".$e->getMessage();
+        $error = "Erreur lors de la modification du personnage. ";
         include_once "views/error.php";
         exit;
     }
@@ -91,6 +93,7 @@ function editCharacter($id, $name, $element_id, $char_jewels_id, $rarity, $cardP
 /**
  * Delete a character by its id
  * @param int $id ID of the character to delete
+ * @return void
  */
 function deleteCharacter($id){
     $pdo = getConnexion();
@@ -98,7 +101,7 @@ function deleteCharacter($id){
         $stmt = $pdo->prepare("DELETE FROM zell_characters WHERE `character_id`=?");
         $stmt->execute([$id]);
     } catch(PDOException $e){
-        $error = "Erreur lors de la suppression du personnage: ".$e->getMessage();
+        $error = "Erreur lors de la suppression du personnage. ";
         include_once "views/error.php";
         exit;
     }

@@ -17,6 +17,7 @@ require_once "models/database.php";
  * @param string $rarity The maximum rarity of the artifact set
  * @param string $description The description of the artifact set
  * @param string $thumbnailPath The path of the artifact set thumbnail file
+ * @return void
  */
 function createArtifact($name, $rarity, $description, $thumbnailPath){
     $pdo = getConnexion();
@@ -25,7 +26,7 @@ function createArtifact($name, $rarity, $description, $thumbnailPath){
         $stmt->execute([$name, $rarity, $thumbnailPath, $description]);
 
     } catch(PDOException $e){
-        $error = "Erreur lors de la création d'un set d'artefacts: ".$e->getMessage();
+        $error = "Erreur lors de la création d'un set d'artefacts. ";
         include_once "views/error.php";
         exit;
     }
@@ -41,7 +42,7 @@ function getAllArtifacts(){
         $stmt = $pdo->query("SELECT `artifact_id`, `name`, `image`, `rarity` FROM zell_artifacts ORDER BY `name`");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(PDOException $e){
-        $error = "Erreur lors de la récupération de tous les sets d'artefacts: ".$e->getMessage();
+        $error = "Erreur lors de la récupération de tous les sets d'artefacts. ";
         include_once "views/error.php";
         exit;
     }
@@ -59,7 +60,7 @@ function getArtifactById($id){
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch(Exception $e){
-        $error =  "Erreur lors de la récupération d'un artéfact par l'ID: ".$e->getMessage();
+        $error =  "Erreur lors de la récupération d'un artéfact par l'ID. ";
         include_once "views/error.php";
         exit;
     }
@@ -72,6 +73,7 @@ function getArtifactById($id){
  * @param string $rarity the rarity of the artifact set
  * @param string $description  the description of the artifact set
  * @param string $thumbnailPath the thumbnail path of the artifact set
+ * @return void
  */
 function editArtifact($id, $name, $rarity, $description, $thumbnailPath){
     $pdo = getConnexion();
@@ -79,7 +81,7 @@ function editArtifact($id, $name, $rarity, $description, $thumbnailPath){
         $stmt = $pdo->prepare("UPDATE zell_artifacts SET `name` =?, `rarity` =?, `image` =?, `description` =? WHERE `artifact_id` =?");
         $stmt->execute([$name, $rarity, $thumbnailPath, $description, $id]);
     } catch(PDOException $e){
-        $error = "Erreur lors de la modification d'un artéfact: ".$e->getMessage();
+        $error = "Erreur lors de la modification d'un artéfact. ";
         include_once "views/error.php";
         exit;
     }
@@ -88,6 +90,7 @@ function editArtifact($id, $name, $rarity, $description, $thumbnailPath){
 /**
  * Delete the artifact set with the given id
  * @param int $id the artifact set id
+ * @return void
  */
 function deleteArtifact($id){
     $pdo = getConnexion();
@@ -95,7 +98,7 @@ function deleteArtifact($id){
         $stmt = $pdo->prepare("DELETE FROM zell_artifacts WHERE `artifact_id` =?");
         $stmt->execute([$id]);
     } catch(PDOException $e){
-        $error = "Erreur lors de la suppression d'un artéfact: ".$e->getMessage();
+        $error = "Erreur lors de la suppression d'un artéfact. ";
         include_once "views/error.php";
         exit;
     }

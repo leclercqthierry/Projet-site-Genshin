@@ -17,7 +17,7 @@ function getAllStats(){
         $stmt = $pdo->query("SELECT `stat_id`, `nameFr` FROM zell_stats ORDER BY `stat_id`");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(PDOException $e){
-        $error = "Erreur lors de la récupération des statistiques: ".$e->getMessage();
+        $error = "Erreur lors de la récupération des statistiques. ";
         include_once "views/error.php";
         exit;
     }
@@ -36,7 +36,7 @@ function getStatById($id){
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }catch (PDOException $e) {
-        $error = "Erreur lors de la récupération d'une statistique par son Id: ".$id.": ".$e->getMessage();
+        $error = "Erreur lors de la récupération d'une statistique par son Id: ".$id;
         include_once "views/error.php";
         exit;
     }
@@ -52,7 +52,7 @@ function getAllFarmDays(){
         $stmt = $pdo->query("SELECT `farm_day_id`, `daysFr` FROM zell_farm_days ORDER BY `farm_day_id`");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(PDOException $e){
-        $error = "Erreur lors de la récupération des jours de farm: ".$e->getMessage();
+        $error = "Erreur lors de la récupération des jours de farm. ";
         include_once "views/error.php";
         exit;
     }
@@ -71,7 +71,7 @@ function getFarmDaysById($id){
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }catch (PDOException $e) {
-        $error = "Erreur lors de la récupération d'un jour de farm par son Id: ".$id.": ".$e->getMessage();
+        $error = "Erreur lors de la récupération d'un jour de farm par son Id: ".$id;
         include_once "views/error.php";
         exit;
     }
@@ -87,7 +87,7 @@ function getAllElementsOrderedByName(){
         $stmt = $pdo->query("SELECT * FROM zell_elements ORDER BY `name`");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(PDOException $e){
-        $error =  "Erreur lors de la récupération des éléments ordonnés par nom: ".$e->getMessage();
+        $error =  "Erreur lors de la récupération des éléments ordonnés par nom. ";
         include_once "views/error.php";
         exit;
     }
@@ -103,7 +103,7 @@ function getAllElementsOrderedById(){
         $stmt = $pdo->query("SELECT * FROM zell_elements ORDER BY `element_id`");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(PDOException $e){
-        $error =  "Erreur lors de la récupération des éléments ordonnés par Id: ".$e->getMessage();
+        $error =  "Erreur lors de la récupération des éléments ordonnés par Id. ";
         include_once "views/error.php";
         exit;
     }
@@ -122,7 +122,7 @@ function getElementById($id){
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch(PDOException $e){
-        $error =  "Erreur lors de la récupération de l'élément par son Id: ".$e->getMessage();
+        $error =  "Erreur lors de la récupération de l'élément par son Id. ";
         include_once "views/error.php";
         exit;
     }
@@ -138,7 +138,7 @@ function howToGet(){
         $stmt = $pdo->query("SELECT `obtaining_id`, `name` FROM zell_obtainings");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
-        $error = "Erreur lors de la récupération du moyen d'obtention: ".$e->getMessage();
+        $error = "Erreur lors de la récupération du moyen d'obtention. ";
         include_once "views/error.php";
         exit;
     }
@@ -157,7 +157,7 @@ function howToGet(){
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch (PDOException $e) {
-        $error = "Erreur lors de la récupération du moyen d'obtention par son Id: ".$id.": ".$e->getMessage();
+        $error = "Erreur lors de la récupération du moyen d'obtention par son Id: ".$id;
         include_once "views/error.php";
         exit;
     }
@@ -175,7 +175,7 @@ function getCharJewelById($id){
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }catch(PDOException $e){
-        $error = "Erreur lors de la récupération des joyaux de personnages: ".$e->getMessage();
+        $error = "Erreur lors de la récupération des joyaux de personnages. ";
         include_once "views/error.php";
         exit;
     }

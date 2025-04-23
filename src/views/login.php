@@ -31,7 +31,7 @@
         </form>
     </main>
     <?php include_once "templates/footer.php";?>
-    <script src="assets/js/validate.js"></script>
-    <script src="assets/js/validate_login.js"></script>
+    <!-- <script src="assets/js/validate.js"></script>
+    <script src="assets/js/validate_login.js"></script> -->
 </body>
 </html>

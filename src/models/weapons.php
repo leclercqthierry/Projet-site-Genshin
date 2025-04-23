@@ -9,6 +9,7 @@ require_once "models/database.php";
 
 /**
  * Get all weapon types ordered by name in the database
+ * @return array list of weapon types ordered by name
  */
 function getAllWeaponTypesOrderedByName(){
     $pdo = getConnexion();
@@ -16,7 +17,7 @@ function getAllWeaponTypesOrderedByName(){
         $stmt = $pdo->query("SELECT * FROM zell_weapon_types ORDER BY `name`");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(Exception $e){
-        $error =  "Erreur lors de la récupération des types d'armes: ".$e->getMessage();
+        $error =  "Erreur lors de la récupération des types d'armes: ";
         include_once "views/error.php";
         exit;
     }
@@ -24,6 +25,7 @@ function getAllWeaponTypesOrderedByName(){
 
 /**
  * Get all weapon types ordered by id in the database
+ * @return array list of weapon types ordered by id
  */
 function getAllWeaponTypesOrderedById(){
     $pdo = getConnexion();
@@ -31,7 +33,7 @@ function getAllWeaponTypesOrderedById(){
         $stmt = $pdo->query("SELECT * FROM zell_weapon_types ORDER BY `weapon_type_id`");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(Exception $e){
-        $error =  "Erreur lors de la récupération des types d'armes: ".$e->getMessage();
+        $error =  "Erreur lors de la récupération des types d'armes: ";
         include_once "views/error.php";
         exit;
     }
@@ -40,7 +42,7 @@ function getAllWeaponTypesOrderedById(){
 /**
  * Get weapon type by its id in the database
  * @param int $id
- * @return array the weapon type
+ * @return array the weapon type 
  */
 function getWeaponTypeById($id){
     $pdo = getConnexion();
@@ -49,7 +51,7 @@ function getWeaponTypeById($id){
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch(Exception $e){
-        $error =  "Erreur lors de la récupération du type d'arme avec l'ID ".$id.": ".$e->getMessage();
+        $error =  "Erreur lors de la récupération du type d'arme avec l'ID ".$id;
         include_once "views/error.php";
         exit;
     }
@@ -57,6 +59,7 @@ function getWeaponTypeById($id){
 
 /**
  * Get all weapons ordered by name in the database
+ * @return array list of weapons ordered by name
  */
 function getAllWeapons(){
     $pdo = getConnexion();
@@ -64,7 +67,7 @@ function getAllWeapons(){
         $stmt = $pdo->query("SELECT `weapon_id`, `weapon_type_id`, `rarity`, `name`, `image` FROM zell_weapons ORDER BY `name`");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(Exception $e){
-        $error =  "Erreur lors de la récupération de tous les armes: ".$e->getMessage();
+        $error =  "Erreur lors de la récupération de tous les armes: ";
         include_once "views/error.php";
         exit;
     }
@@ -82,7 +85,7 @@ function getAllWeaponsOfType($id){
         $stmt->execute([$id]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(Exception $e){
-        $error =  "Erreur lors de la récupération des armes du type dont l'ID est: ".$id.": ".$e->getMessage();
+        $error =  "Erreur lors de la récupération des armes du type dont l'ID est: ".$id;
         include_once "views/error.php";
         exit;
     }
@@ -100,7 +103,7 @@ function getWeaponById($id){
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch(Exception $e){
-        $error =  "Erreur lors de la récupération de l'arme avec l'ID ".$id.": ".$e->getMessage();
+        $error =  "Erreur lors de la récupération de l'arme avec l'ID ".$id;
         include_once "views/error.php";
         exit;
     }
@@ -114,6 +117,7 @@ function getWeaponById($id){
  * @param string $thumbnailPath path to the new weapon thumbnail
  * @param string $description description of the new weapon
  * @param array $ids array of all ids needed to create the new weapon
+ * @return void
  */
 function createWeapon($name, $rarity, $cardPath, $thumbnailPath, $description, $ids){
     $pdo = getConnexion();
@@ -123,7 +127,7 @@ function createWeapon($name, $rarity, $cardPath, $thumbnailPath, $description, $
         $stmt->execute($datas);
         
     } catch(PDOException $e){
-        $error = "Erreur lors de la création d'une arme: ".$e->getMessage();
+        $error = "Erreur lors de la création d'une arme: ";
         include_once "views/error.php";
         exit;
     }
@@ -138,6 +142,7 @@ function createWeapon($name, $rarity, $cardPath, $thumbnailPath, $description, $
  * @param string $thumbnailPath path to the new weapon thumbnail
  * @param string $description description of the new weapon
  * @param array $ids array of all ids needed to create the new weapon
+ * @return void
  */
 function editWeapon($id, $name, $rarity, $cardPath, $thumbnailPath, $description, $ids){
     $pdo = getConnexion();
@@ -146,7 +151,7 @@ function editWeapon($id, $name, $rarity, $cardPath, $thumbnailPath, $description
         $datas = array_merge([$name, $rarity, $cardPath, $thumbnailPath, $description], $ids, [$id]);
         $stmt->execute($datas);
     } catch(PDOException $e){
-        $error = "Erreur lors de la modification d'une arme: ".$e->getMessage();
+        $error = "Erreur lors de la modification d'une arme: ";
         include_once "views/error.php";
         exit;
     }
@@ -155,6 +160,7 @@ function editWeapon($id, $name, $rarity, $cardPath, $thumbnailPath, $description
 /**
  * Delete a weapon from the database
  * @param int $id id of the weapon to delete
+ * @return void
  */
 function deleteWeapon($id){
     $pdo = getConnexion();
@@ -162,7 +168,7 @@ function deleteWeapon($id){
         $stmt = $pdo->prepare("DELETE FROM zell_weapons WHERE `weapon_id` =?");
         $stmt->execute([$id]);
     } catch(PDOException $e){
-        $error = "Erreur lors de la suppression d'une arme: ".$e->getMessage();
+        $error = "Erreur lors de la suppression d'une arme: ";
         include_once "views/error.php";
         exit;
     }

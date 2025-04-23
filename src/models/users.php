@@ -27,7 +27,7 @@ function getUser($nickname, $password){
         return $user && password_verify($password, $user['password']) ? $user : false;
 
     } catch (PDOException $e){
-        $error =  "Erreur lors de la vérification de l'existence d'un utilisateur: ".$e->getMessage();
+        $error =  "Erreur lors de la vérification de l'existence d'un utilisateur: ";
         include_once "views/error.php";
         exit;
     }
@@ -38,6 +38,7 @@ function getUser($nickname, $password){
  * @param string $nickname the nickname of the user
  * @param string $email the email address of the user
  * @param string $password the hashed password of the user
+ * @return void
  */
 function createUser($nickname, $email, $password){
     $pdo = getConnexion();
@@ -45,7 +46,7 @@ function createUser($nickname, $email, $password){
         $stmt = $pdo->prepare("INSERT INTO zell_users (nickname, email, `password`, role_id) VALUES (?,?,?,?)");
         $stmt->execute([$nickname, $email, $password, 2]);
     } catch(PDOException $e){
-        $error = "Echec lors la création de l'utilisateur: ". $e->getMessage();
+        $error = "Echec lors la création de l'utilisateur: ";
         include_once "views/error.php";
         exit;
     }
@@ -63,7 +64,7 @@ function getUserById($id){
         $stmt->execute([$id]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch(PDOException $e){
-        $error = "Erreur lors de la récupération de l'utilisateur par id: ".$e->getMessage();
+        $error = "Erreur lors de la récupération de l'utilisateur par id. ";
         include_once "views/error.php";
         exit;
     }
@@ -81,7 +82,7 @@ function getUserByEmail($email){
         $stmt->execute([$email]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch(PDOException $e){
-        $error = "Erreur lors de la récupération de l'utilisateur par email: ".$e->getMessage();
+        $error = "Erreur lors de la récupération de l'utilisateur par email. ";
         include_once "views/error.php";
         exit;
     }
@@ -91,6 +92,7 @@ function getUserByEmail($email){
  * Update the user with the given email and new password
  * @param string $email the email of the user to update
  * @param string $newPassword the new password of the user
+ * @return void
  */
 function updatePassword($email, $newPassword){
     $pdo = getConnexion();
@@ -98,7 +100,7 @@ function updatePassword($email, $newPassword){
         $stmt = $pdo->prepare("UPDATE zell_users SET password = ? WHERE email = ?");
         $stmt->execute([$newPassword, $email]);
     } catch(PDOException $e){
-        $error = "Erreur lors de la mise à jour du mot de passe: ".$e->getMessage();
+        $error = "Erreur lors de la mise à jour du mot de passe. ";
         include_once "views/error.php";
         exit;
     }
@@ -108,6 +110,7 @@ function updatePassword($email, $newPassword){
  * Delete the user with the given id
  * @note this function will also transfer all the teams and builds created by the user to the user with id 10
  * @param int $id the id of the user to delete
+ * @return void
  */
 function deleteUser($id){
     $pdo = getConnexion();
@@ -124,13 +127,13 @@ function deleteUser($id){
                 $stmt = $pdo->prepare("UPDATE zell_teams SET user_id = ? WHERE user_id = ?");
                 $stmt->execute([10, $id]);
             } catch(PDOException $e){
-                $error = "Erreur lors de la mise à jour des teams de l'utilisateur: ".$e->getMessage();
+                $error = "Erreur lors de la mise à jour des teams de l'utilisateur: ";
                 include_once "views/error.php";
                 exit;
             }
         }
     } catch(PDOException $e){
-        $error = "Erreur lors de la récupération des teams de l'utilisateur: ".$e->getMessage();
+        $error = "Erreur lors de la récupération des teams de l'utilisateur: ";
         include_once "views/error.php";
         exit;
     }
@@ -146,13 +149,13 @@ function deleteUser($id){
                 $stmt = $pdo->prepare("UPDATE zell_builds SET user_id = ? WHERE user_id = ?");
                 $stmt->execute([10, $id]);
             } catch(PDOException $e){
-                $error = "Erreur lors de la mise à jour des builds de l'utilisateur: ".$e->getMessage();
+                $error = "Erreur lors de la mise à jour des builds de l'utilisateur: ";
                 include_once "views/error.php";
                 exit;
             }
         }
     } catch(PDOException $e){
-        $error = "Erreur lors de la récupération des builds de l'utilisateur: ".$e->getMessage();
+        $error = "Erreur lors de la récupération des builds de l'utilisateur: ";
         include_once "views/error.php";
         exit;
     }
@@ -162,7 +165,7 @@ function deleteUser($id){
         $stmt = $pdo->prepare("DELETE FROM zell_users WHERE user_id = ?");
         $stmt->execute([$id]);
     } catch(PDOException $e){
-        $error = "Erreur lors de la suppression de l'utilisateur: ".$e->getMessage();
+        $error = "Erreur lors de la suppression de l'utilisateur: ";
         include_once "views/error.php";
         exit;
     }

@@ -12,12 +12,10 @@ if (isset($_POST['nickname']) && isset($_POST['password'])){
     require_once "utilities/validate.php";
     
     // Validate the nickname
-    $nickname = validateTextField('nickname', "/^[\w\d]{4,}$/", 'Votre pseudo doit contenir au moins 4 caractères 
-    alphanumériques sans espaces ni caractères spéciaux!');
+    $nickname = validateTextField('nickname', "/^[\w\d]{4,}$/", "Nom d'utilisateur ou mot de passe incorrect.");
 
     // Validate the password
-    $password = validateTextField('password', "/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/", 'Le mot de passe doit 
-    contenir au moins un nombre, une lettre majuscule et minuscule et comporter au moins 8 caractères!');
+    $password = validateTextField('password', "/(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}/", "Nom d'utilisateur ou mot de passe incorrect.");
 
     // Ready to compare with the BDD
     require_once "models/users.php";

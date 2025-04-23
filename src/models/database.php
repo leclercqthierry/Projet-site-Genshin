@@ -6,6 +6,7 @@
 
 /**
  * Database connexion
+ * @return PDO the PDO object
  */
 function getConnexion() {
     try {
@@ -16,7 +17,7 @@ function getConnexion() {
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $pdo;
     } catch(PDOException $e) {
-        $error = "Erreur de connexion à la base de donnée: " . $e->getMessage();
+        $error = "Erreur de connexion à la base de donnée. ";
         include_once "views/error.php";
         exit;
     }
@@ -37,7 +38,7 @@ function checkExist($table, $col, $value){
         $stmt->execute([$value]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch(PDOException $e){
-        $error = "Erreur lors de l'utilisation de la fonction checkExist: ".$e->getMessage();
+        $error = "Erreur lors de l'utilisation de la fonction checkExist. ";
         include_once "views/error.php";
         exit;
     }

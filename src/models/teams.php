@@ -9,8 +9,9 @@ require_once "models/database.php";
 /**
  * Create a new team
  * @param string $teamName the name of the team
- * @param $array $buildIds the builds needed to create the team
+ * @param array $buildIds the builds needed to create the team
  * @param int $userId the user id
+ * @return void
  */
 function createTeam($teamName, $buildIds, $userId){
     $pdo = getConnexion();
@@ -23,7 +24,7 @@ function createTeam($teamName, $buildIds, $userId){
             $stmt->execute([$teamId, $buildId]);
         }
     }catch(PDOException $e){
-        $error = "Erreur lors de la création d'une équipe: ". $e->getMessage();
+        $error = "Erreur lors de la création d'une équipe: ";
         include_once "views/error.php";
         exit;
     }
@@ -39,7 +40,7 @@ function getAllTeams(){
         $stmt = $pdo->query("SELECT * FROM zell_teams");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }catch(PDOException $e){
-        $error = "Erreur lors de la récupération de toutes les équipes: ".$e->getMessage();
+        $error = "Erreur lors de la récupération de toutes les équipes: ";
         include_once "views/error.php";
         exit;
     }
@@ -57,7 +58,7 @@ function getTeamById($teamId){
         $stmt->execute([$teamId]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }catch(PDOException $e){
-        $error = "Erreur lors de la récupération de l'équipe d'id: $teamId".$e->getMessage();
+        $error = "Erreur lors de la récupération de l'équipe d'id: $teamId";
         include_once "views/error.php";
         exit;
     }
@@ -75,7 +76,7 @@ function getAllUserTeams($userId){
         $stmt->execute([$userId]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }catch(PDOException $e){
-        $error = "Erreur lors de la récupération des équipes de l'utilisateur d'id: $userId".$e->getMessage();
+        $error = "Erreur lors de la récupération des équipes de l'utilisateur d'id: $userId";
         include_once "views/error.php";
         exit;
     }
@@ -87,6 +88,7 @@ function getAllUserTeams($userId){
  * @param array $oldBuildIds the old build IDs of the team
  * @param array $newBuildIds the new build IDs of the team
  * @param int $teamId the team id
+ * @return void
  */
 function editTeam($teamName, $oldBuildIds, $newBuildIds, $teamId){
     $pdo = getConnexion();
@@ -102,7 +104,7 @@ function editTeam($teamName, $oldBuildIds, $newBuildIds, $teamId){
             $stmt->execute([$newBuildIds[$i], $oldBuildIds[$i], $teamId]);
         }
     }catch(PDOException $e) {
-        $error = "Erreur lors de la modification de l'équipe: ". $e->getMessage();
+        $error = "Erreur lors de la modification de l'équipe: ";
         include_once "views/error.php";
         exit;
     }
@@ -111,6 +113,7 @@ function editTeam($teamName, $oldBuildIds, $newBuildIds, $teamId){
 /**
  * Delete a team from the database with the given id
  * @param int $teamId the team id
+ * @return void
  */
  function deleteTeam($teamId){
     $pdo = getConnexion();
@@ -124,7 +127,7 @@ function editTeam($teamName, $oldBuildIds, $newBuildIds, $teamId){
         $stmt = $pdo->prepare("DELETE FROM zell_teams WHERE team_id=?");
         $stmt->execute([$teamId]);
     }catch(PDOException $e) {
-        $error = "Erreur lors de la suppression de l'équipe: ". $e->getMessage();
+        $error = "Erreur lors de la suppression de l'équipe: ";
         include_once "views/error.php";
         exit;
     }

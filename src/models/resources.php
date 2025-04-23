@@ -19,7 +19,7 @@ function getAllBossDrops(){
         $stmt = $pdo->query("SELECT * FROM zell_boss_drops ORDER BY `name`");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch(Exception $e){
-        $error = "Erreur lors de la récupération des noms de drop des boss: ".$e->getMessage();
+        $error = "Erreur lors de la récupération des noms de drop des boss. ";
         include_once "views/error.php";
         exit;
     }
@@ -37,7 +37,7 @@ function getBossDropById($id){
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch(Exception $e){
-        $error = "Erreur lors de la récupération du drop du boss avec l'id: $id".$e->getMessage();
+        $error = "Erreur lors de la récupération du drop du boss avec l'id: $id";
         include_once "views/error.php";
         exit;
     }
@@ -53,7 +53,7 @@ function getAllLocalMaterials() {
         $stmt = $pdo->query("SELECT * FROM zell_local_materials ORDER BY `name`");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (Exception $e) {
-        $error = "Erreur lors de la récupération des noms des matériaux locaux: " . $e->getMessage();
+        $error = "Erreur lors de la récupération des noms des matériaux locaux. ";
         include_once "views/error.php";
         exit;
     }
@@ -71,7 +71,7 @@ function getLocalMaterialById($id) {
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch (Exception $e) {
-        $error = "Erreur lors de la récupération du matériau local avec l'id: $id".$e->getMessage();
+        $error = "Erreur lors de la récupération du matériau local avec l'id: $id";
         include_once "views/error.php";
         exit;
     }
@@ -87,7 +87,7 @@ function getAllWorldBossDrops() {
         $stmt = $pdo->query("SELECT * FROM zell_world_boss_drops ORDER BY `name`");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (Exception $e) {
-        $error = "Erreur lors de la récupération des noms de drop des world boss: " . $e->getMessage();
+        $error = "Erreur lors de la récupération des noms de drop des world boss. ";
         include_once "views/error.php";
         exit;
     }
@@ -105,7 +105,7 @@ function getWorldBossDropById($id) {
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch (Exception $e) {
-        $error = "Erreur lors de la récupération du drop du world boss avec l'id: $id".$e->getMessage();
+        $error = "Erreur lors de la récupération du drop du world boss avec l'id: $id";
         include_once "views/error.php";
         exit;
     }
@@ -121,7 +121,7 @@ function getAllDjMaterials() {
         $stmt = $pdo->query("SELECT * FROM zell_dungeon_drops ORDER BY `category`");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (Exception $e) {
-        $error = "Erreur lors de la récupération des noms de matériel de donjon: ". $e->getMessage();
+        $error = "Erreur lors de la récupération des noms de matériel de donjon. ";
         include_once "views/error.php";
         exit;
     } 
@@ -139,7 +139,7 @@ function getDjMaterialsById($id) {
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch (Exception $e) {
-        $error = "Erreur lors de la récupération du jeu de drop de donjon d'id: $id".$e->getMessage();
+        $error = "Erreur lors de la récupération du jeu de drop de donjon d'id: $id";
         include_once "views/error.php";
         exit;
     }
@@ -155,7 +155,7 @@ function getAllMobMaterials() {
         $stmt = $pdo->query("SELECT * FROM zell_mob_drops ORDER BY `category`");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     } catch (Exception $e) {
-        $error = "Erreur lors de la récupération des noms de drops de monstres: ". $e->getMessage();
+        $error = "Erreur lors de la récupération des noms de drops de monstres. ";
         include_once "views/error.php";
         exit;
     }
@@ -173,7 +173,7 @@ function getMobMaterialsById($id) {
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     } catch (Exception $e) {
-        $error = "Erreur lors de la récupération du jeu de drop d'id: $id".$e->getMessage();
+        $error = "Erreur lors de la récupération du jeu de drop d'id: $id";
         include_once "views/error.php";
         exit;
     }
@@ -190,7 +190,7 @@ function getAllElevationMaterials(){
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     } catch (Exception $e){
-        $error = "Erreur lors de la récupération des matériaux d'élévation: ".$e->getMessage();
+        $error = "Erreur lors de la récupération des matériaux d'élévation. ";
         include_once "views/error.php";
         exit;
     }
@@ -209,7 +209,7 @@ function getElevationMaterialsById($id){
         return $stmt->fetch(PDO::FETCH_ASSOC);
         
     } catch (Exception $e){
-        $error = "Erreur lors de la récupération du jeu de drop d'id: $id".$e->getMessage();
+        $error = "Erreur lors de la récupération du jeu de drop d'id: $id";
         include_once "views/error.php";
         exit;
     }
@@ -226,7 +226,7 @@ function getAllDjElevationMaterials(){
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
         
     } catch (Exception $e){
-        $error = "Erreur lors de la récupération des matériaux de DJ d'élévation: ".$e->getMessage();
+        $error = "Erreur lors de la récupération des matériaux de DJ d'élévation. ";
         include_once "views/error.php";
         exit;
     }
@@ -245,7 +245,7 @@ function getDjElevationMaterialsById($id){
         return $stmt->fetch(PDO::FETCH_ASSOC);
         
     } catch (Exception $e){
-        $error = "Erreur lors de la récupération du jeu de drop d'id: $id".$e->getMessage();
+        $error = "Erreur lors de la récupération du jeu de drop d'id: $id";
         include_once "views/error.php";
         exit;
     }
@@ -256,6 +256,7 @@ function getDjElevationMaterialsById($id){
 /**
  * Create a new Dungeon drop
  * @param array $data the data to create the new dungeon drop
+ * @return void
  */
 function createDjDrop($data){
     $pdo = getConnexion();
@@ -263,7 +264,7 @@ function createDjDrop($data){
         $stmt = $pdo->prepare("INSERT INTO zell_dungeon_drops (category, name1, name2, name3, image1, image2, image3) VALUES (?,?,?,?,?,?,?)");
         $stmt->execute($data);
     } catch(PDOException $e){
-        $error = "Erreur lors de la création du jeu de drops de donjon: ". $e->getMessage();
+        $error = "Erreur lors de la création du jeu de drops de donjon. ";
         include_once "views/error.php";
         exit;
     }
@@ -272,6 +273,7 @@ function createDjDrop($data){
 /**
  * Create a new boss drop
  * @param array $data the data to create the new boss drop
+ * @return void
  */
 function createBossDrop($data){
     $pdo = getConnexion();
@@ -279,7 +281,7 @@ function createBossDrop($data){
         $stmt = $pdo->prepare("INSERT INTO zell_boss_drops (`name`, `image`) VALUES (?,?)");
         $stmt->execute($data);
     } catch(PDOException $e){
-        $error = "Erreur lors de la création d'un drop de boss: ".$e->getMessage();
+        $error = "Erreur lors de la création d'un drop de boss. ";
         include_once "views/error.php";
         exit;
     }
@@ -288,6 +290,7 @@ function createBossDrop($data){
 /**
  * Create a new dungeon weapon drop
  * @param array $data the data to create the new dungeon weapon drop
+ * @return void
  */
 function createDjWeaponDrop($data){
     $pdo = getConnexion();
@@ -295,7 +298,7 @@ function createDjWeaponDrop($data){
         $stmt = $pdo->prepare("INSERT INTO zell_dungeon_weapon_drops (category, name1, name2, name3, name4, image1, image2, image3, image4) VALUES (?,?,?,?,?,?,?,?,?)");
         $stmt->execute($data);
     } catch(PDOException $e){
-        $error = "Erreur lors de la création d'un jeu de drops de donjon d'armes: ". $e->getMessage();
+        $error = "Erreur lors de la création d'un jeu de drops de donjon d'armes. ";
         include_once "views/error.php";
         exit;
     }
@@ -304,6 +307,7 @@ function createDjWeaponDrop($data){
 /**
  * Create a new elevation drop
  * @param array $data the data to create the new elevation drop
+ * @return void
  */
 function createElevationDrop($data){
     $pdo = getConnexion();
@@ -311,7 +315,7 @@ function createElevationDrop($data){
         $stmt = $pdo->prepare("INSERT INTO zell_elevation_weapon_drops (category, name1, name2, name3, image1, image2, image3) VALUES (?,?,?,?,?,?,?)");
         $stmt->execute($data);
     } catch(PDOException $e){
-        $error = "Erreur lors de la création d'un jeu de drops d'élévation: ". $e->getMessage();
+        $error = "Erreur lors de la création d'un jeu de drops d'élévation. ";
         include_once "views/error.php";
         exit;
     }
@@ -320,6 +324,7 @@ function createElevationDrop($data){
 /**
  * Create a new local material
  * @param array $data the data to create the new local material
+ * @return void
  */
 function createLocalMaterial($data){
     $pdo = getConnexion();
@@ -327,7 +332,7 @@ function createLocalMaterial($data){
         $stmt = $pdo->prepare("INSERT INTO zell_local_materials (`name`, `image`) VALUES (?,?)");
         $stmt->execute($data);
     } catch(PDOException $e){
-        $error = "Erreur de création d'un matériel local: ".$e->getMessage();
+        $error = "Erreur de création d'un matériel local. ";
         include_once "views/error.php";
         exit;
     }
@@ -336,6 +341,7 @@ function createLocalMaterial($data){
 /**
  * Create a new mob material
  * @param array $data the data to create the new mob materials
+ * @return void
  */
 function createMobMaterials($data){
     $pdo = getConnexion();
@@ -343,7 +349,7 @@ function createMobMaterials($data){
         $stmt = $pdo->prepare("INSERT INTO zell_mob_drops (category, name1, name2, name3, image1, image2, image3) VALUES (?,?,?,?,?,?,?)");
         $stmt->execute($data);
     } catch(PDOException $e){
-        $error = "Erreur lors de la création d'un jeu de drop de mobs: ".$e->getMessage();
+        $error = "Erreur lors de la création d'un jeu de drop de mobs. ";
         include_once "views/error.php";
         exit;
     }
@@ -352,6 +358,7 @@ function createMobMaterials($data){
 /**
  * Create a new World boss drop
  * @param array $data the data to create the new world boss drop
+ * @return void
  */
 function createWorldBossDrop($data){
     $pdo = getConnexion();
@@ -359,7 +366,7 @@ function createWorldBossDrop($data){
         $stmt = $pdo->prepare("INSERT INTO zell_world_boss_drops (`name`, `image`) VALUES (?,?)");
         $stmt->execute($data);
     } catch(PDOException $e){
-        $error = "Echec lors de la création d'un drop de world boss: ".$e->getMessage();
+        $error = "Echec lors de la création d'un drop de world boss. ";
         include_once "views/error.php";
         exit;
     }
@@ -371,6 +378,7 @@ function createWorldBossDrop($data){
  * Edit the boss drop with the id
  * @param int $id the boss drop id
  * @param array $data the new boss drop data
+ * @return void
  */
 function editBossDrop($id, $data){
     $pdo = getConnexion();
@@ -379,7 +387,7 @@ function editBossDrop($id, $data){
         array_push($data, $id);
         $stmt->execute($data);
     } catch(PDOException $e){
-        $error = "Erreur lors de la modification d'un drop de boss: ". $e->getMessage();
+        $error = "Erreur lors de la modification d'un drop de boss. ";
         include_once "views/error.php";
         exit;
     }
@@ -389,6 +397,7 @@ function editBossDrop($id, $data){
  * Edit the local material with the given id
  * @param int $id the local material id
  * @param array $data the new local material data
+ * @return void
  */
 function editLocalMaterial($id, $data){
     $pdo = getConnexion();
@@ -397,7 +406,7 @@ function editLocalMaterial($id, $data){
         array_push($data, $id);
         $stmt->execute($data);
     } catch(PDOException $e){
-        $error = "Erreur lors de la modification d'un matériel local: ". $e->getMessage();
+        $error = "Erreur lors de la modification d'un matériel local. ";
         include_once "views/error.php";
         exit;
     }
@@ -407,6 +416,7 @@ function editLocalMaterial($id, $data){
  * Edit the world boss drop with the given id
  * @param int $id the boss drop id
  * @param array $data the new boss drop data
+ * @return void
  */
 function editWorldBossDrop($id, $data){
     $pdo = getConnexion();
@@ -415,7 +425,7 @@ function editWorldBossDrop($id, $data){
         array_push($data, $id);
         $stmt->execute($data);
     } catch(PDOException $e){
-        $error = "Erreur lors de la modification d'un drop de world boss: ". $e->getMessage();
+        $error = "Erreur lors de la modification d'un drop de world boss. ";
         include_once "views/error.php";
         exit;
     }
@@ -425,6 +435,7 @@ function editWorldBossDrop($id, $data){
  * Edit the Mob material with the given id
  * @param int $id the mob material id
  * @param array $data the new mob material data
+ * @return void
  */
 function editMobMaterials($id, $data){
     $pdo = getConnexion();
@@ -433,7 +444,7 @@ function editMobMaterials($id, $data){
         array_push($data, $id);
         $stmt->execute($data);
     } catch(PDOException $e){
-        $error = "Erreur lors de la modification d'un jeu de matériel de mob: ". $e->getMessage();
+        $error = "Erreur lors de la modification d'un jeu de matériel de mob. ";
         include_once "views/error.php";
         exit;
     }
@@ -443,6 +454,7 @@ function editMobMaterials($id, $data){
  * Edit the dungeon materials with the given id
  * @param int $id the dungeon materials id
  * @param array $data the new dungeon materials data
+ * @return void
  */
 function editDjMaterials($id, $data){
     $pdo = getConnexion();
@@ -451,7 +463,7 @@ function editDjMaterials($id, $data){
         array_push($data, $id);
         $stmt->execute($data);
     } catch(PDOException $e){
-        $error = "Erreur lors de la modification d'un jeu de drops de donjon: ". $e->getMessage();
+        $error = "Erreur lors de la modification d'un jeu de drops de donjon. ";
         include_once "views/error.php";
         exit;
     }
@@ -461,6 +473,7 @@ function editDjMaterials($id, $data){
  * Edit the elevation materials with the given id
  * @param int $id the elevation  materials id
  * @param array $data the new elevation materials data
+ * @return void
  */
 function editElevationMaterials($id, $data){
     $pdo = getConnexion();
@@ -469,7 +482,7 @@ function editElevationMaterials($id, $data){
         array_push($data, $id);
         $stmt->execute($data);
     } catch(PDOException $e){
-        $error = "Erreur lors de la modification d'un jeu de drops d'élévation: ". $e->getMessage();
+        $error = "Erreur lors de la modification d'un jeu de drops d'élévation. ";
         include_once "views/error.php";
         exit;
     }
@@ -479,6 +492,7 @@ function editElevationMaterials($id, $data){
  * Edit a dungeon elevation materials with the given id
  * @param int $id the dungeon elevation materials id
  * @param array $data the new dungeon elevation materials data
+ * @return void
  */
 function editDjElevationMaterials($id, $data){
     $pdo = getConnexion();
@@ -487,7 +501,7 @@ function editDjElevationMaterials($id, $data){
         array_push($data, $id);
         $stmt->execute($data);
     } catch(PDOException $e){
-        $error = "Erreur lors de la modification d'un jeu de drops d'élévation de donjon: ". $e->getMessage();
+        $error = "Erreur lors de la modification d'un jeu de drops d'élévation de donjon. ";
         include_once "views/error.php";
         exit;
     }
@@ -498,6 +512,7 @@ function editDjElevationMaterials($id, $data){
 /**
  * Delete the boss drop from the database with the given id 
  * @param int $id the boss drop id
+ * @return void
  */
 function deleteBossDrop($id){
     $pdo = getConnexion();
@@ -505,7 +520,7 @@ function deleteBossDrop($id){
         $stmt = $pdo->prepare("DELETE FROM zell_boss_drops WHERE `boss_drop_id`=?");
         $stmt->execute([$id]);
     } catch(PDOException $e){
-        $error = "Erreur lors de la suppression de la ressource: ".$e->getMessage();
+        $error = "Erreur lors de la suppression de la ressource. ";
         include_once "views/error.php";
         exit;
     }
@@ -514,6 +529,7 @@ function deleteBossDrop($id){
 /**
  * Delete the local material from the database with the given id 
  * @param int $id the local material id
+ * @return void
  */
 function deleteLocalMaterial($id){
     $pdo = getConnexion();
@@ -521,7 +537,7 @@ function deleteLocalMaterial($id){
         $stmt = $pdo->prepare("DELETE FROM zell_local_materials WHERE `local_material_id`=?");
         $stmt->execute([$id]);
     } catch(PDOException $e){
-        $error = "Erreur lors de la suppression de la ressource: ".$e->getMessage();
+        $error = "Erreur lors de la suppression de la ressource. ";
         include_once "views/error.php";
         exit;
     }
@@ -530,6 +546,7 @@ function deleteLocalMaterial($id){
 /**
  * Delete the world boss drop from the database with the given id 
  * @param int $id the world boss drop id
+ * @return void
  */
 function deleteWorldBossDrop($id){
     $pdo = getConnexion();
@@ -537,7 +554,7 @@ function deleteWorldBossDrop($id){
         $stmt = $pdo->prepare("DELETE FROM zell_world_boss_drops WHERE `world_boss_drop_id`=?");
         $stmt->execute([$id]);
     } catch(PDOException $e){
-        $error = "Erreur lors de la suppression de la ressource: ".$e->getMessage();
+        $error = "Erreur lors de la suppression de la ressource. ";
         include_once "views/error.php";
         exit;
     }
@@ -546,6 +563,7 @@ function deleteWorldBossDrop($id){
 /**
  * Delete the mob materials from the database with the given id 
  * @param int $id the mob materials id
+ * @return void
  */
 function deleteMobMaterials($id){
     $pdo = getConnexion();
@@ -553,7 +571,7 @@ function deleteMobMaterials($id){
         $stmt = $pdo->prepare("DELETE FROM zell_mob_drops WHERE `mob_drop_id`=?");
         $stmt->execute([$id]);
     } catch(PDOException $e){
-        $error = "Erreur lors de la suppression de la ressource: ".$e->getMessage();
+        $error = "Erreur lors de la suppression de la ressource. ";
         include_once "views/error.php";
         exit;
     }
@@ -562,6 +580,7 @@ function deleteMobMaterials($id){
 /**
  * Delete the dungeon materials from the database with the given id 
  * @param int $id the dungeon material id
+ * @return void
  */
 function deleteDjMaterials($id){
     $pdo = getConnexion();
@@ -569,7 +588,7 @@ function deleteDjMaterials($id){
         $stmt = $pdo->prepare("DELETE FROM zell_dungeon_drops WHERE `dungeon_drop_id`=?");
         $stmt->execute([$id]);
     } catch(PDOException $e){
-        $error = "Erreur lors de la suppression de la ressource: ".$e->getMessage();
+        $error = "Erreur lors de la suppression de la ressource. ";
         include_once "views/error.php";
         exit;
     }
@@ -578,6 +597,7 @@ function deleteDjMaterials($id){
 /**
  * Delete the elevation materials from the database with the given id 
  * @param int $id the elevation materials id
+ * @return void
  */
 function deleteElevationMaterials($id){
     $pdo = getConnexion();
@@ -585,7 +605,7 @@ function deleteElevationMaterials($id){
         $stmt = $pdo->prepare("DELETE FROM zell_elevation_weapon_drops WHERE `elevation_weapon_drop_id`=?");
         $stmt->execute([$id]);
     } catch(PDOException $e){
-        $error = "Erreur lors de la suppression de la ressource: ".$e->getMessage();
+        $error = "Erreur lors de la suppression de la ressource. ";
         include_once "views/error.php";
         exit;
     }
@@ -594,6 +614,7 @@ function deleteElevationMaterials($id){
 /**
  * Delete the dungeon elevation materials from the database with the given id 
  * @param int $id the dungeon elevation materials id
+ * @return void
  */
 function deleteDjElevationMaterials($id){
     $pdo = getConnexion();
@@ -601,7 +622,7 @@ function deleteDjElevationMaterials($id){
         $stmt = $pdo->prepare("DELETE FROM zell_dungeon_weapon_drops WHERE `dungeon_drop_id`=?");
         $stmt->execute([$id]);
     } catch(PDOException $e){
-        $error = "Erreur lors de la suppression de la ressource: ".$e->getMessage();
+        $error = "Erreur lors de la suppression de la ressource. ";
         include_once "views/error.php";
         exit;
     }

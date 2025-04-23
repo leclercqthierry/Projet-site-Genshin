@@ -20,7 +20,7 @@ function getBuild($charId, $weaponId, $artifactId){
         $stmt->execute([$artifactId, $weaponId, $charId]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }catch(PDOException $e){
-        $error = "Erreur lors de la récupération du build: ".$e->getMessage();
+        $error = "Erreur lors de la récupération du build. ";
         include_once "views/error.php";
         exit;
     }
@@ -38,7 +38,7 @@ function getBuildsByTeamId($teamId){
         $stmt->execute([$teamId]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }catch(PDOException $e){
-        $error = "Erreur lors de la récupération des builds par équipe: ".$e->getMessage();
+        $error = "Erreur lors de la récupération des builds par équipe. ";
         include_once "views/error.php";
         exit;
     }
@@ -50,6 +50,7 @@ function getBuildsByTeamId($teamId){
  * @param int $weaponId the weapon id
  * @param int $artifactId the artifact id
  * @param int $userId the user id of the creator
+ * @return void
  */
 function createBuild($charId, $weaponId, $artifactId, $userId){
     $pdo = getConnexion();
@@ -57,7 +58,7 @@ function createBuild($charId, $weaponId, $artifactId, $userId){
         $stmt = $pdo->prepare("INSERT INTO zell_builds (`artifact_id`, `weapon_id`, `character_id`, `user_id`) VALUES (?,?,?,?)");
         $stmt->execute([$artifactId, $weaponId, $charId, $userId]);
     }catch(PDOException $e){
-        $error = "Erreur lors de la création d'un build: ".$e->getMessage();
+        $error = "Erreur lors de la création d'un build. ";
         include_once "views/error.php";
         exit;
     }
@@ -75,7 +76,7 @@ function getAllBuildsByCharacterId($characterId){
         $stmt->execute([$characterId]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }catch(PDOException $e){
-        $error = "Erreur lors de la récupération des builds par personnage: ".$e->getMessage();
+        $error = "Erreur lors de la récupération des builds par personnage. ";
         include_once "views/error.php";
         exit;
     }
@@ -87,6 +88,7 @@ function getAllBuildsByCharacterId($characterId){
  * @param int $weaponId the new weapon id
  * @param int $artifactId the new artifact id
  * @param int $buildId the given build id
+ * @return void
  */
 function editBuild($characterId, $weaponId, $artifactId, $buildId){
     $pdo = getConnexion();
@@ -94,7 +96,7 @@ function editBuild($characterId, $weaponId, $artifactId, $buildId){
         $stmt = $pdo->prepare("UPDATE zell_builds SET artifact_id =?, weapon_id =? WHERE build_id =? AND character_id =?");
         $stmt->execute([$artifactId, $weaponId, $buildId, $characterId]);
     }catch(PDOException $e){
-        $error = "Erreur lors de la modification du build: ".$e->getMessage();
+        $error = "Erreur lors de la modification du build. ";
         include_once "views/error.php";
         exit;
     }
@@ -103,6 +105,7 @@ function editBuild($characterId, $weaponId, $artifactId, $buildId){
 /**
  * Delete the build with the given id
  * @param int $buildId the build id
+ * @return void
  */
  function deleteBuild($buildId){
     $pdo = getConnexion();
@@ -110,7 +113,7 @@ function editBuild($characterId, $weaponId, $artifactId, $buildId){
         $stmt = $pdo->prepare("DELETE FROM zell_builds WHERE `build_id`=?");
         $stmt->execute([$buildId]);
     }catch(PDOException $e){
-        $error = "Erreur lors de la suppression du build: ".$e->getMessage();
+        $error = "Erreur lors de la suppression du build. ";
         include_once "views/error.php";
         exit;
     }
