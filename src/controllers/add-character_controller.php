@@ -86,6 +86,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
 
                 // Then save the file in the good directory
                 move_uploaded_file($_FILES['thumbnail']['tmp_name'], $thumbnailPath);
+                $cardPath = preg_replace('/(\.[^.]+)$/', '_w174$1', $cardPath);
                 move_uploaded_file($_FILES['card']['tmp_name'], $cardPath);
                 header("Location: admin-menu");
             } else {

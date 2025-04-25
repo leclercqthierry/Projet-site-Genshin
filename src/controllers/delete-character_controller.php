@@ -16,7 +16,8 @@ if (isset($_SESSION['role']) && $_SESSION['role'] === 'Administrator'){
         // We delete the corresponding image then the artifact from the database
         $character = getCharacterById($id);
         unlink($character['image']);
-        unlink($character['card']);
+        $cardPath = preg_replace('/(\.[^.]+)$/', '_w174$1', $character['card']);
+        unlink($cardPath);
         
         deleteCharacter($id);
         header('Location: admin-menu');
